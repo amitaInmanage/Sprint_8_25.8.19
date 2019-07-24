@@ -9,15 +9,18 @@
 import UIKit
 
 struct TenRequestNames {
-    static let getVerifyPinCode = "verifyPinCode"
     static let getSmsToken = "getSmsToken"
     static let getOnBoarding = "getOnboarding"
+    static let getVerifyPinCode = "verifyPinCode"
     static let getVerifySmsToken = "verifySmsToken"
     static let getEditUserInformation = "editUserInformation"
+    static let getTransactionsHistory = "getTransactionsHistory"
     static let getUpdateRegistrationData = "updateRegistrationData"
 }
 
 struct TenParamsNames {
+    static let type = "type"
+    static let page = "page"
     static let add = "add"
     static let pinCode = "pinCode"
     static let token = "token"

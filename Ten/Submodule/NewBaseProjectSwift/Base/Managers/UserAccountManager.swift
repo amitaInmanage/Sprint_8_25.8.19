@@ -278,6 +278,19 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         
     }
     
+    func callGetTransactionsHistory(dictParams: [String:Any], requestFinishedDelegate :RequestFinishedProtocol? , vc: UIViewController? = nil ) {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        let request = GetTransactionsHistoryRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
+        
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
+    }
+    
     func callGetUserFavoritesWithRequestFinishedDelegate(requestFinishedDelegate :RequestFinishedProtocol?) {
         
         var delegate = requestFinishedDelegate

@@ -28,6 +28,7 @@ class SignUpFullNameViewController: BaseFormViewController {
         super.viewDidLoad()
         self.initializeUI()
     }
+
     
     func initializeUI() {
         self.setupTextFields()

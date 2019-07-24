@@ -242,8 +242,13 @@ enum SideMenuItemID: Int {
 }
 
 enum DeepLinkPageStrings: String {
+    
     case transactionsHistory = "transactions_history"
     case personalInformation = "personal_information"
+    case fuelingDevices = "fueling_devices"
+    case myClubs = "my_clubs"
+    case usageInformation = "usage_information"
+    case storePaymentMethods = "store_payment_methods"
     case personalArea = "personalArea"
     case stations = "stations"
     case payment = "payment"

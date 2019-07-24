@@ -21,6 +21,12 @@ class SignUpChooseCustomerTypeViewController: BaseViewController {
         self.initinlizeUI()
     }
     
+    override func didMove(toParentViewController parent: UIViewController?) {
+        if let vc = parent as? TenStyleViewController {
+            vc.bottomConstraint.constant = 17.5
+        }
+    }
+    
     func initinlizeUI() {
         self.btnConfrime.Disabled()
     }

@@ -380,11 +380,18 @@
 		F448C3A5209085CC0077947E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F448C3A3209085CC0077947E /* LaunchScreen.storyboard */; };
 		F44E8E8F215A7B4D008FCD28 /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44E8E8E215A7B4D008FCD28 /* ScreenName.swift */; };
 		F44E8E91215A7D64008FCD28 /* TenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44E8E90215A7D64008FCD28 /* TenConstants.swift */; };
+		F45417FF22E8764F00C9CCFF /* StoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45417FE22E8764F00C9CCFF /* StoresTableViewCell.swift */; };
+		F454180122E8768200C9CCFF /* StoresTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F454180022E8768200C9CCFF /* StoresTableViewCell.xib */; };
+		F454180322E8817300C9CCFF /* GetTransactionsHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */; };
+		F454180522E881B900C9CCFF /* GetTransactionsHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */; };
+		F454180722E8905D00C9CCFF /* TransactionHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */; };
 		F45D570922E5AF260088E704 /* CreatePasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D570822E5AF260088E704 /* CreatePasswordTableViewCell.swift */; };
 		F45D570B22E5AF420088E704 /* CreatePasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45D570A22E5AF420088E704 /* CreatePasswordTableViewCell.xib */; };
 		F48E294322E102680010B01B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E294222E102680010B01B /* SplashViewController.swift */; };
 		F48E294622E43EAF0010B01B /* PasswordManagmenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48E294522E43EAF0010B01B /* PasswordManagmenTableViewCell.xib */; };
 		F48E294822E43ECF0010B01B /* PasswordManagmenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E294722E43ECF0010B01B /* PasswordManagmenTableViewCell.swift */; };
+		F4903DC422E83A7C0029879C /* TransactionsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4903DC322E83A7C0029879C /* TransactionsHistoryViewController.swift */; };
+		F4903DC622E83AD30029879C /* TransactionsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4903DC522E83AD30029879C /* TransactionsHistoryViewModel.swift */; };
 		F4D6A9D822E5CDD100F60A39 /* VerifyPinCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */; };
 		F4D6A9DA22E5CE3200F60A39 /* VerifyPinCodeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */; };
 		F4FA7A2B2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA7A2A2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift */; };
@@ -779,11 +786,18 @@
 		F448C3A6209085CC0077947E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F44E8E8E215A7B4D008FCD28 /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		F44E8E90215A7D64008FCD28 /* TenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenConstants.swift; sourceTree = "<group>"; };
+		F45417FE22E8764F00C9CCFF /* StoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresTableViewCell.swift; sourceTree = "<group>"; };
+		F454180022E8768200C9CCFF /* StoresTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoresTableViewCell.xib; sourceTree = "<group>"; };
+		F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsHistoryResponse.swift; sourceTree = "<group>"; };
+		F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsHistoryRequest.swift; sourceTree = "<group>"; };
+		F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryItem.swift; sourceTree = "<group>"; };
 		F45D570822E5AF260088E704 /* CreatePasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordTableViewCell.swift; sourceTree = "<group>"; };
 		F45D570A22E5AF420088E704 /* CreatePasswordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePasswordTableViewCell.xib; sourceTree = "<group>"; };
 		F48E294222E102680010B01B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F48E294522E43EAF0010B01B /* PasswordManagmenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordManagmenTableViewCell.xib; sourceTree = "<group>"; };
 		F48E294722E43ECF0010B01B /* PasswordManagmenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManagmenTableViewCell.swift; sourceTree = "<group>"; };
+		F4903DC322E83A7C0029879C /* TransactionsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryViewController.swift; sourceTree = "<group>"; };
+		F4903DC522E83AD30029879C /* TransactionsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryViewModel.swift; sourceTree = "<group>"; };
 		F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeResponse.swift; sourceTree = "<group>"; };
 		F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeRequests.swift; sourceTree = "<group>"; };
 		F4FA7A2A2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelingAndExtraServicesViewController.swift; sourceTree = "<group>"; };
@@ -948,6 +962,7 @@
 		3EB304A8215BBD070020DC61 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F45417FD22E8760900C9CCFF /* TransactionsHistoryCells */,
 				F48E294422E43E320010B01B /* SecurityManagmentCells */,
 				E8C5316D22DF6E3E007237ED /* PersonalDetails */,
 				E834A32722DDDE57002D006D /* OnBoardingCell */,
@@ -1008,6 +1023,7 @@
 		E815F12C22AFDF570015D1DD /* PersonalZoneControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F4903DC222E83A340029879C /* TransactionsHidtory */,
 				F4471CAB22E4997F005B0648 /* SecurityManagment */,
 				E8E7790222D61C1E004F0A9F /* PersonelDetails */,
 				E8E778DD22D5C413004F0A9F /* PersonalZone */,
@@ -1900,6 +1916,7 @@
 				E849967222BBD345005228F0 /* UpdateRegistrationDataRequest.swift */,
 				E8DA2A7F22DCB64F00A4F282 /* GetOnBoardingRequest.swift */,
 				F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */,
+				F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1913,6 +1930,7 @@
 				E834A30822DCB86D002D006D /* GetOnBoardingResponse.swift */,
 				285F3A9B22941C2200D0E171 /* AppGeneralDeclarationResponse.swift */,
 				F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */,
+				F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -2158,8 +2176,18 @@
 				E8CDBC9B22D7491500AE3632 /* FuelingDevicesItem.swift */,
 				E8CDBC9D22D74A7900AE3632 /* PowerCardItem.swift */,
 				E834A30A22DCB95F002D006D /* SlidItem.swift */,
+				F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */,
 			);
 			path = Obj;
+			sourceTree = "<group>";
+		};
+		F45417FD22E8760900C9CCFF /* TransactionsHistoryCells */ = {
+			isa = PBXGroup;
+			children = (
+				F45417FE22E8764F00C9CCFF /* StoresTableViewCell.swift */,
+				F454180022E8768200C9CCFF /* StoresTableViewCell.xib */,
+			);
+			path = TransactionsHistoryCells;
 			sourceTree = "<group>";
 		};
 		F459C00022E0F8AD007F3ECA /* Splash */ = {
@@ -2187,6 +2215,15 @@
 				F4471CAE22E4ACAF005B0648 /* ChangePasswordCell */,
 			);
 			path = SecurityManagmentCells;
+			sourceTree = "<group>";
+		};
+		F4903DC222E83A340029879C /* TransactionsHidtory */ = {
+			isa = PBXGroup;
+			children = (
+				F4903DC322E83A7C0029879C /* TransactionsHistoryViewController.swift */,
+				F4903DC522E83AD30029879C /* TransactionsHistoryViewModel.swift */,
+			);
+			path = TransactionsHidtory;
 			sourceTree = "<group>";
 		};
 		F4F8DCF92D93296CFA60D075 /* Frameworks */ = {
@@ -2276,6 +2313,7 @@
 				E8E778FF22D5D08B004F0A9F /* PowerCardTableViewCell.xib in Resources */,
 				3E08CBDE213BEB1D00A4C445 /* Login.storyboard in Resources */,
 				E8BC6FFA22C9E60500CA64F8 /* FuelTypeCollectionViewCell.xib in Resources */,
+				F454180122E8768200C9CCFF /* StoresTableViewCell.xib in Resources */,
 				3E3674B4216A170A007658F3 /* ExtraSecurityTableViewCell.xib in Resources */,
 				E8BC4AEC22DB33500077247E /* PersonalDetailCustomView.xib in Resources */,
 				3E38933321785F740000E770 /* PumpWhichCarTableViewCell.xib in Resources */,
@@ -2430,6 +2468,7 @@
 				E82A3301229BD81700B91456 /* KLCPopup.m in Sources */,
 				E82A335D229BD81800B91456 /* CheckSmsTokenRequest.swift in Sources */,
 				E82A337B229BD81800B91456 /* ClearSessionResponse.swift in Sources */,
+				F454180522E881B900C9CCFF /* GetTransactionsHistoryRequest.swift in Sources */,
 				F4471CB222E4AD69005B0648 /* FaceIdTableViewCell.swift in Sources */,
 				E82A3389229BD81800B91456 /* GetStartUpMessageResponse.swift in Sources */,
 				3E2FAB93216F5D0E00AEDC39 /* InputPopupViewController.swift in Sources */,
@@ -2461,6 +2500,7 @@
 				E88C646822DDED4C002769B7 /* BottomButton.swift in Sources */,
 				E82A32FE229BD81700B91456 /* RIButtonItem.m in Sources */,
 				E815F12522AFA0110015D1DD /* InvoicingNumberViewController.swift in Sources */,
+				F4903DC422E83A7C0029879C /* TransactionsHistoryViewController.swift in Sources */,
 				E82A3387229BD81800B91456 /* ApplicationImage.swift in Sources */,
 				E82A3300229BD81700B91456 /* UIAlertView+Blocks.m in Sources */,
 				E82A3307229BD81700B91456 /* KeychainManager.swift in Sources */,
@@ -2509,6 +2549,7 @@
 				E82A33A8229BD81800B91456 /* BaseFormViewControllerDelegate.swift in Sources */,
 				E82A331F229BD81700B91456 /* SideMenuAndContentPageManager.swift in Sources */,
 				3E42AF04216DDEDB007F9C07 /* Station.swift in Sources */,
+				F4903DC622E83AD30029879C /* TransactionsHistoryViewModel.swift in Sources */,
 				E8AC358F229E7FDA00171BAE /* SignUpConfrimTermsOfServiceViewModel.swift in Sources */,
 				28A38A26229AA1DA00B8D3D6 /* FourDigitCodeViewController.swift in Sources */,
 				E82A32EF229BD81700B91456 /* SideMenuCell.swift in Sources */,
@@ -2572,6 +2613,7 @@
 				282B41AF229AD32000986480 /* FourDigitCodeViewModel.swift in Sources */,
 				E82A331B229BD81700B91456 /* UserAccountProcessObj.swift in Sources */,
 				E82A333E229BD81800B91456 /* IMTextField.swift in Sources */,
+				F45417FF22E8764F00C9CCFF /* StoresTableViewCell.swift in Sources */,
 				F4471CAD22E49AF3005B0648 /* SecurityManagmentViewController.swift in Sources */,
 				E82A32FD229BD81700B91456 /* DeviceUtil.m in Sources */,
 				E82A337C229BD81800B91456 /* ValidateVersionResponse.swift in Sources */,
@@ -2590,6 +2632,7 @@
 				E82A339D229BD81800B91456 /* AddNewCardResponse.swift in Sources */,
 				E8E778F222D5CDC2004F0A9F /* PersonalDetailsTableViewCell.swift in Sources */,
 				E82A3308229BD81700B91456 /* LocalNotificationManager.swift in Sources */,
+				F454180322E8817300C9CCFF /* GetTransactionsHistoryResponse.swift in Sources */,
 				E82A338D229BD81800B91456 /* BaseUser.swift in Sources */,
 				E82A3360229BD81800B91456 /* RestorePasswordRequest.swift in Sources */,
 				E82A330E229BD81700B91456 /* AlertManager.swift in Sources */,
@@ -2661,6 +2704,7 @@
 				E8E778F922D5D05A004F0A9F /* MySavingsTableViewCell.swift in Sources */,
 				E849967522BBDAAF005228F0 /* UpdateRegistrationDataResponse.swift in Sources */,
 				E82A3331229BD81700B91456 /* Double+IMExtension.swift in Sources */,
+				F454180722E8905D00C9CCFF /* TransactionHistoryItem.swift in Sources */,
 				E8061B6022D1E6750045AE23 /* TenUser.swift in Sources */,
 				E8E778FE22D5D08B004F0A9F /* PowerCardTableViewCell.swift in Sources */,
 				E82A333C229BD81800B91456 /* IMScrollView.swift in Sources */,

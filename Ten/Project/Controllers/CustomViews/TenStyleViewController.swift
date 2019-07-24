@@ -65,6 +65,13 @@ class TenStyleViewController: BaseViewController {
             self.bottomBtn.isHidden = !newVal
         }
     }
+    func changeConstraint(trailingConstraint: CGFloat, bottomConstraint: CGFloat, leadingConstraint: CGFloat, containerHeightConst: CGFloat) {
+        
+        self.trailingConstraint.constant = trailingConstraint
+        self.bottomConstraint.constant = bottomConstraint
+        self.leadingConstraint.constant = leadingConstraint
+        self.containerHeightConst.constant = containerHeightConst
+    }
     
     func changeSize(height: CGFloat?) {
         self.vcHeight = height

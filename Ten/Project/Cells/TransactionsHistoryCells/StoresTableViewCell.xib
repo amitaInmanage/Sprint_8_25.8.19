@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="StoresTableViewCell" id="iN0-l3-epB" customClass="StoresTableViewCell" customModule="Ten" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knh-TD-dfw">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQq-Gh-Yau">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fuel" translatesAutoresizingMaskIntoConstraints="NO" id="W6z-qA-lXq">
+                                    <rect key="frame" x="320" y="39" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="4LH-v7-9oG"/>
+                                        <constraint firstAttribute="width" constant="32" id="thM-FP-3HQ"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" תחנת קניון איילון" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3J-k7-yrB">
+                                    <rect key="frame" x="193.5" y="51.5" width="113.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="u3J-k7-yrB" secondAttribute="bottom" constant="38" id="0a2-MW-AL4"/>
+                                <constraint firstItem="W6z-qA-lXq" firstAttribute="centerY" secondItem="rQq-Gh-Yau" secondAttribute="centerY" id="4SH-71-33a"/>
+                                <constraint firstAttribute="trailing" secondItem="W6z-qA-lXq" secondAttribute="trailing" constant="23" id="jli-w4-47w"/>
+                                <constraint firstItem="W6z-qA-lXq" firstAttribute="leading" secondItem="u3J-k7-yrB" secondAttribute="trailing" constant="13" id="uga-Qs-Yuy"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="rQq-Gh-Yau" secondAttribute="bottom" constant="12" id="QVs-xW-KPy"/>
+                        <constraint firstItem="rQq-Gh-Yau" firstAttribute="top" secondItem="Knh-TD-dfw" secondAttribute="top" id="S7x-kq-tl1"/>
+                        <constraint firstItem="rQq-Gh-Yau" firstAttribute="leading" secondItem="Knh-TD-dfw" secondAttribute="leading" id="Sjl-XO-wch"/>
+                        <constraint firstAttribute="trailing" secondItem="rQq-Gh-Yau" secondAttribute="trailing" id="g1F-pi-VT6"/>
+                        <constraint firstAttribute="height" constant="122" id="qpg-tQ-vsi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Knh-TD-dfw" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="MPe-vY-7pc"/>
+                <constraint firstItem="Knh-TD-dfw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VWp-DJ-ZEJ"/>
+                <constraint firstAttribute="bottom" secondItem="Knh-TD-dfw" secondAttribute="bottom" id="Weo-Ms-oza"/>
+                <constraint firstItem="Knh-TD-dfw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="s6f-OB-kZ6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40579710144928" y="132.58928571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fuel" width="32.5" height="32"/>
+    </resources>
+</document>

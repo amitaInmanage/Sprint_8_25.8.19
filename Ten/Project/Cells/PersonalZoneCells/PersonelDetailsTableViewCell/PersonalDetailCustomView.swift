@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol DidTapItem {
+    func didTapItem(menuItem: PersonalAreaMenuItem)
+}
+
 class PersonalDetailCustomView: UIView {
 
     @IBOutlet var view: UIView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var img: UIImageView!
-    
+
+    var didTapItem: DidTapItem?
     var action: ( () -> Void )?
+    var menuItem: PersonalAreaMenuItem?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,8 +41,16 @@ class PersonalDetailCustomView: UIView {
     }
     
     func setDataWith(menuItem: PersonalAreaMenuItem) {
+        self.menuItem = menuItem
         self.lblTitle.text = menuItem.strTitle
         //TODO: uncomment when server returns images
-//        self.img.setImageWithStrURL(strURL: menuItem.strIcon, withAddUnderscoreIphone: false)
+        //self.img.setImageWithStrURL(strURL: menuItem.strIcon, withAddUnderscoreIphone: false)
+    }
+    
+    //IBAction:
+    @IBAction func didTapitem(_ sender: Any) {
+        if self.didTapItem != nil {
+            self.didTapItem?.didTapItem(menuItem: self.menuItem!)
+        }
     }
 }

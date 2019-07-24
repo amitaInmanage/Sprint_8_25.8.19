@@ -23,8 +23,13 @@ class SignUpAddAnotherCarViewController: BaseFormViewController {
         self.initializeUI()
     }
     
+    override func didMove(toParentViewController parent: UIViewController?) {
+        if let vc = parent as? TenStyleViewController {
+             vc.navigationItem.hidesBackButton = true
+        }
+    }
+    
     fileprivate func initializeUI() {
-        //MARK: image HardCoded
         self.imgTop.image = UIImage(named: "confetti")
         self.btnAddCar.setWhiteBackground()
     }

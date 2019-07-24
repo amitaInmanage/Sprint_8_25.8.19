@@ -51,13 +51,11 @@ class SecurityManagmentViewController: BaseFormViewController {
     }
     
     fileprivate func initUI() {
-//        !self.delete ? (self.lblSubTitle.isHidden = false) : (self.lblSubTitle.isHidden = true)
        !user.hasPinCode ? (self.lblSubTitle.isHidden = false) : (self.lblSubTitle.isHidden = true)
 
     }
     
     fileprivate func filRowTypeArr() -> Void{
-//        !self.delete ? self.rowTypeArr.append(RowType.createPassword) : self.rowTypeArr.append(RowType.changePassword)
         if !user.hasPinCode {
             self.rowTypeArr.append(RowType.createPassword)
         } else {
@@ -65,7 +63,6 @@ class SecurityManagmentViewController: BaseFormViewController {
             self.rowTypeArr.append(RowType.faceId)
             self.rowTypeArr.append(RowType.touchId)
         }
-        
     }
     
     fileprivate func registerXibs() {

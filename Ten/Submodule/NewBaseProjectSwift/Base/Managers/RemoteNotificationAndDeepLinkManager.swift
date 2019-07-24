@@ -239,17 +239,22 @@ class RemoteNotificationAndDeepLinkManager: BaseManager {
                 }
                 break
             case DeepLinkPageStrings.transactionsHistory.rawValue:
-                print("transactionsHistory")
+                if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: TransactionsHistoryViewController.className) as? TransactionsHistoryViewController {
+                    personalZone.user = ApplicationManager.sharedInstance.userAccountManager.user
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                }
                 break
-            case DeepLinkPageStrings.personalArea.rawValue:
+            case DeepLinkPageStrings.myClubs.rawValue:
+                print("my_clubs")
                 break
-            case DeepLinkPageStrings.stations.rawValue:
+            case DeepLinkPageStrings.fuelingDevices.rawValue:
+                print("fueling_devices")
                 break
-            case DeepLinkPageStrings.payment.rawValue:
+            case DeepLinkPageStrings.usageInformation.rawValue:
+                print("usage_information")
                 break
-            case DeepLinkPageStrings.sales.rawValue:
-                break
-            case DeepLinkPageStrings.contact.rawValue:
+            case DeepLinkPageStrings.storePaymentMethods.rawValue:
+                print("store_payment_methods")
                 break
             case DeepLinkPageStrings.logout.rawValue:
                 ApplicationManager.sharedInstance.userAccountManager.callLogoutWithUserAccountProcessObj(userAccountProcessObj: nil, andRequestFinishedDelegate: nil)

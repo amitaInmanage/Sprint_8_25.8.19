@@ -18,7 +18,7 @@ class PersonalDetailsTableViewCell: UITableViewCell {
         self.vw.addShadow()
     }
 
-    func setUpData() {
+    func setUpData(didTapItem:DidTapItem ) {
         self.selectionStyle = UITableViewCell.SelectionStyle.none
         var horizontalStck = UIStackView()
         horizontalStck.axis = .horizontal
@@ -33,10 +33,10 @@ class PersonalDetailsTableViewCell: UITableViewCell {
                 
                 horizontalStck = UIStackView()
                 horizontalStck.distribution = .fillEqually
-                self.addItemToStack(horizontalStck: horizontalStck, menu: menu)
+                self.addItemToStack(horizontalStck: horizontalStck, menu: menu, didTapItem: didTapItem)
                 
             } else {
-                self.addItemToStack(horizontalStck: horizontalStck, menu: menu)
+                self.addItemToStack(horizontalStck: horizontalStck, menu: menu, didTapItem: didTapItem)
             }
         }
         
@@ -45,8 +45,9 @@ class PersonalDetailsTableViewCell: UITableViewCell {
         
     }
     
-    func addItemToStack(horizontalStck: UIStackView, menu: PersonalAreaMenuItem) {
+    func addItemToStack(horizontalStck: UIStackView, menu: PersonalAreaMenuItem, didTapItem: DidTapItem) {
         let personalDetailsCVW = PersonalDetailCustomView()
+        personalDetailsCVW.didTapItem = didTapItem
         personalDetailsCVW.setDataWith(menuItem: menu)
         personalDetailsCVW.action = {
             if !ApplicationManager.sharedInstance.remoteNotificationAndDeepLinkManager.openDeepLink(strFullDeeplink: menu.strDeepLink, dataObject: nil, animated: true, completionHandler: nil) {

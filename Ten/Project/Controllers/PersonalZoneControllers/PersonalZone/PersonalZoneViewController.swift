@@ -43,7 +43,6 @@ class PersonalZoneViewController: BaseViewController {
             vc.containerView = nil
             vc.view.backgroundColor = .clear
             addBottomButton(vc: vc)
-            
         }
     }
     
@@ -77,7 +76,7 @@ class PersonalZoneViewController: BaseViewController {
     
     fileprivate func personalItems(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonalDetailsTableViewCell.className, for: indexPath) as! PersonalDetailsTableViewCell
-        cell.setUpData()
+        cell.setUpData(didTapItem: self)
         return cell
     }
     
@@ -104,11 +103,19 @@ class PersonalZoneViewController: BaseViewController {
     }
 }
 
-extension PersonalZoneViewController: UITableViewDelegate, UITableViewDataSource {
+extension PersonalZoneViewController: UITableViewDelegate, UITableViewDataSource, DidTapItem {
+    
+    func didTapItem(menuItem: PersonalAreaMenuItem) {
+        let personalItemObj = menuItem
+        if !ApplicationManager.sharedInstance.remoteNotificationAndDeepLinkManager.openDeepLink(strFullDeeplink: personalItemObj.strDeepLink, dataObject: nil, animated: true, completionHandler: nil) {
+            ApplicationManager.sharedInstance.openURLManager.openSFSafari(strLink: personalItemObj.strDeepLink)
+        }
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.rowTypeArr.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,20 +124,12 @@ extension PersonalZoneViewController: UITableViewDelegate, UITableViewDataSource
         case .accumulation: return self.accumulation(tableView, cellForRowAt: indexPath)
         case .saving: return self.saving(tableView, cellForRowAt: indexPath)
         case .powerCard: return self.powerCard(tableView, cellForRowAt: indexPath)
+            
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let personalItemObj = personelItem[indexPath.row]
-        
-        if !ApplicationManager.sharedInstance.remoteNotificationAndDeepLinkManager.openDeepLink(strFullDeeplink: personalItemObj.strDeepLink, dataObject: nil, animated: true, completionHandler: nil) {
-            ApplicationManager.sharedInstance.openURLManager.openSFSafari(strLink: personalItemObj.strDeepLink)
-        }
     }
 
     fileprivate func addBottomButton(vc: UIViewController) {

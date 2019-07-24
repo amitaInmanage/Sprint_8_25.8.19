@@ -164,6 +164,7 @@ class Translations {
     
     struct Titles {
         
+        static let transactionsHistory = "personal_area_menu_transactions_history_title"
         static let verifyMyPassword = "verify_my_pin_code_title"
         static let securityManagment = "security_management_title_pin_code"
         static let faceId = "security_management_title_fingerprint"
@@ -203,6 +204,7 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let transactionsHistoryDefault = "Default"
         static let verifyMyPasswordDefault = "Default"
         static let securityManagmentDefault = "Default"
         static let faceIdDefault = "Default"
