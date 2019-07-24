@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Regular.ttf">
+            <string>Heebo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="SideMenuCell" id="iN0-l3-epB" customClass="SideMenuCell" customModule="Maccabi_Haifa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="76"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53J-fU-Ihu">
+                    <rect key="frame" x="0.0" y="0.0" width="315" height="76"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Jo-gO-RAl">
+                            <rect key="frame" x="272" y="19.5" width="31" height="37.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="31" id="46M-UA-e6s"/>
+                                <constraint firstAttribute="height" constant="37" id="sLn-Uc-Ndy"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crt-DD-gDP" customClass="RegularLabel" customModule="Maccabi_Haifa" customModuleProvider="target">
+                            <rect key="frame" x="8" y="26" width="246" height="25"/>
+                            <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <color key="highlightedColor" red="0.0" green="0.46415418386459351" blue="0.2234308123588562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toi-sg-gYk">
+                            <rect key="frame" x="14" y="75" width="287" height="1"/>
+                            <color key="backgroundColor" red="0.83441966772079468" green="0.83502978086471558" blue="0.84152776002883911" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="09I-JD-ZJZ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="3Jo-gO-RAl" secondAttribute="trailing" constant="12" id="5cN-JV-sRS"/>
+                        <constraint firstItem="toi-sg-gYk" firstAttribute="leading" secondItem="53J-fU-Ihu" secondAttribute="leading" constant="14" id="7Ye-NY-hOR"/>
+                        <constraint firstItem="3Jo-gO-RAl" firstAttribute="leading" secondItem="Crt-DD-gDP" secondAttribute="trailing" constant="18" id="AJP-h7-J3n"/>
+                        <constraint firstItem="Crt-DD-gDP" firstAttribute="centerY" secondItem="3Jo-gO-RAl" secondAttribute="centerY" id="Z6Q-1l-3wW"/>
+                        <constraint firstAttribute="trailing" secondItem="toi-sg-gYk" secondAttribute="trailing" constant="14" id="bjL-j3-ZI6"/>
+                        <constraint firstAttribute="bottom" secondItem="toi-sg-gYk" secondAttribute="bottom" id="m4e-TC-mAo"/>
+                        <constraint firstItem="3Jo-gO-RAl" firstAttribute="centerY" secondItem="53J-fU-Ihu" secondAttribute="centerY" id="qHT-7j-Rc4"/>
+                        <constraint firstItem="Crt-DD-gDP" firstAttribute="leading" secondItem="53J-fU-Ihu" secondAttribute="leading" constant="8" id="t7Q-6m-teo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="53J-fU-Ihu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4VL-w6-65n"/>
+                <constraint firstAttribute="bottom" secondItem="53J-fU-Ihu" secondAttribute="bottom" id="Jey-ka-rpq"/>
+                <constraint firstItem="53J-fU-Ihu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gFM-Ec-4xK"/>
+                <constraint firstAttribute="trailing" secondItem="53J-fU-Ihu" secondAttribute="trailing" id="i0t-VA-q1c"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imgIcon" destination="3Jo-gO-RAl" id="NVh-tD-8PT"/>
+                <outlet property="lblTitle" destination="Crt-DD-gDP" id="i0q-Il-tTN"/>
+                <outlet property="seperatorView" destination="toi-sg-gYk" id="e6G-8h-LG7"/>
+            </connections>
+            <point key="canvasLocation" x="-8.5" y="-6"/>
+        </view>
+    </objects>
+</document>

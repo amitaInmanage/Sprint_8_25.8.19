@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="MySavingsTableViewCell" customModule="Ten" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2WB-xs-XXB">
+                        <rect key="frame" x="0.0" y="0.0" width="322" height="43.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="27" image="tenCard" translatesAutoresizingMaskIntoConstraints="NO" id="0tc-ni-Shc">
+                                <rect key="frame" x="268" y="8.5" width="41" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="4TM-rD-H0S"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAO-vg-ME5">
+                                <rect key="frame" x="318" y="0.0" width="4" height="43.5"/>
+                                <color key="backgroundColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="4" id="c3y-2a-X7p"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מסלול חיסכון" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wie-qb-HR5">
+                                <rect key="frame" x="10" y="11.5" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9nd-mP-I2y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tenVip" translatesAutoresizingMaskIntoConstraints="NO" id="OHb-vC-tFO">
+                                <rect key="frame" x="195" y="13" width="65" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="dGr-Ku-Atd"/>
+                                    <constraint firstAttribute="width" constant="65" id="xlh-SP-7SI"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OHb-vC-tFO" firstAttribute="centerY" secondItem="0tc-ni-Shc" secondAttribute="centerY" id="35e-gS-5rQ"/>
+                            <constraint firstItem="Wie-qb-HR5" firstAttribute="leading" secondItem="2WB-xs-XXB" secondAttribute="leading" constant="10" id="5z7-ZN-ykC"/>
+                            <constraint firstItem="0tc-ni-Shc" firstAttribute="top" secondItem="2WB-xs-XXB" secondAttribute="top" constant="8" id="8Dk-EG-GLp"/>
+                            <constraint firstItem="OHb-vC-tFO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wie-qb-HR5" secondAttribute="trailing" constant="20" id="E8k-G5-kmk"/>
+                            <constraint firstAttribute="trailing" secondItem="UAO-vg-ME5" secondAttribute="trailing" id="Hof-wD-eUe"/>
+                            <constraint firstItem="UAO-vg-ME5" firstAttribute="leading" secondItem="0tc-ni-Shc" secondAttribute="trailing" constant="9" id="ROn-5i-PHO"/>
+                            <constraint firstItem="UAO-vg-ME5" firstAttribute="top" secondItem="2WB-xs-XXB" secondAttribute="top" id="bQJ-KU-JJ3"/>
+                            <constraint firstAttribute="bottom" secondItem="UAO-vg-ME5" secondAttribute="bottom" id="ff7-EA-kfB"/>
+                            <constraint firstItem="0tc-ni-Shc" firstAttribute="leading" secondItem="OHb-vC-tFO" secondAttribute="trailing" constant="8" id="ggh-CY-Bbd"/>
+                            <constraint firstAttribute="bottom" secondItem="0tc-ni-Shc" secondAttribute="bottom" constant="8" id="ndH-xz-f7C"/>
+                            <constraint firstItem="Wie-qb-HR5" firstAttribute="top" secondItem="2WB-xs-XXB" secondAttribute="top" constant="11" id="q7k-9f-IpW"/>
+                            <constraint firstAttribute="bottom" secondItem="Wie-qb-HR5" secondAttribute="bottom" constant="11" id="wgg-w0-TYf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="2WB-xs-XXB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7zh-4r-ZgJ"/>
+                    <constraint firstItem="2WB-xs-XXB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Y8R-CR-O1N"/>
+                    <constraint firstAttribute="trailing" secondItem="2WB-xs-XXB" secondAttribute="trailing" id="YMf-ug-KZC"/>
+                    <constraint firstAttribute="bottom" secondItem="2WB-xs-XXB" secondAttribute="bottom" constant="20" id="xbL-yP-VzD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contantView" destination="H2p-sc-9uM" id="zdh-vr-pzo"/>
+                <outlet property="imgSeving" destination="0tc-ni-Shc" id="KgS-rY-b0b"/>
+                <outlet property="imgTenVip" destination="OHb-vC-tFO" id="EXB-oN-mOW"/>
+                <outlet property="lblDetails" destination="Wie-qb-HR5" id="IZb-v9-N5G"/>
+                <outlet property="vw" destination="2WB-xs-XXB" id="OMs-UC-kYq"/>
+            </connections>
+            <point key="canvasLocation" x="57.600000000000001" y="93.553223388305852"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tenCard" width="32.5" height="23"/>
+        <image name="tenVip" width="65" height="19"/>
+    </resources>
+</document>

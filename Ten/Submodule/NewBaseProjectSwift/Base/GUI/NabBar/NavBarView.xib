@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Regular.ttf">
+            <string>Heebo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NavBarView" customModule="Ten" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlo-CI-9pG">
+                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם האפליקציה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxz-W9-yXK" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
+                            <rect key="frame" x="102.5" y="9" width="115.5" height="26.5"/>
+                            <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bm-w4-jHR">
+                            <rect key="frame" x="0.0" y="0.0" width="46" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="vM1-j7-DYO"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="logo"/>
+                            <connections>
+                                <action selector="didTapLogo:" destination="iN0-l3-epB" eventType="touchUpInside" id="aeh-o8-Rsj"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vp-MS-fhp">
+                            <rect key="frame" x="268" y="3" width="50" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="7S7-GL-VRF"/>
+                            </constraints>
+                            <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="back"/>
+                            <connections>
+                                <action selector="didTapBack:" destination="iN0-l3-epB" eventType="touchUpInside" id="AX4-Xo-uuW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Mxz-W9-yXK" firstAttribute="centerY" secondItem="wlo-CI-9pG" secondAttribute="centerY" id="0x5-aj-Cy9"/>
+                        <constraint firstItem="0Bm-w4-jHR" firstAttribute="leading" secondItem="wlo-CI-9pG" secondAttribute="leading" id="7uo-kg-i1T"/>
+                        <constraint firstItem="0Bm-w4-jHR" firstAttribute="centerY" secondItem="wlo-CI-9pG" secondAttribute="centerY" id="BMW-dp-c1p"/>
+                        <constraint firstAttribute="height" constant="44" id="KfV-JP-6U0"/>
+                        <constraint firstAttribute="trailing" secondItem="3vp-MS-fhp" secondAttribute="trailing" constant="2" id="MAe-ty-LGZ"/>
+                        <constraint firstItem="Mxz-W9-yXK" firstAttribute="centerX" secondItem="wlo-CI-9pG" secondAttribute="centerX" id="aS4-r5-yyh"/>
+                        <constraint firstItem="3vp-MS-fhp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mxz-W9-yXK" secondAttribute="trailing" constant="5" id="b0D-eC-lCS"/>
+                        <constraint firstItem="Mxz-W9-yXK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Bm-w4-jHR" secondAttribute="trailing" constant="5" id="hra-uo-66o"/>
+                        <constraint firstItem="3vp-MS-fhp" firstAttribute="centerY" secondItem="wlo-CI-9pG" secondAttribute="centerY" id="oCv-Br-c9A"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wlo-CI-9pG" secondAttribute="trailing" id="3VY-Cm-bne"/>
+                <constraint firstAttribute="bottom" secondItem="wlo-CI-9pG" secondAttribute="bottom" id="9vP-97-DWH"/>
+                <constraint firstItem="wlo-CI-9pG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Ynj-BE-l49"/>
+                <constraint firstItem="wlo-CI-9pG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eA4-dN-R4w"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnBack" destination="3vp-MS-fhp" id="FZx-y6-R7t"/>
+                <outlet property="btnLogo" destination="0Bm-w4-jHR" id="Gtx-Xc-Nk9"/>
+                <outlet property="lblTitle" destination="Mxz-W9-yXK" id="JKL-Wm-QzA"/>
+                <outlet property="vwNavBarView" destination="wlo-CI-9pG" id="fsm-0u-zVT"/>
+            </connections>
+            <point key="canvasLocation" x="93" y="53"/>
+        </view>
+    </objects>
+</document>

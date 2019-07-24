@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Regular.ttf">
+            <string>Heebo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KUL-jJ-1Nr" customClass="PumpWhichCarUITableViewHeaderFooterView" customModule="Ten" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="174"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QM0-0c-TKb">
+                    <rect key="frame" x="0.0" y="0.0" width="481" height="174"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Jt-H3-KeZ" userLabel="seperatorLine">
+                            <rect key="frame" x="0.0" y="173" width="481" height="1"/>
+                            <color key="backgroundColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="ywt-ug-L9U"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="6Jt-H3-KeZ" firstAttribute="leading" secondItem="QM0-0c-TKb" secondAttribute="leading" id="2O1-ri-BpM"/>
+                        <constraint firstAttribute="trailing" secondItem="6Jt-H3-KeZ" secondAttribute="trailing" id="gfn-Va-CFO"/>
+                        <constraint firstAttribute="bottom" secondItem="6Jt-H3-KeZ" secondAttribute="bottom" id="pZZ-bK-dqK"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfh-CB-vPs">
+                    <rect key="frame" x="5" y="63" width="48" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="JGW-eg-LYv"/>
+                        <constraint firstAttribute="height" constant="48" id="vTn-zj-MjQ"/>
+                    </constraints>
+                    <state key="normal" image="close"/>
+                    <connections>
+                        <action selector="didTapCancel:" destination="KUL-jJ-1Nr" eventType="touchUpInside" id="UXd-ce-GcV"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחר איזה רכב ברצונך לתדלק?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqr-qJ-E4O" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
+                    <rect key="frame" x="63" y="72.5" width="355" height="29.5"/>
+                    <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="yfh-CB-vPs" firstAttribute="centerY" secondItem="QPH-9c-5d9" secondAttribute="centerY" id="EtF-DK-cBg"/>
+                <constraint firstItem="QPH-9c-5d9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Iqr-qJ-E4O" secondAttribute="trailing" constant="38" id="LVq-y8-Yyx"/>
+                <constraint firstItem="Iqr-qJ-E4O" firstAttribute="centerY" secondItem="QPH-9c-5d9" secondAttribute="centerY" id="Oao-sL-Ahf"/>
+                <constraint firstItem="QPH-9c-5d9" firstAttribute="bottom" secondItem="QM0-0c-TKb" secondAttribute="bottom" id="Xpr-Q2-N5m"/>
+                <constraint firstItem="yfh-CB-vPs" firstAttribute="leading" secondItem="QPH-9c-5d9" secondAttribute="leading" constant="5" id="YI1-VA-Pgq"/>
+                <constraint firstItem="Iqr-qJ-E4O" firstAttribute="leading" secondItem="yfh-CB-vPs" secondAttribute="trailing" constant="10" id="kM0-IC-wrU"/>
+                <constraint firstItem="Iqr-qJ-E4O" firstAttribute="centerX" secondItem="QPH-9c-5d9" secondAttribute="centerX" id="m37-z7-itZ"/>
+                <constraint firstItem="QM0-0c-TKb" firstAttribute="top" secondItem="QPH-9c-5d9" secondAttribute="top" id="t4x-pR-Z1r"/>
+                <constraint firstItem="QM0-0c-TKb" firstAttribute="leading" secondItem="QPH-9c-5d9" secondAttribute="leading" id="vp6-4g-iFk"/>
+                <constraint firstItem="QPH-9c-5d9" firstAttribute="trailing" secondItem="QM0-0c-TKb" secondAttribute="trailing" id="zos-Is-0ES"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="QPH-9c-5d9"/>
+            <connections>
+                <outlet property="btnCancel" destination="yfh-CB-vPs" id="Zg6-6p-yPK"/>
+                <outlet property="lblHeaderTitle" destination="Iqr-qJ-E4O" id="UZR-Vm-VsW"/>
+            </connections>
+            <point key="canvasLocation" x="-196.5" y="-1087"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close" width="16" height="15"/>
+    </resources>
+</document>

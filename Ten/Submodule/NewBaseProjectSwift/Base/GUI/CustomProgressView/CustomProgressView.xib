@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomProgressView" customModule="Maccabi_Haifa" customModuleProvider="target">
+            <connections>
+                <outlet property="imgProgressView" destination="d9g-dI-bfk" id="yGE-qw-E3o"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="11"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Vk-ie-d9R">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="11"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="progress-bar" translatesAutoresizingMaskIntoConstraints="NO" id="d9g-dI-bfk">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="11"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="d9g-dI-bfk" secondAttribute="bottom" id="MvR-9d-XgY"/>
+                        <constraint firstItem="d9g-dI-bfk" firstAttribute="top" secondItem="1Vk-ie-d9R" secondAttribute="top" id="XyN-6e-DuH"/>
+                        <constraint firstItem="d9g-dI-bfk" firstAttribute="leading" secondItem="1Vk-ie-d9R" secondAttribute="leading" id="fr4-Lu-VoS"/>
+                        <constraint firstAttribute="trailing" secondItem="d9g-dI-bfk" secondAttribute="trailing" id="hfg-oz-qKA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="1Vk-ie-d9R" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Dnc-xx-03X"/>
+                <constraint firstItem="1Vk-ie-d9R" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="UKs-XI-Dgc"/>
+                <constraint firstItem="1Vk-ie-d9R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Y9l-Tl-10m"/>
+                <constraint firstItem="1Vk-ie-d9R" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ozJ-dh-fEK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="24" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="progress-bar" width="221" height="10"/>
+    </resources>
+</document>
