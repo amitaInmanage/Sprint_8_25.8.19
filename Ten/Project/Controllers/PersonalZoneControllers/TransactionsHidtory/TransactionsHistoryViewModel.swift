@@ -11,7 +11,8 @@ import UIKit
 class TransactionsHistoryViewModel: BaseFormViewController {
     
     var type = 0
-    var page = 0
+    var currentPage
+ = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,8 @@ class TransactionsHistoryViewModel: BaseFormViewController {
     
     func buildJsonAndSendGetTransactionsHistory(vc: UIViewController?) {
         
-        let dict = [TenParamsNames.type: self.type, TenParamsNames.page: self.page]
+        let dict = [TenParamsNames.type: self.type, TenParamsNames.page: self.currentPage
+]
         
         ApplicationManager.sharedInstance.userAccountManager.callGetTransactionsHistory(dictParams: dict, requestFinishedDelegate: vc as! RequestFinishedProtocol)
     }

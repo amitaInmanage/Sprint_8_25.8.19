@@ -8,12 +8,8 @@
 
 import UIKit
 
-enum RowType {
-    case stores
-}
-
 enum States: Int {
-    case all = 0
+    case allPurchases = 0
     case refueling = 1
     case stores = 2
 }
@@ -26,10 +22,10 @@ class TransactionsHistoryViewController : BaseFormViewController {
     
     var user = TenUser()
     var viewModel = TransactionsHistoryViewModel()
-    var state = Box<States>(States.all)
-    var rowTypeArr: [RowType] = []
+    var state = Box<States>(States.allPurchases)
     var all: [TransactionHistoryItem] = []
     var allTransactionHistoryResponse: GetTransactionsHistoryResponse?
+    var isWaitingForResponse = false
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblTitle: IMLabel!
@@ -42,6 +38,9 @@ class TransactionsHistoryViewController : BaseFormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.registerXibs()
         self.initUI()
         self.initTableView()
@@ -77,6 +76,35 @@ class TransactionsHistoryViewController : BaseFormViewController {
     
     fileprivate func stores(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoresTableViewCell.className, for: indexPath) as! StoresTableViewCell
+
+        cell.stackViewUsage.isHidden = true
+        cell.stackViewAccunulation.isHidden = true
+  
+        
+        if self.all[indexPath.row].isExtended {
+         
+        }
+        
+        if self.all[indexPath.row].intType == 2 {
+         
+        }
+        
+        if self.all[indexPath.row].accumulationAmount.intDisplay == 1 {
+            cell.lblAccumulationAmount.text = String(all[indexPath.row].accumulationAmount.intValue)
+            cell.stackViewAccunulation.isHidden = false
+        }
+        
+        if self.all[indexPath.row].usageAmount.intDisplay == 1 {
+            cell.lblUsageAmount.text = String(all[indexPath.row].usageAmount.intValue)
+            cell.stackViewUsage.isHidden = false
+        }
+        
+        cell.imgType.setImageWithStrURL(strURL: all[indexPath.row].strIcon, withAddUnderscoreIphone: false)
+        cell.lblTitle.text = all[indexPath.row].store.strTitle
+        cell.lblDate.text = all[indexPath.row].strDate
+        cell.lblTime.text = all[indexPath.row].strTime
+        cell.lblAmount.text = all[indexPath.row].amount.strValue
+
         return cell
     }
     
@@ -84,31 +112,28 @@ class TransactionsHistoryViewController : BaseFormViewController {
         self.state.bind { [unowned self] (newVal) in
             switch self.state.value {
                 
-            case .all: self.initUI()
+            case .allPurchases:
+            self.initTabBar()
             if self.allTransactionHistoryResponse == nil {
                 self.viewModel.type = self.state.value.rawValue
+                self.isWaitingForResponse = true
                 self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
             }
-                break
+        
+            case .refueling:
+                self.initTabBar()
                 
-            case .refueling: self.initUI()
-//            self.viewModel.type = self.state.value.rawValue
-//            self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
-                break
-                
-            case .stores: self.initUI()
-//            self.viewModel.type = self.state.value.rawValue
-//            self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
-                break
+            case .stores:
+                self.initTabBar()
             }
         }
     }
     
     @IBAction func didTapAll(_ sender: Any) {
-        self.state.value = .all
+        self.state.value = .allPurchases
     }
     
-    @IBAction func didTapDeluqs(_ sender: Any) {
+    @IBAction func didTapRefueling(_ sender: Any) {
         self.state.value = .refueling
     }
     
@@ -118,6 +143,7 @@ class TransactionsHistoryViewController : BaseFormViewController {
 }
 
 extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return all.count
     }
@@ -125,18 +151,16 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch self.state.value {
-        case .all:
+        case .allPurchases:
              return self.stores(tableView, cellForRowAt: indexPath)
-             
-            break
+            
         case .refueling:
-          return UITableViewCell()
-         break
+//            return self.stores(tableView, cellForRowAt: indexPath)
+       break
         case .stores:
-              return self.stores(tableView, cellForRowAt: indexPath)
-            break
+//              return self.stores(tableView, cellForRowAt: indexPath)
+        break
         }
-        
         return UITableViewCell()
     }
     
@@ -144,13 +168,24 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
         return UITableViewAutomaticDimension
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
-            if indexPath == lastVisibleIndexPath {
-                if allTransactionHistoryResponse?.hasNextPage == true {
-                    self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
-                    self.viewModel.page += 1
-                }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! StoresTableViewCell
+        
+        cell.imgUp.image = UIImage(named: "up")
+
+    }
+   
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        let height = scrollView.frame.size.height
+        let contentYoffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+        if distanceFromBottom < height {
+            if allTransactionHistoryResponse?.hasNextPage == true && !self.isWaitingForResponse {
+                isWaitingForResponse = true
+                self.viewModel.currentPage += 1
+                self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
             }
         }
     }
@@ -162,7 +197,8 @@ extension TransactionsHistoryViewController {
             if let innerResponse = innerResponse as? GetTransactionsHistoryResponse {
                 self.all.append(contentsOf: innerResponse.transactionHistoryList)
                 self.allTransactionHistoryResponse = innerResponse
-                self.initTableView()
+                self.tableView.reloadData()
+                isWaitingForResponse = false
             }
         }
     }
@@ -176,7 +212,7 @@ extension TransactionsHistoryViewController {
 extension TransactionsHistoryViewController {
     func initTabBar() {
         switch self.state.value {
-        case .all:
+        case .allPurchases:
             self.underLinevw0.backgroundColor = UIColor.getApplicationThemeColor()
             self.underLinevw1.backgroundColor = .white
             self.underLinevw2.backgroundColor = .white
@@ -212,7 +248,6 @@ extension TransactionsHistoryViewController {
     func initTableView() {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 80
-        self.tableView.allowsSelection = false
         self.view.backgroundColor = .clear
         self.tableView.reloadData()
     }
