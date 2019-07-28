@@ -33,8 +33,8 @@ class RemoteNotificationAndDeepLinkManager: BaseManager {
     var launchRemoteNotificationDict = [String:Any]()
     var launchURL : URL?
     var didRegisterForRemoteNotificationsCalled = false
-    
     var pushTypes = false
+    var storePamentMathods = [StorePaymentMethodsItem]()
     
     func registerForRemoteNotifications() {
         
@@ -248,13 +248,36 @@ class RemoteNotificationAndDeepLinkManager: BaseManager {
                 print("my_clubs")
                 break
             case DeepLinkPageStrings.fuelingDevices.rawValue:
-                print("fueling_devices")
+                if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: CarManagmentViewControoler.className) as? CarManagmentViewControoler {
+                    //personalZone.user = ApplicationManager.sharedInstance.userAccountManager.user
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                }
                 break
             case DeepLinkPageStrings.usageInformation.rawValue:
                 print("usage_information")
                 break
             case DeepLinkPageStrings.storePaymentMethods.rawValue:
-                print("store_payment_methods")
+                
+                if !ApplicationManager.sharedInstance.userAccountManager.user.storePaymentMethods.isEmpty {
+                    for storePaymante in ApplicationManager.sharedInstance.userAccountManager.user.storePaymentMethods {
+                        if storePaymante.isActiveInStore {
+                            storePamentMathods.append(storePaymante)
+                        }
+                    }
+                    if !storePamentMathods.isEmpty {
+                        if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentActiveViewController.className) as? StorePaymentActiveViewController {
+                            ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                        }
+                    } else {
+                        if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentViewController.className) as? StorePaymentViewController {
+                            ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                        }
+                    }
+                } else {
+                    if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentViewController.className) as? StorePaymentViewController {
+                        ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                    }
+                }
                 break
             case DeepLinkPageStrings.logout.rawValue:
                 ApplicationManager.sharedInstance.userAccountManager.callLogoutWithUserAccountProcessObj(userAccountProcessObj: nil, andRequestFinishedDelegate: nil)
@@ -263,7 +286,7 @@ class RemoteNotificationAndDeepLinkManager: BaseManager {
                 let contentId = ParseValidator.getStringForKey(key: "id", JSONDict: withDictPayLoad, defaultValue: "")
                 if !contentId.isEmpty {
                     ApplicationManager.sharedInstance.sideMenuAndContentPageManager.callGetContentPageWithDictParams(dictParams: [ServerGeneralParams.pageId:contentId], andRequestFinishedDelegate: nil)
-
+                    
                 }
                 break
             case DeepLinkPageStrings.order.rawValue:

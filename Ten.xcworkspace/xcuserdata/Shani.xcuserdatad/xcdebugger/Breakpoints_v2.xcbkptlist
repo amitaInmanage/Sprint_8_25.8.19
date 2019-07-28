@@ -163,13 +163,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/SignUpViewControllers/ChooseCustomerTypeControllers/SignUpChooseCustomerTypeViewController.swift"
-            timestampString = "585753283.407071"
+            filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
+            timestampString = "586027288.7865781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "817"
+            endingLineNumber = "817"
+            landmarkName = "moveToNextScreen(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ten/Project/Controllers/PersonalZoneControllers/StorePayment/StorePaymentActive/StorePaymentActiveViewController.swift"
+            timestampString = "586027288.786658"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "requestSucceeded(request:withOuterResponse:andInnerResponse:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

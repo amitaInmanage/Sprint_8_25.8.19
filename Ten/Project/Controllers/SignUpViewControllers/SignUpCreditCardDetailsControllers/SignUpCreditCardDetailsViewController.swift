@@ -17,6 +17,7 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
     @IBOutlet weak var btnOpenCamera: LightButton!
     @IBOutlet weak var webView: UIWebView!
     
+    var isAddCreditCard = false
     var viewModel = SignUpCreditCardViewModel()
     var screenName = ""
     var redactedCardNumber = ""
@@ -89,8 +90,15 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
                 
                 if success {
                     let jsonObject = ParseValidator.parseUrlToJson(strUrl: strUrl, andSubString: "?json=")
-                    if let data = UpdateRegistrationDataResponse().buildFromJSONDict(JSONDict: jsonObject) as? UpdateRegistrationDataResponse {
-                        ApplicationManager.sharedInstance.userAccountManager.updateScreensAndRegistrationToken(registrationToken: nil, screens: data.arrNextScreens)
+                    if isAddCreditCard {
+                        if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentActiveViewController.className) as? StorePaymentActiveViewController {
+                            ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                        }
+                    } else {
+                        if let data = UpdateRegistrationDataResponse().buildFromJSONDict(JSONDict: jsonObject) as? UpdateRegistrationDataResponse {
+                            
+                            ApplicationManager.sharedInstance.userAccountManager.updateScreensAndRegistrationToken(registrationToken: nil, screens: data.arrNextScreens)
+                        }
                     }
                 } else if failed {
                     //TODO: faild  ?

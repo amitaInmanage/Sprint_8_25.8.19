@@ -380,6 +380,19 @@
 		F448C3A5209085CC0077947E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F448C3A3209085CC0077947E /* LaunchScreen.storyboard */; };
 		F44E8E8F215A7B4D008FCD28 /* ScreenName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44E8E8E215A7B4D008FCD28 /* ScreenName.swift */; };
 		F44E8E91215A7D64008FCD28 /* TenConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44E8E90215A7D64008FCD28 /* TenConstants.swift */; };
+		F450308122EDA10F00BD8202 /* CarManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450308022EDA10F00BD8202 /* CarManagmentViewController.swift */; };
+		F450308322EDA15700BD8202 /* CarManagmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450308222EDA15700BD8202 /* CarManagmentViewModel.swift */; };
+		F450308622EDA46600BD8202 /* StorePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450308522EDA46600BD8202 /* StorePaymentViewController.swift */; };
+		F450308822EDA4AC00BD8202 /* StorePaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450308722EDA4AC00BD8202 /* StorePaymentViewModel.swift */; };
+		F450308C22EDAA9400BD8202 /* StorePaymentActiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450308B22EDAA9400BD8202 /* StorePaymentActiveViewController.swift */; };
+		F450308E22EDAAED00BD8202 /* StorePaymentActiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450308D22EDAAED00BD8202 /* StorePaymentActiveViewModel.swift */; };
+		F450309022EDB12800BD8202 /* StorePaymentMethodsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450308F22EDB12800BD8202 /* StorePaymentMethodsItem.swift */; };
+		F450309422EDC25900BD8202 /* StorePaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309222EDC25900BD8202 /* StorePaymentTableViewCell.swift */; };
+		F450309522EDC25900BD8202 /* StorePaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F450309322EDC25900BD8202 /* StorePaymentTableViewCell.xib */; };
+		F450309722EDD69C00BD8202 /* RemoveStorePaymentMethodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309622EDD69C00BD8202 /* RemoveStorePaymentMethodResponse.swift */; };
+		F450309922EDD6E600BD8202 /* RemoveStorePaymentMethodRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309822EDD6E600BD8202 /* RemoveStorePaymentMethodRequest.swift */; };
+		F450309B22EDE77700BD8202 /* AddCreditCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309A22EDE77700BD8202 /* AddCreditCardResponse.swift */; };
+		F450309D22EDE7C800BD8202 /* AddCreditCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309C22EDE7C800BD8202 /* AddCreditCardRequest.swift */; };
 		F454180322E8817300C9CCFF /* GetTransactionsHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */; };
 		F454180522E881B900C9CCFF /* GetTransactionsHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */; };
 		F454180722E8905D00C9CCFF /* TransactionHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */; };
@@ -790,6 +803,19 @@
 		F448C3A6209085CC0077947E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F44E8E8E215A7B4D008FCD28 /* ScreenName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenName.swift; sourceTree = "<group>"; };
 		F44E8E90215A7D64008FCD28 /* TenConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenConstants.swift; sourceTree = "<group>"; };
+		F450308022EDA10F00BD8202 /* CarManagmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarManagmentViewController.swift; sourceTree = "<group>"; };
+		F450308222EDA15700BD8202 /* CarManagmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarManagmentViewModel.swift; sourceTree = "<group>"; };
+		F450308522EDA46600BD8202 /* StorePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePaymentViewController.swift; sourceTree = "<group>"; };
+		F450308722EDA4AC00BD8202 /* StorePaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePaymentViewModel.swift; sourceTree = "<group>"; };
+		F450308B22EDAA9400BD8202 /* StorePaymentActiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePaymentActiveViewController.swift; sourceTree = "<group>"; };
+		F450308D22EDAAED00BD8202 /* StorePaymentActiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePaymentActiveViewModel.swift; sourceTree = "<group>"; };
+		F450308F22EDB12800BD8202 /* StorePaymentMethodsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePaymentMethodsItem.swift; sourceTree = "<group>"; };
+		F450309222EDC25900BD8202 /* StorePaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePaymentTableViewCell.swift; sourceTree = "<group>"; };
+		F450309322EDC25900BD8202 /* StorePaymentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StorePaymentTableViewCell.xib; sourceTree = "<group>"; };
+		F450309622EDD69C00BD8202 /* RemoveStorePaymentMethodResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveStorePaymentMethodResponse.swift; sourceTree = "<group>"; };
+		F450309822EDD6E600BD8202 /* RemoveStorePaymentMethodRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveStorePaymentMethodRequest.swift; sourceTree = "<group>"; };
+		F450309A22EDE77700BD8202 /* AddCreditCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditCardResponse.swift; sourceTree = "<group>"; };
+		F450309C22EDE7C800BD8202 /* AddCreditCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditCardRequest.swift; sourceTree = "<group>"; };
 		F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsHistoryResponse.swift; sourceTree = "<group>"; };
 		F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsHistoryRequest.swift; sourceTree = "<group>"; };
 		F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryItem.swift; sourceTree = "<group>"; };
@@ -970,6 +996,7 @@
 		3EB304A8215BBD070020DC61 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F450309122EDC23100BD8202 /* StorePaymentCells */,
 				F45417FD22E8760900C9CCFF /* TransactionsHistoryCells */,
 				F48E294422E43E320010B01B /* SecurityManagmentCells */,
 				E8C5316D22DF6E3E007237ED /* PersonalDetails */,
@@ -1031,6 +1058,8 @@
 		E815F12C22AFDF570015D1DD /* PersonalZoneControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F450308422EDA43E00BD8202 /* StorePayment */,
+				F450307F22EDA0A800BD8202 /* CarsManagment */,
 				F4903DC222E83A340029879C /* TransactionsHidtory */,
 				F4471CAB22E4997F005B0648 /* SecurityManagment */,
 				E8E7790222D61C1E004F0A9F /* PersonelDetails */,
@@ -1925,6 +1954,8 @@
 				E8DA2A7F22DCB64F00A4F282 /* GetOnBoardingRequest.swift */,
 				F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */,
 				F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */,
+				F450309822EDD6E600BD8202 /* RemoveStorePaymentMethodRequest.swift */,
+				F450309C22EDE7C800BD8202 /* AddCreditCardRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1939,6 +1970,8 @@
 				285F3A9B22941C2200D0E171 /* AppGeneralDeclarationResponse.swift */,
 				F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */,
 				F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */,
+				F450309622EDD69C00BD8202 /* RemoveStorePaymentMethodResponse.swift */,
+				F450309A22EDE77700BD8202 /* AddCreditCardResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -2189,8 +2222,54 @@
 				F460570B22E9AF9400E0DB12 /* StoreHistory.swift */,
 				F460570D22E9B60B00E0DB12 /* AccumulationAmount.swift */,
 				F460570F22E9B6BE00E0DB12 /* UsageAmount.swift */,
+				F450308F22EDB12800BD8202 /* StorePaymentMethodsItem.swift */,
 			);
 			path = Obj;
+			sourceTree = "<group>";
+		};
+		F450307F22EDA0A800BD8202 /* CarsManagment */ = {
+			isa = PBXGroup;
+			children = (
+				F450308022EDA10F00BD8202 /* CarManagmentViewController.swift */,
+				F450308222EDA15700BD8202 /* CarManagmentViewModel.swift */,
+			);
+			path = CarsManagment;
+			sourceTree = "<group>";
+		};
+		F450308422EDA43E00BD8202 /* StorePayment */ = {
+			isa = PBXGroup;
+			children = (
+				F450308A22EDAA7000BD8202 /* StorePaymentActive */,
+				F450308922EDA9EB00BD8202 /* StorePaymentViewController */,
+			);
+			path = StorePayment;
+			sourceTree = "<group>";
+		};
+		F450308922EDA9EB00BD8202 /* StorePaymentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F450308522EDA46600BD8202 /* StorePaymentViewController.swift */,
+				F450308722EDA4AC00BD8202 /* StorePaymentViewModel.swift */,
+			);
+			path = StorePaymentViewController;
+			sourceTree = "<group>";
+		};
+		F450308A22EDAA7000BD8202 /* StorePaymentActive */ = {
+			isa = PBXGroup;
+			children = (
+				F450308B22EDAA9400BD8202 /* StorePaymentActiveViewController.swift */,
+				F450308D22EDAAED00BD8202 /* StorePaymentActiveViewModel.swift */,
+			);
+			path = StorePaymentActive;
+			sourceTree = "<group>";
+		};
+		F450309122EDC23100BD8202 /* StorePaymentCells */ = {
+			isa = PBXGroup;
+			children = (
+				F450309222EDC25900BD8202 /* StorePaymentTableViewCell.swift */,
+				F450309322EDC25900BD8202 /* StorePaymentTableViewCell.xib */,
+			);
+			path = StorePaymentCells;
 			sourceTree = "<group>";
 		};
 		F45417FD22E8760900C9CCFF /* TransactionsHistoryCells */ = {
@@ -2318,6 +2397,7 @@
 				3E42AF08216E13C1007F9C07 /* StationUITableViewHeaderFooterView.xib in Resources */,
 				F448C3A5209085CC0077947E /* LaunchScreen.storyboard in Resources */,
 				F448C3A2209085CC0077947E /* Assets.xcassets in Resources */,
+				F450309522EDC25900BD8202 /* StorePaymentTableViewCell.xib in Resources */,
 				F48E294622E43EAF0010B01B /* PasswordManagmenTableViewCell.xib in Resources */,
 				F432508A21450CDD00F69D9D /* Popups.storyboard in Resources */,
 				F40CA8C7209618FB00821EAD /* Heebo-Medium.ttf in Resources */,
@@ -2463,6 +2543,7 @@
 				E85E2212229FBCE600EE0907 /* SignUpCarDetailsViewController.swift in Sources */,
 				E8AC3594229E914100171BAE /* ChooseCustomerTypeViewModel.swift in Sources */,
 				E82A32F6229BD81700B91456 /* Translations.swift in Sources */,
+				F450308E22EDAAED00BD8202 /* StorePaymentActiveViewModel.swift in Sources */,
 				E82A331E229BD81700B91456 /* FacebookManager.swift in Sources */,
 				E82A334D229BD81800B91456 /* NavBarView.swift in Sources */,
 				E82A3366229BD81800B91456 /* GetStartUpImagesRequest.swift in Sources */,
@@ -2475,6 +2556,7 @@
 				E88C646322DDE495002769B7 /* FuelTypeCustomView.swift in Sources */,
 				F4D6A9D822E5CDD100F60A39 /* VerifyPinCodeResponse.swift in Sources */,
 				E82A332E229BD81700B91456 /* UIFont+IMExtension.swift in Sources */,
+				F450308622EDA46600BD8202 /* StorePaymentViewController.swift in Sources */,
 				E82A337F229BD81800B91456 /* ContentPage.swift in Sources */,
 				E849966D22BA21F4005228F0 /* VerifySmsTokenRequest.swift in Sources */,
 				E82A3385229BD81800B91456 /* GetStartUpImage.swift in Sources */,
@@ -2507,6 +2589,7 @@
 				E82A3396229BD81800B91456 /* LoginUserResponse.swift in Sources */,
 				E8E7790622D61CD1004F0A9F /* PersonalDetailsViewModel.swift in Sources */,
 				E82A330B229BD81700B91456 /* FileIMManager.swift in Sources */,
+				F450308C22EDAA9400BD8202 /* StorePaymentActiveViewController.swift in Sources */,
 				E82A3347229BD81800B91456 /* BaseViewModelDataFetchProtocol.swift in Sources */,
 				E82A3344229BD81800B91456 /* BaseTableViewModelProtocol.swift in Sources */,
 				E809C37522C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift in Sources */,
@@ -2527,6 +2610,7 @@
 				E82A337A229BD81800B91456 /* ApplicationTokenResponse.swift in Sources */,
 				3E08CBE3213C089F00A4C445 /* TenTranslations.swift in Sources */,
 				E82A3321229BD81700B91456 /* StartupManager.swift in Sources */,
+				F450309022EDB12800BD8202 /* StorePaymentMethodsItem.swift in Sources */,
 				E82A32F4229BD81700B91456 /* ErrorPopupViewController.swift in Sources */,
 				3E4A9655214A3A7000DC36FC /* UserTypeTableViewCell.swift in Sources */,
 				E82A33A0229BD81800B91456 /* CreditCard.swift in Sources */,
@@ -2564,6 +2648,7 @@
 				3E42AF04216DDEDB007F9C07 /* Station.swift in Sources */,
 				F4903DC622E83AD30029879C /* TransactionsHistoryViewModel.swift in Sources */,
 				E8AC358F229E7FDA00171BAE /* SignUpConfrimTermsOfServiceViewModel.swift in Sources */,
+				F450308322EDA15700BD8202 /* CarManagmentViewModel.swift in Sources */,
 				28A38A26229AA1DA00B8D3D6 /* FourDigitCodeViewController.swift in Sources */,
 				E82A32EF229BD81700B91456 /* SideMenuCell.swift in Sources */,
 				E82A33A1229BD81800B91456 /* Street.swift in Sources */,
@@ -2607,6 +2692,7 @@
 				E82A3375229BD81800B91456 /* AddNewCardRequest.swift in Sources */,
 				E82A330C229BD81700B91456 /* InputValidationManager.swift in Sources */,
 				F44E8E91215A7D64008FCD28 /* TenConstants.swift in Sources */,
+				F450309422EDC25900BD8202 /* StorePaymentTableViewCell.swift in Sources */,
 				E82A331C229BD81700B91456 /* BaseProcessObj.swift in Sources */,
 				E8AC35A9229EC70700171BAE /* SignUpEnterSecretSmsCodeViewModel.swift in Sources */,
 				E82A330A229BD81700B91456 /* ImageCacheManager.swift in Sources */,
@@ -2638,6 +2724,7 @@
 				3E389335217869BB0000E770 /* PumpWhichCarUITableViewHeaderFooterView.swift in Sources */,
 				E82A33A7229BD81800B91456 /* SignupViewController.swift in Sources */,
 				E849966F22BA6AC0005228F0 /* DeleteTextField.swift in Sources */,
+				F450309D22EDE7C800BD8202 /* AddCreditCardRequest.swift in Sources */,
 				E8B5979C22DF1CF800EC8937 /* PlayerView.swift in Sources */,
 				E82A335C229BD81800B91456 /* EditUserNotificationRequest.swift in Sources */,
 				E82A3303229BD81700B91456 /* DebugAndDevEnviromentManager.swift in Sources */,
@@ -2659,6 +2746,7 @@
 				E82A3371229BD81800B91456 /* DoPaymentRequest.swift in Sources */,
 				E8CF64CA22C5124A00B6D569 /* TenBottomButton.swift in Sources */,
 				E85E223022A3C3C100EE0907 /* ChangeStationViewModel.swift in Sources */,
+				F450309B22EDE77700BD8202 /* AddCreditCardResponse.swift in Sources */,
 				E82A339C229BD81800B91456 /* SetNotificationSettingsResponse.swift in Sources */,
 				E82A335A229BD81800B91456 /* LogoutRequest.swift in Sources */,
 				E82A33A6229BD81800B91456 /* ParseValidator.swift in Sources */,
@@ -2670,11 +2758,13 @@
 				E82A338E229BD81800B91456 /* ErrorResponse.swift in Sources */,
 				E82A3320229BD81700B91456 /* ErrorManager.swift in Sources */,
 				E82A331A229BD81700B91456 /* StringManager.swift in Sources */,
+				F450309722EDD69C00BD8202 /* RemoveStorePaymentMethodResponse.swift in Sources */,
 				3E42AF06216E136E007F9C07 /* StationUITableViewHeaderFooterView.swift in Sources */,
 				E82A3381229BD81800B91456 /* City.swift in Sources */,
 				E82A3342229BD81800B91456 /* IMButton.swift in Sources */,
 				E82A332A229BD81700B91456 /* String+IMExtension.swift in Sources */,
 				E82A333B229BD81800B91456 /* IMWKWebView.swift in Sources */,
+				F450308822EDA4AC00BD8202 /* StorePaymentViewModel.swift in Sources */,
 				F48E294322E102680010B01B /* SplashViewController.swift in Sources */,
 				3E41BED2216B9F1400596617 /* ButtonSwitchColorPopupViewController.swift in Sources */,
 				E82A336D229BD81800B91456 /* ValidateVersionRequest.swift in Sources */,
@@ -2738,6 +2828,7 @@
 				E82A3362229BD81800B91456 /* AddUserRequest.swift in Sources */,
 				E82A3336229BD81700B91456 /* IMTextView.swift in Sources */,
 				E82A3364229BD81800B91456 /* BaseRequest.swift in Sources */,
+				F450308122EDA10F00BD8202 /* CarManagmentViewController.swift in Sources */,
 				E82A339B229BD81800B91456 /* GetUserFavoritesResponse.swift in Sources */,
 				E82A338F229BD81800B91456 /* BaseInnerResponse.swift in Sources */,
 				E82A339A229BD81800B91456 /* CheckSmsTokenResponse.swift in Sources */,
@@ -2772,6 +2863,7 @@
 				285F3A9F22941C6200D0E171 /* TenButtonStyle.swift in Sources */,
 				E82A3322229BD81700B91456 /* SilentLoginRequest.swift in Sources */,
 				E82A3365229BD81800B91456 /* ApplicationTokenRequest.swift in Sources */,
+				F450309922EDD6E600BD8202 /* RemoveStorePaymentMethodRequest.swift in Sources */,
 				E82A336C229BD81800B91456 /* GetStartUpMessageRequest.swift in Sources */,
 				3E41BED0216B6CE200596617 /* SecondaryGeneralPopupViewController.swift in Sources */,
 				E82A3361229BD81800B91456 /* StartRestorePasswordRequest.swift in Sources */,

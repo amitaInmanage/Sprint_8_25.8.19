@@ -82,6 +82,7 @@ class Translations {
     
     struct  SubTitles {
     
+        static let storePayment = "store_payment_methods_subtitle"
         static let securityManagment = "security_management_subtitle"
         static let dialogDisconnectSubtitle = "dialog_disconnect_subtitle"
         static let rowPowercardTitle = "row_powercard_title"
@@ -97,6 +98,7 @@ class Translations {
         static let creditCardSubTitle = "credit_card_details_sub_title"
         static let carInformationClub = "car_information_club_fuel_type"
         
+        static let storePaymentDefault = "Default"
         static let securityManagmentDefault = "Default"
         static let dialogDisconnectSubtitleDefault = "Default"
         static let rowPowercardTitleDefault = "Default"
@@ -164,6 +166,7 @@ class Translations {
     
     struct Titles {
         
+        static let storePayment = "store_payment_methods_title"
         static let transactionsHistory = "personal_area_menu_transactions_history_title"
         static let verifyMyPassword = "verify_my_pin_code_title"
         static let securityManagment = "security_management_title_pin_code"
@@ -204,6 +207,7 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let storePaymentDefault = "Default"
         static let transactionsHistoryDefault = "Default"
         static let verifyMyPasswordDefault = "Default"
         static let securityManagmentDefault = "Default"

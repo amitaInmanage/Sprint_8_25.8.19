@@ -14,6 +14,7 @@ class TenUser: User {
     
     var personelAreaMenuArr = [PersonalAreaMenuItem]()
     var fuelingDevicesArr = [FuelingDevicesItem]()
+    var storePaymentMethods = [StorePaymentMethodsItem]()
     var powerCardArr = PowerCardItem()
     var accumulation = noAccumulation
     var hasPinCode = false
@@ -29,6 +30,10 @@ class TenUser: User {
         
         let personelAreaMenu = ParseValidator.getArrayForKey(key: "personal_area_menuArr", JSONDict: JSONDict, defaultValue: [Any]())
         self.personelAreaMenuArr = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: personelAreaMenu, innerResponse: PersonalAreaMenuItem(), shouldReverseOrder: false) as! [PersonalAreaMenuItem]
+        
+        let storePaymentMethodsArr = ParseValidator.getArrayForKey(key: "store_payment_methodsArr", JSONDict: JSONDict, defaultValue: [Any]())
+        self.storePaymentMethods = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: storePaymentMethodsArr, innerResponse: StorePaymentMethodsItem(), shouldReverseOrder: false) as! [StorePaymentMethodsItem]
+        
         
         let fuelingDevices = ParseValidator.getArrayForKey(key: "fueling_devicesArr", JSONDict: JSONDict, defaultValue: [Any]())
         self.fuelingDevicesArr = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: fuelingDevices, innerResponse: FuelingDevicesItem(), shouldReverseOrder: false) as! [FuelingDevicesItem]

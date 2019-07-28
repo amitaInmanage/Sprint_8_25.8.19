@@ -291,6 +291,32 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
     }
     
+    func callRemoveStorePaymentMethod(dictParams: [String:Any], requestFinishedDelegate :RequestFinishedProtocol? , vc: UIViewController? = nil ) {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        let request = RemoveStorePaymentMethodRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
+        
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
+    }
+    
+    func callAddCreditCard(requestFinishedDelegate :RequestFinishedProtocol? , vc: UIViewController? = nil ) {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+         let request = AddCreditCardRequest().initWithDictParams(dictParams: nil, andRequestFinishDelegate: requestFinishedDelegate)
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
+    }
+    
+
     func callGetUserFavoritesWithRequestFinishedDelegate(requestFinishedDelegate :RequestFinishedProtocol?) {
         
         var delegate = requestFinishedDelegate

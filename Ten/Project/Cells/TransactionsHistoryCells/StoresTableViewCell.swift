@@ -20,10 +20,22 @@ class StoresTableViewCell: UITableViewCell {
     @IBOutlet weak var lblUsageAmount: IMLabel!
     @IBOutlet weak var lblAmount: IMLabel!
     @IBOutlet weak var imgUp: UIImageView!
+    @IBOutlet weak var dropDown: UIView!
+    @IBOutlet weak var vwHistory: UIView!
+    @IBOutlet weak var dropDownConstraint: NSLayoutConstraint!
+    @IBOutlet weak var historyBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imgFuelType: UIImageView!
+    @IBOutlet weak var lblCarNumber: UILabel!
+    @IBOutlet weak var imgCar: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.vwHistory.addShadow()
+        self.dropDown.isHidden = true
+        self.dropDown.addShadow()
+        self.historyBottomConstraint.constant = 129.5
+      //  self.historyBottomConstraint.constant = 22
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

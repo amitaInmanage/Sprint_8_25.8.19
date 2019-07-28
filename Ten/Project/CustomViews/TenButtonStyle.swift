@@ -40,6 +40,14 @@ class TenButtonStyle: IMButton {
         self.setTitleColor(UIColor.getApplicationThemeColor(), for: .normal)
     }
     
+    func setClearBackground() {
+        self.backgroundColor = .clear
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.getApplicationThemeColor().cgColor
+        self.setTitleColor(UIColor.getApplicationThemeColor(), for: .normal)
+    }
+    
     func setReverseColor() {
         self.layer.borderColor = self.tenButtonColor
         self.layer.borderWidth = 1

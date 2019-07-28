@@ -9,16 +9,20 @@
 import UIKit
 
 struct TenRequestNames {
+    
     static let getSmsToken = "getSmsToken"
     static let getOnBoarding = "getOnboarding"
     static let getVerifyPinCode = "verifyPinCode"
+    static let getAddCreditCard = "addCreditCard"
     static let getVerifySmsToken = "verifySmsToken"
     static let getEditUserInformation = "editUserInformation"
     static let getTransactionsHistory = "getTransactionsHistory"
     static let getUpdateRegistrationData = "updateRegistrationData"
+    static let getRemoveStorePaymentMethod = "removeStorePaymentMethod"
 }
 
 struct TenParamsNames {
+    static let id = "id"
     static let type = "type"
     static let page = "page"
     static let add = "add"

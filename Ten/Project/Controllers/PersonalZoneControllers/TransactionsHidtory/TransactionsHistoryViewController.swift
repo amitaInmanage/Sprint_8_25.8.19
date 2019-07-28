@@ -20,7 +20,7 @@ enum PagerFontState: String {
 
 class TransactionsHistoryViewController : BaseFormViewController {
     
-    var user = TenUser()
+    var user = ApplicationManager.sharedInstance.userAccountManager.user
     var viewModel = TransactionsHistoryViewModel()
     var state = Box<States>(States.allPurchases)
     var all: [TransactionHistoryItem] = []
@@ -76,17 +76,15 @@ class TransactionsHistoryViewController : BaseFormViewController {
     
     fileprivate func stores(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoresTableViewCell.className, for: indexPath) as! StoresTableViewCell
-
+        
         cell.stackViewUsage.isHidden = true
         cell.stackViewAccunulation.isHidden = true
-  
         
-        if self.all[indexPath.row].isExtended {
-         
-        }
+       
+       
         
         if self.all[indexPath.row].intType == 2 {
-         
+            
         }
         
         if self.all[indexPath.row].accumulationAmount.intDisplay == 1 {
@@ -104,7 +102,7 @@ class TransactionsHistoryViewController : BaseFormViewController {
         cell.lblDate.text = all[indexPath.row].strDate
         cell.lblTime.text = all[indexPath.row].strTime
         cell.lblAmount.text = all[indexPath.row].amount.strValue
-
+        
         return cell
     }
     
@@ -113,13 +111,13 @@ class TransactionsHistoryViewController : BaseFormViewController {
             switch self.state.value {
                 
             case .allPurchases:
-            self.initTabBar()
-            if self.allTransactionHistoryResponse == nil {
-                self.viewModel.type = self.state.value.rawValue
-                self.isWaitingForResponse = true
-                self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
-            }
-        
+                self.initTabBar()
+                if self.allTransactionHistoryResponse == nil {
+                    self.viewModel.type = self.state.value.rawValue
+                    self.isWaitingForResponse = true
+                    self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+                }
+                
             case .refueling:
                 self.initTabBar()
                 
@@ -152,14 +150,14 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
         
         switch self.state.value {
         case .allPurchases:
-             return self.stores(tableView, cellForRowAt: indexPath)
+            return self.stores(tableView, cellForRowAt: indexPath)
             
         case .refueling:
-//            return self.stores(tableView, cellForRowAt: indexPath)
-       break
+            //            return self.stores(tableView, cellForRowAt: indexPath)
+            break
         case .stores:
-//              return self.stores(tableView, cellForRowAt: indexPath)
-        break
+            //              return self.stores(tableView, cellForRowAt: indexPath)
+            break
         }
         return UITableViewCell()
     }
@@ -170,14 +168,34 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StoresTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        cell.imgUp.image = UIImage(named: "up")
-
+       all[indexPath.row].isExtended = !all[indexPath.row].isExtended
+            
+        if all[indexPath.row].isExtended {
+            UIView.animate(withDuration: 0.3) {
+                cell.imgUp.image = UIImage(named: "up")
+                cell.historyBottomConstraint.constant = 198.5
+                cell.dropDown.isHidden = false
+                //cell.imgType.setImageWithStrURL(strURL: self.user.fuelingDevicesArr[indexPath.row].strIcon, withAddUnderscoreIphone: false)
+                //cell.imgFuelType.setImageWithStrURL(strURL: self.user.fuelingDevicesArr[indexPath.row].fuelItem.strImage, withAddUnderscoreIphone: false)
+                cell.lblCarNumber.text = self.user.fuelingDevicesArr[indexPath.row].strTitle
+                cell.vwHistory.removeShadow()
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                cell.imgUp.image = UIImage(named: "down")
+                cell.historyBottomConstraint.constant = 129
+                cell.dropDown.isHidden = true
+                cell.vwHistory.addShadow()
+            }
+        }
+        self.view.layoutIfNeeded()
+        self.tableView.reloadData()
     }
-   
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
+        
         let height = scrollView.frame.size.height
         let contentYoffset = scrollView.contentOffset.y
         let distanceFromBottom = scrollView.contentSize.height - contentYoffset
@@ -204,7 +222,7 @@ extension TransactionsHistoryViewController {
     }
     
     func requestFailed(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse) {
-
+        
     }
 }
 
