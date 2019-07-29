@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iOSDropDown
 
 class PersonalDetailsViewControlles: BaseFormViewController {
 
@@ -22,7 +23,7 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     @IBOutlet weak var lblTitle: IMLabel!
     @IBOutlet weak var txtFldFirstName: InputCustomView!
     @IBOutlet weak var txtFldLastName: InputCustomView!
-    @IBOutlet weak var txtFldGander: InputCustomView!
+    @IBOutlet weak var txtFldGander: DropDown!
     @IBOutlet weak var txtFldPhone: InputCustomView!
     @IBOutlet weak var txtFldEmail: InputCustomView!
     @IBOutlet weak var btnNotafication: IMButton!
@@ -31,9 +32,12 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var lblSecurityManager: IMLabel!
     
+    var keys = [Int]()
+    var values = [String]()
     var viewModel = PersonalDetailsViewModel()
     var user = TenUser()
     var button: PersonalDetailsBottomButton?
+    var genserArr = ApplicationManager.sharedInstance.appGD.genderArr
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,20 +62,27 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         self.mDCTextSetUp(mDCText: self.txtFldLastName.txtFldInput, withPlaceholderText: "שם משפחה", withIndex: self.txtFldLastName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
         
          self.mDCTextSetUp(mDCText: self.txtFldPhone.txtFldInput, withPlaceholderText: "טלפון", withIndex: self.txtFldPhone.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
-        
+
         self.mDCTextSetUp(mDCText: self.txtFldEmail.txtFldInput, withPlaceholderText: "דוא׳׳ל", withIndex: self.txtFldEmail.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
         
-        self.mDCTextSetUp(mDCText: self.txtFldGander.txtFldInput,
-                          withPlaceholderText: "מגדר",
-                          withIndex: self.txtFldGander.txtFldInput.tag,
-                          withKeyboardType: .default ,
-                          withKeyType: .done,
-                          txtFldInputType: .generalNumbericNumber,
-                          errorText: "דיווח על טעות", addToolbar: true)
+        
+        for key in self.genserArr.keys {
+            let tempKey = Int(key)
+           keys.append(tempKey ?? 0)
+        }
+        
+        for value in self.genserArr.values {
+            let tempValue = String(describing: value)
+            values.append(tempValue)
+        }
+  
+        
+        self.txtFldGander.optionArray = values
+        self.txtFldGander.optionIds = keys
         
         self.txtFldFirstName.txtFldInput.text  = user.strFirstName
         self.txtFldLastName.txtFldInput.text = user.strLastName
-        self.txtFldPhone.txtFldInput.text = user.strPhoneNumber
+//        self.txtFldPhone.txtFldInput.text = user.strPhoneNumber
     }
     
     override func fillTextWithTrans() {

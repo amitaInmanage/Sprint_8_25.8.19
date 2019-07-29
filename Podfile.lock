@@ -39,6 +39,7 @@ PODS:
   - FBSDKLoginKit (4.35.0):
     - FBSDKCoreKit
   - HTMLString (4.0.2)
+  - iOSDropDown (0.2.7)
   - JTAppleCalendar (7.1.5)
   - LGSideMenuController (1.0.10)
   - MaterialComponents/AnimationTiming (60.1.0)
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - HTMLString
+  - iOSDropDown
   - JTAppleCalendar (~> 7.0)
   - LGSideMenuController (~> 1.0.0)
   - MaterialComponents/TextFields
@@ -101,6 +103,7 @@ SPEC REPOS:
     - FBSDKCoreKit
     - FBSDKLoginKit
     - HTMLString
+    - iOSDropDown
     - JTAppleCalendar
     - LGSideMenuController
     - MaterialComponents
@@ -127,6 +130,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 1a5b2e3ceb5ca827a53c54aa5f4a3480efff80d2
   FBSDKLoginKit: 00a3d65d1226852f9d76dcddff01981e5e6d9c38
   HTMLString: d346ba551d1b7e687190c948ec0c2ddaf4057544
+  iOSDropDown: 7a4cfc67d5166f319858747b63cd2f7760c4fb4b
   JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
   LGSideMenuController: 8682bdbd0008c1acfbce95eaf96cc3657bca5f95
   MaterialComponents: bd1ebf279041919605fe6133a4173db4148ec1cd
@@ -140,6 +144,6 @@ SPEC CHECKSUMS:
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
 
-PODFILE CHECKSUM: d465cdc4cd07316723bf3e5827ebaed590e8fb00
+PODFILE CHECKSUM: 26c78e3403f1f1615a8adfd24c53c39ac64ea291
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1

@@ -17,11 +17,6 @@ class AddCreditCardResponse: BaseInnerResponse {
   
         self.strUrl = ParseValidator.getStringForKey(key: "url", JSONDict: JSONDict, defaultValue: "")
         
-        let tempUser = ParseValidator.getDictionaryForKey(key: "user", JSONDict: JSONDict, defaultValue: [String:Any]())
-        if !tempUser.isEmpty {
-            ApplicationManager.sharedInstance.userAccountManager.user.buildFromJSONDict(JSONDict: tempUser) as! TenUser
-        }
-        
         return self
     }
 }

@@ -30,12 +30,12 @@ class RemoteNotificationAndDeepLinkManager: BaseManager {
     
     static var sharedInstance = RemoteNotificationAndDeepLinkManager()
     
+    var storePamentMathods = [StorePaymentMethodsItem]()
     var launchRemoteNotificationDict = [String:Any]()
     var launchURL : URL?
     var didRegisterForRemoteNotificationsCalled = false
     var pushTypes = false
-    var storePamentMathods = [StorePaymentMethodsItem]()
-    
+  
     func registerForRemoteNotifications() {
         
         if !DeviceType.isSimulator {
@@ -258,26 +258,8 @@ class RemoteNotificationAndDeepLinkManager: BaseManager {
                 break
             case DeepLinkPageStrings.storePaymentMethods.rawValue:
                 
-                if !ApplicationManager.sharedInstance.userAccountManager.user.storePaymentMethods.isEmpty {
-                    for storePaymante in ApplicationManager.sharedInstance.userAccountManager.user.storePaymentMethods {
-                        if storePaymante.isActiveInStore {
-                            storePamentMathods.append(storePaymante)
-                        }
-                    }
-                    if !storePamentMathods.isEmpty {
-                        if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentActiveViewController.className) as? StorePaymentActiveViewController {
-                            ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
-                        }
-                    } else {
-                        if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentViewController.className) as? StorePaymentViewController {
-                            ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
-                        }
-                    }
-                } else {
-                    if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentViewController.className) as? StorePaymentViewController {
-                        ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
-                    }
-                }
+                UserAccountManager.sharedInstance.validateUserPayment(storePamentMathods: storePamentMathods)
+                
                 break
             case DeepLinkPageStrings.logout.rawValue:
                 ApplicationManager.sharedInstance.userAccountManager.callLogoutWithUserAccountProcessObj(userAccountProcessObj: nil, andRequestFinishedDelegate: nil)
@@ -339,6 +321,7 @@ class RemoteNotificationAndDeepLinkManager: BaseManager {
         
     }
     
+   
     
     // MARK: - Server Request Done Delegate
     

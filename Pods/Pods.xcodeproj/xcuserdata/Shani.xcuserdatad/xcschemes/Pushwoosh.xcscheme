@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "390DBE0F7FAE7929BA8AABC4E277359A"
+               BlueprintIdentifier = "065EAE28F8FEBD9747F33B94261E8870"
                BlueprintName = "Pushwoosh"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pushwoosh">

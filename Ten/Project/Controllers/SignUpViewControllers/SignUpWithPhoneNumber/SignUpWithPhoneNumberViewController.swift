@@ -48,7 +48,7 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
         txtFldPhoneNumber.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         //TODO: Delete this row
-        txtFldPhoneNumber.txtFldInput.text = "0542533691"
+        txtFldPhoneNumber.txtFldInput.text = "0582888165"
     }
     
     override func fillTextWithTrans() {

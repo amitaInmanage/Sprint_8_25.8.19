@@ -393,9 +393,11 @@
 		F450309922EDD6E600BD8202 /* RemoveStorePaymentMethodRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309822EDD6E600BD8202 /* RemoveStorePaymentMethodRequest.swift */; };
 		F450309B22EDE77700BD8202 /* AddCreditCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309A22EDE77700BD8202 /* AddCreditCardResponse.swift */; };
 		F450309D22EDE7C800BD8202 /* AddCreditCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309C22EDE7C800BD8202 /* AddCreditCardRequest.swift */; };
+		F450309F22EF302300BD8202 /* SuccessAddCraditCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309E22EF302300BD8202 /* SuccessAddCraditCardResponse.swift */; };
 		F454180322E8817300C9CCFF /* GetTransactionsHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */; };
 		F454180522E881B900C9CCFF /* GetTransactionsHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */; };
 		F454180722E8905D00C9CCFF /* TransactionHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */; };
+		F45B170D22EF4255006CBE22 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45B170C22EF4255006CBE22 /* iOSDropDown.framework */; };
 		F45D570922E5AF260088E704 /* CreatePasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D570822E5AF260088E704 /* CreatePasswordTableViewCell.swift */; };
 		F45D570B22E5AF420088E704 /* CreatePasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45D570A22E5AF420088E704 /* CreatePasswordTableViewCell.xib */; };
 		F460570A22E9AEC500E0DB12 /* AmountHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460570922E9AEC500E0DB12 /* AmountHistory.swift */; };
@@ -816,9 +818,11 @@
 		F450309822EDD6E600BD8202 /* RemoveStorePaymentMethodRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveStorePaymentMethodRequest.swift; sourceTree = "<group>"; };
 		F450309A22EDE77700BD8202 /* AddCreditCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditCardResponse.swift; sourceTree = "<group>"; };
 		F450309C22EDE7C800BD8202 /* AddCreditCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditCardRequest.swift; sourceTree = "<group>"; };
+		F450309E22EF302300BD8202 /* SuccessAddCraditCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessAddCraditCardResponse.swift; sourceTree = "<group>"; };
 		F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsHistoryResponse.swift; sourceTree = "<group>"; };
 		F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsHistoryRequest.swift; sourceTree = "<group>"; };
 		F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryItem.swift; sourceTree = "<group>"; };
+		F45B170C22EF4255006CBE22 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45D570822E5AF260088E704 /* CreatePasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordTableViewCell.swift; sourceTree = "<group>"; };
 		F45D570A22E5AF420088E704 /* CreatePasswordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePasswordTableViewCell.xib; sourceTree = "<group>"; };
 		F460570922E9AEC500E0DB12 /* AmountHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountHistory.swift; sourceTree = "<group>"; };
@@ -842,6 +846,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F45B170D22EF4255006CBE22 /* iOSDropDown.framework in Frameworks */,
 				769641789B10C13755A859A3 /* Pods_Ten.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1972,6 +1977,7 @@
 				F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */,
 				F450309622EDD69C00BD8202 /* RemoveStorePaymentMethodResponse.swift */,
 				F450309A22EDE77700BD8202 /* AddCreditCardResponse.swift */,
+				F450309E22EF302300BD8202 /* SuccessAddCraditCardResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -2320,6 +2326,7 @@
 		F4F8DCF92D93296CFA60D075 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F45B170C22EF4255006CBE22 /* iOSDropDown.framework */,
 				B05537D0D0475563806FA442 /* Pods_Ten.framework */,
 			);
 			name = Frameworks;
@@ -2463,7 +2470,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Collection/Collection.framework",
@@ -2486,6 +2493,7 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/UIColor-HexString/UIColor_HexString.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -2511,10 +2519,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_HexString.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2838,6 +2847,7 @@
 				3E41CB9221664E3100A55781 /* ExtraSecurityTableViewCell.swift in Sources */,
 				F460571022E9B6BE00E0DB12 /* UsageAmount.swift in Sources */,
 				E82A3374229BD81800B91456 /* GetTokenRequest.swift in Sources */,
+				F450309F22EF302300BD8202 /* SuccessAddCraditCardResponse.swift in Sources */,
 				E82A33BC229BD81800B91456 /* RequestFinishedProtocol.swift in Sources */,
 				E88C645A22DDE40D002769B7 /* InputCustomView.swift in Sources */,
 				3E1D8581215D277F00674656 /* Fuel.swift in Sources */,

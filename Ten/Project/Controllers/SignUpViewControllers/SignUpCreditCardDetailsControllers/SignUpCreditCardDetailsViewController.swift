@@ -17,11 +17,13 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
     @IBOutlet weak var btnOpenCamera: LightButton!
     @IBOutlet weak var webView: UIWebView!
     
+    var storePamentMathods = [StorePaymentMethodsItem]()
     var isAddCreditCard = false
     var viewModel = SignUpCreditCardViewModel()
     var screenName = ""
     var redactedCardNumber = ""
-
+    var fieldsArr = [String: Any]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeUI()
@@ -67,9 +69,9 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
     }
     
     func userDidProvide(_ cardInfo: CardIOCreditCardInfo!, in paymentViewController: CardIOPaymentViewController!) {
-
+        
         paymentViewController.dismiss(animated: true, completion: nil)
-    
+        
         let param1 = cardInfo.cardNumber
         let param2 = cardInfo.expiryMonth
         let param3 = cardInfo.expiryYear
@@ -78,7 +80,18 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
         let date = ("\(month)/\(year)")
         let strFunc = "fillCreditCardData('\(param1!)','\(date)')"
         self.webView.stringByEvaluatingJavaScript(from: strFunc)
-
+        
+    }
+    
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .unicode) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
@@ -89,20 +102,38 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
                 let failed = strUrl.contains("/failure/")
                 
                 if success {
-                    let jsonObject = ParseValidator.parseUrlToJson(strUrl: strUrl, andSubString: "?json=")
+                    
+                    var jsonArr = [String]()
+                    jsonArr = strUrl.components(separatedBy: "json=")
+                    let json = jsonArr[1].removingPercentEncoding!
+                    let jsonDict = self.convertToDictionary(text: json)
+                    
                     if isAddCreditCard {
-                        if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentActiveViewController.className) as? StorePaymentActiveViewController {
-                            ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                        if let data = SuccessAddCraditCardResponse().buildFromJSONDict(JSONDict: jsonDict ) as? SuccessAddCraditCardResponse {
+                            if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentActiveViewController.className) as? StorePaymentActiveViewController {
+                               
+                                if !ApplicationManager.sharedInstance.userAccountManager.user.storePaymentMethods.isEmpty {
+                                    for storePaymante in data.user.storePaymentMethods {
+                                        if storePaymante.isActiveInStore {
+                                            storePamentMathods.append(storePaymante)
+                                        }
+                                    }
+                                }
+                                personalZone.storePamentMathods = storePamentMathods
+                                ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                            }
                         }
                     } else {
-                        if let data = UpdateRegistrationDataResponse().buildFromJSONDict(JSONDict: jsonObject) as? UpdateRegistrationDataResponse {
+                        
+                        if let data = UpdateRegistrationDataResponse().buildFromJSONDict(JSONDict: jsonDict ) as? UpdateRegistrationDataResponse {
                             
-                            ApplicationManager.sharedInstance.userAccountManager.updateScreensAndRegistrationToken(registrationToken: nil, screens: data.arrNextScreens)
+                            ApplicationManager.sharedInstance.userAccountManager.updateScreensAndRegistrationToken(registrationToken: ApplicationManager.sharedInstance.userAccountManager.registrationToken, screens: data.arrNextScreens)
                         }
+                        
                     }
                 } else if failed {
                     //TODO: faild  ?
-                print("faildpdjfkdsjsfdsk;jfndsakjfnasdfdsj")
+                    print("faildpdjfkdsjsfdsk;jfndsakjfnasdfdsj")
                 } else {
                     //TODO: else ?
                 }
@@ -110,3 +141,4 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
         }
     }
 }
+

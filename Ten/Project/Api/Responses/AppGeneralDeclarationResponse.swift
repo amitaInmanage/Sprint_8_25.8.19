@@ -27,11 +27,14 @@ class AppGeneralDeclarationResponse: BaseGeneralDeclarationResponse {
     var idNumberMin = 0
     var idNumberMax = 0
     var isShowBoarding = false
+    var genderArr = [String: Any]()
     
     override func buildFromJSONDict(JSONDict: [String: Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
         
     
+        self.genderArr = ParseValidator.getDictionaryForKey(key: "gendersArr", JSONDict: JSONDict, defaultValue: [String: Any]())
+        
         let usersTypesArr = ParseValidator.getArrayForKey(key: "customer_typesArr", JSONDict: JSONDict, defaultValue: [Any]())
         self.usersTypesArr = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: usersTypesArr, innerResponse: UserType(), shouldReverseOrder: false) as! [UserType]
         

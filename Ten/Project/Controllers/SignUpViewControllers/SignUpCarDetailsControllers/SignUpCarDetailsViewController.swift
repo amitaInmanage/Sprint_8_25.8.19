@@ -115,25 +115,3 @@ extension SignUpCarDetailsViewController: UICollectionViewDelegate, UICollection
     }
 }
 
-
-// Lable Error :
-
-//extension SignUpCarDetailsViewController {
-//    func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
-//        if request.requestName == TenRequestNames.getUpdateRegistrationData {
-//            if let innerResponse = innerResponse as? UpdateRegistrationDataResponse {
-//                ApplicationManager.sharedInstance.userAccountManager.updateScreensAndRegistrationToken(registrationToken: nil, screens: innerResponse.arrNextScreens)
-//            }
-//        }
-//    }
-//
-//    func requestFailed(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse) {
-//        if request.requestName == TenRequestNames.getUpdateRegistrationData {
-//            if outerResponse.errorResponse.numID == self.viewModel.invalideLicensePlat {
-//                self.lblCarNumberError.isHidden = false
-//            } else if outerResponse.errorResponse.numID == self.viewModel.invalideIdNumber {
-//                self.lblIdNumberError.isHidden = false
-//            }
-//        }
-//    }
-//}

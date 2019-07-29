@@ -25,5 +25,6 @@ target 'Ten' do
   pod 'MaterialComponents/TextFields'
   pod 'PayCardsRecognizer'
   pod 'CardIO'
+  pod 'iOSDropDown'
 
 end

@@ -80,8 +80,6 @@ class TransactionsHistoryViewController : BaseFormViewController {
         cell.stackViewUsage.isHidden = true
         cell.stackViewAccunulation.isHidden = true
         
-       
-       
         
         if self.all[indexPath.row].intType == 2 {
             
@@ -170,6 +168,7 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
         let cell = tableView.cellForRow(at: indexPath) as! StoresTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
+        tableView.reloadRows(at: [indexPath], with: .none)
        all[indexPath.row].isExtended = !all[indexPath.row].isExtended
             
         if all[indexPath.row].isExtended {
@@ -179,7 +178,7 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
                 cell.dropDown.isHidden = false
                 //cell.imgType.setImageWithStrURL(strURL: self.user.fuelingDevicesArr[indexPath.row].strIcon, withAddUnderscoreIphone: false)
                 //cell.imgFuelType.setImageWithStrURL(strURL: self.user.fuelingDevicesArr[indexPath.row].fuelItem.strImage, withAddUnderscoreIphone: false)
-                cell.lblCarNumber.text = self.user.fuelingDevicesArr[indexPath.row].strTitle
+                //cell.lblCarNumber.text = self.user.fuelingDevicesArr[indexPath.row].strTitle
                 cell.vwHistory.removeShadow()
             }
         } else {

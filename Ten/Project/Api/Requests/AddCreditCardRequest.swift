@@ -1,5 +1,5 @@
 //
-//  RemoveStorePaymentMethodRequest.swift
+//  AddCreditCardRequest.swift
 //  Ten
 //
 //  Created by Amit on 28/07/2019.
@@ -8,17 +8,18 @@
 
 import Foundation
 
-class RemoveStorePaymentMethodRequest: BaseRequest {
+
+class AddCreditCardRequest: BaseRequest {
     
     override func createOuterResponseFromJSONDict(JSONDict: Dictionary<String, Any>) -> BaseOuterResponse? {
-        let response = RemoveStorePaymentMethodResponse()
+        let response = AddCreditCardResponse()
         
         return  BaseOuterResponse.initFromJSONDict(JSONDict:JSONDict, withInnerResponse: response)
     }
     
     override var requestName: String {
         get {
-            return TenRequestNames.getRemoveStorePaymentMethod
+            return TenRequestNames.getAddCreditCard
         }
     }
 }

@@ -17,6 +17,7 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
     static var sharedInstance = UserAccountManager()
     
     var user = TenUser()
+    var storePamentMathods = [StorePaymentMethodsItem]()
     
     var isUserLoggedIn: Bool {
         get {
@@ -813,9 +814,9 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
                 //TODO: send to businessreadonly
                 
             case ScreensNames.completeProcess.rawValue:
-                
-                //TODO: send to comlete signup
-                print("completeProcess")
+                let dict = [String: Any]()
+                self.fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
+            self.callUpdateRegistrationData(dictParams: self.fieldsArr, screenName: nextScreen.screenName, andRequestFinishedDelegate: self)
                 
             case ScreensNames.pinCode.rawValue:
                 print("pinCode")
@@ -833,6 +834,32 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
             }
         }
         return false
+    }
+    
+    func validateUserPayment(storePamentMathods: [StorePaymentMethodsItem]) {
+        
+        var storePamentMathods = [StorePaymentMethodsItem]()
+        if !ApplicationManager.sharedInstance.userAccountManager.user.storePaymentMethods.isEmpty {
+            for storePaymante in ApplicationManager.sharedInstance.userAccountManager.user.storePaymentMethods {
+                if storePaymante.isActiveInStore {
+                    storePamentMathods.append(storePaymante)
+                }
+            }
+            if !storePamentMathods.isEmpty {
+                if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentActiveViewController.className) as? StorePaymentActiveViewController {
+                    personalZone.storePamentMathods = storePamentMathods
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                }
+            } else {
+                if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentViewController.className) as? StorePaymentViewController {
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                }
+            }
+        } else {
+            if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: StorePaymentViewController.className) as? StorePaymentViewController {
+                ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+            }
+        }
     }
     
     //MARK: RequestFinishedProtocol

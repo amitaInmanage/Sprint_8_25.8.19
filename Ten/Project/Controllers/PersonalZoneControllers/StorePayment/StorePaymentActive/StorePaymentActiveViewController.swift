@@ -15,11 +15,11 @@ class StorePaymentActiveViewController: BaseFormViewController {
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var btnAddPayment: TenButtonStyle!
     
-    var counter = 0
     var userId = 0
     var userType = 0
     var viewModel = StorePaymentActiveViewModel()
     var user = ApplicationManager.sharedInstance.userAccountManager.user
+    var storePamentMathods = [StorePaymentMethodsItem]()
     
     override func didMove(toParentViewController parent: UIViewController?) {
         if let vc = parent as? TenStyleViewController {
@@ -67,23 +67,24 @@ class StorePaymentActiveViewController: BaseFormViewController {
 
 extension StorePaymentActiveViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.user.storePaymentMethods.count
+        return storePamentMathods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StorePaymentTableViewCell.className, for: indexPath) as! StorePaymentTableViewCell
         cell.delegate = self
         
-        if user.storePaymentMethods[indexPath.row].isActiveInStore {
+        if storePamentMathods[indexPath.row].isRemovable {
+            userId = storePamentMathods[indexPath.row].intId
+            userType = storePamentMathods[indexPath.row].intType
+        }
+        
+        if storePamentMathods[indexPath.row].isActiveInStore {
             
-            userId = self.user.storePaymentMethods[indexPath.row].intId
-            userType = self.user.storePaymentMethods[indexPath.row].intType
+            cell.imgCardType.setImageWithStrURL(strURL: storePamentMathods[indexPath.row].strIcon, withAddUnderscoreIphone: false)
+            cell.lblCardNumber.text = storePamentMathods[indexPath.row].strtitle
             
-            cell.imgCardType.setImageWithStrURL(strURL: self.user.storePaymentMethods[indexPath.row].strIcon, withAddUnderscoreIphone: false)
-            cell.lblCardNumber.text = self.user.storePaymentMethods[indexPath.row].strtitle
-            
-            
-            if !user.storePaymentMethods[indexPath.row].isRemovable {
+            if !storePamentMathods[indexPath.row].isRemovable {
                 cell.lblRemove.isHidden = true
                 cell.btnRemove.isHidden = true
                 cell.vwBetween.isHidden = true
@@ -107,20 +108,31 @@ extension StorePaymentActiveViewController: UITableViewDelegate, UITableViewData
 extension StorePaymentActiveViewController: RemoveStorePaymentDelegate {
     
     func didTapRemoveStorePayment() {
+        
         self.viewModel.id = self.userId
         self.viewModel.type = self.userType
-        self.tableView.reloadData()
-        self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+        
+        let popupInfoObj = PopupInfoObj()
+        
+        //TODO: change text hardCoded!!!
+        popupInfoObj.popupType = .tenGeneralPopup
+        popupInfoObj.strTitle = "האם אתה בטוח שאתה רוצה להסיר את אמצעי התשלום?"
+        popupInfoObj.strFirstButtonTitle = "לא"
+        popupInfoObj.strSecondButtonTitle = "כן"
+        popupInfoObj.secondButtonAction = {
+            self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+        }
+        ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
     }
 }
+
 
 extension StorePaymentActiveViewController {
     func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
         
         if request.requestName == TenRequestNames.getRemoveStorePaymentMethod {
-            
-                UIView.animate(withDuration: 0.3) {
-                self.tableView.reloadData()
+            UserAccountManager.sharedInstance.validateUserPayment(storePamentMathods: self.storePamentMathods)
+            UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
             }
         }
