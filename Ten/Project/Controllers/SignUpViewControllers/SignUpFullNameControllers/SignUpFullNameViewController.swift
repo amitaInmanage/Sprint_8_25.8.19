@@ -50,8 +50,8 @@ class SignUpFullNameViewController: BaseFormViewController {
     fileprivate func setupTextFields() {
         self.txtFldFirstName.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.txtFldLastName.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        self.txtFldFirstName.txtFldInput.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
-        self.txtFldLastName.txtFldInput.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
+        [txtFldFirstName.txtFldInput, txtFldLastName.txtFldInput].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged) })
+
         self.txtFldFirstName.txtFldInput.tag = TxtFldTag.firstName.rawValue
         self.txtFldLastName.txtFldInput.tag = TxtFldTag.lastName.rawValue
     }
@@ -71,7 +71,21 @@ class SignUpFullNameViewController: BaseFormViewController {
         }
     }
     
-    @objc override func textFieldDidEndEditing(_ textField: UITextField) {
+
+    @objc func editingChanged(_ textField: UITextField) {
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard
+            let habit = txtFldFirstName.txtFldInput.text, !habit.isEmpty,
+            let goal = txtFldLastName.txtFldInput.text, !goal.isEmpty
+            else {
+                self.btnContinue.Disabled()
+                return
+        }
         self.btnContinue.Enabled()
     }
     

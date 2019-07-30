@@ -22,18 +22,21 @@ struct TenRequestNames {
 }
 
 struct TenParamsNames {
+    static let acceptsUpdates = "acceptsUpdates"
     static let id = "id"
     static let type = "type"
     static let page = "page"
     static let add = "add"
     static let pinCode = "pinCode"
+    static let email  = "email"
+    static let gender = "gender"
     static let token = "token"
     static let screen = "screen"
     static let idNumber = "id_number"
-    static let lastName = "last_name"
+    static let lastName = "lastName"
     static let cellPhone = "cellphone"
     static let fieldsArr = "fieldsArr"
-    static let firstName = "first_name"
+    static let firstName = "firstName"
     static let cardNumber = "card_number"
     static let cardSecret = "card_secret"
     static let fuelTypes = "fuel_type_code"

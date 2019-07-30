@@ -10,15 +10,14 @@ import Foundation
 
 class EditUserInformationResponse: BaseUserResponse {
     
-    var tenUser = TenUser()
-    
     override func buildFromJSONDict(JSONDict: [String: Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
         
-        let tempUser = ParseValidator.getDictionaryForKey(key: "user", JSONDict: JSONDict, defaultValue: [String : Any]())
-        
-        self.tenUser = TenUser().buildFromJSONDict(JSONDict: tempUser) as! TenUser
-        
+        let tempUser = ParseValidator.getDictionaryForKey(key: "user", JSONDict: JSONDict, defaultValue: [String:Any]())
+      let user = TenUser().buildFromJSONDict(JSONDict: tempUser) as! TenUser
+
+            ApplicationManager.sharedInstance.userAccountManager.user = user
+
         return self
     }
 }

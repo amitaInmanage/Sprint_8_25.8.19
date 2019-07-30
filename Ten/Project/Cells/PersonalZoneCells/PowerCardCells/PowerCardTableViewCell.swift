@@ -21,7 +21,7 @@ class PowerCardTableViewCell: UITableViewCell {
     }
     
     fileprivate func initUI() {
-        self.selectionStyle = UITableViewCell.SelectionStyle.none
+        self.selectionStyle = .none
         self.lblDetails.text = Translation(Translations.SubTitles.rowPowercardTitle, Translations.SubTitles.rowPowercardTitleDefault)
         self.vw.addShadow()
     }

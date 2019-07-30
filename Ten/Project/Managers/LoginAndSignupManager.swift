@@ -12,7 +12,7 @@ class LoginAndSignupManager: BaseManager {
 
     static var sharedInstance = LoginAndSignupManager()
 
-    func callGetSmsToken(dictParams: [String:Any], andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
+    func callGetSmsToken(dictParams: [String:Any], andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?, vc: UIViewController? = nil) {
         var delegate = requestFinishedDelegate
         
         if delegate == nil {

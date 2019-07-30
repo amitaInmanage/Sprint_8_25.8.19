@@ -19,6 +19,7 @@ class MainScreenViewController: BaseFormViewController {
     
     @IBAction func didTapPersonalZone(_ sender: Any) {
         if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: PersonalZoneViewController.className) as? PersonalZoneViewController {
+            personalZone.user = ApplicationManager.sharedInstance.userAccountManager.user 
             ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
         }
     }

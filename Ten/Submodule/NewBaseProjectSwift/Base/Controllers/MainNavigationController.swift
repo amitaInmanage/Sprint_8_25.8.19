@@ -12,7 +12,7 @@ class MainNavigationController: BaseNavigationController {
     
     override func viewDidLoad() {
          super.viewDidLoad()
-        self.setNavigationBgColor()
+         self.setNavigationBgColor()
     }
     
     func setNavigationBgColor() {

@@ -14,7 +14,7 @@ class SecurityManagmentViewController: BaseFormViewController {
     @IBOutlet weak var lblTtile: IMLabel!
     @IBOutlet weak var lblSubTitle: IMLabel!
     
-    var user = TenUser()
+    var user = ApplicationManager.sharedInstance.userAccountManager.user
     var rowTypeArr: [RowType] = []
     
     enum RowType {

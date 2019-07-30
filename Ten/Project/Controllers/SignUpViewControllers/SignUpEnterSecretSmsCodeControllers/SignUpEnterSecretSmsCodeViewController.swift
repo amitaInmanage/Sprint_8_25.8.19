@@ -23,16 +23,28 @@ class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFiel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.initializeUI()
+        //TODO: delete after Test
+        self.showTokenPopup()
+        
+    }
+    
+    //TODO: delete after Test
+    fileprivate func showTokenPopup() {
+        let popupInfoObj = PopupInfoObj()
+        popupInfoObj.popupType = .general
+        popupInfoObj.strTitle = "QA Test"
+        popupInfoObj.strSubtitle = self.viewModel.strToken
+        popupInfoObj.strFirstButtonTitle = "ok"
+        ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
     }
     
     func initializeUI() {
         
         self.setupTextFields()
 
-        //TODO: Delete this call:
-        ApplicationManager.sharedInstance.loginAndSignupManager.callVerifySmsToken(dictParams: [TenParamsNames.token: self.viewModel.strToken, TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self)
+        //TODO: row for check:
+//        ApplicationManager.sharedInstance.loginAndSignupManager.callVerifySmsToken(dictParams: [TenParamsNames.token: self.viewModel.strToken, TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self)
         
         //TODO: remove or ask about thet:
         self.viewModel.validCodeStr = self.viewModel.validCodeStr.stringByReplacingFirstOccurrenceOfString(target: "}", withString: "").stringByReplacingFirstOccurrenceOfString(target: "{", withString: "")
@@ -116,9 +128,11 @@ class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFiel
         if !self.viewModel.isInProgress {
             self.viewModel.isInProgress = true
            self.changeCodeStateView(isSending: true)
-            ApplicationManager.sharedInstance.loginAndSignupManager.callGetSmsToken(dictParams: [TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self)
+            ApplicationManager.sharedInstance.loginAndSignupManager.callGetSmsToken(dictParams: [TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self, vc:  self)
             DispatchQueue.main.asyncAfter(deadline: .now() + 30.0) {
               self.changeCodeStateView(isSending: false)
+                //TODO: Delete show popup after QA
+                self.showTokenPopup()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     self.imgNewCode.isHidden = true
                     self.lblValidCodeStatus.attributedText = NSAttributedString(string: self.viewModel.validCodeStr, attributes:
@@ -178,14 +192,17 @@ extension SignUpEnterSecretSmsCodeViewController {
                     if let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: MainScreenViewController.className) as? MainScreenViewController {
                         main.user = ApplicationManager.sharedInstance.userAccountManager.user
                         ApplicationManager.sharedInstance.navigationController.pushTenViewController(main, animated: true)
-                        
-                        //                    if let personalZone = UIStoryboard(name: "PersonalZone", bundle: nil).instantiateViewController(withIdentifier: PersonalDetailsViewControlles.className) as? PersonalDetailsViewControlles {
-                        //                        personalZone.user = ApplicationManager.sharedInstance.userAccountManager.user
-                        //                        ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
                     }
                 } else {
                     ApplicationManager.sharedInstance.userAccountManager.updateScreensAndRegistrationToken(registrationToken: innerResponse.registrationToken, screens: innerResponse.nextScreenArr)
                 }
+            }
+        }
+        
+        //TODO: Delete this request afetr test!
+        if request.requestName == TenRequestNames.getSmsToken {
+            if let innerResponse = innerResponse as? GetSmsTokenResponse {
+            self.viewModel.strToken = innerResponse.token
             }
         }
     }
@@ -196,6 +213,5 @@ extension SignUpEnterSecretSmsCodeViewController {
         self.lblValidCodeStatus.textColor = UIColor.getApllicationErrorColor()
         self.lblValidCodeStatus.text = Translation(Translations.Titles.identificationCodeError, Translations.Titles.identificationCodeErrorDefault)
         self.lblTitle.text = Translation(Translations.Titles.registercodevalidationSubTitleCode, Translations.Titles.registercodevalidationSubTitleCodeDefault)
-        
     }
 }

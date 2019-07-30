@@ -275,19 +275,17 @@ class FourDigitCodeViewController: BaseViewController, MyTextFieldDelegate {
 extension FourDigitCodeViewController {
     func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
         if request.requestName == TenRequestNames.getEditUserInformation {
-            ApplicationManager.sharedInstance.userAccountManager.user = (innerResponse as! EditUserInformationResponse).tenUser
             if let SignUpVC = UIStoryboard.init(name: "SignUp", bundle: Bundle.main).instantiateViewController(withIdentifier: SignUpPasswordCreatedSuccessfullyViewController.className) as? SignUpPasswordCreatedSuccessfullyViewController {
                 ApplicationManager.sharedInstance.navigationController.pushTenViewController(SignUpVC, animated: true)
             }
         }
         if request.requestName == TenRequestNames.getVerifyPinCode {
-            //print("here")
             self.changePassword = true
             self.state.value = .changePassword
             self.updateChangePasswordUI()
-            
         }
     }
+    
     func requestFailed(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse) {
         
     }

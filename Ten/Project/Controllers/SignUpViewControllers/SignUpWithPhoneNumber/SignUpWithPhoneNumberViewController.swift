@@ -35,8 +35,7 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
     func initUI() {
         self.moveBtns()
         self.initializeTextFields()
-        //TODO: btnContinue - enable
-        //self.btnContinue.Disabled()
+        self.btnContinue.Disabled()
         self.lblInvalidNumber.isHidden = true
         self.txtFldPhoneNumber.txtFldInput.keyboardType = UIKeyboardType.numberPad
         
@@ -46,9 +45,6 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
         self.mDCTextSetUp(mDCText: self.txtFldPhoneNumber.txtFldInput, withPlaceholderText: "מספר נייד", withIndex: self.txtFldPhoneNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
         
         txtFldPhoneNumber.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
-        //TODO: Delete this row
-        txtFldPhoneNumber.txtFldInput.text = "0582888165"
     }
     
     override func fillTextWithTrans() {
@@ -105,11 +101,7 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
             self.lblInvalidNumber.isHidden = true
         }
         self.viewModel.strPhoneNumber = textField.text ?? ""
-        if self.viewModel.validatePhoneNumber() {
             self.btnContinue.Enabled()
-        }else {
-            self.btnContinue.Disabled()
-        }
     }
     
     //MARK: IBAction

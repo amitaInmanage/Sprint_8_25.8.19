@@ -25,15 +25,15 @@ extension UIViewController {
     }
     
     func setupBackBtn(title: String) {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: ApplicationManager.sharedInstance.mainViewController, action: #selector(HomeViewController.didTapBack(sender:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: .done, target: ApplicationManager.sharedInstance.mainViewController, action: #selector(HomeViewController.didTapBack(sender:)))
     }
     
     func setupBackBtn() {
-        self.setupBackBtn(imgName: "backGray")
+        self.setupBackBtn(imgName: "gray")
     }
     
     func setupBackBtn(imgName: String) {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: imgName), style: .plain, target: ApplicationManager.sharedInstance.mainViewController, action: #selector(HomeViewController.didTapBack(sender:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: imgName), style: .done, target: ApplicationManager.sharedInstance.mainViewController, action: #selector(HomeViewController.didTapBack(sender:)))
     }
     
     func hideBackBtn() {
@@ -50,8 +50,11 @@ extension UIViewController {
         //self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "logo", style: .plain, target: ApplicationManager.sharedInstance.mainViewController, action: #selector(HomeViewController.didTapBack(sender:)))
         
         //image logo
+//        let image = UIImage(named: "tenMainLogo")!.withRenderingMode(.alwaysTemplate)
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "tenMainLogo"), style: .done, target: ApplicationManager.sharedInstance.mainViewController, action: #selector(HomeViewController.didTapLogo(sender:)))
-
+        
+        
         self.navigationItem.leftBarButtonItem?.isEnabled = enable
 
     }

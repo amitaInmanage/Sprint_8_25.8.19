@@ -11,7 +11,7 @@ enum FontType: Int {
 }
 
 import UIKit
-import HTMLString
+//import HTMLString
 
 let arrAppFonts = (Bundle.main.infoDictionary?["UIAppFonts"] as? [Any])
 
@@ -59,7 +59,9 @@ class IMLabel: UILabel {
     override var text: String? {
         set(newValue) {
             if let aNewValue = newValue {
-                return super.text = aNewValue.removingHTMLEntities
+//                return super.text = aNewValue.removingHTMLEntities
+                return super.text = aNewValue
+                //TODO: Add HTMLString later
             }
         }
         get {

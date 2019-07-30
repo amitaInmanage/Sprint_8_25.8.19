@@ -19,7 +19,7 @@ target 'Ten' do
   pod 'EasyDate', '~> 0.9'
   pod 'UIColor-HexString'
   pod 'DeviceGuru'
-  pod 'HTMLString'
+#  pod 'HTMLString'
   pod 'Pushwoosh'
   pod 'SwiftKeychainWrapper'
   pod 'MaterialComponents/TextFields'
