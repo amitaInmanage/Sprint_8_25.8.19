@@ -18,7 +18,7 @@ class SignUpCarDetailsDelekTypeViewModel: BaseViewModel {
     var fuelType = [String: Any]()
     var data = ApplicationManager.sharedInstance.appGD.fuelTypesArr
     
-    func validateCarNumber() ->Bool {
+    func validateCarNumber()-> Bool {
         return ApplicationManager.sharedInstance.inputValidationManager.isValidCarNumber(carStr: strCarNumber)
     }
     

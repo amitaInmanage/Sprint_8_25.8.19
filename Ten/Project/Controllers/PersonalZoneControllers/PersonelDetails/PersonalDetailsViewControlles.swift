@@ -36,6 +36,8 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     @IBOutlet weak var tableDropDownHC: NSLayoutConstraint!
     @IBOutlet weak var imgDropDown: UIImageView!
     @IBOutlet weak var imgCheckBox: UIImageView!
+    @IBOutlet weak var lblFirstNameError: UILabel!
+    @IBOutlet weak var lblLastNameError: UILabel!
     
     var isSelected = false
     var keys = [Int]()
@@ -55,11 +57,13 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         self.initLable()
         self.initCheckBox()
     }
-
+    
     override func fillTextWithTrans() {
         self.lblTitle.text = Translation(Translations.Titles.editPersonal, Translations.Titles.editPersonalDefault)
         self.lblNotafication.text = Translation(Translations.AlertButtonsKeys.editPersonalInformation, Translations.AlertButtonsKeys.editPersonalInformationDefault)
         self.lblSecurityManager.text = Translation(Translations.AlertButtonsKeys.securityMenagement, Translations.AlertButtonsKeys.securityMenagementDefault)
+        self.lblFirstNameError.text = Translation(Translations.ValidationFormErros.fullNameError, Translations.ValidationFormErros.fullNameErrorDefault)
+        self.lblLastNameError.text = Translation(Translations.ValidationFormErros.fullNameError, Translations.ValidationFormErros.fullNameErrorDefault)
         self.lblSecurityManager.textColor = UIColor.getApplicationTextColor()
     }
     
@@ -77,7 +81,8 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     }
     
     fileprivate func initUI() {
-        
+        self.lblFirstNameError.isHidden = true
+        self.lblLastNameError.isHidden = true
         self.btnSaveChanges.isHidden = true
         self.view.backgroundColor = .clear
         self.contentView.addShadow()
@@ -127,12 +132,32 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         self.txtFldLastName.txtFldInput.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
         self.txtFldEmail.txtFldInput.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
         
+        self.txtFldFirstName.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        self.txtFldLastName.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        self.txtFldFirstName.txtFldInput.tag = TxtFldTag.firstName.rawValue
+        self.txtFldLastName.txtFldInput.tag = TxtFldTag.lastName.rawValue
+        
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        
+        switch textField.tag {
+        case TxtFldTag.firstName.rawValue:
+            self.txtFldFirstName.txtFldInput.text = textField.text ?? ""
+            lblFirstNameError.isHidden = true
+        case TxtFldTag.lastName.rawValue:
+            self.txtFldEmail.txtFldInput.text = textField.text ?? ""
+            lblLastNameError.isHidden = true
+        default:
+            break;
+        }
     }
     
     @objc override func textFieldDidEndEditing(_ textField: UITextField) {
         self.btnSaveChanges.isHidden = false
     }
-
+    
     //IBAction:
     @IBAction func didTapNotafication(_ sender: Any) {
         
@@ -185,15 +210,28 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     
     @IBAction func didTapSaveChange(_ sender: Any) {
         
-        self.viewModel.strFirstName = self.txtFldFirstName.txtFldInput.text!
-        self.viewModel.strLastName  = self.txtFldLastName.txtFldInput.text!
-        self.viewModel.strEmail  = self.txtFldEmail.txtFldInput.text!
-        self.viewModel.strCurrentEmail = user.strEmail
+        var isValid = true
         
-        self.viewModel.buildJsonAndSendEditUserInformation(vc: self)
-        
+        if !ApplicationManager.sharedInstance.inputValidationManager.isHebrewValidSingleName(name: self.txtFldFirstName.txtFldInput.text!) {
+            isValid = false
+            lblFirstNameError.isHidden = false
+        }
+        if !TenInputValidation.sharedInstance.isHebrewValidLastName(name: self.txtFldLastName.txtFldInput.text!) {
+            isValid = false
+            lblLastNameError.isHidden = false
+        }
+        if isValid {
+            self.viewModel.strFirstName = self.txtFldFirstName.txtFldInput.text!
+            self.viewModel.strLastName  = self.txtFldLastName.txtFldInput.text!
+            self.viewModel.strEmail  = self.txtFldEmail.txtFldInput.text!
+            self.viewModel.strCurrentEmail = user.strEmail
+            
+            self.viewModel.buildJsonAndSendEditUserInformation(vc: self)
+            
+        }
     }
 }
+
 
 extension PersonalDetailsViewControlles {
     func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {

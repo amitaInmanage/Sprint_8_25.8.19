@@ -22,16 +22,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSa-TS-bwo">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="490"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="515"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" אפשר קבלת נתונים" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjf-9X-frQ" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
-                                                <rect key="frame" x="226" y="445" width="109" height="17"/>
+                                                <rect key="frame" x="226" y="470" width="109" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkBoxOff" translatesAutoresizingMaskIntoConstraints="NO" id="5JN-K1-ySI">
-                                                <rect key="frame" x="343" y="445" width="17" height="17"/>
+                                                <rect key="frame" x="343" y="470" width="17" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="DWN-UC-3gM"/>
                                                     <constraint firstAttribute="width" constant="17" id="uDJ-j6-GYO"/>
@@ -147,7 +147,7 @@
                                                 </connections>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0j-ec-lD4" customClass="RegularButton" customModule="Ten" customModuleProvider="target">
-                                                <rect key="frame" x="226" y="440" width="141" height="28"/>
+                                                <rect key="frame" x="226" y="465" width="141" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="HeQ-SR-6cN"/>
                                                     <constraint firstAttribute="width" constant="141" id="xyT-a8-7FI"/>
@@ -191,7 +191,7 @@
                                             <constraint firstItem="OcT-Pg-E4B" firstAttribute="leading" secondItem="XSa-TS-bwo" secondAttribute="leading" constant="15" id="YML-Oa-15G"/>
                                             <constraint firstItem="hKz-dA-ddD" firstAttribute="top" secondItem="Ou3-9h-fxU" secondAttribute="bottom" constant="8" id="Zu0-ih-iuv"/>
                                             <constraint firstAttribute="trailing" secondItem="B0j-ec-lD4" secondAttribute="trailing" constant="8" id="a8i-Ml-eaB"/>
-                                            <constraint firstAttribute="height" constant="490" id="brN-ib-UzJ"/>
+                                            <constraint firstAttribute="height" constant="515" id="brN-ib-UzJ"/>
                                             <constraint firstItem="hKz-dA-ddD" firstAttribute="leading" secondItem="XSa-TS-bwo" secondAttribute="leading" constant="15" id="gOE-gB-9k3"/>
                                             <constraint firstItem="xcg-N8-c07" firstAttribute="top" secondItem="OcT-Pg-E4B" secondAttribute="bottom" constant="8" id="jSB-lP-g6n"/>
                                             <constraint firstAttribute="trailing" secondItem="xcg-N8-c07" secondAttribute="trailing" constant="12" id="kY3-vu-vYw"/>
@@ -257,7 +257,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZ9-QH-Sa8" customClass="TenButtonStyle" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="75" y="603" width="225" height="42"/>
+                                <rect key="frame" x="75" y="613" width="225" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Ynu-jH-C7X"/>
                                     <constraint firstAttribute="width" constant="225" id="tPO-QA-oaG"/>
@@ -273,8 +273,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hZ9-QH-Sa8" firstAttribute="centerX" secondItem="3NM-ry-m2v" secondAttribute="centerX" id="4vN-0c-RtR"/>
+                            <constraint firstItem="hZ9-QH-Sa8" firstAttribute="top" secondItem="PuG-mn-f2A" secondAttribute="bottom" constant="30" id="BZZ-yz-HYk"/>
                             <constraint firstItem="pt2-zW-DvA" firstAttribute="top" secondItem="8rL-RX-46g" secondAttribute="top" id="F1I-iM-Lod"/>
-                            <constraint firstItem="hZ9-QH-Sa8" firstAttribute="top" secondItem="PuG-mn-f2A" secondAttribute="bottom" constant="20" id="Q5N-6e-4LH"/>
                             <constraint firstItem="XSa-TS-bwo" firstAttribute="width" secondItem="8rL-RX-46g" secondAttribute="width" id="UC7-F9-5gd"/>
                             <constraint firstItem="PuG-mn-f2A" firstAttribute="trailing" secondItem="3NM-ry-m2v" secondAttribute="trailing" id="XLJ-0J-uND"/>
                             <constraint firstItem="pt2-zW-DvA" firstAttribute="leading" secondItem="3NM-ry-m2v" secondAttribute="leading" id="Y6M-uh-uZ1"/>
@@ -292,7 +292,9 @@
                         <outlet property="contentView" destination="8rL-RX-46g" id="0oT-c7-X8l"/>
                         <outlet property="imgCheckBox" destination="5JN-K1-ySI" id="DoL-CY-Z3N"/>
                         <outlet property="imgDropDown" destination="Hbl-8h-BAM" id="eND-Zv-Dhf"/>
+                        <outlet property="lblFirstNameError" destination="SqM-Na-cMo" id="nat-1A-Z5c"/>
                         <outlet property="lblGender" destination="Vh7-Ua-lHx" id="dbv-2N-Nkp"/>
+                        <outlet property="lblLastNameError" destination="xcg-N8-c07" id="vnb-GB-wy9"/>
                         <outlet property="lblNotafication" destination="hjf-9X-frQ" id="7yd-i1-iO3"/>
                         <outlet property="lblSecurityManager" destination="IGT-yV-R2F" id="2gV-Fo-YbM"/>
                         <outlet property="lblTitle" destination="P5e-II-RPE" id="xvF-5K-PRe"/>

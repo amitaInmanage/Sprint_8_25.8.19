@@ -129,11 +129,9 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
                             
                             ApplicationManager.sharedInstance.userAccountManager.updateScreensAndRegistrationToken(registrationToken: ApplicationManager.sharedInstance.userAccountManager.registrationToken, screens: data.arrNextScreens)
                         }
-                        
                     }
                 } else if failed {
                     //TODO: faild  ?
-                    print("faildpdjfkdsjsfdsk;jfndsakjfnasdfdsj")
                 } else {
                     //TODO: else ?
                 }

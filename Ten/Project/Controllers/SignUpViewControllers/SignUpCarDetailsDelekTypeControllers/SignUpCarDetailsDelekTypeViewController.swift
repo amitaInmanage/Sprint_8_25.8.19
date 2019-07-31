@@ -26,6 +26,16 @@ class SignUpCarDetailsDelekTypeViewController: BaseFormViewController {
         super.viewDidLoad()
         self.registerXibs()
         self.initializeUI()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.viewModel.validateCarNumber() {
+            self.btnContinue.Enabled()
+        } else {
+            self.btnContinue.Disabled()
+        }
     }
     
     func initializeUI() {
@@ -37,6 +47,7 @@ class SignUpCarDetailsDelekTypeViewController: BaseFormViewController {
     fileprivate func initializeTextFields() {
         self.txtFldCarNumber.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.txtFldCarNumber.txtFldInput.tag = TxtFldTag.carNumber.rawValue
+            [txtFldCarNumber.txtFldInput].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged) })
     }
     
     override func fillTextWithTrans() {
@@ -62,6 +73,25 @@ class SignUpCarDetailsDelekTypeViewController: BaseFormViewController {
         }
     }
     
+    @objc func editingChanged(_ textField: UITextField) {
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard
+            let carNumber = txtFldCarNumber.txtFldInput.text, !carNumber.isEmpty
+            else {
+                self.btnContinue.Disabled()
+                return
+        }
+        
+        if txtFldCarNumber.txtFldInput.text!.count > 6 {
+             self.btnContinue.Enabled()
+        }
+    }
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         switch textField.tag {
         case TxtFldTag.carNumber.rawValue:
@@ -73,10 +103,8 @@ class SignUpCarDetailsDelekTypeViewController: BaseFormViewController {
     
     //Mark: IBAction:
     @IBAction func didTapContinueBtn(_ sender: Any) {
-        if viewModel.strCarNumber.count < 6 {
-        } else {
-            self.viewModel.buildJsonAndSendUpdateRegistrationData(strScreenName: self.viewModel.screenName)
-        }
+        
+        self.viewModel.buildJsonAndSendUpdateRegistrationData(strScreenName: self.viewModel.screenName)
     }
 }
 
@@ -99,11 +127,6 @@ extension SignUpCarDetailsDelekTypeViewController: UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if self.viewModel.validateCarNumber() {
-            self.btnContinue.Enabled()
-        } else {
-            self.btnContinue.Disabled()
-        }
         self.viewModel.selectedIndexPath = indexPath.item
         let code = self.viewModel.data[indexPath.item].strcode
         self.viewModel.strCode = code

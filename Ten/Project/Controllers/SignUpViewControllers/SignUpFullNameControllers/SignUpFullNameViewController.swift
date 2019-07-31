@@ -50,6 +50,7 @@ class SignUpFullNameViewController: BaseFormViewController {
     fileprivate func setupTextFields() {
         self.txtFldFirstName.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.txtFldLastName.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
         [txtFldFirstName.txtFldInput, txtFldLastName.txtFldInput].forEach({ $0.addTarget(self, action: #selector(editingChanged), for: .editingChanged) })
 
         self.txtFldFirstName.txtFldInput.tag = TxtFldTag.firstName.rawValue
@@ -80,8 +81,8 @@ class SignUpFullNameViewController: BaseFormViewController {
             }
         }
         guard
-            let habit = txtFldFirstName.txtFldInput.text, !habit.isEmpty,
-            let goal = txtFldLastName.txtFldInput.text, !goal.isEmpty
+            let firstName = txtFldFirstName.txtFldInput.text, !firstName.isEmpty,
+            let lastName = txtFldLastName.txtFldInput.text, !lastName.isEmpty
             else {
                 self.btnContinue.Disabled()
                 return
