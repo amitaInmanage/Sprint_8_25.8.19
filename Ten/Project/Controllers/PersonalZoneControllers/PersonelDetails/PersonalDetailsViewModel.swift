@@ -9,23 +9,25 @@
 import UIKit
 
 class PersonalDetailsViewModel: BaseViewModel {
-    
+    var strCurrentEmail = ""
     var strEmail = ""
     var strFirstName = ""
     var strLastName = ""
-    var strGender = ""
+    var intGenderId = 0
     var strCellPhone = ""
     var strAcceptsUpdates = false
     
     func buildJsonAndSendEditUserInformation(vc: UIViewController?) {
         
-        let dict = [TenParamsNames.firstName: self.strFirstName,
+        var dict = [TenParamsNames.firstName: self.strFirstName,
                     TenParamsNames.lastName: self.strLastName,
-                    TenParamsNames.email: self.strEmail,
-                    TenParamsNames.gender: self.strGender,
+                    TenParamsNames.gender: self.intGenderId,
                     TenParamsNames.acceptsUpdates: self.strAcceptsUpdates] as [String : Any]
         
+        if strCurrentEmail != strEmail {
+             dict.updateValue(strEmail, forKey: TenParamsNames.email)
+        }
+       
         ApplicationManager.sharedInstance.userAccountManager.callEditUserInformation(dictParams: dict, andRequestFinishedDelegate: vc as! RequestFinishedProtocol)
     }
-    
 }

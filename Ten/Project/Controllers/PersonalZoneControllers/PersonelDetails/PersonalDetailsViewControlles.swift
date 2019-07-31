@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import iOSDropDown
+import UserNotifications
+
 
 class PersonalDetailsViewControlles: BaseFormViewController {
     
@@ -20,29 +21,31 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     }
     
     @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var lblTitle: IMLabel!
+    @IBOutlet weak var lblTitle: RegularLabel!
     @IBOutlet weak var txtFldFirstName: InputCustomView!
     @IBOutlet weak var txtFldLastName: InputCustomView!
     @IBOutlet weak var txtFldPhone: InputCustomView!
     @IBOutlet weak var txtFldEmail: InputCustomView!
-    @IBOutlet weak var btnNotafication: IMButton!
     @IBOutlet weak var lblNotafication: UILabel!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var lblSecurityManager: IMLabel!
+    @IBOutlet weak var lblSecurityManager: RegularLabel!
     @IBOutlet weak var btnSaveChanges: TenButtonStyle!
-    @IBOutlet weak var lblGender: IMLabel!
+    @IBOutlet weak var lblGender: RegularLabel!
     @IBOutlet weak var tableDropDown: UITableView!
     @IBOutlet weak var tableDropDownHC: NSLayoutConstraint!
     @IBOutlet weak var imgDropDown: UIImageView!
+    @IBOutlet weak var imgCheckBox: UIImageView!
     
+    var isSelected = false
     var keys = [Int]()
     var values = [String]()
     var viewModel = PersonalDetailsViewModel()
     var button: PersonalDetailsBottomButton?
     var genserArr = ApplicationManager.sharedInstance.appGD.genderArr
     var user = ApplicationManager.sharedInstance.userAccountManager.user
-    var isTableVisible = false
+    var isTableVisible = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +53,14 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         self.setupTextFields()
         self.initTextField()
         self.initLable()
+        self.initCheckBox()
+    }
+
+    override func fillTextWithTrans() {
+        self.lblTitle.text = Translation(Translations.Titles.editPersonal, Translations.Titles.editPersonalDefault)
+        self.lblNotafication.text = Translation(Translations.AlertButtonsKeys.editPersonalInformation, Translations.AlertButtonsKeys.editPersonalInformationDefault)
+        self.lblSecurityManager.text = Translation(Translations.AlertButtonsKeys.securityMenagement, Translations.AlertButtonsKeys.securityMenagementDefault)
+        self.lblSecurityManager.textColor = UIColor.getApplicationTextColor()
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -71,15 +82,30 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         self.view.backgroundColor = .clear
         self.contentView.addShadow()
         self.bottomView.addShadow()
-        self.tableDropDown.addShadow()
         self.tableDropDownHC.constant = 0
-   
+        
+    }
+    
+    fileprivate func initCheckBox() {
+        
+        if user.isAcceptsUpdates {
+            self.imgCheckBox.image = UIImage(named: "checkBoxOn")
+        } else {
+            self.imgCheckBox.image = UIImage(named: "checkBoxOff")
+        }
     }
     
     func initTextField() {
         self.txtFldFirstName.txtFldInput.text  = user.strFirstName
         self.txtFldLastName.txtFldInput.text = user.strLastName
         self.txtFldPhone.txtFldInput.text = user.strPhoneNumber
+        
+        if user.strGender.isEmpty {
+            self.lblGender.text = Translation(Translations.AlertButtonsKeys.gender, Translations.AlertButtonsKeys.genderDefault)
+        } else {
+            self.viewModel.intGenderId = Int(user.strGender) ?? 0
+            self.lblGender.text = genserArr[user.strGender] as? String
+        }
         
         self.mDCTextSetUp(mDCText: self.txtFldFirstName.txtFldInput, withPlaceholderText: "שם פרטי", withIndex: self.txtFldFirstName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
         
@@ -93,7 +119,6 @@ class PersonalDetailsViewControlles: BaseFormViewController {
             self.mDCTextSetUp(mDCText: self.txtFldEmail.txtFldInput, withPlaceholderText: "דוא׳׳ל", withIndex: self.txtFldEmail.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
             self.txtFldEmail.txtFldInput.text  = user.strEmail
         }
-        //TODO: Add gander
     }
     
     fileprivate func setupTextFields() {
@@ -107,28 +132,43 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     @objc override func textFieldDidEndEditing(_ textField: UITextField) {
         self.btnSaveChanges.isHidden = false
     }
-    
-    override func fillTextWithTrans() {
-        self.lblTitle.text = Translation(Translations.Titles.editPersonalInformation, Translations.Titles.editPersonalInformationDefault)
-        self.lblSecurityManager.text = Translation(Translations.AlertButtonsKeys.securityMenagement, Translations.AlertButtonsKeys.securityMenagementDefault)
-        self.lblSecurityManager.textColor = UIColor.getApplicationTextColor()
-    }
-    
+
     //IBAction:
-    @IBAction func didTapBtnNotafication(_ sender: Any) {
+    @IBAction func didTapNotafication(_ sender: Any) {
         
+        if user.isAcceptsUpdates {
+            self.isSelected = true
+        }
         
+        if isSelected {
+            UIView.animate(withDuration: 0.3) {
+                self.isSelected = false
+                self.imgCheckBox.image = UIImage(named: "checkBoxOff")
+                self.btnSaveChanges.isHidden = false
+                self.viewModel.strAcceptsUpdates = false
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.isSelected = true
+                self.imgCheckBox.image = UIImage(named: "checkBoxOn")
+                self.btnSaveChanges.isHidden = false
+                self.viewModel.strAcceptsUpdates = true
+                self.view.layoutIfNeeded()
+            }
+        }
     }
     
     @IBAction func didTapGender(_ sender: Any) {
-        
         UIView.animate(withDuration: 0.3) {
             if self.isTableVisible == false {
                 self.tableDropDownHC.constant = 44.0 * 2.0
                 self.imgDropDown.image = UIImage(named: "up")
                 self.isTableVisible = true
+                // self.tableDropDown.addShadow()
             } else {
                 self.imgDropDown.image = UIImage(named: "down")
+                // self.tableDropDown.removeShadow()
                 self.tableDropDownHC.constant = 0
                 self.isTableVisible = false
             }
@@ -148,6 +188,7 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         self.viewModel.strFirstName = self.txtFldFirstName.txtFldInput.text!
         self.viewModel.strLastName  = self.txtFldLastName.txtFldInput.text!
         self.viewModel.strEmail  = self.txtFldEmail.txtFldInput.text!
+        self.viewModel.strCurrentEmail = user.strEmail
         
         self.viewModel.buildJsonAndSendEditUserInformation(vc: self)
         
@@ -160,7 +201,7 @@ extension PersonalDetailsViewControlles {
             
             if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: PersonalZoneViewController.className) as? PersonalZoneViewController {
                 
-                personalZone.user = ApplicationManager.sharedInstance.userAccountManager.user
+                personalZone.user = self.user
                 
                 ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
                 
@@ -201,17 +242,19 @@ extension PersonalDetailsViewControlles: UITableViewDelegate, UITableViewDataSou
         cell?.textLabel?.text = values[indexPath.row]
         cell?.textLabel?.font = UIFont(name: LightLabel.getFontName(), size: 16)
         cell?.textLabel?.textAlignment = .right
-
+        
         return cell!
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+        self.viewModel.intGenderId = keys[indexPath.row]
         self.lblGender.text = values[indexPath.row]
         UIView.animate(withDuration: 0.3) {
+            // self.tableDropDown.removeShadow()
             self.tableDropDownHC.constant = 0
+            self.btnSaveChanges.isHidden = false
             self.isTableVisible = false
             self.view.layoutIfNeeded()
         }

@@ -12,6 +12,8 @@ class Translations {
     
     struct AlertButtonsKeys {
 
+        static let editPersonalInformation = "edit_personal_information_notification"
+        static let gender = "edit_personal_information_gender"
         static let securityManagementSetPinCode = "security_management_set_pin_code"
         static let securityManagementRemove = "security_management_remove_pin_code"
         static let securityMenagement = "security_management_title"
@@ -45,6 +47,8 @@ class Translations {
         static let no = "mobile_alert_btn_no"
         static let noInternet = "alert_no_access_to_server"
         
+        static let editPersonalInformationDefault = "Default"
+        static let genderDefault = "Default"
         static let securityManagementSetPinCodeDefault = "Default"
         static let securityManagementRemoveDefault = "Default"
         static let securityMenagementDefault = "Default"
@@ -166,6 +170,7 @@ class Translations {
     
     struct Titles {
         
+        static let editPersonal = "edit_personal_information_title"
         static let storePayment = "store_payment_methods_title"
         static let transactionsHistory = "personal_area_menu_transactions_history_title"
         static let verifyMyPassword = "verify_my_pin_code_title"
@@ -207,6 +212,7 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let editPersonalDefault = "Default"
         static let storePaymentDefault = "Default"
         static let transactionsHistoryDefault = "Default"
         static let verifyMyPasswordDefault = "Default"

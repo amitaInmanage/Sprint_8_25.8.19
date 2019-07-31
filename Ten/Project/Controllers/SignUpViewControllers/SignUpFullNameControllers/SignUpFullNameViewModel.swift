@@ -24,7 +24,7 @@ class SignUpFullNameViewModel: BaseViewModel {
     }
     
     func buildJsonAndSendUpdateRegistrationData(strScreenName: String) {
-        let dict = [TenParamsNames.firstName: self.strFirstName, TenParamsNames.lastName: self.strLastName]
+        let dict = [updateRegistrationParams.firstName: self.strFirstName, updateRegistrationParams.lastName: self.strLastName]
         
         fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
         

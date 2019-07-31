@@ -46,6 +46,11 @@ struct TenParamsNames {
     static let isAdditionalCard = "is_additional_card"
 }
 
+struct updateRegistrationParams {
+    static let firstName = "first_name"
+    static let lastName = "last_name"
+}
+
 enum ScreensNames: String {
     case pinCode = "pin_code"
     case creditCard = "credit_card"
@@ -83,14 +88,13 @@ struct EditUserInformationParams {
     static let screen = "screen"
 }
 
-struct UpdateRegistrationDataKeys {
-    static let fieldsArrIdNum = "fieldsArr[id_number]"
-    static let fieldsArrLastName = "fieldsArr[last_name]"
-    static let fieldsArrFirstName = "fieldsArr[first_name]"
-    static let fieldsArrCustomerType = "fieldsArr[customer_type]"
-    static let fieldsArrLicensePlate = "fieldsArr[license_plate]"
-    
-}
+//struct UpdateRegistrationDataKeys {
+//    static let fieldsArrIdNum = "fieldsArr[id_number]"
+//    static let fieldsArrLastName = "fieldsArr[last_name]"
+//    static let fieldsArrFirstName = "fieldsArr[first_name]"
+//    static let fieldsArrCustomerType = "fieldsArr[customer_type]"
+//    static let fieldsArrLicensePlate = "fieldsArr[license_plate]"
+//}
 
 struct PaymentUrlPrefix {
     static let baseUrl = "https://ten.inmanage.com/"

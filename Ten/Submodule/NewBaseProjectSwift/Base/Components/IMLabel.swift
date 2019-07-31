@@ -50,7 +50,6 @@ class IMLabel: UILabel {
     
     func initialize() {
         self.minimumScaleFactor = 0.5
-        
         self.textColor = UIColor.getApplicationIMLabelColor()
     
     }

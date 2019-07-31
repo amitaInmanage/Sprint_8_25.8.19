@@ -19,6 +19,7 @@ class TenUser: User {
     var accumulation = noAccumulation
     var hasPinCode = false
     var isClubMamber = true
+    var isAcceptsUpdates = false
     
     public func hasAccumulation() -> Bool{
         return self.accumulation != TenUser.noAccumulation
@@ -50,6 +51,8 @@ class TenUser: User {
         
         self.hasPinCode = ParseValidator.getBoolForKey(key: "has_pin_code", JSONDict: JSONDict, defaultValue: false)
         
+        self.isAcceptsUpdates = ParseValidator.getBoolForKey(key: "accepts_updates", JSONDict: JSONDict, defaultValue: false)
+
         return self
     }
 }

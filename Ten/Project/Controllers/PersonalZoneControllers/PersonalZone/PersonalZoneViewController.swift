@@ -39,7 +39,7 @@ class PersonalZoneViewController: BaseViewController {
     
     override func didMove(toParentViewController parent: UIViewController?) {
     
-        if let vc = parent as? TenStyleViewController {
+        if let vc = parent as? TenStyleViewController { 
             vc.changeConstraint(trailingConstraint: 0,
                                 bottomConstraint: 0,
                                 leadingConstraint: 0,
