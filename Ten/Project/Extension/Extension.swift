@@ -16,15 +16,6 @@ extension MainNavigationController {
                 vc.changeSize(height: height)
             }
             vc.boxChild.value = viewController
-            if ((viewController as? SignUpConfrimTermsOfServiceViewController) != nil){
-                
-            }
-         
-            if let signUpVC = viewController as? ActionBottomBtnDelegate {
-                vc.delegate = signUpVC
-            }
-            
-            vc.shouldShowBottomBtn.value = shouldShowBottomBtn
             ApplicationManager.sharedInstance.navigationController.pushViewController(vc, animated: true)
             
         }

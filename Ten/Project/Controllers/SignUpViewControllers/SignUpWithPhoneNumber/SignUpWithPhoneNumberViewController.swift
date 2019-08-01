@@ -22,14 +22,13 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.initUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.hideBackBtn()
+    override func didMove(toParentViewController parent: UIViewController?) {
+        if let navigation = parent as? TenStyleViewController {
+            navigation.hideBackBtn()
+        }
     }
     
     func initUI() {
@@ -54,30 +53,44 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
         self.btnContinueWithOutSignUp.addUnderline(title: Translation(Translations.AlertButtonsKeys.loginUnderlineText, Translations.AlertButtonsKeys.loginUnderlineTextDefault))
     }
   
-    private func moveBtns() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+    fileprivate func moveBtns() {
+       NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShow),
+                                          name: Notification.Name.UIKeyboardWillShow, object: nil)
+       NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHide),
+                                               name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
     
     //MARK: KeyboardNotification
-    @objc func keyboardWillHide(_ notification: Notification) {
+    @objc func handleKeyboardHide(_ notification: Notification) {
         consteintSignUpBtn.constant = consteintSignUpBtn.constant - self.viewModel.keyboardH + self.viewModel.navigationH + self.viewModel.statusBarH
         UIView.animate(withDuration: 0.3) {
              self.view.layoutIfNeeded()
         }
     }
     
-    @objc func keyboardWillShow (_ notification: Notification) {
+    @objc func handleKeyboardShow (_ notification: Notification) {
         if self.viewModel.keyboardH == 0 {
             if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 self.viewModel.keyboardH = keyboardRectangle.height
             }
         }
-        if consteintSignUpBtn.constant < self.viewModel.keyboardH {
-            consteintSignUpBtn.constant = consteintSignUpBtn.constant + self.viewModel.keyboardH - self.viewModel.navigationH - self.viewModel.statusBarH
+        if self.consteintSignUpBtn.constant < self.viewModel.keyboardH {
+            
             UIView.animate(withDuration: 0.3) {
+                
+                self.consteintSignUpBtn.constant = self.consteintSignUpBtn.constant + self.viewModel.keyboardH - self.viewModel.navigationH - self.viewModel.statusBarH
+                
                  self.view.layoutIfNeeded()
+            }
+        } else if self.consteintSignUpBtn.constant > 190 {
+            
+            UIView.animate(withDuration: 0.3) {
+                
+                self.consteintSignUpBtn.constant = self.consteintSignUpBtn.constant - self.viewModel.keyboardH + self.viewModel.navigationH + self.viewModel.statusBarH
+                
+                self.view.layoutIfNeeded()
+        
             }
         }
     }
@@ -122,7 +135,9 @@ extension SignUpWithPhoneNumberViewController {
                 if let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: SignUpEnterSecretSmsCodeViewController.className) as? SignUpEnterSecretSmsCodeViewController {
                     signUpVC.viewModel.strPhoneNumber = self.viewModel.strPhoneNumber
                     signUpVC.viewModel.strToken = innerResponse.token
+                    
                     ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
+                 
                 }
             }
         }

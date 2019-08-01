@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,11 +25,11 @@
         <scene sceneID="xNf-kf-1Wg">
             <objects>
                 <viewController storyboardIdentifier="SecondaryGeneralPopupViewController" id="wWF-jb-6CA" customClass="SecondaryGeneralPopupViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="rY7-rz-B1g">
+                    <view key="view" contentMode="scaleToFill" id="rY7-rz-B1g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-J8-xAT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-J8-xAT">
                                 <rect key="frame" x="38" y="177" width="299" height="333.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY4-RC-b7h">
@@ -44,19 +44,19 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-Wc-3vU">
-                                        <rect key="frame" x="16" y="40" width="268" height="140.5"/>
+                                        <rect key="frame" x="16" y="40" width="267" height="140.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Ff-Ax-ZkY">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="50.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="50.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKd-YH-GzS" customClass="RegularLabel">
-                                                        <rect key="frame" x="0.0" y="0.0" width="268" height="29.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="29.5"/>
                                                         <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7a-vy-ToP" customClass="LightLabel" customModule="Ten" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="29.5" width="268" height="21"/>
+                                                        <rect key="frame" x="0.0" y="29.5" width="267" height="21"/>
                                                         <fontDescription key="fontDescription" name="Heebo-Light" family="Heebo" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -64,15 +64,15 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="nRg-ui-Zm0">
-                                                <rect key="frame" x="0.0" y="80.5" width="268" height="60"/>
+                                                <rect key="frame" x="0.0" y="80.5" width="267" height="60"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="wyw-nz-r5G">
-                                        <rect key="frame" x="8" y="192.5" width="284" height="111"/>
+                                        <rect key="frame" x="8" y="192.5" width="283" height="111"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg4-b1-udX" customClass="MediumButton" customModule="Ten" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="284" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="283" height="33"/>
                                                 <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="14"/>
                                                 <state key="normal" title="CONFIRM">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -82,7 +82,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTy-gm-8bR" customClass="MediumButton" customModule="Ten" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="39" width="284" height="33"/>
+                                                <rect key="frame" x="0.0" y="39" width="283" height="33"/>
                                                 <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="14"/>
                                                 <state key="normal" title="SKIP"/>
                                                 <connections>
@@ -90,7 +90,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkd-oR-VVT">
-                                                <rect key="frame" x="0.0" y="78" width="284" height="33"/>
+                                                <rect key="frame" x="0.0" y="78" width="283" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -876,11 +876,11 @@
         <scene sceneID="ovd-OE-TAS">
             <objects>
                 <viewController storyboardIdentifier="GeneralPopupViewController" id="B1Q-Wr-Ncc" customClass="GeneralPopupViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Nh4-7E-c6j">
+                    <view key="view" contentMode="scaleToFill" id="Nh4-7E-c6j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jLc-KX-gXQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLc-KX-gXQ">
                                 <rect key="frame" x="38" y="176" width="299" height="335.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M46-US-2AQ">
@@ -895,19 +895,19 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="C0C-6p-Ape">
-                                        <rect key="frame" x="16" y="40" width="268" height="203.5"/>
+                                        <rect key="frame" x="16" y="40" width="267" height="203.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Y1-ME-ILt">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="50.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="50.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tee-ug-26T" customClass="RegularLabel">
-                                                        <rect key="frame" x="0.0" y="0.0" width="268" height="29.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="29.5"/>
                                                         <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5w-WX-pSa" customClass="LightLabel" customModule="Ten" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="29.5" width="268" height="21"/>
+                                                        <rect key="frame" x="0.0" y="29.5" width="267" height="21"/>
                                                         <fontDescription key="fontDescription" name="Heebo-Light" family="Heebo" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -915,20 +915,20 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="z7R-sj-SNC">
-                                                <rect key="frame" x="0.0" y="80.5" width="268" height="60"/>
+                                                <rect key="frame" x="0.0" y="80.5" width="267" height="60"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aff-jA-qQm" customClass="MediumButton" customModule="Ten" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="170.5" width="268" height="33"/>
+                                                <rect key="frame" x="0.0" y="170.5" width="267" height="33"/>
                                                 <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="14"/>
                                                 <state key="normal" title="SKIP"/>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="3Gu-FZ-JH8">
-                                        <rect key="frame" x="8" y="255.5" width="284" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="3Gu-FZ-JH8">
+                                        <rect key="frame" x="8" y="255.5" width="102" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfb-zo-cgu" customClass="TenButtonStyle" customModule="Ten" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="50"/>
                                                 <color key="backgroundColor" red="0.20784313730000001" green="0.58823529409999997" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="18"/>
                                                 <state key="normal" title="אישור">
@@ -939,7 +939,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0K-oS-OUE" customClass="TenButtonStyle" customModule="Ten" customModuleProvider="target">
-                                                <rect key="frame" x="145" y="0.0" width="139" height="50"/>
+                                                <rect key="frame" x="54" y="0.0" width="48" height="50"/>
                                                 <color key="backgroundColor" red="0.20784313730000001" green="0.58823529409999997" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="En9-nT-ugP"/>
@@ -1091,27 +1091,37 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="aRN-xW-eP9">
+                                        <rect key="frame" x="12" y="12" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="08f-95-Rjd"/>
+                                            <constraint firstAttribute="width" constant="15" id="pns-W0-XlO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMi-bG-ocq" customClass="IMButton" customModule="Ten" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="mQJ-cx-Rzs"/>
+                                            <constraint firstAttribute="height" constant="40" id="ywr-8C-kC3"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="didTapCancel:" destination="yAQ-yW-6D2" eventType="touchUpInside" id="XFR-gy-Kpp"/>
+                                            <action selector="didTapExit:" destination="jAx-7K-62M" eventType="touchUpInside" id="IBD-tB-qL3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="HMi-bG-ocq" firstAttribute="top" secondItem="W2Q-fm-9oG" secondAttribute="top" id="51e-iG-qQE"/>
+                                    <constraint firstItem="HMi-bG-ocq" firstAttribute="leading" secondItem="W2Q-fm-9oG" secondAttribute="leading" id="c42-8u-czA"/>
                                     <constraint firstItem="iuK-LS-2z8" firstAttribute="leading" secondItem="W2Q-fm-9oG" secondAttribute="leading" constant="43" id="rY4-fi-aX9"/>
                                     <constraint firstItem="iuK-LS-2z8" firstAttribute="top" secondItem="W2Q-fm-9oG" secondAttribute="top" constant="21" id="rhI-ow-8a5"/>
                                     <constraint firstAttribute="trailing" secondItem="iuK-LS-2z8" secondAttribute="trailing" constant="44" id="sNv-et-C4E"/>
+                                    <constraint firstItem="aRN-xW-eP9" firstAttribute="top" secondItem="W2Q-fm-9oG" secondAttribute="top" constant="12" id="t0Q-vw-asg"/>
                                     <constraint firstAttribute="bottom" secondItem="iuK-LS-2z8" secondAttribute="bottom" constant="14.5" id="vnR-U6-aKw"/>
+                                    <constraint firstItem="aRN-xW-eP9" firstAttribute="leading" secondItem="W2Q-fm-9oG" secondAttribute="leading" constant="12" id="waY-Dq-wDc"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMi-bG-ocq" customClass="IMButton" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="21" y="172.5" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="mQJ-cx-Rzs"/>
-                                    <constraint firstAttribute="height" constant="20" id="ywr-8C-kC3"/>
-                                </constraints>
-                                <state key="normal" image="close"/>
-                                <connections>
-                                    <action selector="didTapCancel:" destination="yAQ-yW-6D2" eventType="touchUpInside" id="XFR-gy-Kpp"/>
-                                    <action selector="didTapExit:" destination="jAx-7K-62M" eventType="touchUpInside" id="IBD-tB-qL3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1124,8 +1134,6 @@
                             <constraint firstItem="fhB-ip-lAg" firstAttribute="trailing" secondItem="rEv-CH-X4L" secondAttribute="trailing" id="kGW-5g-qei"/>
                             <constraint firstItem="W2Q-fm-9oG" firstAttribute="centerY" secondItem="rEv-CH-X4L" secondAttribute="centerY" id="mH4-0A-03P"/>
                             <constraint firstItem="rEv-CH-X4L" firstAttribute="trailing" secondItem="W2Q-fm-9oG" secondAttribute="trailing" constant="10" id="oUh-Bk-jsS"/>
-                            <constraint firstItem="HMi-bG-ocq" firstAttribute="leading" secondItem="W2Q-fm-9oG" secondAttribute="leading" constant="11" id="wwF-7d-cpd"/>
-                            <constraint firstItem="HMi-bG-ocq" firstAttribute="top" secondItem="W2Q-fm-9oG" secondAttribute="top" constant="11" id="yfX-LQ-BTa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rEv-CH-X4L"/>
                     </view>

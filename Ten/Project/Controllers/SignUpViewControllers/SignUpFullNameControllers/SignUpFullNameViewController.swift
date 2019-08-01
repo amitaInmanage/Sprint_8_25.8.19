@@ -28,7 +28,12 @@ class SignUpFullNameViewController: BaseFormViewController {
         super.viewDidLoad()
         self.initializeUI()
     }
-
+    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        if let navigation = parent as? TenStyleViewController {
+            navigation.hideBackBtn()
+        }
+    }
     
     func initializeUI() {
         self.setupTextFields()

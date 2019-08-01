@@ -26,6 +26,7 @@ class SignUpFullNameViewModel: BaseViewModel {
     func buildJsonAndSendUpdateRegistrationData(strScreenName: String) {
         let dict = [updateRegistrationParams.firstName: self.strFirstName, updateRegistrationParams.lastName: self.strLastName]
         
+
         fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
         
         ApplicationManager.sharedInstance.userAccountManager.callUpdateRegistrationData(dictParams: fieldsArr, screenName: strScreenName, andRequestFinishedDelegate: nil)

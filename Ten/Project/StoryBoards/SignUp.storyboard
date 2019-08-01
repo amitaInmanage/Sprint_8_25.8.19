@@ -887,42 +887,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pav-6a-6GP">
-                                <rect key="frame" x="16" y="39" width="343" height="27"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzo-Th-BcD">
+                                <rect key="frame" x="10" y="0.0" width="355" height="117"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pav-6a-6GP">
+                                        <rect key="frame" x="6" y="28" width="343" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="subTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N83-iY-WYh" customClass="BoldLabel" customModule="Ten" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="71" width="335" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="SUe-ay-I10"/>
+                                    <constraint firstAttribute="height" constant="117" id="61V-zf-hjU"/>
+                                </constraints>
+                            </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXr-v3-hu6" customClass="IMWebView" customModule="Ten" customModuleProvider="target">
+                                <rect key="frame" x="10" y="117" width="355" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs2-9J-CCW">
+                                <rect key="frame" x="0.0" y="599.5" width="375" height="67.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67.5" id="wlm-Da-1Xl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXr-v3-hu6" customClass="IMWebView" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="117" width="375" height="550"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N83-iY-WYh" customClass="BoldLabel" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="20" y="76" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Confrim">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapBtnConfrimTermsOfUse:" destination="RIz-v0-bym" eventType="touchUpInside" id="HxJ-1I-ae9"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pav-6a-6GP" firstAttribute="leading" secondItem="zwE-CK-2r1" secondAttribute="leading" constant="16" id="2Fk-qG-enZ"/>
-                            <constraint firstItem="MXr-v3-hu6" firstAttribute="leading" secondItem="zwE-CK-2r1" secondAttribute="leading" id="3z8-y8-h3F"/>
-                            <constraint firstItem="zwE-CK-2r1" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="N83-iY-WYh" secondAttribute="trailing" constant="20" id="AUh-Ey-Wft"/>
-                            <constraint firstItem="MXr-v3-hu6" firstAttribute="trailing" secondItem="zwE-CK-2r1" secondAttribute="trailing" id="DFh-DL-Ebp"/>
-                            <constraint firstItem="N83-iY-WYh" firstAttribute="top" secondItem="pav-6a-6GP" secondAttribute="bottom" constant="10" id="DwL-3e-5N5"/>
-                            <constraint firstItem="pav-6a-6GP" firstAttribute="top" secondItem="zwE-CK-2r1" secondAttribute="top" constant="19" id="Kr9-Vv-8E3"/>
-                            <constraint firstItem="zwE-CK-2r1" firstAttribute="trailing" secondItem="pav-6a-6GP" secondAttribute="trailing" constant="16" id="Yin-hD-9k3"/>
+                            <constraint firstItem="Bs2-9J-CCW" firstAttribute="trailing" secondItem="zwE-CK-2r1" secondAttribute="trailing" id="33k-pa-0h9"/>
+                            <constraint firstItem="MXr-v3-hu6" firstAttribute="leading" secondItem="zwE-CK-2r1" secondAttribute="leading" constant="10" id="3z8-y8-h3F"/>
+                            <constraint firstItem="Xzo-Th-BcD" firstAttribute="top" secondItem="mhe-CV-yJl" secondAttribute="top" id="77A-2N-uPG"/>
+                            <constraint firstItem="MXr-v3-hu6" firstAttribute="trailing" secondItem="zwE-CK-2r1" secondAttribute="trailing" constant="-10" id="DFh-DL-Ebp"/>
+                            <constraint firstItem="Xzo-Th-BcD" firstAttribute="leading" secondItem="zwE-CK-2r1" secondAttribute="leading" constant="10" id="OXh-co-29i"/>
                             <constraint firstItem="zwE-CK-2r1" firstAttribute="bottom" secondItem="MXr-v3-hu6" secondAttribute="bottom" id="ZhN-LL-eti"/>
-                            <constraint firstItem="MXr-v3-hu6" firstAttribute="top" secondItem="N83-iY-WYh" secondAttribute="bottom" constant="20" id="sjV-st-Wen"/>
-                            <constraint firstItem="N83-iY-WYh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="zwE-CK-2r1" secondAttribute="leading" constant="20" id="xxa-GQ-yFH"/>
+                            <constraint firstItem="zwE-CK-2r1" firstAttribute="bottom" secondItem="Bs2-9J-CCW" secondAttribute="bottom" id="e7G-F2-JLQ"/>
+                            <constraint firstItem="Bs2-9J-CCW" firstAttribute="leading" secondItem="zwE-CK-2r1" secondAttribute="leading" id="fpL-Yj-wWC"/>
+                            <constraint firstItem="zwE-CK-2r1" firstAttribute="trailing" secondItem="Xzo-Th-BcD" secondAttribute="trailing" constant="10" id="uol-OT-LKy"/>
+                            <constraint firstItem="MXr-v3-hu6" firstAttribute="top" secondItem="Xzo-Th-BcD" secondAttribute="bottom" id="zTL-o5-l0s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zwE-CK-2r1"/>
                     </view>
                     <connections>
+                        <outlet property="btnConfrimTermsOfUse" destination="Bs2-9J-CCW" id="GxI-TL-tQx"/>
                         <outlet property="lblSubTitle" destination="N83-iY-WYh" id="fwo-iL-dsw"/>
                         <outlet property="lblTitle" destination="pav-6a-6GP" id="u4T-CM-hph"/>
                         <outlet property="webViewTermsOfService" destination="MXr-v3-hu6" id="I7O-EI-lYu"/>

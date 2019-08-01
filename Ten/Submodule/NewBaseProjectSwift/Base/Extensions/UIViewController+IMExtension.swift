@@ -22,14 +22,16 @@ extension UIViewController {
 //        UINavigationBar.appearance().backgroundColor = UIColor.getApplicationThemeColor()
 //        UIApplication.statusBarBackgroundColor = UIColor.getApplicationThemeColor()
 
+        
     }
+
     
-    func setupBackBtn(title: String) {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: .done, target: ApplicationManager.sharedInstance.mainViewController, action: #selector(HomeViewController.didTapBack(sender:)))
-    }
+//    func setupBackBtn(title: String) {
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: title, style: .done, target: ApplicationManager.sharedInstance.mainViewController, action: #selector(HomeViewController.didTapBack(sender:)))
+//    }
     
     func setupBackBtn() {
-        self.setupBackBtn(imgName: "gray")
+       self.setupBackBtn(imgName: "gray")
     }
     
     func setupBackBtn(imgName: String) {
@@ -37,7 +39,7 @@ extension UIViewController {
     }
     
     func hideBackBtn() {
-        self.navigationItem.rightBarButtonItem = nil
+         self.navigationItem.rightBarButtonItem = nil
     }
 
     func hideLogo() {

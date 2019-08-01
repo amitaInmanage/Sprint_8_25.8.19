@@ -12,6 +12,8 @@ class SignUpCarDetailsDelekTypeViewModel: BaseViewModel {
     
     var strCode = ""
     var screenName = ""
+    var isSelecTedFuelType = false
+    var isCarNumberValid = false
     var strCarNumber = ""
     var selectedIndexPath = 100
     var fieldsArr = [String:Any]()

@@ -29,15 +29,6 @@ class SignUpCarDetailsDelekTypeViewController: BaseFormViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if self.viewModel.validateCarNumber() {
-            self.btnContinue.Enabled()
-        } else {
-            self.btnContinue.Disabled()
-        }
-    }
-    
     func initializeUI() {
         self.initializeTextFields()
         self.btnContinue.Disabled()
@@ -62,6 +53,7 @@ class SignUpCarDetailsDelekTypeViewController: BaseFormViewController {
     
     //MARK: text field delegate:
     override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        
         //Max length UITextField:
         if let textFieldText = textField.text,
             let rangeOfTextToReplace = Range(range, in: textFieldText) {
@@ -82,19 +74,16 @@ class SignUpCarDetailsDelekTypeViewController: BaseFormViewController {
         }
         guard
             let carNumber = txtFldCarNumber.txtFldInput.text, !carNumber.isEmpty
-            else {
-                self.btnContinue.Disabled()
-                return
+               else {
+                  self.btnContinue.Disabled()
+            return
         }
-        
-        if txtFldCarNumber.txtFldInput.text!.count > 6 {
-             self.btnContinue.Enabled()
-        }
+        self.validateCarnumberLength()
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         switch textField.tag {
-        case TxtFldTag.carNumber.rawValue:
+          case TxtFldTag.carNumber.rawValue:
             self.viewModel.strCarNumber = textField.text ?? ""
         default:
             break;
@@ -127,6 +116,8 @@ extension SignUpCarDetailsDelekTypeViewController: UICollectionViewDelegate, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.validateSelectedFuelType()
         self.viewModel.selectedIndexPath = indexPath.item
         let code = self.viewModel.data[indexPath.item].strcode
         self.viewModel.strCode = code
@@ -134,3 +125,31 @@ extension SignUpCarDetailsDelekTypeViewController: UICollectionViewDelegate, UIC
     }
 }
 
+extension SignUpCarDetailsDelekTypeViewController {
+    
+    func validateSelectedFuelType() {
+        
+        if self.viewModel.isCarNumberValid {
+            self.viewModel.isSelecTedFuelType = true
+            self.btnContinue.Enabled()
+        } else {
+            self.viewModel.isSelecTedFuelType = true
+            self.btnContinue.Disabled()
+        }
+    }
+    
+    func validateCarnumberLength() {
+        if txtFldCarNumber.txtFldInput.text!.count > 6 && self.viewModel.isSelecTedFuelType {
+            self.viewModel.isCarNumberValid = true
+            self.btnContinue.Enabled()
+            
+        } else if txtFldCarNumber.txtFldInput.text!.count > 6 && self.viewModel.isSelecTedFuelType == false {
+            self.viewModel.isCarNumberValid = true
+            self.btnContinue.Disabled()
+            
+        } else {
+            self.btnContinue.Disabled()
+            self.viewModel.isCarNumberValid = false
+        }
+    }
+}

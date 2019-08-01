@@ -31,9 +31,11 @@ class SignUpWithPhoneNumberViewModel: BaseViewModel {
         popupInfoObj.strFirstButtonTitle = Translation(Translations.Titles.sending, Translations.Titles.btnRegisterDefault)
         popupInfoObj.strSecondButtonTitle = Translation(Translations.Titles.sending, Translations.Titles.btnSkipDefault)
         popupInfoObj.secondButtonAction = {
-            //TODO: Send to HomePage WithOut Register
+            if let main = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: MainScreenViewController.className) as? MainScreenViewController {
+                main.userConnect = false
+                ApplicationManager.sharedInstance.navigationController.pushTenViewController(main, animated: true)
+            }
         }
         ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
     }
-    
 }

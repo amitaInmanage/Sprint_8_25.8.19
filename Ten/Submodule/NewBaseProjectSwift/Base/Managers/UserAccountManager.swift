@@ -25,7 +25,7 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         }
     }
     
-    var arrScreens: Set<ScreenName> = Set<ScreenName>()
+    var arrScreens: Array<ScreenName> = Array<ScreenName>()
     var registrationToken = ""
     var fieldsArr = [String: Any]()
     
@@ -679,15 +679,31 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         
     }
     
+    func isScreenInStack(screenName: ScreenName) -> Bool {
+        
+        _ = arrScreens.filter({(item: ScreenName) in
+            
+            let stringMatch = item.screenName == screenName.screenName
+             return stringMatch
+            
+        })
+       return false
+    }
+    
     func updateScreensAndRegistrationToken(registrationToken: String?, screens: [ScreenName]?, data: Any? = nil) {
+        
         if let screens = screens {
             screens.forEach { (screen) in
-                self.arrScreens.insert(screen)
+                
+                if self.isScreenInStack(screenName: screen) == false {
+                     self.arrScreens.append(screen)
+                }
             }
         }
         if let registrationToken = registrationToken {
             self.registrationToken = registrationToken
         }
+        
         self.moveToNextScreen()
     }
     
@@ -696,18 +712,18 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         if let nextScreen = self.arrScreens.first {
             
             switch nextScreen.screenName {
-            case ScreensNames.personalInformation.rawValue:
-                if let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: SignUpFullNameViewController.className) as? SignUpFullNameViewController {
-                    signUpVC.viewModel.screenName = nextScreen.screenName
-                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
-                }
             case ScreensNames.termsOfUse.rawValue:
                 if let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: SignUpConfrimTermsOfServiceViewController.className) as? SignUpConfrimTermsOfServiceViewController {
                     signUpVC.viewModel.screenName = nextScreen.screenName
                     signUpVC.viewModel.strHTML = nextScreen.contentHtml
                     signUpVC.viewModel.strUrl = nextScreen.strUrl
                     signUpVC.viewModel.strTitle = nextScreen.strTitle
-                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true, shouldShowBottomBtn: true)
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
+                }
+            case ScreensNames.personalInformation.rawValue:
+                if let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: SignUpFullNameViewController.className) as? SignUpFullNameViewController {
+                    signUpVC.viewModel.screenName = nextScreen.screenName
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
                 }
             case ScreensNames.customerType.rawValue:
                 if let signUpVC = UIStoryboard.init(name: "SignUp", bundle: Bundle.main).instantiateViewController(withIdentifier: SignUpChooseCustomerTypeViewController.className) as? SignUpChooseCustomerTypeViewController {

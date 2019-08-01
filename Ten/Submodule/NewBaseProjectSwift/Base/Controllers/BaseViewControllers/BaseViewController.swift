@@ -19,6 +19,17 @@ class BaseViewController: UIViewController,RequestFinishedProtocol,GoogleAnalyti
         fillTextWithTrans()
         
         self.view.backgroundColor = UIColor.getApplicationScreenBackgroundColor()
+        if !(self is SplashViewController) {
+            //ApplicationManager.sharedInstance.mainViewController.showMain(show: false)
+            
+            //ApplicationManager.sharedInstance.mainViewController.showBackButton(showBackButton: true, withBackActionDelegate: nil)
+            
+            self.setNavigationBgColor(color: .white)
+            self.setupBackBtn()
+            self.setupLogo()
+        }
+        
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,16 +43,11 @@ class BaseViewController: UIViewController,RequestFinishedProtocol,GoogleAnalyti
 //                ApplicationManager.sharedInstance.mainViewController.showBackButton(showBackButton: true, withBackActionDelegate: nil)
 //            }
 //        }
-        if !(self is SplashViewController) {
-            //ApplicationManager.sharedInstance.mainViewController.showMain(show: false)
-
-            //ApplicationManager.sharedInstance.mainViewController.showBackButton(showBackButton: true, withBackActionDelegate: nil)
-            
-            self.setNavigationBgColor(color: .white)
-            self.setupBackBtn()
-            self.setupLogo()
-            
-        }
+        
+        
+        
+       
+        
     }
     
 

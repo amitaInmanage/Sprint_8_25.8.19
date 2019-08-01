@@ -448,37 +448,20 @@
                                     <constraint firstAttribute="trailing" secondItem="AUL-Md-h8b" secondAttribute="trailing" id="OFV-1x-RKu"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7h5-Z7-TaG" customClass="IMButton" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="I3V-zX-9Id"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Confrim">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96985918280000005" blue="0.96923929450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapBottomBtn:" destination="pms-2s-mk0" eventType="touchUpInside" id="Wna-zs-VdU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="02Q-tz-Nw5" firstAttribute="trailing" secondItem="ftN-Tf-QCW" secondAttribute="trailing" id="Hyv-Mn-H9f"/>
                             <constraint firstItem="ftN-Tf-QCW" firstAttribute="leading" secondItem="02Q-tz-Nw5" secondAttribute="leading" id="JwG-E6-bga"/>
-                            <constraint firstItem="7h5-Z7-TaG" firstAttribute="trailing" secondItem="02Q-tz-Nw5" secondAttribute="trailing" id="LbB-Xk-ZGX"/>
                             <constraint firstItem="02Q-tz-Nw5" firstAttribute="trailing" secondItem="lvJ-MM-ND0" secondAttribute="trailing" constant="10" id="QW5-m5-kcE"/>
                             <constraint firstItem="ftN-Tf-QCW" firstAttribute="top" secondItem="02Q-tz-Nw5" secondAttribute="top" id="aMp-w0-bOG"/>
                             <constraint firstItem="02Q-tz-Nw5" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lvJ-MM-ND0" secondAttribute="bottom" constant="53" id="eHl-NR-FBj"/>
                             <constraint firstItem="02Q-tz-Nw5" firstAttribute="top" secondItem="lvJ-MM-ND0" secondAttribute="top" constant="-40" id="eaF-rv-fAq"/>
                             <constraint firstItem="lvJ-MM-ND0" firstAttribute="leading" secondItem="02Q-tz-Nw5" secondAttribute="leading" constant="10" id="hfF-v1-zVC"/>
-                            <constraint firstItem="7h5-Z7-TaG" firstAttribute="leading" secondItem="02Q-tz-Nw5" secondAttribute="leading" id="pMI-cZ-pfy"/>
-                            <constraint firstItem="7h5-Z7-TaG" firstAttribute="bottom" secondItem="02Q-tz-Nw5" secondAttribute="bottom" id="xQ3-Sz-SSI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="02Q-tz-Nw5"/>
                     </view>
                     <connections>
-                        <outlet property="bottomBtn" destination="7h5-Z7-TaG" id="D0b-dk-bGZ"/>
                         <outlet property="bottomConstraint" destination="eHl-NR-FBj" id="eZk-0k-CtM"/>
                         <outlet property="containerHeightConst" destination="BLF-Da-oY8" id="8xf-0S-3B1"/>
                         <outlet property="containerView" destination="lvJ-MM-ND0" id="tj1-NA-Vtp"/>

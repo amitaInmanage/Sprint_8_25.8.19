@@ -24,7 +24,7 @@ class LoginAndSignupManager: BaseManager {
         ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
     }
     
-    func callVerifySmsToken(dictParams: [String:Any], andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
+    func callVerifySmsToken(dictParams: [String:Any], andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?, vc: UIViewController?) {
         var delegate = requestFinishedDelegate
         
         if delegate == nil {
@@ -36,21 +36,21 @@ class LoginAndSignupManager: BaseManager {
         ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
     }
     
-    func callUpdateRegistrationData(dictParams: [String:Any]?, screenName: Any?, andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
-        var delegate = requestFinishedDelegate
-        
-        if delegate == nil {
-            delegate = self
-        }
-       
-        let request = UpdateRegistrationDataRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
-        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
-    }
+//    func callUpdateRegistrationData(dictParams: [String:Any]?, screenName: Any?, andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
+//        var delegate = requestFinishedDelegate
+//
+//        if delegate == nil {
+//            delegate = self
+//        }
+//
+//        let request = UpdateRegistrationDataRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
+//        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
+//    }
 
     // MARK: RequestFinishedProtocol
     
     func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
-        
+
     }
     
     func requestFailed(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse) {

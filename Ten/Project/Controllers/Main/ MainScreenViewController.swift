@@ -11,16 +11,24 @@ import UIKit
 class MainScreenViewController: BaseFormViewController {
     
     var user = ApplicationManager.sharedInstance.userAccountManager.user
-    
+    var userConnect = true
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     
     @IBAction func didTapPersonalZone(_ sender: Any) {
-        if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: PersonalZoneViewController.className) as? PersonalZoneViewController {
-            personalZone.user = ApplicationManager.sharedInstance.userAccountManager.user 
-            ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+        
+        if userConnect {
+            if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: PersonalZoneViewController.className) as? PersonalZoneViewController {
+                personalZone.user = ApplicationManager.sharedInstance.userAccountManager.user
+                ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+            }
+        } else {
+            //TODO: Send cal user Disconnected
+            if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: PersonalZoneViewController.className) as? PersonalZoneViewController {
+                ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+            }
         }
     }
 }

@@ -110,7 +110,8 @@ class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFiel
         } else {
             self.textFields[textField.tag].resignFirstResponder()
             let txt = self.viewModel.txtArr.joined(separator: "")
-            ApplicationManager.sharedInstance.loginAndSignupManager.callVerifySmsToken(dictParams: [TenParamsNames.token: txt, TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self)
+            ApplicationManager.sharedInstance.loginAndSignupManager.callVerifySmsToken(dictParams: [TenParamsNames.token: txt, TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self, vc: self)
+//             ApplicationManager.sharedInstance.navigationController.popViewController(animated: true)
         }
         return true
     }
@@ -187,6 +188,8 @@ extension SignUpEnterSecretSmsCodeViewController {
             
             if let innerResponse = innerResponse as? VerifySmsTokenResponse {
                 
+                ApplicationManager.sharedInstance.userAccountManager.arrScreens = [ScreenName]()
+                
                 if innerResponse.userExists {
                     
                     if let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: MainScreenViewController.className) as? MainScreenViewController {
@@ -201,8 +204,10 @@ extension SignUpEnterSecretSmsCodeViewController {
         
         //TODO: Delete this request afetr test!
         if request.requestName == TenRequestNames.getSmsToken {
+            
             if let innerResponse = innerResponse as? GetSmsTokenResponse {
-            self.viewModel.strToken = innerResponse.token
+                self.viewModel.strToken = innerResponse.token
+                
             }
         }
     }

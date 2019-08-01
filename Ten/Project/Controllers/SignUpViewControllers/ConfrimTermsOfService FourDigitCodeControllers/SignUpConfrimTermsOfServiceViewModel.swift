@@ -17,9 +17,10 @@ class SignUpConfrimTermsOfServiceViewModel: BaseViewModel {
     var costumerType = ""
     var fieldsArr = [String: Any]()
     
-    func buildJsonAndSendUpdateRegistrationData(strScreenName: String) {
-                
-        ApplicationManager.sharedInstance.userAccountManager.callUpdateRegistrationData(dictParams: fieldsArr, screenName: strScreenName, andRequestFinishedDelegate: nil)
+    
+    func buildJsonAndSendUpdateRegistrationData(strScreenName: String, vc: UIViewController? = nil) {
         
+        
+        ApplicationManager.sharedInstance.userAccountManager.callUpdateRegistrationData(dictParams: fieldsArr, screenName: strScreenName, andRequestFinishedDelegate: vc as? RequestFinishedProtocol)
     }
 }
