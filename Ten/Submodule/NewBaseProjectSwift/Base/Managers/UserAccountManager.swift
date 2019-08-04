@@ -18,6 +18,7 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
     
     var user = TenUser()
     var storePamentMathods = [StorePaymentMethodsItem]()
+    var tokenNewFuilingDevice = ""
     
     var isUserLoggedIn: Bool {
         get {
@@ -172,7 +173,7 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         
         ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
     }
-
+    
     
     func callEditUserNotificationWithUserAccountProcessObj(userAccountProcessObj: UserAccountProcessObj, andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
         
@@ -313,11 +314,11 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
             delegate = self
         }
         
-         let request = AddCreditCardRequest().initWithDictParams(dictParams: nil, andRequestFinishDelegate: requestFinishedDelegate)
+        let request = AddCreditCardRequest().initWithDictParams(dictParams: nil, andRequestFinishDelegate: requestFinishedDelegate)
         ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
     }
     
-
+    
     func callGetUserFavoritesWithRequestFinishedDelegate(requestFinishedDelegate :RequestFinishedProtocol?) {
         
         var delegate = requestFinishedDelegate
@@ -438,6 +439,20 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         
     }
     
+    func callStarsNewFuelingDeviceProcess(requestFinishedDelegate: RequestFinishedProtocol?) {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        let request = StartNewFuelingDeviceProcessRequest().initWithDictParams(dictParams: SilentLoginRequest().getInitialDictParams(), andRequestFinishDelegate: delegate)
+        
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
+        
+    }
+    
     func callGetSmsToken(dictParams: [String:Any], andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?, showHud: Bool = true) {
         
         var delegate = requestFinishedDelegate
@@ -468,6 +483,22 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         let request = UpdateRegistrationDataRequest().initWithDictParams(dictParams: newDictParams, andRequestFinishDelegate: delegate)
         ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
     }
+    
+    func callUpdateNewFuelingDeviceProcessData(dictParams: [String:Any], screenName: String, andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        var newDictParams = dictParams
+        newDictParams.updateValue(self.tokenNewFuilingDevice, forKey: UpdateNewFuelingDeviceProcessDataParams.token)
+        newDictParams.updateValue(screenName, forKey: UpdateNewFuelingDeviceProcessDataParams.screen)
+        
+        let request = UpdateNewFuelingDeviceProcessDataRequest().initWithDictParams(dictParams: newDictParams, andRequestFinishDelegate: delegate)
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
+    }
+    
     
     func callverifyPinCode(dictParams: [String:Any], andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
         
@@ -684,10 +715,10 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         _ = arrScreens.filter({(item: ScreenName) in
             
             let stringMatch = item.screenName == screenName.screenName
-             return stringMatch
+            return stringMatch
             
         })
-       return false
+        return false
     }
     
     func updateScreensAndRegistrationToken(registrationToken: String?, screens: [ScreenName]?, data: Any? = nil) {
@@ -696,7 +727,7 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
             screens.forEach { (screen) in
                 
                 if self.isScreenInStack(screenName: screen) == false {
-                     self.arrScreens.append(screen)
+                    self.arrScreens.append(screen)
                 }
             }
         }
@@ -801,19 +832,19 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
                 }
             case ScreensNames.fuelingCardPrivate.rawValue:
                 print("fuelingCardPrivate")
-//                if let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: CarInformationFcPrivateViewController.className) as? CarInformationFcPrivateViewController {
-//                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(vc, animated: true)
-//                }
+                //                if let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: CarInformationFcPrivateViewController.className) as? CarInformationFcPrivateViewController {
+                //                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(vc, animated: true)
+            //                }
             case ScreensNames.fuelingCardBusiness.rawValue:
                 print("fuelingCardBusiness")
-//                if let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: CarInformationFcPrivateViewController.className) as? CarInformationFcPrivateViewController {
-//                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(vc, animated: true)
-//                }
+                //                if let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: CarInformationFcPrivateViewController.className) as? CarInformationFcPrivateViewController {
+                //                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(vc, animated: true)
+            //                }
             case ScreensNames.extraSecurity.rawValue:
                 print("extraSecurity")
-//                if let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: CarInformationFcPrivateViewController.className) as? CarInformationFcPrivateViewController {
-//                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(vc, animated: true)
-//                }
+                //                if let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: CarInformationFcPrivateViewController.className) as? CarInformationFcPrivateViewController {
+                //                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(vc, animated: true)
+            //                }
             case ScreensNames.carInformationFcPrivateReadonly.rawValue:
                 if let signUpVC = UIStoryboard.init(name: "SignUp", bundle: Bundle.main).instantiateViewController(withIdentifier: SignUpCarDetailsViewController.className) as? SignUpCarDetailsViewController {
                     signUpVC.viewModel.screenName = nextScreen.screenName
@@ -832,10 +863,16 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
             case ScreensNames.completeProcess.rawValue:
                 let dict = [String: Any]()
                 self.fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
-            self.callUpdateRegistrationData(dictParams: self.fieldsArr, screenName: nextScreen.screenName, andRequestFinishedDelegate: self)
+                self.callUpdateRegistrationData(dictParams: self.fieldsArr, screenName: nextScreen.screenName, andRequestFinishedDelegate: self)
                 
             case ScreensNames.pinCode.rawValue:
                 print("pinCode")
+                
+            case ScreensNames.chooseCreditCard.rawValue:
+                if let AddCar = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: AddNewCarViewController.className) as? AddNewCarViewController {
+                    AddCar.viewModel.screenName = nextScreen.screenName
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(AddCar, animated: true)
+                }
                 
             default:
                 print("none")
@@ -843,8 +880,8 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
             
             self.arrScreens.removeFirst()
             return true
-            
         } else {
+            self.registrationToken = ""
             if let signUpVC = UIStoryboard.init(name: "SignUp", bundle: Bundle.main).instantiateViewController(withIdentifier: SignUpAddAnotherCarViewController.className) as? SignUpAddAnotherCarViewController {
                 ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
             }
@@ -881,6 +918,23 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
     //MARK: RequestFinishedProtocol
     
     func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
+        
+        
+        if request.requestName == TenRequestNames.getStarsNewFuelingDeviceProcess {
+            if let innerResponse = innerResponse as? StartNewFuelingDeviceProcessResponse {
+                
+                self.tokenNewFuilingDevice = innerResponse.token
+                self.arrScreens = innerResponse.arrNextScreens
+                self.updateScreensAndRegistrationToken(registrationToken: nil, screens:self.arrScreens)
+            }
+        }
+        
+        if request.requestName == TenRequestNames.getUpdateNewFuelingDeviceProcessData {
+            if let innerResponse = innerResponse as? UpdateNewFuelingDeviceProcessDataResponse {
+                self.arrScreens.removeAll()
+                self.updateScreensAndRegistrationToken(registrationToken: nil, screens: innerResponse.arrNextScreens)
+            }
+        }
         
         if request.requestName == ServerUserRequests.addUser {
             
@@ -920,19 +974,7 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
             
         } else if request.requestName == ServerLoginCalls.getSmsToken {
             
-//            if let vc = UIStoryboard.init(name: "Login", bundle: Bundle.main).instantiateViewController(withIdentifier: RegisterCodeValidationViewController.className) as? RegisterCodeValidationViewController {
-//
-//                if let phone = request.dictParams[ServerLoginCallsParams.cellphone] as? String{
-//                    vc.strPhoneNumber = phone
-//                }
-//
-//                ApplicationManager.sharedInstance.navigationController.pushViewController(vc, animated: true)
-//            }
-            
         } else if request.requestName == ServerLoginCalls.loginWithSmsToken {
-            //            if self.user.strLoginHash.count > 0 {
-            //                ApplicationManager.sharedInstance.keychainManager.saveStringToKeychain(self.user.strLoginHash, forKey: DiskKeys.loginHash)
-            //            }
             
         } else if request.requestName == ServerLoginCalls.connectSocialAccount {
             ApplicationManager.sharedInstance.userAccountManager.user = (innerResponse as! ConnectSocialAccountResponse).user as! TenUser
@@ -957,7 +999,6 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
             
             if let checkSmsTokenResponse = innerResponse as? CheckSmsTokenResponse {
                 if checkSmsTokenResponse.isUserExist {
-//                    self.user = innerResponse.
                     self.moveToHomePage()
                 } else {
                     ApplicationManager.sharedInstance.userAccountManager.moveToNextScreen()
@@ -970,13 +1011,11 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         } else if request.requestName == UpdateRegistrationDataCalls.updateRegistrationData {
             if let innerResponse = innerResponse as? UpdateRegistrationDataResponse {
                 self.updateScreensAndRegistrationToken(registrationToken: self.registrationToken, screens: innerResponse.arrNextScreens)
+                if innerResponse.isUserExists {
+                    self.registrationToken = ""
+                }
             }
         }
-        //        else if request.requestName == ServerUserRequests.editUserInformation {
-        //            if let innerResponse = innerResponse as? EditUserInformationResponse {
-        //
-        //            }
-        //        }
     }
     
     func requestFailed(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse) {

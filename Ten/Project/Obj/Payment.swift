@@ -12,12 +12,16 @@ class Payment: BaseInnerResponse {
 
     var strIcon = ""
     var intType = 0
+    var strTitle = ""
+    var intId = 0
     
     override func buildFromJSONDict(JSONDict: [String : Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
         
         self.strIcon = ParseValidator.getStringForKey(key: "icon", JSONDict: JSONDict, defaultValue: "")
+        self.strTitle = ParseValidator.getStringForKey(key: "title", JSONDict: JSONDict, defaultValue: "")
         self.intType = ParseValidator.getIntForKey(key: "type", JSONDict: JSONDict, defaultValue: 0)
+        self.intId = ParseValidator.getIntForKey(key: "id", JSONDict: JSONDict, defaultValue: 0)
         
         return self
     }

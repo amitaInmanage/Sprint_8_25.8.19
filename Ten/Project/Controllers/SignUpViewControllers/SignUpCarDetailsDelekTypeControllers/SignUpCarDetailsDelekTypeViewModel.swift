@@ -24,6 +24,14 @@ class SignUpCarDetailsDelekTypeViewModel: BaseViewModel {
         return ApplicationManager.sharedInstance.inputValidationManager.isValidCarNumber(carStr: strCarNumber)
     }
     
+    func buildJsonAndSendUpdateNewFuelingDeviceProcessData(strScreenName: String) {
+        
+        let dict = [TenParamsNames.licensePlate: self.strCarNumber, TenParamsNames.fuelTypes: self.strCode] as [String:Any]
+        fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
+        
+        ApplicationManager.sharedInstance.userAccountManager.callUpdateNewFuelingDeviceProcessData(dictParams: fieldsArr, screenName: strScreenName, andRequestFinishedDelegate: nil)
+    }
+    
     func buildJsonAndSendUpdateRegistrationData(strScreenName: String) {
         
         let dict = [TenParamsNames.licensePlate: self.strCarNumber, TenParamsNames.fuelTypes: self.strCode] as [String:Any]

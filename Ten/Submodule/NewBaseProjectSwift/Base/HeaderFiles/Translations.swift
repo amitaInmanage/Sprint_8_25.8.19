@@ -12,6 +12,9 @@ class Translations {
     
     struct AlertButtonsKeys {
 
+        static let chooseCreditCardNew = "choose_credit_card_new"
+        static let chooseCreditCardUse = "choose_credit_card_use"
+        static let vehicleManagement = "vehicle_management_add_new_car"
         static let editPersonalInformation = "edit_personal_information_notification"
         static let gender = "edit_personal_information_gender"
         static let securityManagementSetPinCode = "security_management_set_pin_code"
@@ -47,6 +50,9 @@ class Translations {
         static let no = "mobile_alert_btn_no"
         static let noInternet = "alert_no_access_to_server"
         
+        static let chooseCreditCardNewDefault = "Default"
+        static let chooseCreditCardUseDefault = "Default"
+        static let vehicleManagementDefault = "Default"
         static let editPersonalInformationDefault = "Default"
         static let genderDefault = "Default"
         static let securityManagementSetPinCodeDefault = "Default"
@@ -86,6 +92,7 @@ class Translations {
     
     struct  SubTitles {
     
+        static let chooseCreditCard = "choose_credit_card_subtitle"
         static let storePayment = "store_payment_methods_subtitle"
         static let securityManagment = "security_management_subtitle"
         static let dialogDisconnectSubtitle = "dialog_disconnect_subtitle"
@@ -102,6 +109,7 @@ class Translations {
         static let creditCardSubTitle = "credit_card_details_sub_title"
         static let carInformationClub = "car_information_club_fuel_type"
         
+        static let chooseCreditCardDefault = "Default"
         static let storePaymentDefault = "Default"
         static let securityManagmentDefault = "Default"
         static let dialogDisconnectSubtitleDefault = "Default"
@@ -170,6 +178,9 @@ class Translations {
     
     struct Titles {
         
+        static let chooseCreditCardBottom = "choose_credit_card_bottom_sheet"
+        static let chooseCreditCard = "choose_credit_card_title"
+        static let vehicleManagement = "vehicle_management_title"
         static let editPersonal = "edit_personal_information_title"
         static let storePayment = "store_payment_methods_title"
         static let transactionsHistory = "personal_area_menu_transactions_history_title"
@@ -212,6 +223,9 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let chooseCreditCardBottomDefault = "Default"
+        static let chooseCreditCardDefault = "Default"
+        static let vehicleManagementDefault = "Default"
         static let editPersonalDefault = "Default"
         static let storePaymentDefault = "Default"
         static let transactionsHistoryDefault = "Default"

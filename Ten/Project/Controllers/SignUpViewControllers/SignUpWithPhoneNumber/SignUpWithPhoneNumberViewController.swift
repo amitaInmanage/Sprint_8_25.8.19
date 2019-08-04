@@ -23,6 +23,9 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
+        
+       
+        
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {

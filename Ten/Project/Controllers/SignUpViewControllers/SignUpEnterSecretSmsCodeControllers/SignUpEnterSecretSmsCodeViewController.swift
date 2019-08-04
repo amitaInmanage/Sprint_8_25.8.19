@@ -26,9 +26,8 @@ class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFiel
         self.initializeUI()
         //TODO: delete after Test
         self.showTokenPopup()
-        
     }
-    
+
     //TODO: delete after Test
     fileprivate func showTokenPopup() {
         let popupInfoObj = PopupInfoObj()

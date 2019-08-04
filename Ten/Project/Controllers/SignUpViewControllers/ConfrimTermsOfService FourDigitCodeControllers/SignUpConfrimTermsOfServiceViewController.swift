@@ -22,7 +22,7 @@ class SignUpConfrimTermsOfServiceViewController: BaseFormViewController, WKNavig
         super.viewDidLoad()
         self.initializeUI()
         self.loadUrl()
-       
+    
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -36,16 +36,10 @@ class SignUpConfrimTermsOfServiceViewController: BaseFormViewController, WKNavig
             vc.vwContent = nil
             vc.containerView = nil
             vc.navigationItem.hidesBackButton = true
-//            let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.bordered, target: self, action: Selector("back:"))
-//            vc.navigationItem.rightBarButtonItem = newBackButton
+
         }
     }
     
-//    func back(sender: UIBarButtonItem) {
-////        let vc = (self.navigationController?.viewControllers[1].self.navigationController)!
-////        vc.popToViewController(vc, animated: true)
-//        self.navigationController?.popViewController(animated: true)
-//    }
     
     func initializeUI() {
         self.view.backgroundColor = .clear

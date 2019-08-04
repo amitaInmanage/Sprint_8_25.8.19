@@ -11,7 +11,7 @@ import UIKit
 class UpdateRegistrationDataResponse: BaseInnerResponse {
     
     var arrNextScreens = [ScreenName]()
-    
+    var isUserExists = false
     
     override func buildFromJSONDict(JSONDict: [String : Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
@@ -30,6 +30,7 @@ class UpdateRegistrationDataResponse: BaseInnerResponse {
             let tempUser = ParseValidator.getDictionaryForKey(key: "user", JSONDict: JSONDict, defaultValue: [String:Any]())
             if !tempUser.isEmpty {
                 ApplicationManager.sharedInstance.userAccountManager.user.buildFromJSONDict(JSONDict: tempUser) as! TenUser
+                self.isUserExists = true
             }
         }
      

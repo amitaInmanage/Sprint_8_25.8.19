@@ -38,7 +38,11 @@ class SignUpChooseCustomerTypeViewController: BaseViewController {
     
     //MARK: IBAction:
     @IBAction func didTapContinueBtn(_ sender: Any) {
-        self.viewModel.buildJsonAndSendUpdateRegistrationData(strScreenName: self.viewModel.screenName)
+        if ApplicationManager.sharedInstance.userAccountManager.registrationToken.isEmpty {
+           self.viewModel.buildJsonAndSendUpdateNewFuelingDeviceProcessData(strScreenName: self.viewModel.screenName)
+        } else {
+            self.viewModel.buildJsonAndSendUpdateRegistrationData(strScreenName: self.viewModel.screenName)
+        }
     }
 }
 

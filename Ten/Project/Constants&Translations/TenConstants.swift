@@ -9,7 +9,7 @@
 import UIKit
 
 struct TenRequestNames {
-    
+   
     static let getSmsToken = "getSmsToken"
     static let getOnBoarding = "getOnboarding"
     static let getVerifyPinCode = "verifyPinCode"
@@ -19,9 +19,13 @@ struct TenRequestNames {
     static let getTransactionsHistory = "getTransactionsHistory"
     static let getUpdateRegistrationData = "updateRegistrationData"
     static let getRemoveStorePaymentMethod = "removeStorePaymentMethod"
+    static let getStarsNewFuelingDeviceProcess = "startNewFuelingDeviceProcess"
+    static let getUpdateNewFuelingDeviceProcessData = "updateNewFuelingDeviceProcessData"
+
 }
 
 struct TenParamsNames {
+    static let cardId = "card_id"
     static let acceptsUpdates = "acceptsUpdates"
     static let id = "id"
     static let type = "type"
@@ -59,6 +63,7 @@ enum ScreensNames: String {
     case customerType = "customer_type"
     case extraSecurity = "extra_security"
     case completeProcess = "complete_process"
+    case chooseCreditCard = "choose_credit_card"
     case carInformationClub = "car_information_club"
     case fuelingCardPrivate = "fueling_card_private"
     case personalInformation = "personal_information"
@@ -85,6 +90,12 @@ struct UpdateRegistrationDataCallsParams {
 }
 
 struct EditUserInformationParams {
+    static let screen = "screen"
+}
+
+
+struct UpdateNewFuelingDeviceProcessDataParams {
+    static let token = "token"
     static let screen = "screen"
 }
 

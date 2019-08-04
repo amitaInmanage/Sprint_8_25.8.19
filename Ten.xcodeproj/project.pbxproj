@@ -398,6 +398,16 @@
 		F454180522E881B900C9CCFF /* GetTransactionsHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */; };
 		F454180722E8905D00C9CCFF /* TransactionHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */; };
 		F45B170D22EF4255006CBE22 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45B170C22EF4255006CBE22 /* iOSDropDown.framework */; };
+		F45B171222F6B7C5006CBE22 /* CarManagmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B171022F6B7C5006CBE22 /* CarManagmentTableViewCell.swift */; };
+		F45B171322F6B7C5006CBE22 /* CarManagmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45B171122F6B7C5006CBE22 /* CarManagmentTableViewCell.xib */; };
+		F45B171522F6E620006CBE22 /* StartNewFuelingDeviceProcessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B171422F6E620006CBE22 /* StartNewFuelingDeviceProcessResponse.swift */; };
+		F45B171722F6E696006CBE22 /* StartNewFuelingDeviceProcessRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B171622F6E696006CBE22 /* StartNewFuelingDeviceProcessRequest.swift */; };
+		F45B171922F6EEF9006CBE22 /* UpdateNewFuelingDeviceProcessDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B171822F6EEF9006CBE22 /* UpdateNewFuelingDeviceProcessDataResponse.swift */; };
+		F45B171B22F6EF3E006CBE22 /* UpdateNewFuelingDeviceProcessDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B171A22F6EF3E006CBE22 /* UpdateNewFuelingDeviceProcessDataRequest.swift */; };
+		F45B171F22F705CB006CBE22 /* AddNewCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B171E22F705CB006CBE22 /* AddNewCarViewController.swift */; };
+		F45B172122F7061B006CBE22 /* AddNewCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B172022F7061B006CBE22 /* AddNewCarViewModel.swift */; };
+		F45B172722F71D43006CBE22 /* CreditCardExistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B172522F71D43006CBE22 /* CreditCardExistsTableViewCell.swift */; };
+		F45B172822F71D43006CBE22 /* CreditCardExistsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45B172622F71D43006CBE22 /* CreditCardExistsTableViewCell.xib */; };
 		F45D570922E5AF260088E704 /* CreatePasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D570822E5AF260088E704 /* CreatePasswordTableViewCell.swift */; };
 		F45D570B22E5AF420088E704 /* CreatePasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45D570A22E5AF420088E704 /* CreatePasswordTableViewCell.xib */; };
 		F460570A22E9AEC500E0DB12 /* AmountHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460570922E9AEC500E0DB12 /* AmountHistory.swift */; };
@@ -824,6 +834,16 @@
 		F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryItem.swift; sourceTree = "<group>"; };
 		F45B170C22EF4255006CBE22 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45B170E22F1B753006CBE22 /* Ten.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ten.entitlements; sourceTree = "<group>"; };
+		F45B171022F6B7C5006CBE22 /* CarManagmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarManagmentTableViewCell.swift; sourceTree = "<group>"; };
+		F45B171122F6B7C5006CBE22 /* CarManagmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarManagmentTableViewCell.xib; sourceTree = "<group>"; };
+		F45B171422F6E620006CBE22 /* StartNewFuelingDeviceProcessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewFuelingDeviceProcessResponse.swift; sourceTree = "<group>"; };
+		F45B171622F6E696006CBE22 /* StartNewFuelingDeviceProcessRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewFuelingDeviceProcessRequest.swift; sourceTree = "<group>"; };
+		F45B171822F6EEF9006CBE22 /* UpdateNewFuelingDeviceProcessDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNewFuelingDeviceProcessDataResponse.swift; sourceTree = "<group>"; };
+		F45B171A22F6EF3E006CBE22 /* UpdateNewFuelingDeviceProcessDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNewFuelingDeviceProcessDataRequest.swift; sourceTree = "<group>"; };
+		F45B171E22F705CB006CBE22 /* AddNewCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCarViewController.swift; sourceTree = "<group>"; };
+		F45B172022F7061B006CBE22 /* AddNewCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCarViewModel.swift; sourceTree = "<group>"; };
+		F45B172522F71D43006CBE22 /* CreditCardExistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardExistsTableViewCell.swift; sourceTree = "<group>"; };
+		F45B172622F71D43006CBE22 /* CreditCardExistsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardExistsTableViewCell.xib; sourceTree = "<group>"; };
 		F45D570822E5AF260088E704 /* CreatePasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordTableViewCell.swift; sourceTree = "<group>"; };
 		F45D570A22E5AF420088E704 /* CreatePasswordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePasswordTableViewCell.xib; sourceTree = "<group>"; };
 		F460570922E9AEC500E0DB12 /* AmountHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountHistory.swift; sourceTree = "<group>"; };
@@ -1002,6 +1022,8 @@
 		3EB304A8215BBD070020DC61 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F45B172222F71B13006CBE22 /* CreditCardTableViewCell */,
+				F45B170F22F6B78F006CBE22 /* CarManagmentCells */,
 				F450309122EDC23100BD8202 /* StorePaymentCells */,
 				F45417FD22E8760900C9CCFF /* TransactionsHistoryCells */,
 				F48E294422E43E320010B01B /* SecurityManagmentCells */,
@@ -1064,6 +1086,7 @@
 		E815F12C22AFDF570015D1DD /* PersonalZoneControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F45B171D22F70598006CBE22 /* AddNewCar */,
 				F450308422EDA43E00BD8202 /* StorePayment */,
 				F450307F22EDA0A800BD8202 /* CarsManagment */,
 				F4903DC222E83A340029879C /* TransactionsHidtory */,
@@ -1962,6 +1985,8 @@
 				F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */,
 				F450309822EDD6E600BD8202 /* RemoveStorePaymentMethodRequest.swift */,
 				F450309C22EDE7C800BD8202 /* AddCreditCardRequest.swift */,
+				F45B171622F6E696006CBE22 /* StartNewFuelingDeviceProcessRequest.swift */,
+				F45B171A22F6EF3E006CBE22 /* UpdateNewFuelingDeviceProcessDataRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1979,6 +2004,8 @@
 				F450309622EDD69C00BD8202 /* RemoveStorePaymentMethodResponse.swift */,
 				F450309A22EDE77700BD8202 /* AddCreditCardResponse.swift */,
 				F450309E22EF302300BD8202 /* SuccessAddCraditCardResponse.swift */,
+				F45B171422F6E620006CBE22 /* StartNewFuelingDeviceProcessResponse.swift */,
+				F45B171822F6EEF9006CBE22 /* UpdateNewFuelingDeviceProcessDataResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -2296,6 +2323,33 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		F45B170F22F6B78F006CBE22 /* CarManagmentCells */ = {
+			isa = PBXGroup;
+			children = (
+				F45B171022F6B7C5006CBE22 /* CarManagmentTableViewCell.swift */,
+				F45B171122F6B7C5006CBE22 /* CarManagmentTableViewCell.xib */,
+			);
+			path = CarManagmentCells;
+			sourceTree = "<group>";
+		};
+		F45B171D22F70598006CBE22 /* AddNewCar */ = {
+			isa = PBXGroup;
+			children = (
+				F45B171E22F705CB006CBE22 /* AddNewCarViewController.swift */,
+				F45B172022F7061B006CBE22 /* AddNewCarViewModel.swift */,
+			);
+			path = AddNewCar;
+			sourceTree = "<group>";
+		};
+		F45B172222F71B13006CBE22 /* CreditCardTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F45B172522F71D43006CBE22 /* CreditCardExistsTableViewCell.swift */,
+				F45B172622F71D43006CBE22 /* CreditCardExistsTableViewCell.xib */,
+			);
+			path = CreditCardTableViewCell;
+			sourceTree = "<group>";
+		};
 		F45D570322E5A6210088E704 /* CreatePasswordCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2419,6 +2473,7 @@
 				E8E778FF22D5D08B004F0A9F /* PowerCardTableViewCell.xib in Resources */,
 				3E08CBDE213BEB1D00A4C445 /* Login.storyboard in Resources */,
 				E8BC6FFA22C9E60500CA64F8 /* FuelTypeCollectionViewCell.xib in Resources */,
+				F45B172822F71D43006CBE22 /* CreditCardExistsTableViewCell.xib in Resources */,
 				3E3674B4216A170A007658F3 /* ExtraSecurityTableViewCell.xib in Resources */,
 				E8BC4AEC22DB33500077247E /* PersonalDetailCustomView.xib in Resources */,
 				3E38933321785F740000E770 /* PumpWhichCarTableViewCell.xib in Resources */,
@@ -2433,6 +2488,7 @@
 				F448C3A0209085C80077947E /* Main.storyboard in Resources */,
 				E82A32EE229BD81700B91456 /* SideMenuFooter.xib in Resources */,
 				F4471CB422E4ADAB005B0648 /* FaceIdTableViewCell.xib in Resources */,
+				F45B171322F6B7C5006CBE22 /* CarManagmentTableViewCell.xib in Resources */,
 				F4471CB822E4B2FB005B0648 /* TouchIdableViewCell.xib in Resources */,
 				E82A32EC229BD81700B91456 /* SideMenuHeader.xib in Resources */,
 				E8C5317322DF6F6B007237ED /* PersonalDetailsBottomButton.xib in Resources */,
@@ -2554,6 +2610,7 @@
 				E82A3352229BD81800B91456 /* ShareObj.swift in Sources */,
 				E82A3384229BD81800B91456 /* MediaZipFile.swift in Sources */,
 				E85E222722A3AE4F00EE0907 /* SignUpPasswordCreatedSuccessfullyViewController.swift in Sources */,
+				F45B171522F6E620006CBE22 /* StartNewFuelingDeviceProcessResponse.swift in Sources */,
 				E85E2212229FBCE600EE0907 /* SignUpCarDetailsViewController.swift in Sources */,
 				E8AC3594229E914100171BAE /* ChooseCustomerTypeViewModel.swift in Sources */,
 				E82A32F6229BD81700B91456 /* Translations.swift in Sources */,
@@ -2663,6 +2720,7 @@
 				F4903DC622E83AD30029879C /* TransactionsHistoryViewModel.swift in Sources */,
 				E8AC358F229E7FDA00171BAE /* SignUpConfrimTermsOfServiceViewModel.swift in Sources */,
 				F450308322EDA15700BD8202 /* CarManagmentViewModel.swift in Sources */,
+				F45B171722F6E696006CBE22 /* StartNewFuelingDeviceProcessRequest.swift in Sources */,
 				28A38A26229AA1DA00B8D3D6 /* FourDigitCodeViewController.swift in Sources */,
 				E82A32EF229BD81700B91456 /* SideMenuCell.swift in Sources */,
 				E82A33A1229BD81800B91456 /* Street.swift in Sources */,
@@ -2679,7 +2737,9 @@
 				E82A3372229BD81800B91456 /* GetCitiesRequest.swift in Sources */,
 				E86082F922A560BA00D3E376 /* ToolTipsViewController.swift in Sources */,
 				F460570C22E9AF9400E0DB12 /* StoreHistory.swift in Sources */,
+				F45B172722F71D43006CBE22 /* CreditCardExistsTableViewCell.swift in Sources */,
 				E82A33A2229BD81800B91456 /* ErrorReportResponse.swift in Sources */,
+				F45B172122F7061B006CBE22 /* AddNewCarViewModel.swift in Sources */,
 				3E4032EA21737AFE00AF7647 /* PickPumpObligoLiterPopupViewController.swift in Sources */,
 				E8AC3597229E976800171BAE /* EnterTheCarDetailsViewController.swift in Sources */,
 				E82A3369229BD81800B91456 /* RegisterPushNotificationRequest.swift in Sources */,
@@ -2715,6 +2775,7 @@
 				E82A33B3229BD81800B91456 /* BaseNavigationController.swift in Sources */,
 				E82A3377229BD81800B91456 /* GetHostUrlResponse.swift in Sources */,
 				F45D570922E5AF260088E704 /* CreatePasswordTableViewCell.swift in Sources */,
+				F45B171922F6EEF9006CBE22 /* UpdateNewFuelingDeviceProcessDataResponse.swift in Sources */,
 				E82A334C229BD81800B91456 /* CustomProgressView.swift in Sources */,
 				E849966522BA1CC1005228F0 /* VerifySmsTokenResponse.swift in Sources */,
 				E82A3373229BD81800B91456 /* GetContentPageRequest.swift in Sources */,
@@ -2737,6 +2798,7 @@
 				3E41CB9421665DD400A55781 /* ExtraSecurity.swift in Sources */,
 				3E389335217869BB0000E770 /* PumpWhichCarUITableViewHeaderFooterView.swift in Sources */,
 				E82A33A7229BD81800B91456 /* SignupViewController.swift in Sources */,
+				F45B171B22F6EF3E006CBE22 /* UpdateNewFuelingDeviceProcessDataRequest.swift in Sources */,
 				E849966F22BA6AC0005228F0 /* DeleteTextField.swift in Sources */,
 				F450309D22EDE7C800BD8202 /* AddCreditCardRequest.swift in Sources */,
 				E8B5979C22DF1CF800EC8937 /* PlayerView.swift in Sources */,
@@ -2758,6 +2820,7 @@
 				E82A3358229BD81800B91456 /* LoginUserRequest.swift in Sources */,
 				E82A3329229BD81700B91456 /* UIStackView+IMExtension.swift in Sources */,
 				E82A3371229BD81800B91456 /* DoPaymentRequest.swift in Sources */,
+				F45B171F22F705CB006CBE22 /* AddNewCarViewController.swift in Sources */,
 				E8CF64CA22C5124A00B6D569 /* TenBottomButton.swift in Sources */,
 				E85E223022A3C3C100EE0907 /* ChangeStationViewModel.swift in Sources */,
 				F450309B22EDE77700BD8202 /* AddCreditCardResponse.swift in Sources */,
@@ -2801,6 +2864,7 @@
 				E87B2D3922C0BD3C00AB799C /* Payment.swift in Sources */,
 				E88C645E22DDE441002769B7 /* ExtraServiceCustomView.swift in Sources */,
 				E82A3319229BD81700B91456 /* LocationManager.swift in Sources */,
+				F45B171222F6B7C5006CBE22 /* CarManagmentTableViewCell.swift in Sources */,
 				F4D6A9DA22E5CE3200F60A39 /* VerifyPinCodeRequests.swift in Sources */,
 				E82A32F7229BD81700B91456 /* UITextView+Placeholder.m in Sources */,
 				E849966922BA1F9E005228F0 /* NextScreenArr.swift in Sources */,
