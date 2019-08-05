@@ -20,7 +20,7 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
     var storePamentMathods = [StorePaymentMethodsItem]()
     var isAddCreditCard = false
     var viewModel = SignUpCreditCardViewModel()
-    var screenName = ""
+    //var screenName = ""
     var redactedCardNumber = ""
     var fieldsArr = [String: Any]()
     
@@ -123,6 +123,13 @@ class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDe
                                 ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
                             }
                         }
+                    } else if ApplicationManager.sharedInstance.userAccountManager.registrationToken.isEmpty {
+                        
+                        if let data = UpdateNewFuelingDeviceProcessDataResponse().buildFromJSONDict(JSONDict: jsonDict) as? UpdateNewFuelingDeviceProcessDataResponse {
+                            
+                          ApplicationManager.sharedInstance.userAccountManager.updateScreensAndRegistrationToken(registrationToken: nil, screens: data.arrNextScreens)
+                        }
+                        
                     } else {
                         
                         if let data = UpdateRegistrationDataResponse().buildFromJSONDict(JSONDict: jsonDict ) as? UpdateRegistrationDataResponse {

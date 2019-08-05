@@ -12,15 +12,19 @@ class CarManagmentViewControoler: BaseFormViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblTitle: MediumLabel!
-    @IBOutlet weak var btnNewCar: UIButton!
+    @IBOutlet weak var btnNewCar: TenButtonStyle!
     
     var viewModel = CarManagmentViewModel()
     var user = ApplicationManager.sharedInstance.userAccountManager.user
+    var isShowPopup = false
+    var fieldsArr = [String: Any]()
+    var id = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerXibs()
-        self.view.backgroundColor = .clear
+        self.initUI()
+        self.showPopup()
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -40,9 +44,20 @@ class CarManagmentViewControoler: BaseFormViewController {
         self.tableView.register(UINib(nibName: CarManagmentTableViewCell.className, bundle: nil), forCellReuseIdentifier: CarManagmentTableViewCell.className)
     }
     
+    fileprivate func showPopup() {
+        if isShowPopup {
+            self.viewModel.moveToTenGanrelPopup()
+        }
+    }
+    
+    fileprivate func initUI() {
+        self.view.backgroundColor = .clear
+        self.btnNewCar.setWhiteBackground()
+    }
+    
     override func fillTextWithTrans() {
         self.btnNewCar.setTitle(Translation(Translations.AlertButtonsKeys.vehicleManagement, Translations.AlertButtonsKeys.vehicleManagementDefault), for: .normal)
-        self.lblTitle.text = Translation(Translations.Titles.vehicleManagement, Translations.Titles.vehicleManagementDefault)
+            self.lblTitle.text = Translation(Translations.Titles.vehicleManagement, Translations.Titles.vehicleManagementDefault)
     }
     
     //IBAction:
@@ -60,25 +75,43 @@ extension CarManagmentViewControoler: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CarManagmentTableViewCell.className, for: indexPath) as! CarManagmentTableViewCell
         
-        cell.imgCar.setImageWithStrURL(strURL: user.fuelingDevicesArr[indexPath.row].strIcon, withAddUnderscoreIphone: false)
-        cell.lblCarNumber.text = user.fuelingDevicesArr[indexPath.row].strTitle
-        cell.imgFuelType.setImageWithStrURL(strURL: user.fuelingDevicesArr[indexPath.row].fuelItem.strIcon, withAddUnderscoreIphone: false)
-        cell.lblCreditCardNumber.text = user.fuelingDevicesArr[indexPath.row].payment.strTitle
-        cell.imgCreditCard.setImageWithStrURL(strURL: user.fuelingDevicesArr[indexPath.row].payment.strIcon, withAddUnderscoreIphone: false)
+        cell.deleteCarDelegate = self
+        cell.saveChangesDelegate = self
+        
+            cell.imgCar.setImageWithStrURL(strURL: user.fuelingDevicesArr[indexPath.row].strIcon, withAddUnderscoreIphone: false)
+            cell.lblCarNumber.text = user.fuelingDevicesArr[indexPath.row].strTitle
+            cell.imgFuelType.setImageWithStrURL(strURL: user.fuelingDevicesArr[indexPath.row].fuelItem.strIcon, withAddUnderscoreIphone: false)
+            cell.lblCreditCardNumber.text = user.fuelingDevicesArr[indexPath.row].payment.strTitle
+            cell.imgCreditCard.setImageWithStrURL(strURL: user.fuelingDevicesArr[indexPath.row].payment.strIcon, withAddUnderscoreIphone: false)
+        
+        mDCTextSetUp(mDCText: cell.txtFldManufacturer.txtFldInput, withPlaceholderText: "יצרן", withIndex: 1, withKeyboardType: .default, withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: " ", addToolbar: true)
+       
+        
+        mDCTextSetUp(mDCText: cell.txtFldModel.txtFldInput, withPlaceholderText: "דגם", withIndex: 2, withKeyboardType: .default, withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: " ", addToolbar: true)
+        
+        
+        mDCTextSetUp(mDCText: cell.txtFldDate.txtFldInput, withPlaceholderText: "תוקף טסט", withIndex: 3, withKeyboardType: .default, withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: " ", addToolbar: true)
+        
         
         return cell
     }
-}
-
-extension CarManagmentViewControoler {
-    func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
-      
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.id = user.fuelingDevicesArr[indexPath.row].numID
     }
 }
 
-func requestFailed(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse) {
-    if request.requestName == TenRequestNames.getStarsNewFuelingDeviceProcess {
+extension CarManagmentViewControoler: DeleteCarDelegate {
+    func didTapRemoveCar() {
+        
+        let dict = [TenParamsNames.id: self.id] as [String:Any]
+        
+        ApplicationManager.sharedInstance.userAccountManager.callRemoveFuelingDevice(dictParams: dict, requestFinishedDelegate: self)
+    }
+}
+
+extension CarManagmentViewControoler: SaveChangesDelegate {
+    func didTapSaveChanges() {
         
     }
 }
-

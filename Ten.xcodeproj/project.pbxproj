@@ -421,6 +421,8 @@
 		F4903DC622E83AD30029879C /* TransactionsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4903DC522E83AD30029879C /* TransactionsHistoryViewModel.swift */; };
 		F4D6A9D822E5CDD100F60A39 /* VerifyPinCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */; };
 		F4D6A9DA22E5CE3200F60A39 /* VerifyPinCodeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */; };
+		F4EE0A9522F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE0A9422F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift */; };
+		F4EE0A9722F8687B00DC8394 /* RemoveFuelingDeviceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE0A9622F8687B00DC8394 /* RemoveFuelingDeviceRequest.swift */; };
 		F4F91BB322E9E64B00B348F3 /* StoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F91BB122E9E64B00B348F3 /* StoresTableViewCell.swift */; };
 		F4F91BB422E9E64B00B348F3 /* StoresTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F91BB222E9E64B00B348F3 /* StoresTableViewCell.xib */; };
 		F4FA7A2B2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA7A2A2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift */; };
@@ -857,6 +859,8 @@
 		F4903DC522E83AD30029879C /* TransactionsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryViewModel.swift; sourceTree = "<group>"; };
 		F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeResponse.swift; sourceTree = "<group>"; };
 		F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeRequests.swift; sourceTree = "<group>"; };
+		F4EE0A9422F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFuelingDeviceResponse.swift; sourceTree = "<group>"; };
+		F4EE0A9622F8687B00DC8394 /* RemoveFuelingDeviceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFuelingDeviceRequest.swift; sourceTree = "<group>"; };
 		F4F91BB122E9E64B00B348F3 /* StoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresTableViewCell.swift; sourceTree = "<group>"; };
 		F4F91BB222E9E64B00B348F3 /* StoresTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoresTableViewCell.xib; sourceTree = "<group>"; };
 		F4FA7A2A2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelingAndExtraServicesViewController.swift; sourceTree = "<group>"; };
@@ -1987,6 +1991,7 @@
 				F450309C22EDE7C800BD8202 /* AddCreditCardRequest.swift */,
 				F45B171622F6E696006CBE22 /* StartNewFuelingDeviceProcessRequest.swift */,
 				F45B171A22F6EF3E006CBE22 /* UpdateNewFuelingDeviceProcessDataRequest.swift */,
+				F4EE0A9622F8687B00DC8394 /* RemoveFuelingDeviceRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -2006,6 +2011,7 @@
 				F450309E22EF302300BD8202 /* SuccessAddCraditCardResponse.swift */,
 				F45B171422F6E620006CBE22 /* StartNewFuelingDeviceProcessResponse.swift */,
 				F45B171822F6EEF9006CBE22 /* UpdateNewFuelingDeviceProcessDataResponse.swift */,
+				F4EE0A9422F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -2723,6 +2729,7 @@
 				F45B171722F6E696006CBE22 /* StartNewFuelingDeviceProcessRequest.swift in Sources */,
 				28A38A26229AA1DA00B8D3D6 /* FourDigitCodeViewController.swift in Sources */,
 				E82A32EF229BD81700B91456 /* SideMenuCell.swift in Sources */,
+				F4EE0A9522F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift in Sources */,
 				E82A33A1229BD81800B91456 /* Street.swift in Sources */,
 				282B41AA229ABE4800986480 /* TenStyleViewController.swift in Sources */,
 				3E47B048216CCB6A009942A1 /* IdentificationPinCodePopupViewController.swift in Sources */,
@@ -2909,6 +2916,7 @@
 				F450308122EDA10F00BD8202 /* CarManagmentViewController.swift in Sources */,
 				E82A339B229BD81800B91456 /* GetUserFavoritesResponse.swift in Sources */,
 				E82A338F229BD81800B91456 /* BaseInnerResponse.swift in Sources */,
+				F4EE0A9722F8687B00DC8394 /* RemoveFuelingDeviceRequest.swift in Sources */,
 				E82A339A229BD81800B91456 /* CheckSmsTokenResponse.swift in Sources */,
 				E82A334A229BD81800B91456 /* BaseFunctionsViewModelDataSource.swift in Sources */,
 				E82A337E229BD81800B91456 /* BaseMenuItem.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController,RequestFinishedProtocol,GoogleAnalyticsProtocol{
+class BaseViewController: UIViewController,RequestFinishedProtocol, GoogleAnalyticsProtocol {
 
     var processType : ProcessType?
     var shouldReversePushDirection = false

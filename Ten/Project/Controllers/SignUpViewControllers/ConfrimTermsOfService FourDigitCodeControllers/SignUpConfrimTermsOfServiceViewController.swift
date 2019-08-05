@@ -16,13 +16,16 @@ class SignUpConfrimTermsOfServiceViewController: BaseFormViewController, WKNavig
     @IBOutlet weak var webViewTermsOfService: IMWebView!
     @IBOutlet weak var btnConfrimTermsOfUse: UIButton!
     
+    var parentVC: UIViewController?
     var viewModel = SignUpConfrimTermsOfServiceViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializeUI()
         self.loadUrl()
-    
+        
+        let tabBarController = ApplicationManager.sharedInstance.tabBarController
+        tabBarController.backDelegate = self
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -36,10 +39,12 @@ class SignUpConfrimTermsOfServiceViewController: BaseFormViewController, WKNavig
             vc.vwContent = nil
             vc.containerView = nil
             vc.navigationItem.hidesBackButton = true
-
+            
+            self.parentVC = vc
         }
     }
     
+
     
     func initializeUI() {
         self.view.backgroundColor = .clear
@@ -71,5 +76,13 @@ class SignUpConfrimTermsOfServiceViewController: BaseFormViewController, WKNavig
     
     @IBAction func didTapBtnConfrimTermsOfUse(_ sender: Any) {
         ApplicationManager.sharedInstance.userAccountManager.updateScreensAndRegistrationToken(registrationToken: nil, screens: nil)
+    }
+}
+
+extension SignUpConfrimTermsOfServiceViewController: BackProtocol {
+    func backCompletion() {
+        guard let vc = self.parentVC as? TenStyleViewController else { return }
+            let controller = (vc.navigationController?.viewControllers[0])!
+                vc.navigationController?.popToViewController(controller, animated: true)
     }
 }

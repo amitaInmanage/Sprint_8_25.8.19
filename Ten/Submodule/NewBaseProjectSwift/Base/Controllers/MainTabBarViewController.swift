@@ -10,7 +10,6 @@
 import UIKit
 
 @objc protocol BackProtocol : NSObjectProtocol {
-    
     func backCompletion()
 }
 

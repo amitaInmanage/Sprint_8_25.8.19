@@ -16,6 +16,7 @@ struct TenRequestNames {
     static let getAddCreditCard = "addCreditCard"
     static let getVerifySmsToken = "verifySmsToken"
     static let getEditUserInformation = "editUserInformation"
+    static let getRemoveFuelingDevice = "removeFuelingDevice"
     static let getTransactionsHistory = "getTransactionsHistory"
     static let getUpdateRegistrationData = "updateRegistrationData"
     static let getRemoveStorePaymentMethod = "removeStorePaymentMethod"

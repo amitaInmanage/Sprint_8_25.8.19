@@ -12,6 +12,7 @@ class Translations {
     
     struct AlertButtonsKeys {
 
+        static let addFuelingCardSucces = "add_fueling_card_success_popup_btn"
         static let chooseCreditCardNew = "choose_credit_card_new"
         static let chooseCreditCardUse = "choose_credit_card_use"
         static let vehicleManagement = "vehicle_management_add_new_car"
@@ -50,6 +51,7 @@ class Translations {
         static let no = "mobile_alert_btn_no"
         static let noInternet = "alert_no_access_to_server"
         
+        static let addFuelingCardSuccesDefault = "Default"
         static let chooseCreditCardNewDefault = "Default"
         static let chooseCreditCardUseDefault = "Default"
         static let vehicleManagementDefault = "Default"
@@ -92,6 +94,7 @@ class Translations {
     
     struct  SubTitles {
     
+        static let addFuelingCardSuccess = "add_fueling_card_success_popup_subtitle"
         static let chooseCreditCard = "choose_credit_card_subtitle"
         static let storePayment = "store_payment_methods_subtitle"
         static let securityManagment = "security_management_subtitle"
@@ -109,6 +112,7 @@ class Translations {
         static let creditCardSubTitle = "credit_card_details_sub_title"
         static let carInformationClub = "car_information_club_fuel_type"
         
+        static let addFuelingCardSuccessDefault = "Default"
         static let chooseCreditCardDefault = "Default"
         static let storePaymentDefault = "Default"
         static let securityManagmentDefault = "Default"
@@ -178,6 +182,7 @@ class Translations {
     
     struct Titles {
         
+        static let addFuelingCardSuccess = "add_fueling_card_success_popup_title"
         static let chooseCreditCardBottom = "choose_credit_card_bottom_sheet"
         static let chooseCreditCard = "choose_credit_card_title"
         static let vehicleManagement = "vehicle_management_title"
@@ -223,6 +228,7 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let addFuelingCardSuccessDefault = "Default"
         static let chooseCreditCardBottomDefault = "Default"
         static let chooseCreditCardDefault = "Default"
         static let vehicleManagementDefault = "Default"

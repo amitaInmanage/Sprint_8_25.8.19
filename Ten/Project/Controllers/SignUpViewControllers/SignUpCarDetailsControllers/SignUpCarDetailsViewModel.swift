@@ -46,6 +46,16 @@ class SignUpCarDetailsViewModel: BaseViewModel {
         return phoneTest.evaluate(with: strLicensePlate)
     }
     
+    func buildJsonAndSendUpdateNewFuelingDeviceProcessData(strScreenName: String) {
+        
+        let dict = [TenParamsNames.token: ApplicationManager.sharedInstance.userAccountManager.tokenNewFuilingDevice ,TenParamsNames.idNumber: self.strIdNumber, TenParamsNames.licensePlate: self.strCarNumber, TenParamsNames.fuelTypes: self.strCode] as [String:Any]
+        
+         fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
+        
+        ApplicationManager.sharedInstance.userAccountManager.callUpdateNewFuelingDeviceProcessData(dictParams: fieldsArr, screenName: strScreenName, andRequestFinishedDelegate: nil)
+    }
+    
+    
     func buildJsonAndSendUpdateRegistrationData(strScreenName: String, vc: UIViewController? = nil) {
         
         let dict = [TenParamsNames.idNumber: self.strIdNumber, TenParamsNames.licensePlate: self.strCarNumber, TenParamsNames.fuelTypes: self.strCode] as [String:Any]

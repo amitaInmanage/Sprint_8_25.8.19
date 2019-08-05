@@ -82,7 +82,7 @@ extension StorePaymentActiveViewController: UITableViewDelegate, UITableViewData
         if storePamentMathods[indexPath.row].isActiveInStore {
             
             cell.imgCardType.setImageWithStrURL(strURL: storePamentMathods[indexPath.row].strIcon, withAddUnderscoreIphone: false)
-            cell.lblCardNumber.text = storePamentMathods[indexPath.row].strtitle
+            cell.lblCardNumber.text = storePamentMathods[indexPath.row].strTitle
             
             if !storePamentMathods[indexPath.row].isRemovable {
                 cell.lblRemove.isHidden = true

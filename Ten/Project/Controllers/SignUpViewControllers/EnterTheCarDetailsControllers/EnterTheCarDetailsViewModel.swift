@@ -58,6 +58,14 @@ class EnterTheCarDetailsViewModel: BaseViewModel {
         ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
     }
     
+    func buildJsonAndSendUpdateNewFuelingDeviceProcessData(strScreenName: String) {
+        let dict = [TenParamsNames.token: ApplicationManager.sharedInstance.userAccountManager.tokenNewFuilingDevice ,TenParamsNames.cardNumber: self.strFuilingCard, TenParamsNames.cardSecret: self.strSecretCode, TenParamsNames.isAdditionalCard: self.strAdditionalCard] as [String : Any]
+        fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
+        
+        ApplicationManager.sharedInstance.userAccountManager.callUpdateNewFuelingDeviceProcessData(dictParams: fieldsArr, screenName: strScreenName, andRequestFinishedDelegate: nil)
+    }
+    
+    
     func buildJsonAndSendUpdateRegistrationData(strScreenName: String, vc: UIViewController? = nil) {
         
         let dict = [TenParamsNames.cardNumber: self.strFuilingCard, TenParamsNames.cardSecret: self.strSecretCode, TenParamsNames.isAdditionalCard: self.strAdditionalCard] as [String : Any]

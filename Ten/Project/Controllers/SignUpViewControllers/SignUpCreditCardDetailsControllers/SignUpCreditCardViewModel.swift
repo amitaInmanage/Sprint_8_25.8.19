@@ -18,4 +18,11 @@ class SignUpCreditCardViewModel: BaseViewModel {
         
         ApplicationManager.sharedInstance.userAccountManager.callUpdateRegistrationData(dictParams: fieldsArr, screenName: strScreenName, andRequestFinishedDelegate: nil)
     }
+    
+    
+//    func buildJsonAndSendUpdateNewFuelingDeviceProcessData(screens: [ScreenName]?) {
+//        
+//        ApplicationManager.sharedInstance.userAccountManager.callUpdateNewFuelingDeviceProcessData(dictParams: fieldsArr, screenName: screens, andRequestFinishedDelegate: nil)
+//    }
+    
 }

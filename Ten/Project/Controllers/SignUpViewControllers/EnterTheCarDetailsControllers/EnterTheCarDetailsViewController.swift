@@ -76,7 +76,11 @@ class EnterTheCarDetailsViewController: BaseFormViewController {
     }
     
     @IBAction func didTapContinueBtn(_ sender: Any) {
-        self.viewModel.buildJsonAndSendUpdateRegistrationData(strScreenName: self.viewModel.screenName, vc: self)
+        if ApplicationManager.sharedInstance.userAccountManager.registrationToken.isEmpty {
+            self.viewModel.buildJsonAndSendUpdateNewFuelingDeviceProcessData(strScreenName: self.viewModel.screenName)
+        } else {
+            self.viewModel.buildJsonAndSendUpdateRegistrationData(strScreenName: self.viewModel.screenName, vc: self)
+        }
     }
     
     @IBAction func didTapToolTipCardNumber(_ sender: Any) {

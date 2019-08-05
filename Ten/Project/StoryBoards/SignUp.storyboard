@@ -1034,9 +1034,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="b7a-aE-siq" firstAttribute="bottom" secondItem="fql-MM-YjK" secondAttribute="bottom" constant="132.5" id="2gD-4g-Cfq"/>
                             <constraint firstItem="75M-Rg-uV1" firstAttribute="leading" secondItem="b7a-aE-siq" secondAttribute="leading" constant="13" id="6qy-pu-CJi"/>
                             <constraint firstItem="b7a-aE-siq" firstAttribute="trailing" secondItem="75M-Rg-uV1" secondAttribute="trailing" constant="13.5" id="JCS-PK-ceM"/>
-                            <constraint firstItem="UoR-xV-Jre" firstAttribute="top" secondItem="75M-Rg-uV1" secondAttribute="bottom" constant="60" id="K7i-Cw-r4R"/>
+                            <constraint firstItem="UoR-xV-Jre" firstAttribute="top" relation="lessThanOrEqual" secondItem="75M-Rg-uV1" secondAttribute="bottom" constant="60" id="K7i-Cw-r4R"/>
                             <constraint firstItem="tDG-gf-XP7" firstAttribute="top" secondItem="b7a-aE-siq" secondAttribute="top" constant="20" id="Mi5-Vc-Rwc"/>
                             <constraint firstItem="tDG-gf-XP7" firstAttribute="centerX" secondItem="b7a-aE-siq" secondAttribute="centerX" id="QGw-Xa-ixF"/>
                             <constraint firstItem="b7a-aE-siq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tDG-gf-XP7" secondAttribute="trailing" constant="40" id="Qfz-Td-IHh"/>

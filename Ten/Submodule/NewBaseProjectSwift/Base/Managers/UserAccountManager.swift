@@ -335,6 +335,19 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         ApplicationManager.sharedInstance.requestManager.sendRequest(request: request, view: nil)
     }
     
+    func callRemoveFuelingDevice(dictParams: [String: Any], requestFinishedDelegate :RequestFinishedProtocol?) {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        let request = RemoveFuelingDeviceRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
+        
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
+    }
+    
     func callAddToFavorites(dictParams: [String:Any], andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
         
         var delegate = requestFinishedDelegate
@@ -861,9 +874,20 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
                 //TODO: send to businessreadonly
                 
             case ScreensNames.completeProcess.rawValue:
-                let dict = [String: Any]()
-                self.fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
-                self.callUpdateRegistrationData(dictParams: self.fieldsArr, screenName: nextScreen.screenName, andRequestFinishedDelegate: self)
+                
+                if ApplicationManager.sharedInstance.userAccountManager.registrationToken.isEmpty {
+                    
+                    let dict = [String: Any]()
+                    self.fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
+                    self.callUpdateNewFuelingDeviceProcessData(dictParams: dict, screenName: nextScreen.screenName, andRequestFinishedDelegate: self)
+                    
+                } else {
+                    
+                    let dict = [String: Any]()
+                    self.fieldsArr.updateValue(dict, forKey: TenParamsNames.fieldsArr)
+                    self.callUpdateRegistrationData(dictParams: self.fieldsArr, screenName: nextScreen.screenName, andRequestFinishedDelegate: self)
+                    
+                }
                 
             case ScreensNames.pinCode.rawValue:
                 print("pinCode")
@@ -881,10 +905,17 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
             self.arrScreens.removeFirst()
             return true
         } else {
-            self.registrationToken = ""
-            if let signUpVC = UIStoryboard.init(name: "SignUp", bundle: Bundle.main).instantiateViewController(withIdentifier: SignUpAddAnotherCarViewController.className) as? SignUpAddAnotherCarViewController {
-                ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
+            if self.registrationToken.isEmpty {
+                if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: CarManagmentViewControoler.className) as? CarManagmentViewControoler {
+                    personalZone.isShowPopup = true
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                }
+            } else {
+                if let signUpVC = UIStoryboard.init(name: "SignUp", bundle: Bundle.main).instantiateViewController(withIdentifier: SignUpAddAnotherCarViewController.className) as? SignUpAddAnotherCarViewController {
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
+                }
             }
+            self.registrationToken = ""
         }
         return false
     }

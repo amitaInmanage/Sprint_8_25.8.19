@@ -10,4 +10,14 @@ import UIKit
 
 class CarManagmentViewModel: BaseViewModel {
  
+    func moveToTenGanrelPopup() {
+        let popupInfoObj = PopupInfoObj()
+        popupInfoObj.popupType = .tenGeneralPopup
+        popupInfoObj.strImageName = "carAdd"
+        popupInfoObj.strTitle = Translation(Translations.Titles.addFuelingCardSuccess, Translations.Titles.addFuelingCardSuccessDefault)
+        popupInfoObj.strSubtitle = Translation(Translations.SubTitles.addFuelingCardSuccess, Translations.SubTitles.addFuelingCardSuccessDefault)
+        popupInfoObj.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.addFuelingCardSucces, Translations.AlertButtonsKeys.addFuelingCardSuccesDefault)
+        
+        ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
+    }
 }
