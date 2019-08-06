@@ -348,6 +348,20 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
     }
     
+    func callUpdateFuelingDevice(dictParams: [String: Any], requestFinishedDelegate :RequestFinishedProtocol?) {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        let request = UpdateFuelingDeviceRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
+        
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
+    }
+    
+    
     func callAddToFavorites(dictParams: [String:Any], andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
         
         var delegate = requestFinishedDelegate
@@ -953,7 +967,7 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         
         if request.requestName == TenRequestNames.getStarsNewFuelingDeviceProcess {
             if let innerResponse = innerResponse as? StartNewFuelingDeviceProcessResponse {
-                
+
                 self.tokenNewFuilingDevice = innerResponse.token
                 self.arrScreens = innerResponse.arrNextScreens
                 self.updateScreensAndRegistrationToken(registrationToken: nil, screens:self.arrScreens)

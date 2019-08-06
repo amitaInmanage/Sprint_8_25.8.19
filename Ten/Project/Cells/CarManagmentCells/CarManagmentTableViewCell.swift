@@ -17,7 +17,10 @@ protocol SaveChangesDelegate: NSObject {
 }
 
 class CarManagmentTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var dropDownConstraint: NSLayoutConstraint!
+    @IBOutlet weak var contentVw: UIView!
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var imgCar: UIImageView!
     @IBOutlet weak var lblCarNumber: RegularLabel!
     @IBOutlet weak var imgFuelType: UIImageView!
@@ -30,21 +33,23 @@ class CarManagmentTableViewCell: UITableViewCell {
     @IBOutlet weak var txtFldDate: InputCustomView!
     @IBOutlet weak var btnDeleteCar: TenButtonStyle!
     @IBOutlet weak var btnSaveChanges: TenButtonStyle!
+    @IBOutlet weak var dropDownView: UIView!
     
-     weak var deleteCarDelegate: DeleteCarDelegate?
-     weak var saveChangesDelegate: SaveChangesDelegate?
+    weak var deleteCarDelegate: DeleteCarDelegate?
+    weak var saveChangesDelegate: SaveChangesDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initUI()
-        
+        self.contentViewHeightConstraint.constant = 95
+        self.dropDownView.isHidden = true
     }
-
+    
     fileprivate func initUI() {
         self.vwCarMenegmentCell.addShadow()
         self.btnDeleteCar.setWhiteBackground()
-        self.btnDeleteCar.setTitle("הסר", for: .normal)
-        self.btnSaveChanges.setTitle("שמור שיוניים", for: .normal)
+        self.btnDeleteCar.setTitle(Translation(Translations.AlertButtonsKeys.securityManagementRemovePinCode, Translations.AlertButtonsKeys.securityManagementRemovePinCodeDefault), for: .normal)
+        self.btnSaveChanges.setTitle(Translation(Translations.AlertButtonsKeys.VehicleManagementRowSaveChanges, Translations.AlertButtonsKeys.VehicleManagementRowSaveChangesDefault), for: .normal)
     }
     
     @IBAction func didTapRemoveCar(_ sender: Any) {

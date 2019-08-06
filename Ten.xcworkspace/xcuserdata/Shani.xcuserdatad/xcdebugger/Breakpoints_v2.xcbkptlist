@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "586706103.389769"
+            timestampString = "586796040.6992691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1044"
-            endingLineNumber = "1044"
+            startingLineNumber = "1058"
+            endingLineNumber = "1058"
             landmarkName = "requestSucceeded(request:withOuterResponse:andInnerResponse:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -164,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "586706103.390197"
+            timestampString = "586796040.69941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -273,7 +273,7 @@
                   moduleName = "Ten"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/SignUpViewControllers/SignUpPasswordCreatedSuccessfully/SignUpPasswordCreatedSuccessfullyViewController.swift"
-                  timestampString = "586706103.92309"
+                  timestampString = "586796105.258328"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -288,7 +288,7 @@
                   moduleName = "Ten"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/SignUpViewControllers/SignUpPasswordCreatedSuccessfully/SignUpPasswordCreatedSuccessfullyViewController.swift"
-                  timestampString = "586706103.926901"
+                  timestampString = "586796105.260231"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -311,86 +311,6 @@
             startingLineNumber = "266"
             endingLineNumber = "266"
             landmarkName = "didTapContinue(_:id:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/PersonalZoneControllers/TransactionsHidtory/TransactionsHistoryViewController.swift"
-            timestampString = "586627217.1134551"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/SignUpViewControllers/SignUpCreditCardDetailsControllers/SignUpCreditCardDetailsViewController.swift"
-            timestampString = "586694442.676668"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "webViewDidFinishLoad(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/SignUpViewControllers/SignUpCreditCardDetailsControllers/SignUpCreditCardDetailsViewController.swift"
-            timestampString = "586694442.676742"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "webViewDidFinishLoad(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/SignUpViewControllers/SignUpCreditCardDetailsControllers/SignUpCreditCardDetailsViewController.swift"
-            timestampString = "586694442.676941"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "webViewDidFinishLoad(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "586706103.390607"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "878"
-            endingLineNumber = "878"
-            landmarkName = "moveToNextScreen(data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -445,16 +365,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ten/Project/Controllers/PersonalZoneControllers/CarsManagment/CarManagmentViewController.swift"
+            timestampString = "586796040.699622"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
+            timestampString = "586796040.700124"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "910"
+            endingLineNumber = "910"
+            landmarkName = "moveToNextScreen(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Project/Controllers/PersonalZoneControllers/CarsManagment/CarManagmentViewController.swift"
-            timestampString = "586706103.3909349"
+            timestampString = "586796040.7001981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "didTapRemoveCar()"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ten/Project/Controllers/PersonalZoneControllers/CarsManagment/CarManagmentViewController.swift"
+            timestampString = "586796040.700497"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

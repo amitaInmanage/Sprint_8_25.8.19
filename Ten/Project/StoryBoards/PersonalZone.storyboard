@@ -1143,6 +1143,7 @@
                         <outlet property="btnNewCar" destination="zav-lF-gPz" id="PuX-Vn-kGd"/>
                         <outlet property="lblTitle" destination="gI2-AJ-xbD" id="diV-iG-lEf"/>
                         <outlet property="tableView" destination="2Mm-AS-Gfr" id="65Y-3e-ZfZ"/>
+                        <outlet property="vwTitle" destination="GFM-Ie-WE5" id="LnT-hg-d9n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJL-S3-rMw" userLabel="First Responder" sceneMemberID="firstResponder"/>

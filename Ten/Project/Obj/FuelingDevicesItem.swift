@@ -14,9 +14,17 @@ class FuelingDevicesItem: BaseInnerResponse {
     var strTitle = ""
     var fuelItem = Fuel()
     var payment = Payment()
+    var strId = ""
+    var isExtended = false
+    var objInfo = Info()
     
     override func buildFromJSONDict(JSONDict:  [String: Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
+        
+        let tempInfo = ParseValidator.getDictionaryForKey(key: "info", JSONDict: JSONDict, defaultValue: [String : Any]())
+        self.objInfo = Info().buildFromJSONDict(JSONDict: tempInfo) as! Info
+        
+        self.strId = ParseValidator.getStringForKey(key: "id", JSONDict: JSONDict, defaultValue: "")
         
         let tempFuelItem = ParseValidator.getDictionaryForKey(key: "fuel", JSONDict: JSONDict, defaultValue: [String : Any]())
         self.fuelItem = Fuel().buildFromJSONDict(JSONDict: tempFuelItem) as! Fuel

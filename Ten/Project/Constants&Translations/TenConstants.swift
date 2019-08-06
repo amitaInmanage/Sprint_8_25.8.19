@@ -15,6 +15,7 @@ struct TenRequestNames {
     static let getVerifyPinCode = "verifyPinCode"
     static let getAddCreditCard = "addCreditCard"
     static let getVerifySmsToken = "verifySmsToken"
+    static let getUpdateFuelingDevice = "updateFuelingDevice"
     static let getEditUserInformation = "editUserInformation"
     static let getRemoveFuelingDevice = "removeFuelingDevice"
     static let getTransactionsHistory = "getTransactionsHistory"
@@ -26,6 +27,9 @@ struct TenRequestNames {
 }
 
 struct TenParamsNames {
+    static let carManufacturer = "carManufacturer"
+    static let carModel = "carModel"
+    static let carInspectionValidityDate = "carInspectionValidityDate"
     static let cardId = "card_id"
     static let acceptsUpdates = "acceptsUpdates"
     static let id = "id"

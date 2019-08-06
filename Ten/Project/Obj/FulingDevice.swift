@@ -17,6 +17,7 @@ class FulingDevice: BaseInnerResponse {
     var strTitle = ""
     var intType = 0
     
+    
     override func buildFromJSONDict(JSONDict: [String : Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
         

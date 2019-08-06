@@ -12,6 +12,8 @@ class Translations {
     
     struct AlertButtonsKeys {
 
+        static let VehicleManagementRowSaveChanges = "vehicle_management_row_save_changes"
+        static let securityManagementRemovePinCode = "security_management_remove_pin_code"
         static let addFuelingCardSucces = "add_fueling_card_success_popup_btn"
         static let chooseCreditCardNew = "choose_credit_card_new"
         static let chooseCreditCardUse = "choose_credit_card_use"
@@ -51,6 +53,8 @@ class Translations {
         static let no = "mobile_alert_btn_no"
         static let noInternet = "alert_no_access_to_server"
         
+        static let VehicleManagementRowSaveChangesDefault = "Default"
+        static let securityManagementRemovePinCodeDefault = "Default"
         static let addFuelingCardSuccesDefault = "Default"
         static let chooseCreditCardNewDefault = "Default"
         static let chooseCreditCardUseDefault = "Default"

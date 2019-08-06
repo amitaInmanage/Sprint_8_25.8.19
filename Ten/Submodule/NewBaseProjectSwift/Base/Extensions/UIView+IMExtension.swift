@@ -92,7 +92,7 @@ extension UIView {
     func addShadowAndCorner() {
         
         let shdowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        let shadowOffset = CGSize(width: 1, height: 1)
+        let shadowOffset = CGSize(width: -1, height: 1)
         
         self.layer.shadowColor = shdowColor
         self.layer.shadowOffset = shadowOffset
@@ -109,7 +109,7 @@ extension UIView {
         
         self.layer.shadowColor = shadowColor
         self.layer.shadowOffset = shadowOffset
-        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOpacity = 0.2
         self.layer.shadowRadius = 5
         self.layer.masksToBounds = false
         self.layer.cornerRadius = 2.0
