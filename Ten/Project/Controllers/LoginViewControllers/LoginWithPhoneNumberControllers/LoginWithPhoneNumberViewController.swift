@@ -71,7 +71,7 @@ class LoginWithPhoneNumberViewController: BaseFormViewController {
     
     fileprivate func initializeTextFields() {
         self.phoneNumber.txtFldInput.keyboardType = UIKeyboardType.numberPad
-        self.mDCTextSetUp(mDCText: self.phoneNumber.txtFldInput, withPlaceholderText: "מספר נייד", withIndex: self.phoneNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
+        self.mDCTextSetUp(mDCText: self.phoneNumber.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.carInforamtionClubeLicense, Translations.Placeholders.carInforamtionClubeLicenseDefault), withIndex: self.phoneNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
         
         phoneNumber.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

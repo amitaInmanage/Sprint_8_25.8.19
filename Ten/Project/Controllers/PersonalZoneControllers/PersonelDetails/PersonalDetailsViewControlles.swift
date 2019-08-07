@@ -112,16 +112,16 @@ class PersonalDetailsViewControlles: BaseFormViewController {
             self.lblGender.text = genserArr[user.strGender] as? String
         }
         
-        self.mDCTextSetUp(mDCText: self.txtFldFirstName.txtFldInput, withPlaceholderText: "שם פרטי", withIndex: self.txtFldFirstName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
+        self.mDCTextSetUp(mDCText: self.txtFldFirstName.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.registerNameFirstName, Translations.Placeholders.registerNameFirstNameDefault), withIndex: self.txtFldFirstName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
         
-        self.mDCTextSetUp(mDCText: self.txtFldLastName.txtFldInput, withPlaceholderText: "שם משפחה", withIndex: self.txtFldLastName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
+        self.mDCTextSetUp(mDCText: self.txtFldLastName.txtFldInput, withPlaceholderText:Translation(Translations.Placeholders.registerNameLastName, Translations.Placeholders.registerNameLastNameDefault), withIndex: self.txtFldLastName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
         
-        self.mDCTextSetUp(mDCText: self.txtFldPhone.txtFldInput, withPlaceholderText: "טלפון", withIndex: self.txtFldPhone.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
+        self.mDCTextSetUp(mDCText: self.txtFldPhone.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.phone, Translations.Placeholders.phoneDefault), withIndex: self.txtFldPhone.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
         
         if user.strEmail.isEmpty {
-            self.mDCTextSetUp(mDCText: self.txtFldEmail.txtFldInput, withPlaceholderText: "אנא הזן את כתובת המייל שלך", withIndex: self.txtFldEmail.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
+            self.mDCTextSetUp(mDCText: self.txtFldEmail.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.email, Translations.Placeholders.emailDefault), withIndex: self.txtFldEmail.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
         } else {
-            self.mDCTextSetUp(mDCText: self.txtFldEmail.txtFldInput, withPlaceholderText: "דוא׳׳ל", withIndex: self.txtFldEmail.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
+            self.mDCTextSetUp(mDCText: self.txtFldEmail.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.insertYourEmailAddress, Translations.Placeholders.insertYourEmailAddressDefault), withIndex: self.txtFldEmail.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
             self.txtFldEmail.txtFldInput.text  = user.strEmail
         }
     }

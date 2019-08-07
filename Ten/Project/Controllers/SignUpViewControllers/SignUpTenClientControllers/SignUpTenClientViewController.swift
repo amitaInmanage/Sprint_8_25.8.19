@@ -30,8 +30,10 @@ class SignUpTenClientViewController: BaseFormViewController {
     func initializeUI() {
         self.btnContinue.Disabled()
         self.setupTextFields()
-        self.mDCTextSetUp(mDCText: self.txtFldAuthorizedDealer.txtFldInput, withPlaceholderText: "מספר ח.פ / עוסק מורשה", withIndex: self.txtFldAuthorizedDealer.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
-        self.mDCTextSetUp(mDCText: self.txtFldCarNumber.txtFldInput, withPlaceholderText: "מספר רכב", withIndex: self.txtFldCarNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
+        
+        self.mDCTextSetUp(mDCText: self.txtFldAuthorizedDealer.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.businessRefuelingCardRegistration, Translations.Placeholders.businessRefuelingCardRegistrationDefault), withIndex: self.txtFldAuthorizedDealer.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
+        
+        self.mDCTextSetUp(mDCText: self.txtFldCarNumber.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.carInformationClubLicensePlate, Translations.Placeholders.carInformationClubLicensePlateDefault), withIndex: self.txtFldCarNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
     }
     
     override func fillTextWithTrans() {

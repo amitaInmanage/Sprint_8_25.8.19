@@ -10,6 +10,40 @@ import Foundation
 
 class Translations {
     
+    struct Placeholders {
+        static let insertYourEmailAddress = "insert_your_email_address_popup_placeholder"
+        static let email = "enter_email_placeholder"
+        static let phone = "phone_placeholder"
+        static let carTest = "car_test_placeholder"
+        static let carModel = "car_model_placeholder"
+        static let carManufacturer = "car_manufacturer_placeholder"
+        static let registerTenCardSecretcoder = "register_ten_card_secretcoder_placeholder"
+        static let registerTenCardnumber = "register_ten_cardnumber_placeholder"
+        static let registerNameLastName = "register_name_last_name_placeholder"
+        static let registerNameFirstName = "register_name_first_name_placeholder"
+        static let carInformationClubeId = "car_information_club_id"
+        static let carInformationClubLicensePlate = "car_information_club_license_plate_placeholder"
+        static let businessRefuelingCardRegistration = "business_refueling_card_registration_placeholder_business_number"
+        static let loginGetPhone = "login_get_phone_placeholder"
+        static let carInforamtionClubeLicense = "car_information_club_license_plate_placeholder"
+        
+        static let insertYourEmailAddressDefault = "Default"
+        static let emailDefault = "Default"
+        static let phoneDefault = "Default"
+        static let carTestDefault = "Default"
+        static let carModelDefault = "Default"
+        static let carManufacturerDefault = "Default"
+        static let registerTenCardSecretcoderDefault = "Default"
+        static let registerTenCardnumberDefault = "Default"
+        static let registerNameLastNameDefault = "Default"
+        static let registerNameFirstNameDefault = "Default"
+        static let carInformationClubeIdDefault = "Default"
+        static let carInformationClubLicensePlateDefault = "Default"
+        static let businessRefuelingCardRegistrationDefault = "Default"
+        static let loginGetPhoneDefault = "Default"
+        static let carInforamtionClubeLicenseDefault = "Default"
+    }
+    
     struct AlertButtonsKeys {
 
         static let VehicleManagementRowSaveChanges = "vehicle_management_row_save_changes"

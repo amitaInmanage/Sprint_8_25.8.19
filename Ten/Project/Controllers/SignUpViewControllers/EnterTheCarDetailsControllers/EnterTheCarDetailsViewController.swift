@@ -32,10 +32,10 @@ class EnterTheCarDetailsViewController: BaseFormViewController {
         self.setupTextFields()
         self.btnContinue.Disabled()
         self.btnForgotPass.tintColor = UIColor.getHighlightedTextColor()
-        self.mDCTextSetUp(mDCText: self.txtFldTenNumberCard.txtFldInput, withPlaceholderText: "מספר כרטיס", withIndex: self.txtFldTenNumberCard.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: "Error")
-        txtFldSecretCode.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        self.mDCTextSetUp(mDCText: self.txtFldSecretCode.txtFldInput, withPlaceholderText: "קוד סודי", withIndex: self.txtFldSecretCode.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: "Error")
-        txtFldTenNumberCard.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        self.mDCTextSetUp(mDCText: self.txtFldTenNumberCard.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.registerTenCardnumber, Translations.Placeholders.registerTenCardnumberDefault), withIndex: self.txtFldTenNumberCard.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: "")
+        
+        self.mDCTextSetUp(mDCText: self.txtFldSecretCode.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.registerTenCardSecretcoder, Translations.Placeholders.registerTenCardSecretcoderDefault), withIndex: self.txtFldSecretCode.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: "")
         
     }
     
@@ -46,6 +46,8 @@ class EnterTheCarDetailsViewController: BaseFormViewController {
     }
     
     fileprivate func setupTextFields() {
+        self.txtFldSecretCode.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        self.txtFldTenNumberCard.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.txtFldTenNumberCard.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.txtFldSecretCode.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         self.txtFldTenNumberCard.txtFldInput.tag = TxtFldTag.cardNumber.rawValue

@@ -33,8 +33,10 @@ class SignUpCarDetailsViewController: BaseFormViewController {
     func initializeUI() {
         self.registerXibs()
         self.setupTextFields()
-        self.mDCTextSetUp(mDCText: self.txtFldCarNumber.txtFldInput, withPlaceholderText: "מספר רכב", withIndex: self.txtFldCarNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "רכב אינו תקין", addToolbar: true)
-        self.mDCTextSetUp(mDCText: self.txtFldIdNumber.txtFldInput, withPlaceholderText: "ת.ז בעל הרכב", withIndex: self.txtFldIdNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "רכב אינו תקין", addToolbar: true)
+        
+        self.mDCTextSetUp(mDCText: self.txtFldCarNumber.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.carInformationClubLicensePlate, Translations.Placeholders.carInformationClubLicensePlateDefault), withIndex: self.txtFldCarNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
+        
+        self.mDCTextSetUp(mDCText: self.txtFldIdNumber.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.carInformationClubeId, Translations.Placeholders.carInformationClubeIdDefault), withIndex: self.txtFldIdNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
         
     }
     

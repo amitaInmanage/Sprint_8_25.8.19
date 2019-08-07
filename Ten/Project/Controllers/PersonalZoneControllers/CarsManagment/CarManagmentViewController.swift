@@ -26,6 +26,7 @@ class CarManagmentViewControoler: BaseFormViewController {
     var user = ApplicationManager.sharedInstance.userAccountManager.user
     var isShowPopup = false
     var fieldsArr = [String: Any]()
+    var fuelingDeviceItem = [FuelingDevicesItem]()
     var id = ""
     var carManufacturer = ""
     var carModel = ""
@@ -42,7 +43,7 @@ class CarManagmentViewControoler: BaseFormViewController {
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
         
-        datePicker?.addTarget(self, action: #selector(self.dateChanged(_:)), for: .valueChanged)
+        datePicker?.addTarget(self, action: #selector(self.dateChanged(_:)), for: .editingDidEnd)
  
     }
     
@@ -184,13 +185,13 @@ extension CarManagmentViewControoler: UITableViewDelegate, UITableViewDataSource
             cell.lblCreditCardNumber.text = user.fuelingDevicesArr[indexPath.row].payment.strTitle
             cell.imgCreditCard.setImageWithStrURL(strURL: user.fuelingDevicesArr[indexPath.row].payment.strIcon, withAddUnderscoreIphone: false)
         
-        mDCTextSetUp(mDCText: cell.txtFldManufacturer.txtFldInput, withPlaceholderText: "יצרן", withIndex: 1, withKeyboardType: .default, withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: " ", addToolbar: true)
+        mDCTextSetUp(mDCText: cell.txtFldManufacturer.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.carManufacturer, Translations.Placeholders.carManufacturerDefault), withIndex: 1, withKeyboardType: .default, withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: "", addToolbar: true)
        
         
-        mDCTextSetUp(mDCText: cell.txtFldModel.txtFldInput, withPlaceholderText: "דגם", withIndex: 2, withKeyboardType: .default, withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: " ", addToolbar: true)
+        mDCTextSetUp(mDCText: cell.txtFldModel.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.carModel, Translations.Placeholders.carModelDefault), withIndex: 2, withKeyboardType: .default, withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: "", addToolbar: true)
         
         
-        mDCTextSetUp(mDCText: cell.txtFldDate.txtFldInput, withPlaceholderText: "תוקף טסט", withIndex: 3, withKeyboardType: .default, withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: " ", addToolbar: true)
+        mDCTextSetUp(mDCText: cell.txtFldDate.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.carTest, Translations.Placeholders.carTestDefault), withIndex: 3, withKeyboardType: .default, withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: "", addToolbar: true)
         
         
         cell.txtFldDate.txtFldInput.inputView = datePicker

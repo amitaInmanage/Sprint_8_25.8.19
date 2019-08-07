@@ -44,7 +44,7 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
     }
     
     fileprivate func initializeTextFields() {
-        self.mDCTextSetUp(mDCText: self.txtFldPhoneNumber.txtFldInput, withPlaceholderText: "מספר נייד", withIndex: self.txtFldPhoneNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
+        self.mDCTextSetUp(mDCText: self.txtFldPhoneNumber.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.loginGetPhone, Translations.Placeholders.loginGetPhoneDefault), withIndex: self.txtFldPhoneNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
         
         txtFldPhoneNumber.txtFldInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

@@ -349,7 +349,7 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
     }
     
     func callUpdateFuelingDevice(dictParams: [String: Any], requestFinishedDelegate :RequestFinishedProtocol?) {
-        
+
         var delegate = requestFinishedDelegate
         
         if delegate == nil {

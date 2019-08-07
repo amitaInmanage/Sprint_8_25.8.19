@@ -32,7 +32,7 @@ class SignUpCarDetailsDelekTypeViewController: BaseFormViewController {
     func initializeUI() {
         self.initializeTextFields()
         self.btnContinue.Disabled()
-        self.mDCTextSetUp(mDCText: self.txtFldCarNumber.txtFldInput, withPlaceholderText: "מספר רכב", withIndex: self.txtFldCarNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "רכב אינו תקין", addToolbar: true)
+        self.mDCTextSetUp(mDCText: self.txtFldCarNumber.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.carInforamtionClubeLicense, Translations.Placeholders.carInforamtionClubeLicenseDefault), withIndex: self.txtFldCarNumber.txtFldInput.tag, withKeyboardType: .numberPad , withKeyType: .done, txtFldInputType: .generalNumbericNumber, errorText: "" , addToolbar: true)
     }
     
     fileprivate func initializeTextFields() {

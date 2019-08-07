@@ -41,8 +41,9 @@ class SignUpFullNameViewController: BaseFormViewController {
         self.lblFirstNameError.isHidden = true
         self.lblLastNameError.isHidden = true
         
-        self.mDCTextSetUp(mDCText: self.txtFldFirstName.txtFldInput, withPlaceholderText: "שם פרטי", withIndex: self.txtFldFirstName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
-        self.mDCTextSetUp(mDCText: self.txtFldLastName.txtFldInput, withPlaceholderText: "שם משפחה", withIndex: self.txtFldLastName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "דיווח על טעות", addToolbar: true)
+        self.mDCTextSetUp(mDCText: self.txtFldFirstName.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.registerNameFirstName, Translations.Placeholders.registerNameFirstNameDefault), withIndex: self.txtFldFirstName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
+        
+        self.mDCTextSetUp(mDCText: self.txtFldLastName.txtFldInput, withPlaceholderText: Translation(Translations.Placeholders.registerNameLastName, Translations.Placeholders.registerNameLastNameDefault), withIndex: self.txtFldLastName.txtFldInput.tag, withKeyboardType: .default , withKeyType: .done, txtFldInputType: .generalNumbericNumber , errorText: "", addToolbar: true)
     }
     
     override func fillTextWithTrans() {

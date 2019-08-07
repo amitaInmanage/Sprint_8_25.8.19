@@ -96,12 +96,6 @@ class LoginViewController: BaseFormViewController {
         let popupInfoObj = PopupInfoObj()
         
         popupInfoObj.popupType = .restorePassword
-//        popupInfoObj.strTitle = Translation(RestorePasswordPopupTranslations.lblTitle, RestorePasswordPopupTranslations.lblTitleDefault)
-//        popupInfoObj.strFirstButtonTitle = Translation(RestorePasswordPopupTranslations.btnConfirm, RestorePasswordPopupTranslations.btnConfirmDefault)
-//        popupInfoObj.strSecondButtonTitle = Translation(RestorePasswordPopupTranslations.btnClose, RestorePasswordPopupTranslations.btnCloseDefault)
-//
-//        popupInfoObj.strTxtFldPlaceholder = Translation(RestorePasswordPopupTranslations.lblTxtFieldPlaceholder, RestorePasswordPopupTranslations.lblTxtFieldPlaceholderDefault)
-//        popupInfoObj.strTxtFldError = Translation(RestorePasswordPopupTranslations.lblError, RestorePasswordPopupTranslations.lblErrorDefault)
         
         popupInfoObj.firstButtonActionWithObj = { (_ dataObject :Any) -> () in
             
