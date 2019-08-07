@@ -25,6 +25,7 @@ class AddNewCarViewController: BaseFormViewController {
     var viewModel = AddNewCarViewModel()
     var isTableVisible = false
     var storePaymentMethodsTypeOne = [StorePaymentMethodsItem]()
+    var window: UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,10 @@ class AddNewCarViewController: BaseFormViewController {
         self.initUI()
         self.registerXibs()
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window!.backgroundColor = UIColor.blue
     }
+    
     
     override func didMove(toParentViewController parent: UIViewController?) {
         if let vc = parent as?TenStyleViewController {

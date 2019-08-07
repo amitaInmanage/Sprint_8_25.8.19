@@ -113,19 +113,16 @@ extension StorePaymentActiveViewController: RemoveStorePaymentDelegate {
         self.viewModel.type = self.userType
         
         let popupInfoObj = PopupInfoObj()
-        
-        //TODO: change text hardCoded!!!
-        popupInfoObj.popupType = .tenGeneralPopup
-        popupInfoObj.strTitle = "האם אתה בטוח שאתה רוצה להסיר את אמצעי התשלום?"
-        popupInfoObj.strFirstButtonTitle = "לא"
-        popupInfoObj.strSecondButtonTitle = "כן"
-        popupInfoObj.secondButtonAction = {
+        popupInfoObj.popupType = .exit
+        popupInfoObj.strTitle = Translation(Translations.Titles.popupRemovePaymentMethod, Translations.Titles.popupRemovePaymentMethodDefault)
+        popupInfoObj.strSkipButtonTitle = Translation(Translations.AlertButtonsKeys.popupRemoveFuelingCardNo, Translations.AlertButtonsKeys.popupRemoveFuelingCardNoDefault)
+        popupInfoObj.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.popupRemoveFuelingCardYes, Translations.AlertButtonsKeys.popupRemoveFuelingCardYesDefault)
+        popupInfoObj.firstButtonAction = {
             self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
         }
         ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
     }
 }
-
 
 extension StorePaymentActiveViewController {
     func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {

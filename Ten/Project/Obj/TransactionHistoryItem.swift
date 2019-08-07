@@ -10,7 +10,7 @@ import UIKit
 
 class TransactionHistoryItem: BaseInnerResponse {
  
-    var intId = 0
+    var strId = ""
     var intType = 0
     var strIcon = ""
     var strDate = ""
@@ -24,7 +24,7 @@ class TransactionHistoryItem: BaseInnerResponse {
     override func buildFromJSONDict(JSONDict:  [String: Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
 
-        self.intId = ParseValidator.getIntForKey(key: "id", JSONDict: JSONDict, defaultValue: 0)
+        self.strId = ParseValidator.getStringForKey(key: "id", JSONDict: JSONDict, defaultValue: "")
         self.intType = ParseValidator.getIntForKey(key: "type", JSONDict: JSONDict, defaultValue: 0)
         self.strIcon = ParseValidator.getStringForKey(key: "icon", JSONDict: JSONDict, defaultValue: "")
         self.strDate = ParseValidator.getStringForKey(key: "date", JSONDict: JSONDict, defaultValue: "")

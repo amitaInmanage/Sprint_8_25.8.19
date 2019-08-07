@@ -20,4 +20,6 @@ class CarManagmentViewModel: BaseViewModel {
         
         ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
     }
+    
+   
 }

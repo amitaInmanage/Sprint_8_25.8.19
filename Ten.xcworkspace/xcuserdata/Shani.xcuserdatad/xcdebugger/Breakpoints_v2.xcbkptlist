@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "586845914.003655"
+            timestampString = "586872785.818534"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1058"
-            endingLineNumber = "1058"
+            startingLineNumber = "1063"
+            endingLineNumber = "1063"
             landmarkName = "requestSucceeded(request:withOuterResponse:andInnerResponse:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -164,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "586845914.003804"
+            timestampString = "586872785.818694"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -273,7 +273,7 @@
                   moduleName = "Ten"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/SignUpViewControllers/SignUpPasswordCreatedSuccessfully/SignUpPasswordCreatedSuccessfullyViewController.swift"
-                  timestampString = "586845914.56583"
+                  timestampString = "586885490.1310591"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -288,7 +288,7 @@
                   moduleName = "Ten"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/SignUpViewControllers/SignUpPasswordCreatedSuccessfully/SignUpPasswordCreatedSuccessfullyViewController.swift"
-                  timestampString = "586845914.567964"
+                  timestampString = "586885490.133095"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -311,38 +311,6 @@
             startingLineNumber = "266"
             endingLineNumber = "266"
             landmarkName = "didTapContinue(_:id:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/PersonalZoneControllers/CarsManagment/CarManagmentViewController.swift"
-            timestampString = "586845914.003991"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "586847369.677395"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "924"
-            endingLineNumber = "924"
-            landmarkName = "moveToNextScreen(data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

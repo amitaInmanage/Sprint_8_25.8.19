@@ -46,6 +46,8 @@ class Translations {
     
     struct AlertButtonsKeys {
 
+        static let popupRemoveFuelingCardYes = "popup_remove_fueling_card_yes"
+        static let popupRemoveFuelingCardNo = "popup_remove_fueling_card_no"
         static let VehicleManagementRowSaveChanges = "vehicle_management_row_save_changes"
         static let securityManagementRemovePinCode = "security_management_remove_pin_code"
         static let addFuelingCardSucces = "add_fueling_card_success_popup_btn"
@@ -87,6 +89,8 @@ class Translations {
         static let no = "mobile_alert_btn_no"
         static let noInternet = "alert_no_access_to_server"
         
+        static let popupRemoveFuelingCardYesDefault = "Default"
+        static let popupRemoveFuelingCardNoDefault = "Default"
         static let VehicleManagementRowSaveChangesDefault = "Default"
         static let securityManagementRemovePinCodeDefault = "Default"
         static let addFuelingCardSuccesDefault = "Default"
@@ -220,6 +224,8 @@ class Translations {
     
     struct Titles {
         
+        static let popupRemovePaymentMethod = "popup_remove_payment_method_title"
+        static let popupRemoveFuelingCard = "popup_remove_fueling_card_title"
         static let addFuelingCardSuccess = "add_fueling_card_success_popup_title"
         static let chooseCreditCardBottom = "choose_credit_card_bottom_sheet"
         static let chooseCreditCard = "choose_credit_card_title"
@@ -266,6 +272,8 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let popupRemovePaymentMethodDefault = "Default"
+        static let popupRemoveFuelingCardDefault = "Default"
         static let addFuelingCardSuccessDefault = "Default"
         static let chooseCreditCardBottomDefault = "Default"
         static let chooseCreditCardDefault = "Default"

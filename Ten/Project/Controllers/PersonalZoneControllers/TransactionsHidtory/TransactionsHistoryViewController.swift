@@ -23,9 +23,16 @@ class TransactionsHistoryViewController : BaseFormViewController {
     var user = ApplicationManager.sharedInstance.userAccountManager.user
     var viewModel = TransactionsHistoryViewModel()
     var state = Box<States>(States.allPurchases)
+    
+    
+    
     var TransactionHistoryItems: [TransactionHistoryItem] = []
     var allTransactionHistoryResponse: GetTransactionsHistoryResponse?
+    
+    
+    
     var isWaitingForResponse = false
+    var selctedItem = -1
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblTitle: IMLabel!
@@ -76,15 +83,13 @@ class TransactionsHistoryViewController : BaseFormViewController {
     
     fileprivate func stores(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoresTableViewCell.className, for: indexPath) as! StoresTableViewCell
+
         
         cell.stackViewUsage.isHidden = true
         cell.stackViewAccunulation.isHidden = true
         
-        //TODO: Change index to - indexPath.row when sever side add id
-        cell.imgType.setImageWithStrURL(strURL: self.user.fuelingDevicesArr[0].strIcon, withAddUnderscoreIphone: false)
-        cell.imgFuelType.setImageWithStrURL(strURL: self.user.fuelingDevicesArr[0].fuelItem.strImage, withAddUnderscoreIphone: false)
-        cell.lblCarNumber.text = self.user.fuelingDevicesArr[0].strTitle
-        
+      
+    
         cell.imgType.setImageWithStrURL(strURL: TransactionHistoryItems[indexPath.row].strIcon, withAddUnderscoreIphone: false)
         cell.lblTitle.text = TransactionHistoryItems[indexPath.row].store.strTitle
         cell.lblDate.text = TransactionHistoryItems[indexPath.row].strDate
@@ -171,6 +176,14 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+//                for TransactionHistoryItem in self.TransactionHistoryItems[indexPath.row].strId {
+//        
+//                    if self.TransactionHistoryItems[indexPath.row].strId == self.user.fuelingDevicesArr.strId {
+//                        cell.imgFuelType.setImageWithStrURL(strURL: self.user.fuelingDevicesArr[indexPath.row].fuelItem.strImage, withAddUnderscoreIphone: false)
+//                        cell.lblCarNumber.text = self.user.fuelingDevicesArr[indexPath.row].strTitle
+//                    }
+//                }
+        
         switch self.state.value {
         case .allPurchases:
             return self.stores(tableView, cellForRowAt: indexPath)
@@ -193,6 +206,7 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
         let cell = tableView.cellForRow(at: indexPath) as! StoresTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
     
+        self.selctedItem = indexPath.row
         TransactionHistoryItems[indexPath.row].isExtended = !TransactionHistoryItems[indexPath.row].isExtended
         self.view.layoutIfNeeded()
         self.tableView.reloadData()

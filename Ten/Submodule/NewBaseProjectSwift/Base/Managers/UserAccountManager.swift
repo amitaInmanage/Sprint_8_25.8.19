@@ -765,6 +765,11 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         self.moveToNextScreen()
     }
     
+//    func pushViewController(StoryboardName: UIStoryboard) {
+//        StoryboardName.instantiateViewController(withIdentifier: UIViewController.className)
+//         ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
+//    }
+//    
     private func moveToNextScreen(data: Any? = nil) -> Bool {
         
         if let nextScreen = self.arrScreens.first {

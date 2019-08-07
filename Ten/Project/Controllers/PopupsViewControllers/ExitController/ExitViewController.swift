@@ -14,6 +14,7 @@ class ExitViewController: BasePopupViewController {
     @IBOutlet weak var lblSubTitle: LightLabel!
     @IBOutlet weak var btnYes: TenButtonStyle!
     @IBOutlet weak var btnNo: TenButtonStyle!
+    @IBOutlet weak var btnExit: IMButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

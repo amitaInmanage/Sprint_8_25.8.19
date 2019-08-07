@@ -214,6 +214,14 @@ class TimeManager: BaseManager {
         return str
     }
     
+    // Date -> "dd.MM.yyyy"
+    func getFullDateFullYearWithBackSlashString(from date: Date) -> String {
+        let f = DateFormatter()
+        f.dateFormat = "dd/MM/yyyy"
+        let str: String = f.string(from: date)
+        return str
+    }
+    
     // Date -> "dd/MM/yyyy hh:mm:ss.SSS"
     func getFullDateAndTimeString(from date: Date) -> String {
         let f = DateFormatter()

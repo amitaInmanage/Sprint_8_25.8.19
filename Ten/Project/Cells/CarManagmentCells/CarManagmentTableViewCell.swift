@@ -48,7 +48,10 @@ class CarManagmentTableViewCell: UITableViewCell {
     fileprivate func initUI() {
         self.vwCarMenegmentCell.addShadow()
         self.btnDeleteCar.setWhiteBackground()
+        self.btnDeleteCar.setImage(UIImage(named: "blueTrush"), for: .normal)
+        self.btnDeleteCar.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -80)
         self.btnDeleteCar.setTitle(Translation(Translations.AlertButtonsKeys.securityManagementRemovePinCode, Translations.AlertButtonsKeys.securityManagementRemovePinCodeDefault), for: .normal)
+        self.btnDeleteCar.titleEdgeInsets = UIEdgeInsets(top: 0, left: -40, bottom: 0, right: 0)
         self.btnSaveChanges.setTitle(Translation(Translations.AlertButtonsKeys.VehicleManagementRowSaveChanges, Translations.AlertButtonsKeys.VehicleManagementRowSaveChangesDefault), for: .normal)
     }
     

@@ -10,13 +10,13 @@ import Foundation
 
 class StoreHistoey: BaseInnerResponse {
     
-    var intId = 0
+    var intId = ""
     var strTitle = ""
     
     override func buildFromJSONDict(JSONDict:  [String: Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
         
-        self.intId = ParseValidator.getIntForKey(key: "id", JSONDict: JSONDict, defaultValue: 0)
+        self.intId = ParseValidator.getStringForKey(key: "id", JSONDict: JSONDict, defaultValue: "")
         self.strTitle = ParseValidator.getStringForKey(key: "title", JSONDict: JSONDict, defaultValue: "")
         
         return self

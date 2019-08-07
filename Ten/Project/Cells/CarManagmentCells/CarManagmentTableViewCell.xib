@@ -69,7 +69,6 @@
                                                     <constraint firstAttribute="width" constant="125" id="Qdu-iy-RJQ"/>
                                                     <constraint firstAttribute="height" constant="42" id="dYW-t1-g7d"/>
                                                 </constraints>
-                                                <state key="normal" image="blueTrush"/>
                                                 <connections>
                                                     <action selector="didTapRemoveCar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lyh-XU-ZFk"/>
                                                 </connections>
@@ -208,7 +207,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="blueTrush" width="21.5" height="24"/>
         <image name="down" width="16.5" height="9"/>
     </resources>
 </document>
