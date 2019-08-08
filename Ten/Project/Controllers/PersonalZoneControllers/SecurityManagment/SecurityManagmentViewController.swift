@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class SecurityManagmentViewController: BaseFormViewController {
+    
+    enum BiometricType {
+        case none
+        case touch
+        case face
+    }
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblTtile: IMLabel!
@@ -30,6 +37,8 @@ class SecurityManagmentViewController: BaseFormViewController {
         self.registerXibs()
         self.initTableView()
         self.initUI()
+        
+        
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -45,6 +54,23 @@ class SecurityManagmentViewController: BaseFormViewController {
         }
     }
     
+     func biometricType() -> BiometricType {
+        let authContext = LAContext()
+        if #available(iOS 11, *) {
+            let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+            switch(authContext.biometryType) {
+            case .none:
+                return .none
+            case .touchID:
+                return .touch
+            case .faceID:
+                return .face
+            }
+        } else {
+            return authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touch : .none
+        }
+    }
+    
     override func fillTextWithTrans() {
         self.lblTtile.text = Translation(Translations.AlertButtonsKeys.securityMenagement, Translations.AlertButtonsKeys.securityMenagementDefault)
         self.lblSubTitle.text = Translation(Translations.SubTitles.securityManagment, Translations.SubTitles.securityManagmentDefault)
@@ -52,16 +78,27 @@ class SecurityManagmentViewController: BaseFormViewController {
     
     fileprivate func initUI() {
        !user.hasPinCode ? (self.lblSubTitle.isHidden = false) : (self.lblSubTitle.isHidden = true)
-
+        
     }
     
     fileprivate func filRowTypeArr() -> Void{
-        if !user.hasPinCode {
-            self.rowTypeArr.append(RowType.createPassword)
-        } else {
+        
+        let device = self.biometricType()
+        
+        if device == BiometricType.touch && user.hasPinCode {
+            self.rowTypeArr.append(RowType.changePassword)
+            self.rowTypeArr.append(RowType.touchId)
+            
+        } else if device == BiometricType.face && user.hasPinCode {
             self.rowTypeArr.append(RowType.changePassword)
             self.rowTypeArr.append(RowType.faceId)
-            self.rowTypeArr.append(RowType.touchId)
+       
+        } else if device == BiometricType.none && user.hasPinCode {
+                self.rowTypeArr.append(RowType.changePassword)
+    
+        } else {
+            
+            self.rowTypeArr.append(RowType.createPassword)
         }
     }
     

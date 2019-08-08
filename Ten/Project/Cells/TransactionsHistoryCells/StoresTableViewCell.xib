@@ -190,30 +190,31 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-CB-WMv">
-                                        <rect key="frame" x="8" y="44" width="24" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjK-io-Vbi">
+                                        <rect key="frame" x="0.0" y="30" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="MPD-Q2-FIK"/>
-                                            <constraint firstAttribute="height" constant="22" id="kI9-19-gvh"/>
+                                            <constraint firstAttribute="height" constant="50" id="Rcu-ZA-sk5"/>
+                                            <constraint firstAttribute="width" constant="50" id="VSl-KP-1Wp"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" image="down"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Nr2-CB-WMv" firstAttribute="leading" secondItem="PNm-rb-SrZ" secondAttribute="leading" constant="8" id="1IV-mv-b1I"/>
                                     <constraint firstItem="etF-MO-NPR" firstAttribute="leading" secondItem="TXe-qy-xTj" secondAttribute="leading" constant="60" id="H0M-TO-Yin"/>
                                     <constraint firstItem="WBN-rl-tO8" firstAttribute="leading" secondItem="KC8-7h-iQK" secondAttribute="trailing" constant="13" id="HJN-Jv-LvE"/>
                                     <constraint firstItem="WBN-rl-tO8" firstAttribute="centerY" secondItem="TXe-qy-xTj" secondAttribute="centerY" id="NDX-f6-kCj"/>
                                     <constraint firstItem="50i-Rs-2yv" firstAttribute="leading" secondItem="TXe-qy-xTj" secondAttribute="leading" constant="69" id="Qyv-e8-aa0"/>
+                                    <constraint firstItem="IjK-io-Vbi" firstAttribute="leading" secondItem="PNm-rb-SrZ" secondAttribute="leading" id="Ubc-0g-00g"/>
                                     <constraint firstItem="etF-MO-NPR" firstAttribute="top" secondItem="TXe-qy-xTj" secondAttribute="top" constant="26" id="XZL-X7-wId"/>
                                     <constraint firstAttribute="height" constant="109.5" id="Ycj-Ze-3ER"/>
-                                    <constraint firstItem="Nr2-CB-WMv" firstAttribute="centerY" secondItem="PNm-rb-SrZ" secondAttribute="centerY" id="Yt5-JH-JNB"/>
                                     <constraint firstItem="WBN-rl-tO8" firstAttribute="leading" secondItem="Gak-Ry-lde" secondAttribute="trailing" constant="13" id="bKI-ZI-8qi"/>
                                     <constraint firstItem="etF-MO-NPR" firstAttribute="leading" secondItem="Uu8-qh-v8D" secondAttribute="trailing" constant="2" id="bcs-ww-OF2"/>
                                     <constraint firstItem="Uu8-qh-v8D" firstAttribute="bottom" secondItem="etF-MO-NPR" secondAttribute="bottom" id="ioi-6I-u51"/>
                                     <constraint firstAttribute="bottom" secondItem="KC8-7h-iQK" secondAttribute="bottom" constant="28" id="jm6-9B-orJ"/>
                                     <constraint firstAttribute="trailing" secondItem="WBN-rl-tO8" secondAttribute="trailing" constant="23" id="kwE-2N-kkn"/>
                                     <constraint firstItem="50i-Rs-2yv" firstAttribute="top" secondItem="etF-MO-NPR" secondAttribute="bottom" constant="2" id="pJ2-qK-15R"/>
+                                    <constraint firstItem="IjK-io-Vbi" firstAttribute="centerY" secondItem="PNm-rb-SrZ" secondAttribute="centerY" id="pd5-KM-GGp"/>
                                     <constraint firstItem="KC8-7h-iQK" firstAttribute="top" secondItem="Gak-Ry-lde" secondAttribute="bottom" constant="5.5" id="xf9-Pe-AEa"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="PNm-rb-SrZ"/>
@@ -243,13 +244,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="dropDown" destination="0yN-bQ-DDr" id="Tvp-FF-l1O"/>
+                <outlet property="btnDropDown" destination="IjK-io-Vbi" id="LCN-qh-PmG"/>
                 <outlet property="dropDownConstraint" destination="QCk-wK-Url" id="mK9-1T-qSG"/>
                 <outlet property="historyBottomConstraint" destination="6Sc-I6-mIi" id="7sS-xe-Q9b"/>
                 <outlet property="imgCar" destination="MRz-wr-oQN" id="WdP-id-D8R"/>
                 <outlet property="imgFuelType" destination="t6c-EB-oys" id="o3r-Ht-z4H"/>
                 <outlet property="imgType" destination="WBN-rl-tO8" id="YEj-2Q-hgJ"/>
-                <outlet property="imgUp" destination="Nr2-CB-WMv" id="hmX-hv-vD1"/>
                 <outlet property="lblAccumulationAmount" destination="mbM-m8-zvb" id="RR3-L2-fvh"/>
                 <outlet property="lblAmount" destination="etF-MO-NPR" id="tfo-m1-TNe"/>
                 <outlet property="lblCarNumber" destination="3Br-6f-bus" id="oLQ-dx-onN"/>
@@ -259,6 +259,7 @@
                 <outlet property="lblUsageAmount" destination="xnf-0A-BvF" id="pgG-Yc-Eyv"/>
                 <outlet property="stackViewAccunulation" destination="nCf-dX-ncp" id="PFn-bE-ca9"/>
                 <outlet property="stackViewUsage" destination="hEL-yz-FCS" id="vda-nU-h6f"/>
+                <outlet property="vwDropDown" destination="0yN-bQ-DDr" id="Tvp-FF-l1O"/>
                 <outlet property="vwHistory" destination="TXe-qy-xTj" id="Qob-Up-FJ6"/>
             </connections>
             <point key="canvasLocation" x="45.652173913043484" y="36.495535714285715"/>

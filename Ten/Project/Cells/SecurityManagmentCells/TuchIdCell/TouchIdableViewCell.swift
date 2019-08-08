@@ -36,88 +36,47 @@ class TouchIdableViewCell: UITableViewCell {
     
     @IBAction func didTapCreateTouchId(_ sender: Any) {
         
+        
         print("hello there!.. You have clicked the touch ID")
         
+        let popupInfoObj = PopupInfoObj()
+        popupInfoObj.popupType = .tenGeneralPopup
+        popupInfoObj.strImageName = "carAdd"
+        popupInfoObj.strTitle = Translation(Translations.Titles.addFuelingCardSuccess, Translations.Titles.addFuelingCardSuccessDefault)
+        popupInfoObj.strSubtitle = Translation(Translations.SubTitles.addFuelingCardSuccess, Translations.SubTitles.addFuelingCardSuccessDefault)
+        popupInfoObj.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.addFuelingCardSucces, Translations.AlertButtonsKeys.addFuelingCardSuccesDefault)
+        
+        ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
+    
+    
         let myContext = LAContext()
         let myLocalizedReasonString = "Biometric Authntication testing !! "
-        var authError: NSError?
         
+        var authError: NSError?
         if #available(iOS 8.0, macOS 10.12.1, *) {
             if myContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
                 myContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString) { success, evaluateError in
                     
                     DispatchQueue.main.async {
                         if success {
-                        //  self.lblTouchId.text = "done"
+                            // User authenticated successfully, take appropriate action
+//                            self.successLabel.text = "Awesome!!... User authenticated successfully"
                         } else {
                             // User did not authenticate successfully, look at error and take appropriate action
-                            //            self.successLabel.text = "Sorry!!... User did not authenticate successfully"
+//                            self.successLabel.text = "Sorry!!... User did not authenticate successfully"
                         }
                     }
                 }
             } else {
                 // Could not evaluate policy; look at authError and present an appropriate message to user
-                //  successLabel.text = "Sorry!!.. Could not evaluate policy."
+//                successLabel.text = "Sorry!!.. Could not evaluate policy."
             }
         } else {
             // Fallback on earlier versions
-            //successLabel.text = "Ooops!!.. This feature is not supported."
+//            successLabel.text = "Ooops!!.. This feature is not supported."
         }
-        
-        
     }
-    
-    
-    //        let context = LAContext()
-    //        var error: NSError?
-    //
-    //        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-    //            let reason = "Identify yourself!"
-    //
-    //            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-    //                [unowned self] success, authenticationError in
-    //
-    //                DispatchQueue.main.async {
-    //                    if success {
-    //                        self.runSecretCode()
-    //                    } else {
-    //                        let ac = UIAlertController(title: "Authentication failed", message: "Sorry!", preferredStyle: .alert)
-    //                        ac.addAction(UIAlertAction(title: "OK", style: .default))
-    //                        self.present(ac, animated: true)
-    //                    }
-    //                }
-    //            }
-    //        } else {
-    //            let ac = UIAlertController(title: "Touch ID not available", message: "Your device is not configured for Touch ID.", preferredStyle: .alert)
-    //            ac.addAction(UIAlertAction(title: "OK", style: .default))
-    //            present(ac, animated: true)
-    //        }
-    
-    
-    
-    
-    //        biometricHelper = BiometricHelper(action: { (newVal) in
-    //            switch newVal {
-    //            case .authSuccess:
-    //                print("biometric auth success")
-    //                break
-    //            case .authFailed:
-    //                print("biometric auth fail")
-    //                break
-    //                //            case .biometricLockout:
-    //                //                print("biometric auth lockout")
-    //                //                break
-    //                //            case .notAvailable:
-    //                //                print("biometric not available")
-    //                //                break
-    //                //            case .notEnrolled:
-    //                //                print("biometric not set")
-    //            //                break
-    //            default:
-    //                break
-    //            }
-    //        }, parent: UIViewController())
-    //    }
 }
+
 
 

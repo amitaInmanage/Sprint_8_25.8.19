@@ -10,7 +10,6 @@ import UIKit
 
 class PasswordManagmenTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var lblRemovePassword: UILabel!
     @IBOutlet weak var lblChangePassowrd: UILabel!
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var vwContent: UIView!
@@ -25,9 +24,6 @@ class PasswordManagmenTableViewCell: UITableViewCell {
     }
     
     //IBAction:
-    @IBAction func didTapRemovePassword(_ sender: Any) {
-    }
-    
     @IBAction func didTapChangePassword(_ sender: Any) {
         if let signUpVC = UIStoryboard.init(name: "SignUp", bundle: Bundle.main).instantiateViewController(withIdentifier: FourDigitCodeViewController.className) as? FourDigitCodeViewController {
             signUpVC.changePassword = false

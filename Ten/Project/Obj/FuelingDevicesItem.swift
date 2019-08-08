@@ -24,14 +24,13 @@ class FuelingDevicesItem: BaseInnerResponse {
         let tempInfo = ParseValidator.getDictionaryForKey(key: "info", JSONDict: JSONDict, defaultValue: [String : Any]())
         self.objInfo = Info().buildFromJSONDict(JSONDict: tempInfo) as! Info
         
-        self.strId = ParseValidator.getStringForKey(key: "id", JSONDict: JSONDict, defaultValue: "")
-        
         let tempFuelItem = ParseValidator.getDictionaryForKey(key: "fuel", JSONDict: JSONDict, defaultValue: [String : Any]())
         self.fuelItem = Fuel().buildFromJSONDict(JSONDict: tempFuelItem) as! Fuel
         
         let tempPayment = ParseValidator.getDictionaryForKey(key: "payment", JSONDict: JSONDict, defaultValue: [String : Any]())
         self.payment = Payment().buildFromJSONDict(JSONDict: tempPayment) as! Payment
         
+        self.strId = ParseValidator.getStringForKey(key: "id", JSONDict: JSONDict, defaultValue: "")
         self.strIcon = ParseValidator.getStringForKey(key: "icon", JSONDict: JSONDict, defaultValue: "")
         self.strTitle = ParseValidator.getStringForKey(key: "title", JSONDict: JSONDict, defaultValue: "")
         

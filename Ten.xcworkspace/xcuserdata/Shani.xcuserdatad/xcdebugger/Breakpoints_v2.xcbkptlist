@@ -256,61 +256,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/SignUpViewControllers/SignUpPasswordCreatedSuccessfully/SignUpPasswordCreatedSuccessfullyViewController.swift"
-            timestampString = "586627217.113"
+            filePath = "Ten/Project/Cells/SecurityManagmentCells/TuchIdCell/TouchIdableViewCell.swift"
+            timestampString = "586966560.745141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ten.SignUpPasswordCreatedSuccessfullyViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Ten"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/SignUpViewControllers/SignUpPasswordCreatedSuccessfully/SignUpPasswordCreatedSuccessfullyViewController.swift"
-                  timestampString = "586885490.1310591"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "332">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Ten.SignUpPasswordCreatedSuccessfullyViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "Ten"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/SignUpViewControllers/SignUpPasswordCreatedSuccessfully/SignUpPasswordCreatedSuccessfullyViewController.swift"
-                  timestampString = "586885490.133095"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/SignUpViewControllers/FourDigitCodeControllers/FourDigitCodeViewController.swift"
-            timestampString = "586627217.113228"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "didTapContinue(_:id:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "didTapCreateTouchId(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

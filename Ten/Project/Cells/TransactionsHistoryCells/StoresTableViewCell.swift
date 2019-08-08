@@ -10,6 +10,7 @@ import UIKit
 
 class StoresTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var btnDropDown: UIButton!
     @IBOutlet weak var stackViewAccunulation: UIStackView!
     @IBOutlet weak var stackViewUsage: UIStackView!
     @IBOutlet weak var imgType: UIImageView!
@@ -19,8 +20,7 @@ class StoresTableViewCell: UITableViewCell {
     @IBOutlet weak var lblAccumulationAmount: IMLabel!
     @IBOutlet weak var lblUsageAmount: IMLabel!
     @IBOutlet weak var lblAmount: IMLabel!
-    @IBOutlet weak var imgUp: UIImageView!
-    @IBOutlet weak var dropDown: UIView!
+    @IBOutlet weak var vwDropDown: UIView!
     @IBOutlet weak var vwHistory: UIView!
     @IBOutlet weak var dropDownConstraint: NSLayoutConstraint!
     @IBOutlet weak var historyBottomConstraint: NSLayoutConstraint!
@@ -28,14 +28,29 @@ class StoresTableViewCell: UITableViewCell {
     @IBOutlet weak var lblCarNumber: UILabel!
     @IBOutlet weak var imgCar: UIImageView!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.lblTitle.text = ""
+        self.lblDate.text = ""
+        self.lblTime.text = ""
+        self.lblAccumulationAmount.text = ""
+        self.lblAmount.text = ""
+        self.imgCar.image = nil
+        self.imgType.image = nil
+        self.imgFuelType.image = nil
+        self.imageView?.image = nil
+        self.btnDropDown.isHidden = false
+        self.vwDropDown.isHidden = true
+        self.historyBottomConstraint.constant = 95
+
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.vwHistory.addShadow()
-        self.dropDown.isHidden = true
-        self.dropDown.addShadow()
+        self.vwDropDown.isHidden = true
+        self.vwDropDown.addShadow()
         self.historyBottomConstraint.constant = 129.5
-      //  self.historyBottomConstraint.constant = 22
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -15,14 +15,14 @@ class PersonalDetailsViewModel: BaseViewModel {
     var strLastName = ""
     var intGenderId = 0
     var strCellPhone = ""
-    var strAcceptsUpdates = false
+    var isAcceptsUpdates = false
     
     func buildJsonAndSendEditUserInformation(vc: UIViewController?) {
         
         var dict = [TenParamsNames.firstName: self.strFirstName,
                     TenParamsNames.lastName: self.strLastName,
                     TenParamsNames.gender: self.intGenderId,
-                    TenParamsNames.acceptsUpdates: self.strAcceptsUpdates] as [String : Any]
+                    TenParamsNames.acceptsUpdates: self.isAcceptsUpdates] as [String : Any]
         
         if strCurrentEmail != strEmail {
              dict.updateValue(strEmail, forKey: TenParamsNames.email)
