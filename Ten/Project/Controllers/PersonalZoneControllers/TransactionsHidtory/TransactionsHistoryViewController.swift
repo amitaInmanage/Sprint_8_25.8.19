@@ -24,8 +24,20 @@ class TransactionsHistoryViewController : BaseFormViewController {
     var viewModel = TransactionsHistoryViewModel()
     var state = Box<States>(States.allPurchases)
     var fuelingDevices = ApplicationManager.sharedInstance.userAccountManager.user.fuelingDevicesArr
-    var transactionHistoryItems = [TransactionHistoryItem]()
+    
+    
+    
+    var allPurchasesItems = [TransactionHistoryItem]()
+    var refuelingItems = [TransactionHistoryItem]()
+    var storesItems = [TransactionHistoryItem]()
+    
+    
+    
     var allTransactionHistoryResponse: GetTransactionsHistoryResponse?
+    var refuelingHistoryResponse: GetTransactionsHistoryResponse?
+    var storesHistoryResponse: GetTransactionsHistoryResponse?
+    
+    
     var isWaitingForResponse = false
     
     @IBOutlet weak var tableView: UITableView!
@@ -60,6 +72,32 @@ class TransactionsHistoryViewController : BaseFormViewController {
         }
     }
     
+    fileprivate func initializeBindings() {
+        self.state.bind { [unowned self] (newVal) in
+            switch self.state.value {
+                
+            case .allPurchases:
+                self.initTabBar()
+                self.viewModel.type = self.state.value.rawValue
+                self.isWaitingForResponse = true
+                self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+                
+            case .refueling:
+                self.initTabBar()
+                self.isWaitingForResponse = true
+                self.viewModel.type = self.state.value.rawValue
+                self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+                
+                
+            case .stores:
+                self.initTabBar()
+                self.viewModel.type = self.state.value.rawValue
+                self.isWaitingForResponse = true
+                self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+            }
+        }
+    }
+    
     fileprivate func initUI() {
         self.view.backgroundColor = .clear
         self.initTabBar()
@@ -88,24 +126,24 @@ class TransactionsHistoryViewController : BaseFormViewController {
         cell.stackViewUsage.isHidden = true
         cell.stackViewAccunulation.isHidden = true
         
-        cell.imgType.setImageWithStrURL(strURL: transactionHistoryItems[indexPath.row].strIcon, withAddUnderscoreIphone: false)
-        cell.lblTitle.text = transactionHistoryItems[indexPath.row].store.strTitle
-        cell.lblDate.text = transactionHistoryItems[indexPath.row].strDate
-        cell.lblTime.text = transactionHistoryItems[indexPath.row].strTime
-        cell.lblAmount.text = transactionHistoryItems[indexPath.row].amount.strValue
+        cell.imgType.setImageWithStrURL(strURL: allPurchasesItems[indexPath.row].strIcon, withAddUnderscoreIphone: false)
+        cell.lblTitle.text = allPurchasesItems[indexPath.row].store.strTitle
+        cell.lblDate.text = allPurchasesItems[indexPath.row].strDate
+        cell.lblTime.text = allPurchasesItems[indexPath.row].strTime
+        cell.lblAmount.text = allPurchasesItems[indexPath.row].amount.strValue
         
-        if self.transactionHistoryItems[indexPath.row].intType == 2 {
+        if self.allPurchasesItems[indexPath.row].intType == 2 {
             cell.btnDropDown.isHidden = true
             
-        } else if self.transactionHistoryItems[indexPath.row].intType == 1 {
+        } else if self.allPurchasesItems[indexPath.row].intType == 1 {
             cell.btnDropDown.isHidden = false
             
-            let fuelingDeviceItem = self.getFuelingDeviceItem(id: self.transactionHistoryItems[indexPath.row].fuelingDeviceId)
+            let fuelingDeviceItem = self.getFuelingDeviceItem(id: self.allPurchasesItems[indexPath.row].fuelingDeviceId)
             cell.imgFuelType.setImageWithStrURL(strURL: fuelingDeviceItem.fuelItem.strIcon, withAddUnderscoreIphone: false)
             cell.lblCarNumber.text = fuelingDeviceItem.strTitle
             cell.imgCar.setImageWithStrURL(strURL: fuelingDeviceItem.strIcon, withAddUnderscoreIphone: false)
             
-            if self.transactionHistoryItems[indexPath.row].isExtended {
+            if self.allPurchasesItems[indexPath.row].isExtended {
                 
                 UIView.animate(withDuration: 0.3) {
                     cell.btnDropDown.setImage(UIImage(named: "up"), for: .normal)
@@ -125,13 +163,13 @@ class TransactionsHistoryViewController : BaseFormViewController {
             }
         }
         
-        if self.transactionHistoryItems[indexPath.row].accumulationAmount.intDisplay == 1 {
-            cell.lblAccumulationAmount.text = String(transactionHistoryItems[indexPath.row].accumulationAmount.intValue)
+        if self.allPurchasesItems[indexPath.row].accumulationAmount.intDisplay == 1 {
+            cell.lblAccumulationAmount.text = String(allPurchasesItems[indexPath.row].accumulationAmount.intValue)
             cell.stackViewAccunulation.isHidden = false
         }
         
-        if self.transactionHistoryItems[indexPath.row].usageAmount.intDisplay == 1 {
-            cell.lblUsageAmount.text = String(transactionHistoryItems[indexPath.row].usageAmount.intValue)
+        if self.allPurchasesItems[indexPath.row].usageAmount.intDisplay == 1 {
+            cell.lblUsageAmount.text = String(allPurchasesItems[indexPath.row].usageAmount.intValue)
             cell.stackViewUsage.isHidden = false
         }
         
@@ -141,24 +179,23 @@ class TransactionsHistoryViewController : BaseFormViewController {
     fileprivate func refueling(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StoresTableViewCell.className, for: indexPath) as! StoresTableViewCell
         
-        
+        cell.btnDropDown.isHidden = false
         cell.stackViewUsage.isHidden = true
         cell.stackViewAccunulation.isHidden = true
         
-        cell.imgType.setImageWithStrURL(strURL: transactionHistoryItems[indexPath.row].strIcon, withAddUnderscoreIphone: false)
-        cell.lblTitle.text = transactionHistoryItems[indexPath.row].store.strTitle
-        cell.lblDate.text = transactionHistoryItems[indexPath.row].strDate
-        cell.lblTime.text = transactionHistoryItems[indexPath.row].strTime
-        cell.lblAmount.text = transactionHistoryItems[indexPath.row].amount.strValue
+        cell.imgType.setImageWithStrURL(strURL: refuelingItems[indexPath.row].strIcon, withAddUnderscoreIphone: false)
+        cell.lblTitle.text = refuelingItems[indexPath.row].store.strTitle
+        cell.lblDate.text = refuelingItems[indexPath.row].strDate
+        cell.lblTime.text = refuelingItems[indexPath.row].strTime
+        cell.lblAmount.text = refuelingItems[indexPath.row].amount.strValue
         
-        cell.btnDropDown.isHidden = false
         
-        let fuelingDeviceItem = self.getFuelingDeviceItem(id: self.transactionHistoryItems[indexPath.row].fuelingDeviceId)
+        let fuelingDeviceItem = self.getFuelingDeviceItem(id: self.refuelingItems[indexPath.row].fuelingDeviceId)
         cell.imgFuelType.setImageWithStrURL(strURL: fuelingDeviceItem.fuelItem.strIcon, withAddUnderscoreIphone: false)
         cell.lblCarNumber.text = fuelingDeviceItem.strTitle
         cell.imgCar.setImageWithStrURL(strURL: fuelingDeviceItem.strIcon, withAddUnderscoreIphone: false)
         
-        if self.transactionHistoryItems[indexPath.row].isExtended {
+        if self.refuelingItems[indexPath.row].isExtended {
             
             UIView.animate(withDuration: 0.3) {
                 cell.btnDropDown.setImage(UIImage(named: "up"), for: .normal)
@@ -178,13 +215,13 @@ class TransactionsHistoryViewController : BaseFormViewController {
         }
         
         
-        if self.transactionHistoryItems[indexPath.row].accumulationAmount.intDisplay == 1 {
-            cell.lblAccumulationAmount.text = String(transactionHistoryItems[indexPath.row].accumulationAmount.intValue)
+        if self.refuelingItems[indexPath.row].accumulationAmount.intDisplay == 1 {
+            cell.lblAccumulationAmount.text = String(refuelingItems[indexPath.row].accumulationAmount.intValue)
             cell.stackViewAccunulation.isHidden = false
         }
         
-        if self.transactionHistoryItems[indexPath.row].usageAmount.intDisplay == 1 {
-            cell.lblUsageAmount.text = String(transactionHistoryItems[indexPath.row].usageAmount.intValue)
+        if self.refuelingItems[indexPath.row].usageAmount.intDisplay == 1 {
+            cell.lblUsageAmount.text = String(refuelingItems[indexPath.row].usageAmount.intValue)
             cell.stackViewUsage.isHidden = false
         }
         
@@ -198,63 +235,34 @@ class TransactionsHistoryViewController : BaseFormViewController {
         cell.stackViewUsage.isHidden = true
         cell.stackViewAccunulation.isHidden = true
         
-        cell.imgType.setImageWithStrURL(strURL: transactionHistoryItems[indexPath.row].strIcon, withAddUnderscoreIphone: false)
-        cell.lblTitle.text = transactionHistoryItems[indexPath.row].store.strTitle
-        cell.lblDate.text = transactionHistoryItems[indexPath.row].strDate
-        cell.lblTime.text = transactionHistoryItems[indexPath.row].strTime
-        cell.lblAmount.text = transactionHistoryItems[indexPath.row].amount.strValue
+        cell.imgType.setImageWithStrURL(strURL: storesItems[indexPath.row].strIcon, withAddUnderscoreIphone: false)
+        cell.lblTitle.text = storesItems[indexPath.row].store.strTitle
+        cell.lblDate.text = storesItems[indexPath.row].strDate
+        cell.lblTime.text = storesItems[indexPath.row].strTime
+        cell.lblAmount.text = storesItems[indexPath.row].amount.strValue
         
-        if self.transactionHistoryItems[indexPath.row].accumulationAmount.intDisplay == 1 {
-            cell.lblAccumulationAmount.text = String(transactionHistoryItems[indexPath.row].accumulationAmount.intValue)
+        if self.storesItems[indexPath.row].accumulationAmount.intDisplay == 1 {
+            cell.lblAccumulationAmount.text = String(storesItems[indexPath.row].accumulationAmount.intValue)
             cell.stackViewAccunulation.isHidden = false
         }
         
-        if self.transactionHistoryItems[indexPath.row].usageAmount.intDisplay == 1 {
-            cell.lblUsageAmount.text = String(transactionHistoryItems[indexPath.row].usageAmount.intValue)
+        if self.storesItems[indexPath.row].usageAmount.intDisplay == 1 {
+            cell.lblUsageAmount.text = String(storesItems[indexPath.row].usageAmount.intValue)
             cell.stackViewUsage.isHidden = false
         }
         return cell
-    }
-    
-    fileprivate func initializeBindings() {
-        self.state.bind { [unowned self] (newVal) in
-            switch self.state.value {
-                
-            case .allPurchases:
-                self.initTabBar()
-                self.viewModel.type = self.state.value.rawValue
-                self.isWaitingForResponse = true
-                self.viewModel.type = 0
-                self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
-                
-            case .refueling:                self.initTabBar()
-            self.viewModel.type = self.state.value.rawValue
-            self.isWaitingForResponse = true
-            self.viewModel.type = 1
-            self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
-                
-            case .stores:
-                self.initTabBar()
-                self.viewModel.type = self.state.value.rawValue
-                self.isWaitingForResponse = true
-                self.viewModel.type = 2
-                self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
-            }
-        }
+        
     }
     
     @IBAction func didTapAll(_ sender: Any) {
-        self.tableView.reloadData()
         self.state.value = .allPurchases
     }
     
     @IBAction func didTapRefueling(_ sender: Any) {
-        self.tableView.reloadData()
         self.state.value = .refueling
     }
     
     @IBAction func didTapStores(_ sender: Any) {
-        self.tableView.reloadData()
         self.state.value = .stores
     }
 }
@@ -263,7 +271,17 @@ class TransactionsHistoryViewController : BaseFormViewController {
 extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transactionHistoryItems.count
+        
+        switch self.state.value {
+        case .allPurchases:
+            return allPurchasesItems.count
+            
+        case .refueling:
+            return refuelingItems.count
+            
+        case .stores:
+            return storesItems.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -288,24 +306,65 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
         
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        if self.transactionHistoryItems[indexPath.row].intType == 1 {
-            self.transactionHistoryItems[indexPath.row].isExtended = !self.transactionHistoryItems[indexPath.row].isExtended
+        
+        switch self.state.value {
             
+        case .allPurchases:
+            if self.allPurchasesItems[indexPath.row].intType == 1 {
+                self.allPurchasesItems[indexPath.row].isExtended = !self.allPurchasesItems[indexPath.row].isExtended
+                self.view.layoutIfNeeded()
+                self.tableView.reloadData()
+            }
+            
+        case .refueling:
+            if self.refuelingItems[indexPath.row].intType == 1 {
+                self.refuelingItems[indexPath.row].isExtended = !self.refuelingItems[indexPath.row].isExtended
+                self.view.layoutIfNeeded()
+                self.tableView.reloadData()
+            }
+            
+        case .stores:
             self.view.layoutIfNeeded()
             self.tableView.reloadData()
         }
+        
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    //MARK - LazyLoad:
+    private func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let height = scrollView.frame.size.height
         let contentYoffset = scrollView.contentOffset.y
         let distanceFromBottom = scrollView.contentSize.height - contentYoffset
         if distanceFromBottom < height {
-            if allTransactionHistoryResponse?.hasNextPage == true && !self.isWaitingForResponse {
-                isWaitingForResponse = true
-                self.viewModel.currentPage += 1
-                self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+            
+              switch self.state.value {
+              case .allPurchases:
+                if allTransactionHistoryResponse?.hasNextPage == true && !self.isWaitingForResponse {
+                    isWaitingForResponse = true
+                    self.viewModel.currentPage += 1
+                    self.viewModel.type = self.state.value.rawValue
+                    self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+                }
+                
+              case .refueling:
+                if refuelingHistoryResponse?.hasNextPage == true && !self.isWaitingForResponse {
+                    isWaitingForResponse = true
+                    self.viewModel.currentPage += 1
+                    self.viewModel.type = self.state.value.rawValue
+                    self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+
+                }
+                
+              case .stores:
+                if storesHistoryResponse?.hasNextPage == true && !self.isWaitingForResponse {
+                    isWaitingForResponse = true
+                    self.viewModel.currentPage += 1
+                    self.viewModel.type = self.state.value.rawValue
+                    self.viewModel.buildJsonAndSendGetTransactionsHistory(vc: self)
+                 
+
+                }
             }
         }
     }
@@ -314,11 +373,29 @@ extension TransactionsHistoryViewController: UITableViewDelegate, UITableViewDat
 extension TransactionsHistoryViewController {
     func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
         if request.requestName == TenRequestNames.getTransactionsHistory {
+            
             if let innerResponse = innerResponse as? GetTransactionsHistoryResponse {
-                self.transactionHistoryItems = [TransactionHistoryItem]()
-                self.transactionHistoryItems.append(contentsOf: innerResponse.transactionHistoryList)
-                self.allTransactionHistoryResponse = innerResponse
-                self.tableView.reloadData()
+                
+                switch self.state.value {
+                case .allPurchases:
+                    
+                    self.allPurchasesItems.append(contentsOf: innerResponse.transactionHistoryList)
+                    self.allTransactionHistoryResponse = innerResponse
+                    self.tableView.reloadData()
+                    
+                case .refueling:
+                    
+                    self.refuelingItems.append(contentsOf: innerResponse.transactionHistoryList)
+                    self.refuelingHistoryResponse = innerResponse
+                    self.tableView.reloadData()
+                    
+                case .stores:
+                    
+                    self.storesItems.append(contentsOf: innerResponse.transactionHistoryList)
+                    self.storesHistoryResponse = innerResponse
+                    self.tableView.reloadData()
+                    
+                }
                 isWaitingForResponse = false
             }
         }
@@ -330,7 +407,7 @@ extension TransactionsHistoryViewController {
 }
 
 extension TransactionsHistoryViewController {
-    func initTabBar() {
+    private func initTabBar() {
         switch self.state.value {
         case .allPurchases:
             self.underLinevw0.backgroundColor = UIColor.getApplicationThemeColor()
@@ -365,10 +442,9 @@ extension TransactionsHistoryViewController {
         }
     }
     
-    func initTableView() {
+    private func initTableView() {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 80
         self.view.backgroundColor = .clear
-        self.tableView.reloadData()
     }
 }

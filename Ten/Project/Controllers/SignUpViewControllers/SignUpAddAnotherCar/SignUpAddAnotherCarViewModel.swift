@@ -18,7 +18,6 @@ class SignUpAddAnotherCarViewModel: BaseViewModel {
         popupInfoObj.popupType = .tenGeneralPopup
         popupInfoObj.strImageName = "security"
         popupInfoObj.strSubtitle = StringManager.sharedInstance.replaceString(originalString: Translation(Translations.Titles.securityTooltip, Translations.Titles.securityTooltipDefault), replacement: ApplicationManager.sharedInstance.userAccountManager.user.strFirstName)
-        //popupInfoObj.strSubtitle = Translation(Translations.Titles.securityTooltip, Translations.Titles.securityTooltipDefault)
         popupInfoObj.strBottomText = Translation(Translations.SubTitles.securityTooltip, Translations.SubTitles.securityTooltipDefault)
         
         popupInfoObj.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.securityTooltip, Translations.AlertButtonsKeys.securityTooltipDefault)

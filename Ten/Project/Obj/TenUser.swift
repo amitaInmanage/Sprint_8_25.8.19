@@ -39,7 +39,7 @@ class TenUser: User {
         let fuelingDevices = ParseValidator.getArrayForKey(key: "fueling_devicesArr", JSONDict: JSONDict, defaultValue: [Any]())
         self.fuelingDevicesArr = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: fuelingDevices, innerResponse: FuelingDevicesItem(), shouldReverseOrder: false) as! [FuelingDevicesItem]
         
-        let tempPowerCardArr = ParseValidator.getDictionaryForKey(key: "powercardArr", JSONDict: JSONDict, defaultValue: [String : Any]())
+        let tempPowerCardArr = ParseValidator.getDictionaryForKey(key: "powercard", JSONDict: JSONDict, defaultValue: [String : Any]())
         
         self.powerCardArr = PowerCardItem().buildFromJSONDict(JSONDict: tempPowerCardArr) as! PowerCardItem
         

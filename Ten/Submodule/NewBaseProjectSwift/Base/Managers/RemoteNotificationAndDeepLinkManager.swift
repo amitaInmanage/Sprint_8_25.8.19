@@ -244,18 +244,22 @@ class RemoteNotificationAndDeepLinkManager: BaseManager {
                     ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
                 }
                 break
-            case DeepLinkPageStrings.myClubs.rawValue:
-                print("my_clubs")
-                break
             case DeepLinkPageStrings.fuelingDevices.rawValue:
                 if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: CarManagmentViewControoler.className) as? CarManagmentViewControoler {
-                    //personalZone.user = ApplicationManager.sharedInstance.userAccountManager.user
                     ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
                 }
                 break
+                
+            case DeepLinkPageStrings.myClubs.rawValue:
+                if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: ClubsViewController.className) as? ClubsViewController {
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                }
+                break
+         
             case DeepLinkPageStrings.usageInformation.rawValue:
                 print("usage_information")
                 break
+                
             case DeepLinkPageStrings.storePaymentMethods.rawValue:
                 
                 UserAccountManager.sharedInstance.validateUserPayment(storePamentMathods: storePamentMathods)

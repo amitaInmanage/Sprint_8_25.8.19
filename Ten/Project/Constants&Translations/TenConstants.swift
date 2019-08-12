@@ -12,9 +12,11 @@ struct TenRequestNames {
    
     static let getSmsToken = "getSmsToken"
     static let getOnBoarding = "getOnboarding"
+    static let getAddPowerCard = "addPowerCard"
     static let getVerifyPinCode = "verifyPinCode"
     static let getAddCreditCard = "addCreditCard"
     static let getVerifySmsToken = "verifySmsToken"
+    static let getRemovePowerCard = "removePowerCard"
     static let getUpdateFuelingDevice = "updateFuelingDevice"
     static let getEditUserInformation = "editUserInformation"
     static let getRemoveFuelingDevice = "removeFuelingDevice"
@@ -53,6 +55,11 @@ struct TenParamsNames {
     static let licensePlate = "license_plate"
     static let registrationToken = "registrationToken"
     static let isAdditionalCard = "is_additional_card"
+}
+
+struct addPowerCard {
+    static let cardId = "cardId"
+    static let pinCode = "pinCode"
 }
 
 struct updateRegistrationParams {

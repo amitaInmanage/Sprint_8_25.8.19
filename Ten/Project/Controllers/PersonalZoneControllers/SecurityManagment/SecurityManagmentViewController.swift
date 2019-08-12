@@ -81,7 +81,7 @@ class SecurityManagmentViewController: BaseFormViewController {
         
     }
     
-    fileprivate func filRowTypeArr() -> Void{
+    fileprivate func filRowTypeArr() -> Void {
         
         let device = self.biometricType()
         

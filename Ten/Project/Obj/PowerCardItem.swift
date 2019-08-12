@@ -10,16 +10,15 @@ import UIKit
 
 class PowerCardItem: BaseInnerResponse {
     
-    //TODO: cahnge defualt value to false
-    var isHasCard = 0
-    var intBudget = 0
+  
+    var isHasCard = false
+    var strBudget = ""
     
     override func buildFromJSONDict(JSONDict:  [String: Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
         
-        //TODO: cahnge defualt value to false
-       self.isHasCard = ParseValidator.getIntForKey(key: "has_card", JSONDict: JSONDict, defaultValue: 0)
-       self.intBudget = ParseValidator.getIntForKey(key: "budget", JSONDict: JSONDict, defaultValue: 0)
+       self.isHasCard = ParseValidator.getBoolForKey(key: "has_card", JSONDict: JSONDict, defaultValue: false)
+       self.strBudget = ParseValidator.getStringForKey(key: "budget", JSONDict: JSONDict, defaultValue: "")
         
         return self
     }

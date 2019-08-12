@@ -11,6 +11,8 @@ import Foundation
 class Translations {
     
     struct Placeholders {
+        static let powercardConnectPinCode = "powercard_connect_pin_code"
+        static let powercardConnectId = "powercard_connect_id"
         static let insertYourEmailAddress = "insert_your_email_address_popup_placeholder"
         static let email = "enter_email_placeholder"
         static let phone = "phone_placeholder"
@@ -27,6 +29,8 @@ class Translations {
         static let loginGetPhone = "login_get_phone_placeholder"
         static let carInforamtionClubeLicense = "car_information_club_license_plate_placeholder"
         
+        static let powercardConnectPinCodeDefault = "Default"
+        static let powercardConnectIdDefault = "Default"
         static let insertYourEmailAddressDefault = "Default"
         static let emailDefault = "Default"
         static let phoneDefault = "Default"
@@ -46,6 +50,11 @@ class Translations {
     
     struct AlertButtonsKeys {
 
+        static let popupConnectSuccessfulPowercard = "popup_connect_successful_powercard_btn"
+        static let powercardConnect = "powercard_connect"
+        static let powercardDisconnect = "powercard_disconnect"
+        static let fingertipTooltipSkip = "fingertip_tooltip_skip"
+        static let fingertipTooltip = "fingertip_tooltip_blue_btn"
         static let popupRemoveFuelingCardYes = "popup_remove_fueling_card_yes"
         static let popupRemoveFuelingCardNo = "popup_remove_fueling_card_no"
         static let VehicleManagementRowSaveChanges = "vehicle_management_row_save_changes"
@@ -89,6 +98,11 @@ class Translations {
         static let no = "mobile_alert_btn_no"
         static let noInternet = "alert_no_access_to_server"
         
+        static let popupConnectSuccessfulPowercardDefault = "Default"
+        static let powercardConnectDefault = "Default"
+        static let powercardDisconnectDefault = "Default"
+        static let fingertipTooltipSkipDefault = "Default"
+        static let fingertipTooltipDefault = "Default"
         static let popupRemoveFuelingCardYesDefault = "Default"
         static let popupRemoveFuelingCardNoDefault = "Default"
         static let VehicleManagementRowSaveChangesDefault = "Default"
@@ -135,7 +149,9 @@ class Translations {
     }
     
     struct  SubTitles {
-    
+        static let popupConnectSuccessfulPowercard = "popup_connect_successful_powercard_subtitle"
+        static let popupDisconnectPowercard = "popup_disconnect_powercard_subtitle"
+        static let fingertipTooltip = "fingertip_tooltip_subtitle"
         static let addFuelingCardSuccess = "add_fueling_card_success_popup_subtitle"
         static let chooseCreditCard = "choose_credit_card_subtitle"
         static let storePayment = "store_payment_methods_subtitle"
@@ -154,6 +170,9 @@ class Translations {
         static let creditCardSubTitle = "credit_card_details_sub_title"
         static let carInformationClub = "car_information_club_fuel_type"
         
+        static let popupConnectSuccessfulPowercardDefault = "Default"
+        static let popupDisconnectPowercardDefault = "Default"
+        static let fingertipTooltipDefault = "Default"
         static let addFuelingCardSuccessDefault = "Default"
         static let chooseCreditCardDefault = "Default"
         static let storePaymentDefault = "Default"
@@ -223,7 +242,14 @@ class Translations {
     }
     
     struct Titles {
-        
+        static let tooltipSecretCodePowercard = "tooltip_secret_code_powercard_title"
+        static let popupConnectSuccessfulPowercard = "popup_connect_successful_powercard_title"
+        static let popupDisconnectPowercard = "popup_disconnect_powercard_title"
+        static let powercardConnect = "powercard_connect_title"
+        static let powercardAccumulation = "powercard_accumulation"
+        static let powerCard = "powercard_title"
+        static let clubs = "clubs_title"
+        static let fingertipTooltip = "fingertip_tooltip_title"
         static let popupRemovePaymentMethod = "popup_remove_payment_method_title"
         static let popupRemoveFuelingCard = "popup_remove_fueling_card_title"
         static let addFuelingCardSuccess = "add_fueling_card_success_popup_title"
@@ -272,6 +298,14 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let tooltipSecretCodePowercardDefault = "Default"
+        static let popupConnectSuccessfulPowercardDefault = "Default"
+        static let popupDisconnectPowercardDefault = "Default"
+        static let powercardConnectDefault = "Default"
+        static let powercardAccumulationDefault = "Default"
+        static let powerCardDefault = "Default"
+        static let clubsDefault = "Default"
+        static let fingertipTooltipDefault = "Default"
         static let popupRemovePaymentMethodDefault = "Default"
         static let popupRemoveFuelingCardDefault = "Default"
         static let addFuelingCardSuccessDefault = "Default"

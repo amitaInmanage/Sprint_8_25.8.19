@@ -144,6 +144,45 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
     
     //MARK: Server Requests
     
+    func callUpdateFuelingDevice(dictParams: [String: Any], requestFinishedDelegate :RequestFinishedProtocol?) {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        let request = UpdateFuelingDeviceRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
+        
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
+    }
+    
+    func callRemovePowerCard(requestFinishedDelegate :RequestFinishedProtocol?) {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        let request = RemovePowerCardRequest().initWithDictParams(dictParams: nil, andRequestFinishDelegate: delegate)
+        
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
+    }
+    
+    func callAddPowerCard(dictParams: [String: Any], requestFinishedDelegate :RequestFinishedProtocol?)  {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        let request = AddPowerCardRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
+        
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
+    }
+    
     func callAddUserWithUserAccountProcessObj(userAccountProcessObj: UserAccountProcessObj, andRequestFinishedDelegate requestFinishedDelegate: RequestFinishedProtocol?) {
         
         var delegate = requestFinishedDelegate
@@ -344,19 +383,6 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
         }
         
         let request = RemoveFuelingDeviceRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
-        
-        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
-    }
-    
-    func callUpdateFuelingDevice(dictParams: [String: Any], requestFinishedDelegate :RequestFinishedProtocol?) {
-
-        var delegate = requestFinishedDelegate
-        
-        if delegate == nil {
-            delegate = self
-        }
-        
-        let request = UpdateFuelingDeviceRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
         
         ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
     }
@@ -968,7 +994,27 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
     //MARK: RequestFinishedProtocol
     
     func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
+    
+        if request.requestName == TenRequestNames.getRemovePowerCard {
+            if let signUpVC = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: PowerCardViewController.className) as? PowerCardViewController {
+                ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
+            }
+        }
         
+        if  request.requestName == TenRequestNames.getAddPowerCard {
+            let popupInfoObj = PopupInfoObj()
+            popupInfoObj.popupType = .tenGeneralPopup
+            popupInfoObj.strImageName = "powerCardDone"
+            popupInfoObj.strTitle = Translation(Translations.Titles.popupConnectSuccessfulPowercard, Translations.Titles.popupConnectSuccessfulPowercardDefault)
+            popupInfoObj.strSubtitle = Translation(Translations.SubTitles.popupConnectSuccessfulPowercard, Translations.SubTitles.popupConnectSuccessfulPowercardDefault)
+            popupInfoObj.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.popupConnectSuccessfulPowercard, Translations.AlertButtonsKeys.popupConnectSuccessfulPowercardDefault)
+            popupInfoObj.firstButtonAction = {
+                if let signUpVC = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: PowerCardViewController.className) as? PowerCardViewController {
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
+                }
+            }
+            ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
+        }
         
         if request.requestName == TenRequestNames.getStarsNewFuelingDeviceProcess {
             if let innerResponse = innerResponse as? StartNewFuelingDeviceProcessResponse {

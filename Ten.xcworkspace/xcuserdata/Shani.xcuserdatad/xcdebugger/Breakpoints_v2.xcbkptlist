@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "586872785.818534"
+            timestampString = "587304836.0592411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1063"
-            endingLineNumber = "1063"
+            startingLineNumber = "1109"
+            endingLineNumber = "1109"
             landmarkName = "requestSucceeded(request:withOuterResponse:andInnerResponse:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -148,7 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/RemoteNotificationAndDeepLinkManager.swift"
-            timestampString = "586162436.6806329"
+            timestampString = "587304836.059342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
@@ -164,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "586872785.818694"
+            timestampString = "587304836.0594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -253,17 +253,109 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Cells/SecurityManagmentCells/TuchIdCell/TouchIdableViewCell.swift"
-            timestampString = "586966560.745141"
+            filePath = "Ten/Project/Controllers/PersonalZoneControllers/Clubs/powerCard/PowerCardViewController.swift"
+            timestampString = "587304836.059478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "didTapCreateTouchId(_:)"
-            landmarkType = "7">
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "PowerCardViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ten.PowerCardViewController.hasPowarCard.getter : Swift.Bool"
+                  moduleName = "Ten"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/PersonalZoneControllers/Clubs/powerCard/PowerCardViewController.swift"
+                  timestampString = "587296959.707898"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ten.PowerCardViewController.hasPowarCard.setter : Swift.Bool"
+                  moduleName = "Ten"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/PersonalZoneControllers/Clubs/powerCard/PowerCardViewController.swift"
+                  timestampString = "587296959.710305"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ten.PowerCardViewController.hasPowarCard.modify : Swift.Bool"
+                  moduleName = "Ten"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/PersonalZoneControllers/Clubs/powerCard/PowerCardViewController.swift"
+                  timestampString = "587296959.712459"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ten.PowerCardViewController.hasPowarCard.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Ten"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/PersonalZoneControllers/Clubs/powerCard/PowerCardViewController.swift"
+                  timestampString = "587296959.7142659"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ten.PowerCardViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Ten.PowerCardViewController"
+                  moduleName = "Ten"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/PersonalZoneControllers/Clubs/powerCard/PowerCardViewController.swift"
+                  timestampString = "587296959.716179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "788">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ten.PowerCardViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Ten.PowerCardViewController&gt;"
+                  moduleName = "Ten"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Shani/Desktop/Ten-iOS/Ten/Project/Controllers/PersonalZoneControllers/Clubs/powerCard/PowerCardViewController.swift"
+                  timestampString = "587296959.718017"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "732">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

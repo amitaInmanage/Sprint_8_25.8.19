@@ -66,7 +66,7 @@ class PersonalZoneViewController: BaseViewController {
             
             self.rowTypeArr.append(RowType.saving)
         }
-        if user.powerCardArr.isHasCard < 0 {
+        if user.powerCardArr.isHasCard {
             
             self.rowTypeArr.append(RowType.powerCard)
         }
@@ -98,6 +98,8 @@ class PersonalZoneViewController: BaseViewController {
     fileprivate func powerCard(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: PowerCardTableViewCell.className, for: indexPath) as! PowerCardTableViewCell
+        
+        
         return cell
     }
     

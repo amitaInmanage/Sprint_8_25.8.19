@@ -22,14 +22,12 @@ class PowerCardTableViewCell: UITableViewCell {
     
     fileprivate func initUI() {
         self.selectionStyle = .none
-        self.lblDetails.text = Translation(Translations.SubTitles.rowPowercardTitle, Translations.SubTitles.rowPowercardTitleDefault)
+        
+        
+        self.lblDetails.text = StringManager.sharedInstance.replaceString(originalString:   Translation(Translations.SubTitles.rowPowercardTitle, Translations.SubTitles.rowPowercardTitleDefault), replacement: ApplicationManager.sharedInstance.userAccountManager.user.powerCardArr.strBudget)
+            
+            
+        
         self.vw.addShadow()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

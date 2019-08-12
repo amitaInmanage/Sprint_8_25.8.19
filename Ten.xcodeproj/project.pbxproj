@@ -419,6 +419,20 @@
 		F48E294822E43ECF0010B01B /* PasswordManagmenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E294722E43ECF0010B01B /* PasswordManagmenTableViewCell.swift */; };
 		F4903DC422E83A7C0029879C /* TransactionsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4903DC322E83A7C0029879C /* TransactionsHistoryViewController.swift */; };
 		F4903DC622E83AD30029879C /* TransactionsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4903DC522E83AD30029879C /* TransactionsHistoryViewModel.swift */; };
+		F4ADEFAC23013F8E005E18A9 /* ClubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFAB23013F8E005E18A9 /* ClubsViewController.swift */; };
+		F4ADEFAE23013FCF005E18A9 /* ClubsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFAD23013FCF005E18A9 /* ClubsViewModel.swift */; };
+		F4ADEFB22301425F005E18A9 /* TenClubsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFB02301425F005E18A9 /* TenClubsTableViewCell.swift */; };
+		F4ADEFB32301425F005E18A9 /* TenClubsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4ADEFB12301425F005E18A9 /* TenClubsTableViewCell.xib */; };
+		F4ADEFB823014893005E18A9 /* PowerCardClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFB623014893005E18A9 /* PowerCardClubTableViewCell.swift */; };
+		F4ADEFB923014893005E18A9 /* PowerCardClubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4ADEFB723014893005E18A9 /* PowerCardClubTableViewCell.xib */; };
+		F4ADEFBE230156D0005E18A9 /* PowerCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFBD230156D0005E18A9 /* PowerCardViewController.swift */; };
+		F4ADEFC023015743005E18A9 /* PowerCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFBF23015743005E18A9 /* PowerCardViewModel.swift */; };
+		F4ADEFC223016060005E18A9 /* AddPowerCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFC123016060005E18A9 /* AddPowerCardResponse.swift */; };
+		F4ADEFC4230160A2005E18A9 /* AddPowerCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFC3230160A2005E18A9 /* AddPowerCardRequest.swift */; };
+		F4ADEFC7230161FC005E18A9 /* AddPowerCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFC6230161FC005E18A9 /* AddPowerCardViewController.swift */; };
+		F4ADEFC923016235005E18A9 /* AddPowerCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFC823016235005E18A9 /* AddPowerCardViewModel.swift */; };
+		F4ADEFCB23017474005E18A9 /* RemovePowerCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFCA23017474005E18A9 /* RemovePowerCardRequest.swift */; };
+		F4ADEFCD230174CD005E18A9 /* RemovePowerCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFCC230174CD005E18A9 /* RemovePowerCardResponse.swift */; };
 		F4D6A9D822E5CDD100F60A39 /* VerifyPinCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */; };
 		F4D6A9DA22E5CE3200F60A39 /* VerifyPinCodeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */; };
 		F4EE0A9522F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE0A9422F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift */; };
@@ -860,6 +874,20 @@
 		F48E294722E43ECF0010B01B /* PasswordManagmenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManagmenTableViewCell.swift; sourceTree = "<group>"; };
 		F4903DC322E83A7C0029879C /* TransactionsHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryViewController.swift; sourceTree = "<group>"; };
 		F4903DC522E83AD30029879C /* TransactionsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsHistoryViewModel.swift; sourceTree = "<group>"; };
+		F4ADEFAB23013F8E005E18A9 /* ClubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsViewController.swift; sourceTree = "<group>"; };
+		F4ADEFAD23013FCF005E18A9 /* ClubsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsViewModel.swift; sourceTree = "<group>"; };
+		F4ADEFB02301425F005E18A9 /* TenClubsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenClubsTableViewCell.swift; sourceTree = "<group>"; };
+		F4ADEFB12301425F005E18A9 /* TenClubsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenClubsTableViewCell.xib; sourceTree = "<group>"; };
+		F4ADEFB623014893005E18A9 /* PowerCardClubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCardClubTableViewCell.swift; sourceTree = "<group>"; };
+		F4ADEFB723014893005E18A9 /* PowerCardClubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PowerCardClubTableViewCell.xib; sourceTree = "<group>"; };
+		F4ADEFBD230156D0005E18A9 /* PowerCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCardViewController.swift; sourceTree = "<group>"; };
+		F4ADEFBF23015743005E18A9 /* PowerCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCardViewModel.swift; sourceTree = "<group>"; };
+		F4ADEFC123016060005E18A9 /* AddPowerCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPowerCardResponse.swift; sourceTree = "<group>"; };
+		F4ADEFC3230160A2005E18A9 /* AddPowerCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPowerCardRequest.swift; sourceTree = "<group>"; };
+		F4ADEFC6230161FC005E18A9 /* AddPowerCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPowerCardViewController.swift; sourceTree = "<group>"; };
+		F4ADEFC823016235005E18A9 /* AddPowerCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPowerCardViewModel.swift; sourceTree = "<group>"; };
+		F4ADEFCA23017474005E18A9 /* RemovePowerCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovePowerCardRequest.swift; sourceTree = "<group>"; };
+		F4ADEFCC230174CD005E18A9 /* RemovePowerCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovePowerCardResponse.swift; sourceTree = "<group>"; };
 		F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeResponse.swift; sourceTree = "<group>"; };
 		F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeRequests.swift; sourceTree = "<group>"; };
 		F4EE0A9422F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFuelingDeviceResponse.swift; sourceTree = "<group>"; };
@@ -1032,6 +1060,7 @@
 		3EB304A8215BBD070020DC61 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F4ADEFAF23014248005E18A9 /* ClubsTableViewCells */,
 				F45B172222F71B13006CBE22 /* CreditCardTableViewCell */,
 				F45B170F22F6B78F006CBE22 /* CarManagmentCells */,
 				F450309122EDC23100BD8202 /* StorePaymentCells */,
@@ -1096,6 +1125,7 @@
 		E815F12C22AFDF570015D1DD /* PersonalZoneControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F4ADEFAA23013F65005E18A9 /* Clubs */,
 				F45B171D22F70598006CBE22 /* AddNewCar */,
 				F450308422EDA43E00BD8202 /* StorePayment */,
 				F450307F22EDA0A800BD8202 /* CarsManagment */,
@@ -1999,6 +2029,8 @@
 				F45B171A22F6EF3E006CBE22 /* UpdateNewFuelingDeviceProcessDataRequest.swift */,
 				F4EE0A9622F8687B00DC8394 /* RemoveFuelingDeviceRequest.swift */,
 				F4EE0A9A22F9747B00DC8394 /* UpdateFuelingDeviceRequest.swift */,
+				F4ADEFC3230160A2005E18A9 /* AddPowerCardRequest.swift */,
+				F4ADEFCA23017474005E18A9 /* RemovePowerCardRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -2020,6 +2052,8 @@
 				F45B171822F6EEF9006CBE22 /* UpdateNewFuelingDeviceProcessDataResponse.swift */,
 				F4EE0A9422F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift */,
 				F4EE0A9822F9743A00DC8394 /* UpdateFuelingDeviceResponse.swift */,
+				F4ADEFC123016060005E18A9 /* AddPowerCardResponse.swift */,
+				F4ADEFCC230174CD005E18A9 /* RemovePowerCardResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -2394,6 +2428,62 @@
 			path = TransactionsHidtory;
 			sourceTree = "<group>";
 		};
+		F4ADEFAA23013F65005E18A9 /* Clubs */ = {
+			isa = PBXGroup;
+			children = (
+				F4ADEFC5230161E6005E18A9 /* AddPowerCard */,
+				F4ADEFBA23015691005E18A9 /* powerCard */,
+				F4ADEFAB23013F8E005E18A9 /* ClubsViewController.swift */,
+				F4ADEFAD23013FCF005E18A9 /* ClubsViewModel.swift */,
+			);
+			path = Clubs;
+			sourceTree = "<group>";
+		};
+		F4ADEFAF23014248005E18A9 /* ClubsTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				F4ADEFB52301485A005E18A9 /* PowerCardClubTableViewCell */,
+				F4ADEFB423014806005E18A9 /* TenClubsTableViewCell */,
+			);
+			path = ClubsTableViewCells;
+			sourceTree = "<group>";
+		};
+		F4ADEFB423014806005E18A9 /* TenClubsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F4ADEFB02301425F005E18A9 /* TenClubsTableViewCell.swift */,
+				F4ADEFB12301425F005E18A9 /* TenClubsTableViewCell.xib */,
+			);
+			path = TenClubsTableViewCell;
+			sourceTree = "<group>";
+		};
+		F4ADEFB52301485A005E18A9 /* PowerCardClubTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F4ADEFB623014893005E18A9 /* PowerCardClubTableViewCell.swift */,
+				F4ADEFB723014893005E18A9 /* PowerCardClubTableViewCell.xib */,
+			);
+			path = PowerCardClubTableViewCell;
+			sourceTree = "<group>";
+		};
+		F4ADEFBA23015691005E18A9 /* powerCard */ = {
+			isa = PBXGroup;
+			children = (
+				F4ADEFBD230156D0005E18A9 /* PowerCardViewController.swift */,
+				F4ADEFBF23015743005E18A9 /* PowerCardViewModel.swift */,
+			);
+			path = powerCard;
+			sourceTree = "<group>";
+		};
+		F4ADEFC5230161E6005E18A9 /* AddPowerCard */ = {
+			isa = PBXGroup;
+			children = (
+				F4ADEFC6230161FC005E18A9 /* AddPowerCardViewController.swift */,
+				F4ADEFC823016235005E18A9 /* AddPowerCardViewModel.swift */,
+			);
+			path = AddPowerCard;
+			sourceTree = "<group>";
+		};
 		F4F8DCF92D93296CFA60D075 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2478,6 +2568,7 @@
 				E8E778F322D5CDC2004F0A9F /* PersonalDetailsTableViewCell.xib in Resources */,
 				F40CA8C5209618FB00821EAD /* Heebo-ExtraBold.ttf in Resources */,
 				3E42AF08216E13C1007F9C07 /* StationUITableViewHeaderFooterView.xib in Resources */,
+				F4ADEFB32301425F005E18A9 /* TenClubsTableViewCell.xib in Resources */,
 				F448C3A5209085CC0077947E /* LaunchScreen.storyboard in Resources */,
 				F448C3A2209085CC0077947E /* Assets.xcassets in Resources */,
 				F450309522EDC25900BD8202 /* StorePaymentTableViewCell.xib in Resources */,
@@ -2502,6 +2593,7 @@
 				E88C645F22DDE441002769B7 /* ExtraServiceCustomView.xib in Resources */,
 				F448C3A0209085C80077947E /* Main.storyboard in Resources */,
 				E82A32EE229BD81700B91456 /* SideMenuFooter.xib in Resources */,
+				F4ADEFB923014893005E18A9 /* PowerCardClubTableViewCell.xib in Resources */,
 				F4471CB422E4ADAB005B0648 /* FaceIdTableViewCell.xib in Resources */,
 				F45B171322F6B7C5006CBE22 /* CarManagmentTableViewCell.xib in Resources */,
 				F4471CB822E4B2FB005B0648 /* TouchIdableViewCell.xib in Resources */,
@@ -2627,6 +2719,7 @@
 				E85E222722A3AE4F00EE0907 /* SignUpPasswordCreatedSuccessfullyViewController.swift in Sources */,
 				F45B171522F6E620006CBE22 /* StartNewFuelingDeviceProcessResponse.swift in Sources */,
 				E85E2212229FBCE600EE0907 /* SignUpCarDetailsViewController.swift in Sources */,
+				F4ADEFC923016235005E18A9 /* AddPowerCardViewModel.swift in Sources */,
 				E8AC3594229E914100171BAE /* ChooseCustomerTypeViewModel.swift in Sources */,
 				E82A32F6229BD81700B91456 /* Translations.swift in Sources */,
 				F450308E22EDAAED00BD8202 /* StorePaymentActiveViewModel.swift in Sources */,
@@ -2708,6 +2801,7 @@
 				E82A336B229BD81800B91456 /* SetSettingsRequest.swift in Sources */,
 				F4471CB622E4B2D9005B0648 /* TouchIdableViewCell.swift in Sources */,
 				E85E221E22A018A900EE0907 /* SignUpTenClientViewController.swift in Sources */,
+				F4ADEFCB23017474005E18A9 /* RemovePowerCardRequest.swift in Sources */,
 				3E42AEFE216DD81D007F9C07 /* StationTableViewCell.swift in Sources */,
 				E82A32F1229BD81700B91456 /* SideMenuFooter.swift in Sources */,
 				E8E778DF22D5C43E004F0A9F /* PersonalZoneViewController.swift in Sources */,
@@ -2794,6 +2888,7 @@
 				F45D570922E5AF260088E704 /* CreatePasswordTableViewCell.swift in Sources */,
 				F45B171922F6EEF9006CBE22 /* UpdateNewFuelingDeviceProcessDataResponse.swift in Sources */,
 				E82A334C229BD81800B91456 /* CustomProgressView.swift in Sources */,
+				F4ADEFBE230156D0005E18A9 /* PowerCardViewController.swift in Sources */,
 				E849966522BA1CC1005228F0 /* VerifySmsTokenResponse.swift in Sources */,
 				E82A3373229BD81800B91456 /* GetContentPageRequest.swift in Sources */,
 				F448C39D209085C80077947E /* OnBoardingViewController.swift in Sources */,
@@ -2822,14 +2917,18 @@
 				E8B5979C22DF1CF800EC8937 /* PlayerView.swift in Sources */,
 				E82A335C229BD81800B91456 /* EditUserNotificationRequest.swift in Sources */,
 				E82A3303229BD81700B91456 /* DebugAndDevEnviromentManager.swift in Sources */,
+				F4ADEFC023015743005E18A9 /* PowerCardViewModel.swift in Sources */,
 				E82A337D229BD81800B91456 /* BaseGeneralDeclarationResponse.swift in Sources */,
 				E82A3309229BD81700B91456 /* OpenURLManager.swift in Sources */,
 				E82A339D229BD81800B91456 /* AddNewCardResponse.swift in Sources */,
+				F4ADEFCD230174CD005E18A9 /* RemovePowerCardResponse.swift in Sources */,
 				E8E778F222D5CDC2004F0A9F /* PersonalDetailsTableViewCell.swift in Sources */,
 				E82A3308229BD81700B91456 /* LocalNotificationManager.swift in Sources */,
 				F454180322E8817300C9CCFF /* GetTransactionsHistoryResponse.swift in Sources */,
+				F4ADEFAC23013F8E005E18A9 /* ClubsViewController.swift in Sources */,
 				E82A338D229BD81800B91456 /* BaseUser.swift in Sources */,
 				E82A3360229BD81800B91456 /* RestorePasswordRequest.swift in Sources */,
+				F4ADEFC223016060005E18A9 /* AddPowerCardResponse.swift in Sources */,
 				E82A330E229BD81700B91456 /* AlertManager.swift in Sources */,
 				E82A332D229BD81700B91456 /* UIImageView+IMExtension.swift in Sources */,
 				E86082F422A538F500D3E376 /* TenGanrelPopupViewController.swift in Sources */,
@@ -2848,6 +2947,7 @@
 				E82A33A6229BD81800B91456 /* ParseValidator.swift in Sources */,
 				E82A3370229BD81800B91456 /* ErrorReportRequest.swift in Sources */,
 				E82A3346229BD81800B91456 /* ViewModel.swift in Sources */,
+				F4ADEFAE23013FCF005E18A9 /* ClubsViewModel.swift in Sources */,
 				E82A3388229BD81800B91456 /* FAQ.swift in Sources */,
 				E809C37822C38DDF0014A2C2 /* SignUpCarDetailsDelekTypeViewController.swift in Sources */,
 				E82A32FF229BD81700B91456 /* UIActionSheet+Blocks.m in Sources */,
@@ -2872,8 +2972,10 @@
 				E82A32EA229BD81700B91456 /* SideMenuProfileTableViewCell.swift in Sources */,
 				E82A33BA229BD81800B91456 /* MainNavigationController.swift in Sources */,
 				E82A33AB229BD81800B91456 /* ConfirmationPopupViewController.swift in Sources */,
+				F4ADEFB22301425F005E18A9 /* TenClubsTableViewCell.swift in Sources */,
 				E82A3306229BD81700B91456 /* CrashAndReportsLogManager.swift in Sources */,
 				E82A3341229BD81800B91456 /* IMBarButtonItem.swift in Sources */,
+				F4ADEFB823014893005E18A9 /* PowerCardClubTableViewCell.swift in Sources */,
 				E82A3327229BD81700B91456 /* Date+IMExtension.swift in Sources */,
 				E85E2217229FC9F900EE0907 /* SignUpCreditCardDetailsViewController.swift in Sources */,
 				E82A3330229BD81700B91456 /* UILabel+IMExtension.swift in Sources */,
@@ -2921,6 +3023,7 @@
 				E82A33BF229BD81800B91456 /* GoogleAnalyticsProtocol.swift in Sources */,
 				E82A33BB229BD81800B91456 /* LocationUpdateableProtocol.swift in Sources */,
 				E82A33C6229BE19500B91456 /* LoginWithPhoneNumberViewModel.swift in Sources */,
+				F4ADEFC4230160A2005E18A9 /* AddPowerCardRequest.swift in Sources */,
 				E834A31322DCDCF3002D006D /* OnBordingCell.swift in Sources */,
 				E82A3362229BD81800B91456 /* AddUserRequest.swift in Sources */,
 				E82A3336229BD81700B91456 /* IMTextView.swift in Sources */,
@@ -2972,6 +3075,7 @@
 				E82A3382229BD81800B91456 /* CategoryFAQ.swift in Sources */,
 				E82A33AC229BD81800B91456 /* MainViewController.swift in Sources */,
 				E86082FB22A560C900D3E376 /* ToolTipsViewModel.swift in Sources */,
+				F4ADEFC7230161FC005E18A9 /* AddPowerCardViewController.swift in Sources */,
 				E82A3328229BD81700B91456 /* FrameAccesor.swift in Sources */,
 				E82A33BE229BD81800B91456 /* ProcessFinishedProtocol.swift in Sources */,
 				E82A3348229BD81800B91456 /* BaseCollectionViewModelProtocol.swift in Sources */,
