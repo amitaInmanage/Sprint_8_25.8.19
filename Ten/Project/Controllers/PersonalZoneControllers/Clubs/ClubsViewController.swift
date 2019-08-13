@@ -104,7 +104,9 @@ extension ClubsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch self.rowTypeArr[indexPath.row] {
         case .tenClub:
-            break
+            if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: ChooseDelekTenProgramViewController.className) as? ChooseDelekTenProgramViewController {
+                ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+            }
         case .poweCardClub:
             if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: PowerCardViewController.className) as? PowerCardViewController {
                 ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)

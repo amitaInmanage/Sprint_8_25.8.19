@@ -144,6 +144,19 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
     
     //MARK: Server Requests
     
+    func callSetUserCustomerProgram(dictParams: [String: Any], requestFinishedDelegate :RequestFinishedProtocol?) {
+        
+        var delegate = requestFinishedDelegate
+        
+        if delegate == nil {
+            delegate = self
+        }
+        
+        let request = SetUserCustomerProgramRequest().initWithDictParams(dictParams: dictParams, andRequestFinishDelegate: delegate)
+        
+        ApplicationManager.sharedInstance.requestManager.sendRequest(request: request)
+    }
+    
     func callUpdateFuelingDevice(dictParams: [String: Any], requestFinishedDelegate :RequestFinishedProtocol?) {
         
         var delegate = requestFinishedDelegate

@@ -26,12 +26,20 @@ class AppGeneralDeclarationResponse: BaseGeneralDeclarationResponse {
     var licensePlateMax = 0
     var idNumberMin = 0
     var idNumberMax = 0
+    var maxCustomerProgramChanges = 0
     var isShowBoarding = false
     var genderArr = [String: Any]()
+    var customerProgramItem = [CustomerProgramItem]()
+    var customerProgramBenefitTypesItem = [CustomerProgramBenefit]()
     
     override func buildFromJSONDict(JSONDict: [String: Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
+    
+        let customerProgramBenefitTypes = ParseValidator.getArrayForKey(key: "customer_program_benefit_typesArr", JSONDict: JSONDict, defaultValue: [Any]())
+        self.customerProgramBenefitTypesItem = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: customerProgramBenefitTypes, innerResponse: CustomerProgramBenefit(), shouldReverseOrder: false) as! [CustomerProgramBenefit]
         
+        let customerProgram = ParseValidator.getArrayForKey(key: "customer_programsArr", JSONDict: JSONDict, defaultValue: [Any]())
+        self.customerProgramItem = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: customerProgram, innerResponse: CustomerProgramItem(), shouldReverseOrder: false) as! [CustomerProgramItem]
     
         self.genderArr = ParseValidator.getDictionaryForKey(key: "gendersArr", JSONDict: JSONDict, defaultValue: [String: Any]())
         
@@ -47,6 +55,8 @@ class AppGeneralDeclarationResponse: BaseGeneralDeclarationResponse {
         self.isShowBoarding = ParseValidator.getBoolForKey(key: "show_onboarding", JSONDict: JSONDict, defaultValue: false)
         
         self.maxViewsWithoutScroll = ParseValidator.getIntForKey(key: "car_information_club_max_cells_without_scrolling", JSONDict: JSONDict, defaultValue: 3)
+        
+        self.maxCustomerProgramChanges = ParseValidator.getIntForKey(key: "max_customer_program_changes", JSONDict: JSONDict, defaultValue: 0)
         
         self.idNumberMax = ParseValidator.getIntForKey(key: "user_id_max_chars", JSONDict: JSONDict, defaultValue: 0)
         

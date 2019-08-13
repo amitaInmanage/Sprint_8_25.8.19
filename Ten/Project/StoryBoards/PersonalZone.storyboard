@@ -310,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yW-a9-8sb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4804" y="-1899.400299850075"/>
+            <point key="canvasLocation" x="7215" y="-3284"/>
         </scene>
         <!--Personal Zone View Controller-->
         <scene sceneID="c9F-kW-PZP">
@@ -381,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ow-eu-bgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4037.5999999999999" y="-1899.400299850075"/>
+            <point key="canvasLocation" x="5650" y="-2594"/>
         </scene>
         <!--Existing Credit Card View Controller-->
         <scene sceneID="IdF-hT-3Kg">
@@ -655,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwR-5o-pMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5542" y="-2698"/>
+            <point key="canvasLocation" x="4078" y="-2699"/>
         </scene>
         <!--Security Managment View Controller-->
         <scene sceneID="HB7-eB-jEC">
@@ -724,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQX-Cw-G66" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5541.6000000000004" y="-1899.400299850075"/>
+            <point key="canvasLocation" x="6398" y="-3283"/>
         </scene>
         <!--Transactions History View Controller-->
         <scene sceneID="zFO-m9-nUK">
@@ -941,7 +941,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bai-5m-hva" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6284" y="-1902.0989505247378"/>
+            <point key="canvasLocation" x="6398" y="-2595"/>
         </scene>
         <!--Store Payment View Controller-->
         <scene sceneID="RmT-RE-0g2">
@@ -1007,7 +1007,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJf-mI-oTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7042" y="-1903"/>
+            <point key="canvasLocation" x="7214" y="-2594"/>
         </scene>
         <!--Store Payment Active View Controller-->
         <scene sceneID="68i-Bb-Sl6">
@@ -1077,7 +1077,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qfm-VA-bFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7890.3999999999996" y="-1908.3958020989508"/>
+            <point key="canvasLocation" x="6398" y="-1908"/>
         </scene>
         <!--Car Managment View Controoler-->
         <scene sceneID="hUT-49-j8X">
@@ -1149,7 +1149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJL-S3-rMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8830" y="-1899"/>
+            <point key="canvasLocation" x="7214" y="-1908"/>
         </scene>
         <!--Add New Car View Controller-->
         <scene sceneID="GqY-Y1-VcP">
@@ -1362,7 +1362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="erc-nv-MS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9629.6000000000004" y="-1890.4047976011996"/>
+            <point key="canvasLocation" x="8028" y="-1908"/>
         </scene>
         <!--Clubs View Controller-->
         <scene sceneID="DaG-AW-qct">
@@ -1419,7 +1419,162 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aty-3B-z1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10386" y="-1890"/>
+            <point key="canvasLocation" x="6398" y="-826"/>
+        </scene>
+        <!--Choose Delek Ten Program View Controller-->
+        <scene sceneID="q60-nb-wlH">
+            <objects>
+                <viewController storyboardIdentifier="ChooseDelekTenProgramViewController" id="ECW-01-2gU" customClass="ChooseDelekTenProgramViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vlz-XI-EkA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckb-sf-aJY">
+                                <rect key="frame" x="10" y="20" width="355" height="59.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="RSV-9B-NiA" customClass="MediumLabel" customModule="Ten" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="19.5" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RSV-9B-NiA" firstAttribute="top" secondItem="ckb-sf-aJY" secondAttribute="top" constant="19.5" id="1Z2-TB-zQp"/>
+                                    <constraint firstItem="RSV-9B-NiA" firstAttribute="leading" secondItem="ckb-sf-aJY" secondAttribute="leading" constant="10" id="Nt5-l6-cIW"/>
+                                    <constraint firstAttribute="bottom" secondItem="RSV-9B-NiA" secondAttribute="bottom" constant="19.5" id="Thz-Ly-BYf"/>
+                                    <constraint firstAttribute="trailing" secondItem="RSV-9B-NiA" secondAttribute="trailing" constant="10" id="spK-8x-blS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44N-ed-lfX">
+                                <rect key="frame" x="10" y="95" width="355" height="51"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1U-Qy-SKt">
+                                        <rect key="frame" x="352" y="0.0" width="3" height="51"/>
+                                        <color key="backgroundColor" red="0.9515346885" green="0.84996598960000003" blue="0.23117190600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="3" id="yaI-Lo-l0c"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISk-VW-SJ4" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
+                                        <rect key="frame" x="310.5" y="15" width="33.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFA-HH-Ve7" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="10.5" width="31" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KK9-D2-dL5" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="17.5" width="12" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ISk-VW-SJ4" firstAttribute="top" secondItem="44N-ed-lfX" secondAttribute="top" constant="15" id="66N-RM-uMN"/>
+                                    <constraint firstItem="h1U-Qy-SKt" firstAttribute="top" secondItem="44N-ed-lfX" secondAttribute="top" id="6j1-jw-9Ay"/>
+                                    <constraint firstItem="h1U-Qy-SKt" firstAttribute="leading" secondItem="ISk-VW-SJ4" secondAttribute="trailing" constant="8" id="8nR-M4-odG"/>
+                                    <constraint firstItem="KK9-D2-dL5" firstAttribute="top" secondItem="44N-ed-lfX" secondAttribute="top" constant="17.5" id="9dT-gP-DNH"/>
+                                    <constraint firstAttribute="bottom" secondItem="KK9-D2-dL5" secondAttribute="bottom" constant="10.5" id="FcO-WX-np7"/>
+                                    <constraint firstAttribute="bottom" secondItem="h1U-Qy-SKt" secondAttribute="bottom" id="FnC-cU-RI8"/>
+                                    <constraint firstItem="KK9-D2-dL5" firstAttribute="bottom" secondItem="CFA-HH-Ve7" secondAttribute="bottom" id="G4R-zd-fLT"/>
+                                    <constraint firstAttribute="bottom" secondItem="ISk-VW-SJ4" secondAttribute="bottom" constant="15" id="GFB-0q-p7K"/>
+                                    <constraint firstItem="KK9-D2-dL5" firstAttribute="leading" secondItem="44N-ed-lfX" secondAttribute="leading" constant="10" id="Jjr-qI-8hT"/>
+                                    <constraint firstItem="CFA-HH-Ve7" firstAttribute="leading" secondItem="KK9-D2-dL5" secondAttribute="trailing" constant="2" id="bU9-L8-2hM"/>
+                                    <constraint firstAttribute="trailing" secondItem="h1U-Qy-SKt" secondAttribute="trailing" id="mEw-ZR-XjE"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מסלולים" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHu-RT-Ram" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
+                                <rect key="frame" x="313" y="176" width="52" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="עברת x מתוך y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzY-bV-CmW" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
+                                <rect key="frame" x="10" y="176" width="85.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lx-3P-WGM" customClass="TenButtonStyle" customModule="Ten" customModuleProvider="target">
+                                <rect key="frame" x="75" y="595" width="225" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="475-cQ-0Ov"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="שמור שינויים">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSaveChanges:" destination="ECW-01-2gU" eventType="touchUpInside" id="bvW-wY-7HE"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="232" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AyT-JV-6qX">
+                                <rect key="frame" x="0.0" y="205.5" width="375" height="232"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="h6B-vn-a4j"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="ECW-01-2gU" id="kR2-ZX-0ZQ"/>
+                                    <outlet property="delegate" destination="ECW-01-2gU" id="vDf-Tl-tac"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avz-Yi-DRf" customClass="IMButton" customModule="Ten" customModuleProvider="target">
+                                <rect key="frame" x="147.5" y="535" width="80" height="30"/>
+                                <state key="normal" title="תקנון המועדון"/>
+                                <connections>
+                                    <action selector="didTapTermsOfClubs:" destination="ECW-01-2gU" eventType="touchUpInside" id="xiL-6Z-Lxp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AyT-JV-6qX" firstAttribute="top" secondItem="cHu-RT-Ram" secondAttribute="bottom" constant="10" id="CDh-XO-BZR"/>
+                            <constraint firstItem="AyT-JV-6qX" firstAttribute="trailing" secondItem="SK6-2H-Iue" secondAttribute="trailing" id="H4g-bJ-z5c"/>
+                            <constraint firstItem="44N-ed-lfX" firstAttribute="top" secondItem="ckb-sf-aJY" secondAttribute="bottom" constant="15.5" id="IM7-Pv-LPi"/>
+                            <constraint firstItem="SK6-2H-Iue" firstAttribute="trailing" secondItem="3lx-3P-WGM" secondAttribute="trailing" constant="75" id="MtT-PJ-nve"/>
+                            <constraint firstItem="44N-ed-lfX" firstAttribute="leading" secondItem="SK6-2H-Iue" secondAttribute="leading" constant="10" id="PEx-Md-CN2"/>
+                            <constraint firstItem="Avz-Yi-DRf" firstAttribute="centerX" secondItem="Vlz-XI-EkA" secondAttribute="centerX" id="Q3R-2P-YsY"/>
+                            <constraint firstItem="AyT-JV-6qX" firstAttribute="leading" secondItem="SK6-2H-Iue" secondAttribute="leading" id="RTD-jW-LfM"/>
+                            <constraint firstItem="cHu-RT-Ram" firstAttribute="top" secondItem="44N-ed-lfX" secondAttribute="bottom" constant="30" id="TXv-ib-tGu"/>
+                            <constraint firstItem="Avz-Yi-DRf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AyT-JV-6qX" secondAttribute="bottom" constant="20" id="XCb-GI-eGl"/>
+                            <constraint firstItem="3lx-3P-WGM" firstAttribute="leading" secondItem="SK6-2H-Iue" secondAttribute="leading" constant="75" id="YKv-0n-INO"/>
+                            <constraint firstItem="SK6-2H-Iue" firstAttribute="trailing" secondItem="44N-ed-lfX" secondAttribute="trailing" constant="10" id="YbY-av-hgm"/>
+                            <constraint firstItem="lzY-bV-CmW" firstAttribute="top" secondItem="44N-ed-lfX" secondAttribute="bottom" constant="30" id="dGc-4F-zIa"/>
+                            <constraint firstItem="ckb-sf-aJY" firstAttribute="leading" secondItem="SK6-2H-Iue" secondAttribute="leading" constant="10" id="gAH-dg-Xc0"/>
+                            <constraint firstItem="3lx-3P-WGM" firstAttribute="top" secondItem="Avz-Yi-DRf" secondAttribute="bottom" constant="30" id="kWg-ch-QlP"/>
+                            <constraint firstItem="lzY-bV-CmW" firstAttribute="leading" secondItem="SK6-2H-Iue" secondAttribute="leading" constant="10" id="l71-x6-cZA"/>
+                            <constraint firstItem="AyT-JV-6qX" firstAttribute="top" secondItem="lzY-bV-CmW" secondAttribute="bottom" constant="5.5" id="lRk-L3-oqN"/>
+                            <constraint firstItem="SK6-2H-Iue" firstAttribute="trailing" secondItem="ckb-sf-aJY" secondAttribute="trailing" constant="10" id="msz-hd-QtH"/>
+                            <constraint firstItem="SK6-2H-Iue" firstAttribute="trailing" secondItem="cHu-RT-Ram" secondAttribute="trailing" constant="10" id="rtg-X7-zcw"/>
+                            <constraint firstItem="SK6-2H-Iue" firstAttribute="bottom" secondItem="3lx-3P-WGM" secondAttribute="bottom" constant="30" id="ulG-zX-akp"/>
+                            <constraint firstItem="ckb-sf-aJY" firstAttribute="top" secondItem="SK6-2H-Iue" secondAttribute="top" id="uzC-Zh-xf3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SK6-2H-Iue"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnSaveChanges" destination="3lx-3P-WGM" id="Rdr-2Y-Dpf"/>
+                        <outlet property="btnTermsOfClubs" destination="Avz-Yi-DRf" id="WFv-7J-X2n"/>
+                        <outlet property="lblAmount" destination="CFA-HH-Ve7" id="de9-cN-geM"/>
+                        <outlet property="lblDetailsAmount" destination="ISk-VW-SJ4" id="y1z-7d-unx"/>
+                        <outlet property="lblProgramDetails" destination="lzY-bV-CmW" id="1TB-C0-iuO"/>
+                        <outlet property="lblProgramTitle" destination="cHu-RT-Ram" id="UNQ-pZ-wYH"/>
+                        <outlet property="lblTitle" destination="RSV-9B-NiA" id="FOE-xW-5yz"/>
+                        <outlet property="tableView" destination="AyT-JV-6qX" id="59Y-eQ-cgL"/>
+                        <outlet property="tableViewHC" destination="h6B-vn-a4j" id="Oyb-c5-hPV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJT-gR-XsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7136.8000000000002" y="-512.29385307346331"/>
         </scene>
         <!--Power Card View Controller-->
         <scene sceneID="j32-Xo-CYE">
@@ -1531,7 +1686,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7K-tb-eSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11108" y="-1899.400299850075"/>
+            <point key="canvasLocation" x="7135" y="-1224"/>
         </scene>
         <!--Add Power Card View Controller-->
         <scene sceneID="QeV-VT-Zd8">
@@ -1622,7 +1777,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNR-q6-PlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11857" y="-1908"/>
+            <point key="canvasLocation" x="7961" y="-1224"/>
         </scene>
     </scenes>
     <resources>

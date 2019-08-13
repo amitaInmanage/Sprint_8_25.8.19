@@ -414,6 +414,9 @@
 		F460570C22E9AF9400E0DB12 /* StoreHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460570B22E9AF9400E0DB12 /* StoreHistory.swift */; };
 		F460570E22E9B60B00E0DB12 /* AccumulationAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460570D22E9B60B00E0DB12 /* AccumulationAmount.swift */; };
 		F460571022E9B6BE00E0DB12 /* UsageAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460570F22E9B6BE00E0DB12 /* UsageAmount.swift */; };
+		F48DB9AF2302D4180066534F /* CustomerProgramUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DB9AE2302D4180066534F /* CustomerProgramUser.swift */; };
+		F48DB9B32302DD790066534F /* CustomerProgramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DB9B22302DD790066534F /* CustomerProgramItem.swift */; };
+		F48DB9B52302DDF20066534F /* CustomerProgramBenefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DB9B42302DDF20066534F /* CustomerProgramBenefit.swift */; };
 		F48E294322E102680010B01B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E294222E102680010B01B /* SplashViewController.swift */; };
 		F48E294622E43EAF0010B01B /* PasswordManagmenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48E294522E43EAF0010B01B /* PasswordManagmenTableViewCell.xib */; };
 		F48E294822E43ECF0010B01B /* PasswordManagmenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48E294722E43ECF0010B01B /* PasswordManagmenTableViewCell.swift */; };
@@ -433,6 +436,10 @@
 		F4ADEFC923016235005E18A9 /* AddPowerCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFC823016235005E18A9 /* AddPowerCardViewModel.swift */; };
 		F4ADEFCB23017474005E18A9 /* RemovePowerCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFCA23017474005E18A9 /* RemovePowerCardRequest.swift */; };
 		F4ADEFCD230174CD005E18A9 /* RemovePowerCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFCC230174CD005E18A9 /* RemovePowerCardResponse.swift */; };
+		F4ADEFD023019547005E18A9 /* ChooseDelekTenProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFCF23019547005E18A9 /* ChooseDelekTenProgramViewController.swift */; };
+		F4ADEFD2230197B3005E18A9 /* ChooseDelekTenProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFD1230197B3005E18A9 /* ChooseDelekTenProgramViewModel.swift */; };
+		F4ADEFD6230290CA005E18A9 /* TenProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFD4230290CA005E18A9 /* TenProgramTableViewCell.swift */; };
+		F4ADEFD7230290CA005E18A9 /* TenProgramTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4ADEFD5230290CA005E18A9 /* TenProgramTableViewCell.xib */; };
 		F4D6A9D822E5CDD100F60A39 /* VerifyPinCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */; };
 		F4D6A9DA22E5CE3200F60A39 /* VerifyPinCodeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */; };
 		F4EE0A9522F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE0A9422F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift */; };
@@ -443,6 +450,8 @@
 		F4F91BB322E9E64B00B348F3 /* StoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F91BB122E9E64B00B348F3 /* StoresTableViewCell.swift */; };
 		F4F91BB422E9E64B00B348F3 /* StoresTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F91BB222E9E64B00B348F3 /* StoresTableViewCell.xib */; };
 		F4FA7A2B2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA7A2A2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift */; };
+		F4FEA69A2302F9B4000E5A02 /* SetUserCustomerProgramRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEA6992302F9B4000E5A02 /* SetUserCustomerProgramRequest.swift */; };
+		F4FEA69C2302FA20000E5A02 /* SetUserCustomerProgramResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEA69B2302FA20000E5A02 /* SetUserCustomerProgramResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -869,6 +878,9 @@
 		F460570B22E9AF9400E0DB12 /* StoreHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistory.swift; sourceTree = "<group>"; };
 		F460570D22E9B60B00E0DB12 /* AccumulationAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulationAmount.swift; sourceTree = "<group>"; };
 		F460570F22E9B6BE00E0DB12 /* UsageAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageAmount.swift; sourceTree = "<group>"; };
+		F48DB9AE2302D4180066534F /* CustomerProgramUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProgramUser.swift; sourceTree = "<group>"; };
+		F48DB9B22302DD790066534F /* CustomerProgramItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProgramItem.swift; sourceTree = "<group>"; };
+		F48DB9B42302DDF20066534F /* CustomerProgramBenefit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProgramBenefit.swift; sourceTree = "<group>"; };
 		F48E294222E102680010B01B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F48E294522E43EAF0010B01B /* PasswordManagmenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordManagmenTableViewCell.xib; sourceTree = "<group>"; };
 		F48E294722E43ECF0010B01B /* PasswordManagmenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManagmenTableViewCell.swift; sourceTree = "<group>"; };
@@ -888,6 +900,10 @@
 		F4ADEFC823016235005E18A9 /* AddPowerCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPowerCardViewModel.swift; sourceTree = "<group>"; };
 		F4ADEFCA23017474005E18A9 /* RemovePowerCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovePowerCardRequest.swift; sourceTree = "<group>"; };
 		F4ADEFCC230174CD005E18A9 /* RemovePowerCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovePowerCardResponse.swift; sourceTree = "<group>"; };
+		F4ADEFCF23019547005E18A9 /* ChooseDelekTenProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDelekTenProgramViewController.swift; sourceTree = "<group>"; };
+		F4ADEFD1230197B3005E18A9 /* ChooseDelekTenProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDelekTenProgramViewModel.swift; sourceTree = "<group>"; };
+		F4ADEFD4230290CA005E18A9 /* TenProgramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenProgramTableViewCell.swift; sourceTree = "<group>"; };
+		F4ADEFD5230290CA005E18A9 /* TenProgramTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenProgramTableViewCell.xib; sourceTree = "<group>"; };
 		F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeResponse.swift; sourceTree = "<group>"; };
 		F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeRequests.swift; sourceTree = "<group>"; };
 		F4EE0A9422F8681F00DC8394 /* RemoveFuelingDeviceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFuelingDeviceResponse.swift; sourceTree = "<group>"; };
@@ -898,6 +914,8 @@
 		F4F91BB122E9E64B00B348F3 /* StoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresTableViewCell.swift; sourceTree = "<group>"; };
 		F4F91BB222E9E64B00B348F3 /* StoresTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoresTableViewCell.xib; sourceTree = "<group>"; };
 		F4FA7A2A2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelingAndExtraServicesViewController.swift; sourceTree = "<group>"; };
+		F4FEA6992302F9B4000E5A02 /* SetUserCustomerProgramRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserCustomerProgramRequest.swift; sourceTree = "<group>"; };
+		F4FEA69B2302FA20000E5A02 /* SetUserCustomerProgramResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserCustomerProgramResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1060,6 +1078,7 @@
 		3EB304A8215BBD070020DC61 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F4ADEFD3230290A5005E18A9 /* TenProgramCell */,
 				F4ADEFAF23014248005E18A9 /* ClubsTableViewCells */,
 				F45B172222F71B13006CBE22 /* CreditCardTableViewCell */,
 				F45B170F22F6B78F006CBE22 /* CarManagmentCells */,
@@ -2031,6 +2050,7 @@
 				F4EE0A9A22F9747B00DC8394 /* UpdateFuelingDeviceRequest.swift */,
 				F4ADEFC3230160A2005E18A9 /* AddPowerCardRequest.swift */,
 				F4ADEFCA23017474005E18A9 /* RemovePowerCardRequest.swift */,
+				F4FEA6992302F9B4000E5A02 /* SetUserCustomerProgramRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -2038,11 +2058,11 @@
 		E8E2CA9A22B8CEFE00729F10 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				285F3A9B22941C2200D0E171 /* AppGeneralDeclarationResponse.swift */,
 				E8E2CA9D22B8CF2D00729F10 /* GetSmsTokenResponse.swift */,
 				E849966422BA1CC1005228F0 /* VerifySmsTokenResponse.swift */,
 				E849967422BBDAAF005228F0 /* UpdateRegistrationDataResponse.swift */,
 				E834A30822DCB86D002D006D /* GetOnBoardingResponse.swift */,
-				285F3A9B22941C2200D0E171 /* AppGeneralDeclarationResponse.swift */,
 				F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */,
 				F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */,
 				F450309622EDD69C00BD8202 /* RemoveStorePaymentMethodResponse.swift */,
@@ -2054,6 +2074,7 @@
 				F4EE0A9822F9743A00DC8394 /* UpdateFuelingDeviceResponse.swift */,
 				F4ADEFC123016060005E18A9 /* AddPowerCardResponse.swift */,
 				F4ADEFCC230174CD005E18A9 /* RemovePowerCardResponse.swift */,
+				F4FEA69B2302FA20000E5A02 /* SetUserCustomerProgramResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -2307,6 +2328,9 @@
 				F460570F22E9B6BE00E0DB12 /* UsageAmount.swift */,
 				F450308F22EDB12800BD8202 /* StorePaymentMethodsItem.swift */,
 				F4EE0A9C22F980FF00DC8394 /* Info.swift */,
+				F48DB9AE2302D4180066534F /* CustomerProgramUser.swift */,
+				F48DB9B22302DD790066534F /* CustomerProgramItem.swift */,
+				F48DB9B42302DDF20066534F /* CustomerProgramBenefit.swift */,
 			);
 			path = Obj;
 			sourceTree = "<group>";
@@ -2431,6 +2455,7 @@
 		F4ADEFAA23013F65005E18A9 /* Clubs */ = {
 			isa = PBXGroup;
 			children = (
+				F4ADEFCE2301949E005E18A9 /* ChooseDelekTenProgrem */,
 				F4ADEFC5230161E6005E18A9 /* AddPowerCard */,
 				F4ADEFBA23015691005E18A9 /* powerCard */,
 				F4ADEFAB23013F8E005E18A9 /* ClubsViewController.swift */,
@@ -2482,6 +2507,24 @@
 				F4ADEFC823016235005E18A9 /* AddPowerCardViewModel.swift */,
 			);
 			path = AddPowerCard;
+			sourceTree = "<group>";
+		};
+		F4ADEFCE2301949E005E18A9 /* ChooseDelekTenProgrem */ = {
+			isa = PBXGroup;
+			children = (
+				F4ADEFCF23019547005E18A9 /* ChooseDelekTenProgramViewController.swift */,
+				F4ADEFD1230197B3005E18A9 /* ChooseDelekTenProgramViewModel.swift */,
+			);
+			path = ChooseDelekTenProgrem;
+			sourceTree = "<group>";
+		};
+		F4ADEFD3230290A5005E18A9 /* TenProgramCell */ = {
+			isa = PBXGroup;
+			children = (
+				F4ADEFD4230290CA005E18A9 /* TenProgramTableViewCell.swift */,
+				F4ADEFD5230290CA005E18A9 /* TenProgramTableViewCell.xib */,
+			);
+			path = TenProgramCell;
 			sourceTree = "<group>";
 		};
 		F4F8DCF92D93296CFA60D075 /* Frameworks */ = {
@@ -2604,6 +2647,7 @@
 				F4F91BB422E9E64B00B348F3 /* StoresTableViewCell.xib in Resources */,
 				E88C646A22DDEE00002769B7 /* BottomButton.xib in Resources */,
 				E82A334E229BD81800B91456 /* NavBarView.xib in Resources */,
+				F4ADEFD7230290CA005E18A9 /* TenProgramTableViewCell.xib in Resources */,
 				E82A334B229BD81800B91456 /* CustomProgressView.xib in Resources */,
 				F40CA8C4209618FB00821EAD /* Heebo-Bold.ttf in Resources */,
 				3E4A9656214A3A7000DC36FC /* UserTypeTableViewCell.xib in Resources */,
@@ -2848,6 +2892,7 @@
 				E82A3372229BD81800B91456 /* GetCitiesRequest.swift in Sources */,
 				E86082F922A560BA00D3E376 /* ToolTipsViewController.swift in Sources */,
 				F460570C22E9AF9400E0DB12 /* StoreHistory.swift in Sources */,
+				F4FEA69C2302FA20000E5A02 /* SetUserCustomerProgramResponse.swift in Sources */,
 				F45B172722F71D43006CBE22 /* CreditCardExistsTableViewCell.swift in Sources */,
 				E82A33A2229BD81800B91456 /* ErrorReportResponse.swift in Sources */,
 				F45B172122F7061B006CBE22 /* AddNewCarViewModel.swift in Sources */,
@@ -2857,6 +2902,7 @@
 				E82A3317229BD81700B91456 /* UserAccountManager.swift in Sources */,
 				E82A333A229BD81800B91456 /* CardView.swift in Sources */,
 				E85E223322A3C41C00EE0907 /* ButtonSwitchColorPopupViewModel.swift in Sources */,
+				F4FEA69A2302F9B4000E5A02 /* SetUserCustomerProgramRequest.swift in Sources */,
 				E82A3316229BD81700B91456 /* BaseManager.swift in Sources */,
 				E8E2CA9E22B8CF2D00729F10 /* GetSmsTokenResponse.swift in Sources */,
 				F460570E22E9B60B00E0DB12 /* AccumulationAmount.swift in Sources */,
@@ -2872,6 +2918,7 @@
 				F48E294822E43ECF0010B01B /* PasswordManagmenTableViewCell.swift in Sources */,
 				E82A33A9229BD81800B91456 /* WebContentViewController.swift in Sources */,
 				E82A32F3229BD81700B91456 /* User.swift in Sources */,
+				F48DB9B32302DD790066534F /* CustomerProgramItem.swift in Sources */,
 				E82A3357229BD81800B91456 /* SetNotificationSettingsRequest.swift in Sources */,
 				E82A338A229BD81800B91456 /* GetStartUpImagesResponse.swift in Sources */,
 				E82A3375229BD81800B91456 /* AddNewCardRequest.swift in Sources */,
@@ -2896,7 +2943,9 @@
 				E8AC3599229E978800171BAE /* EnterTheCarDetailsViewModel.swift in Sources */,
 				E85E222322A3AA4300EE0907 /* SignUpAddAnotherCarViewModel.swift in Sources */,
 				E85E222122A3AA2600EE0907 /* SignUpAddAnotherCarViewController.swift in Sources */,
+				F4ADEFD2230197B3005E18A9 /* ChooseDelekTenProgramViewModel.swift in Sources */,
 				3E72DF1021778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift in Sources */,
+				F4ADEFD6230290CA005E18A9 /* TenProgramTableViewCell.swift in Sources */,
 				E82A33A4229BD81800B91456 /* GetCitiesStreetsResponse.swift in Sources */,
 				282B41AF229AD32000986480 /* FourDigitCodeViewModel.swift in Sources */,
 				E82A331B229BD81700B91456 /* UserAccountProcessObj.swift in Sources */,
@@ -2924,6 +2973,7 @@
 				F4ADEFCD230174CD005E18A9 /* RemovePowerCardResponse.swift in Sources */,
 				E8E778F222D5CDC2004F0A9F /* PersonalDetailsTableViewCell.swift in Sources */,
 				E82A3308229BD81700B91456 /* LocalNotificationManager.swift in Sources */,
+				F48DB9B52302DDF20066534F /* CustomerProgramBenefit.swift in Sources */,
 				F454180322E8817300C9CCFF /* GetTransactionsHistoryResponse.swift in Sources */,
 				F4ADEFAC23013F8E005E18A9 /* ClubsViewController.swift in Sources */,
 				E82A338D229BD81800B91456 /* BaseUser.swift in Sources */,
@@ -2939,6 +2989,7 @@
 				E82A3371229BD81800B91456 /* DoPaymentRequest.swift in Sources */,
 				F4EE0A9B22F9747B00DC8394 /* UpdateFuelingDeviceRequest.swift in Sources */,
 				F45B171F22F705CB006CBE22 /* AddNewCarViewController.swift in Sources */,
+				F48DB9AF2302D4180066534F /* CustomerProgramUser.swift in Sources */,
 				E8CF64CA22C5124A00B6D569 /* TenBottomButton.swift in Sources */,
 				E85E223022A3C3C100EE0907 /* ChangeStationViewModel.swift in Sources */,
 				F450309B22EDE77700BD8202 /* AddCreditCardResponse.swift in Sources */,
@@ -3025,6 +3076,7 @@
 				E82A33C6229BE19500B91456 /* LoginWithPhoneNumberViewModel.swift in Sources */,
 				F4ADEFC4230160A2005E18A9 /* AddPowerCardRequest.swift in Sources */,
 				E834A31322DCDCF3002D006D /* OnBordingCell.swift in Sources */,
+				F4ADEFD023019547005E18A9 /* ChooseDelekTenProgramViewController.swift in Sources */,
 				E82A3362229BD81800B91456 /* AddUserRequest.swift in Sources */,
 				E82A3336229BD81700B91456 /* IMTextView.swift in Sources */,
 				E82A3364229BD81800B91456 /* BaseRequest.swift in Sources */,

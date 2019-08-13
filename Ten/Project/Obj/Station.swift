@@ -12,7 +12,6 @@ import UIKit
 
 class Station: BaseInnerResponse {
     
-    //var strTitle? = "" // sever or salat??
     var id = 0
     var orderNum = 0
     var strName = ""

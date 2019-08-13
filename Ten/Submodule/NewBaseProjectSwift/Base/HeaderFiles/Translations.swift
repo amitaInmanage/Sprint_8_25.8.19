@@ -49,7 +49,10 @@ class Translations {
     }
     
     struct AlertButtonsKeys {
-
+        
+        static let delekTenChooseProgramAccumulation = "delek_ten_choose_program_accumulation_title"
+        static let delekTenChooseProgram = "delek_ten_choose_program_btn"
+        static let delekTenChooseProgramTerms = "delek_ten_choose_program_terms_ios"
         static let popupConnectSuccessfulPowercard = "popup_connect_successful_powercard_btn"
         static let powercardConnect = "powercard_connect"
         static let powercardDisconnect = "powercard_disconnect"
@@ -98,6 +101,9 @@ class Translations {
         static let no = "mobile_alert_btn_no"
         static let noInternet = "alert_no_access_to_server"
         
+        static let delekTenChooseProgramAccumulationDefault = "Default"
+        static let delekTenChooseProgramDefault = "Default"
+        static let delekTenChooseProgramTermsDefault = "Default"
         static let popupConnectSuccessfulPowercardDefault = "Default"
         static let powercardConnectDefault = "Default"
         static let powercardDisconnectDefault = "Default"
@@ -145,7 +151,6 @@ class Translations {
         static let yesDefault = "Yes"
         static let noDefault = "No"
         static let noInternetDefault = "No access to server"
-
     }
     
     struct  SubTitles {
@@ -225,13 +230,13 @@ class Translations {
         static let enterDevEnviroment = "mobile_developer_options_btn_enter_dev_enviroment"
         static let exitDevEnviroment = "mobile_developer_options_btn_exit_dev_enviroment"
         static let generalInfo = "mobile_developer_options_btn_general_info"
-
+        
         static let titleDefault = "Developer Options"
         static let sendCallLogsToMailDefault = "Send Call Logs to Mail"
         static let enterDevEnviromentDefault = "Enter Dev Enviroment"
         static let exitDevEnviromentDefault = "Exit Dev Enviroment"
         static let generalInfoDefault = "General Info"
-
+        
     }
     
     struct Symbols {
@@ -242,6 +247,13 @@ class Translations {
     }
     
     struct Titles {
+        static let delekTenChooseProgramRowDiscountStore = "delek_ten_choose_program_row_discount_Store_title"
+        static let delekTenChooseProgramRowDiscountCar = "delek_ten_choose_program_row_discount_car_title"
+        static let delekTenChooseProgramRowDiscountDelek = "delek_ten_choose_program_row_discount_delek_title"
+        static let delekTenChooseProgramRow = "delek_ten_choose_program_row_title"
+        static let delekTenChooseProgramChangesLeft = "delek_ten_choose_program_changes_left_title"
+        static let delekTenChoosePrograms = "delek_ten_choose_program_programs_title"
+        static let delekTenChooseProgram = "delek_ten_choose_program_title"
         static let tooltipSecretCodePowercard = "tooltip_secret_code_powercard_title"
         static let popupConnectSuccessfulPowercard = "popup_connect_successful_powercard_title"
         static let popupDisconnectPowercard = "popup_disconnect_powercard_title"
@@ -298,6 +310,13 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let delekTenChooseProgramRowDiscountStoreDefault = "Default"
+        static let delekTenChooseProgramRowDiscountCarDefault = "Default"
+        static let delekTenChooseProgramRowDiscountDelekDefault = "Default"
+        static let delekTenChooseProgramRowDefault = "Default"
+        static let delekTenChooseProgramChangesLeftDefault = "Default"
+        static let delekTenChooseProgramsDefault = "Default"
+        static let delekTenChooseProgramDefault = "Default"
         static let tooltipSecretCodePowercardDefault = "Default"
         static let popupConnectSuccessfulPowercardDefault = "Default"
         static let popupDisconnectPowercardDefault = "Default"

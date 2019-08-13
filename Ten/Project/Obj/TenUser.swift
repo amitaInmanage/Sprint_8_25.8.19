@@ -16,6 +16,7 @@ class TenUser: User {
     var fuelingDevicesArr = [FuelingDevicesItem]()
     var storePaymentMethods = [StorePaymentMethodsItem]()
     var powerCardArr = PowerCardItem()
+    var customerProgram = CustomerProgramUser()
     var accumulation = noAccumulation
     var hasPinCode = false
     var isClubMamber = true
@@ -27,7 +28,6 @@ class TenUser: User {
     
     override func buildFromJSONDict(JSONDict: [String : Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
-        
         
         let personelAreaMenu = ParseValidator.getArrayForKey(key: "personal_area_menuArr", JSONDict: JSONDict, defaultValue: [Any]())
         self.personelAreaMenuArr = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: personelAreaMenu, innerResponse: PersonalAreaMenuItem(), shouldReverseOrder: false) as! [PersonalAreaMenuItem]
@@ -42,6 +42,10 @@ class TenUser: User {
         let tempPowerCardArr = ParseValidator.getDictionaryForKey(key: "powercard", JSONDict: JSONDict, defaultValue: [String : Any]())
         
         self.powerCardArr = PowerCardItem().buildFromJSONDict(JSONDict: tempPowerCardArr) as! PowerCardItem
+        
+        let tempCustomerProgram = ParseValidator.getDictionaryForKey(key: "customer_program", JSONDict: JSONDict, defaultValue: [String : Any]())
+        
+        self.customerProgram = CustomerProgramUser().buildFromJSONDict(JSONDict: tempCustomerProgram) as! CustomerProgramUser
         
         //TODO: replace defualt value to false 
         self.isClubMamber = ParseValidator.getBoolForKey(key: "is_club_member", JSONDict: JSONDict, defaultValue: false)
