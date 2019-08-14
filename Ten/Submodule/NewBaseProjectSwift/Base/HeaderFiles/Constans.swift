@@ -47,7 +47,7 @@ struct DeviceType {
     static let IS_IPAD = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_WIDTH == 768.0
     static let IS_IPADPro10 = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_WIDTH == 834.0
     static let IS_IPADPro12 = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_WIDTH == 1024.0
-    
+    static let IS_IPHONE_XR = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 896.0
     
     static var isSimulator: Bool {
         return TARGET_OS_SIMULATOR != 0 

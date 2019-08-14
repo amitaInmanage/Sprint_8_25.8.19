@@ -10,7 +10,7 @@ import Foundation
 
 class CustomerProgramItem: BaseInnerResponse {
     
-    var strId = ""
+    var intId = 0
     var strName = ""
     var strDescription = ""
     var strNotes = ""
@@ -24,7 +24,7 @@ class CustomerProgramItem: BaseInnerResponse {
     override func buildFromJSONDict(JSONDict:  [String: Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
         
-        self.strId = ParseValidator.getStringForKey(key: "id", JSONDict: JSONDict, defaultValue: "")
+        self.intId = ParseValidator.getIntForKey(key: "id", JSONDict: JSONDict, defaultValue: 0)
         self.strName = ParseValidator.getStringForKey(key: "name", JSONDict: JSONDict, defaultValue: "")
         self.strDescription = ParseValidator.getStringForKey(key: "description", JSONDict: JSONDict, defaultValue: "")
         self.strNotes = ParseValidator.getStringForKey(key: "notes", JSONDict: JSONDict, defaultValue: "")

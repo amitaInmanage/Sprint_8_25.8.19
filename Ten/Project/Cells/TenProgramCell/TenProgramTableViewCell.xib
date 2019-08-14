@@ -25,13 +25,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBW-9A-bGy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpB-Sg-5kH" customClass="IMButton" customModule="Ten" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpB-Sg-5kH">
                                         <rect key="frame" x="339" y="12" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="PUh-VC-HWf"/>
                                             <constraint firstAttribute="height" constant="24" id="urB-na-aOA"/>
                                         </constraints>
                                         <state key="normal" image="radioButtonOff"/>
+                                        <state key="selected" image="radioButtonOn"/>
                                         <connections>
                                             <action selector="didTapSelectadProgram:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BrW-Y2-lD5"/>
                                         </connections>
@@ -257,5 +258,6 @@ kdeZ16rXqNeUINeR16LXqiDXqteT15zXldenINeV15HXl9eg15XXmdeV16og15TXoNeV15fXldeqA
     <resources>
         <image name="down" width="16.5" height="9"/>
         <image name="radioButtonOff" width="24.5" height="24.5"/>
+        <image name="radioButtonOn" width="24.5" height="24.5"/>
     </resources>
 </document>

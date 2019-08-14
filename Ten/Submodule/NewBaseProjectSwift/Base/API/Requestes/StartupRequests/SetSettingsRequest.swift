@@ -34,6 +34,8 @@ class SetSettingsRequest: BaseRequest {
             strResolution = "ipadPro_10"
         } else if DeviceType.IS_IPADPro12 {
             strResolution = "ipadPro_12"
+        } else if DeviceType.IS_IPHONE_XR {
+            strResolution = "3xX"
         }
         
 //        if screenScale == 1 {

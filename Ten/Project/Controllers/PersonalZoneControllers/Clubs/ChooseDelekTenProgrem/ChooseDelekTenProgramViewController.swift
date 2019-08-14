@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum State: Int {
+    case none = 0
+    case disable = 1
+    case enable = 2
+}
+
 class ChooseDelekTenProgramViewController: BaseFormViewController {
     
     @IBOutlet weak var btnSaveChanges: TenButtonStyle!
@@ -20,20 +26,34 @@ class ChooseDelekTenProgramViewController: BaseFormViewController {
     @IBOutlet weak var lblTitle: MediumLabel!
     @IBOutlet weak var tableViewHC: NSLayoutConstraint!
     
+    var state = Box<State>(State.none)
     var viewModel = ChooseDelekTenProgramViewModel()
     var customerProgramsItems = ApplicationManager.sharedInstance.appGD.customerProgramItem
     var customerProgramBenefit = ApplicationManager.sharedInstance.appGD.customerProgramBenefitTypesItem
     var customerProgramsUser = ApplicationManager.sharedInstance.userAccountManager.user.customerProgram
     var maxChanges = ApplicationManager.sharedInstance.appGD.maxCustomerProgramChanges
-    var customerProgramId = 0
-    var selected = 0
+    var customerProgramId: Int = 0
+    var selected: Int = -1
+    var firstTimeLoaded = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
         self.registerXibs()
+        self.initializeBindings()
     }
     
+    fileprivate func initializeBindings() {
+        self.state.bind { [unowned self] (newVal) in
+//            
+//            if self.customerProgramsUser.availableProgram.count <= 1 {
+//                self.state.value = .disable
+//                return
+//            } else {
+//                self.state.value = .enable
+//            }
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -92,12 +112,17 @@ class ChooseDelekTenProgramViewController: BaseFormViewController {
 extension ChooseDelekTenProgramViewController: SelectedProgramDelegate, DropDownDelegate {
     
     func didTapDropDown() {
+        
     }
     
-    func didTapSelectedProgram() {
-        self.customerProgramId = Int(customerProgramsItems[selected].strId)!
+    func didTapSelectedProgram(sender: UIButton) {
+        self.selected = sender.tag
+        self.customerProgramId = customerProgramsItems[self.selected].intId
+        self.firstTimeLoaded = false
+        self.tableView.reloadData()
     }
 }
+
 
 extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -108,8 +133,27 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TenProgramTableViewCell.className, for: indexPath) as! TenProgramTableViewCell
         
-        self.selected = indexPath.row
+        cell.btnSelectedProgram.tag = indexPath.row
         
+        if firstTimeLoaded {
+            if customerProgramsItems[indexPath.row].intId == customerProgramsUser.intCurrentProgrramId {
+                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOn"), for: .normal)
+                self.selected = indexPath.row
+            } else {
+                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOff"), for: .normal)
+            }
+        } else {
+            if indexPath.row == selected {
+                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOn"), for: .normal)
+            } else {
+                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOff"), for: .normal)
+            }
+        }
+        
+//        if self.customerProgramsUser.availableProgram.count <= 1 {
+//            cell.btnSelectedProgram.setTitleColor(UIColor.gray, for: .disabled)
+//        }
+    
         cell.dropDownDelegate = self
         cell.selectedProgramDelegate = self
         
@@ -134,9 +178,9 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
         } else {
             cell.lblProgramDetailsDropDown.text = customerProgramsItems[indexPath.row].strNotes
         }
-        
         return cell
     }
+    
     
     func getTemplateText(type: String) -> String {
         for benefitType in customerProgramBenefit {
