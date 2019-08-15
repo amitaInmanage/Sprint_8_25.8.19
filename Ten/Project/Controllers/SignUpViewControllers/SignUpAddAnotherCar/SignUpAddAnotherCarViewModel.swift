@@ -55,3 +55,4 @@ class SignUpAddAnotherCarViewModel: BaseViewModel {
         ApplicationManager.sharedInstance.userAccountManager.callUpdateRegistrationData(dictParams: fieldsArr, screenName: strScreenName, andRequestFinishedDelegate: nil)
     }
 }
+

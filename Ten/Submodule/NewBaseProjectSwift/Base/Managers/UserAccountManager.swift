@@ -1013,7 +1013,6 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
                 ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
             }
         }
-        
         if  request.requestName == TenRequestNames.getAddPowerCard {
             let popupInfoObj = PopupInfoObj()
             popupInfoObj.popupType = .tenGeneralPopup
@@ -1055,7 +1054,6 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
                 self.updateAdditionalUserInfoFromRequest(request: request)
                 self.finishProcessWithStatus(processFinishedStatus: .ProcessFinishedStatusSuccess)
             }
-            
         } else if request.requestName == ServerUserRequests.loginUser {
             
             self.user = (innerResponse as! LoginUserResponse).user as! TenUser
@@ -1076,6 +1074,7 @@ class UserAccountManager: BaseProcessManager,ProcessFinishedProtocol {
             updateSideMenu()
             
         } else if request.requestName == ServerUserRequests.addToFavorites {
+            
             
         } else if request.requestName == ServerUserRequests.removeFromFavorites {
             

@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum State: Int {
-    case none = 0
-    case disable = 1
-    case enable = 2
-}
-
 class ChooseDelekTenProgramViewController: BaseFormViewController {
     
     @IBOutlet weak var btnSaveChanges: TenButtonStyle!
@@ -25,8 +19,8 @@ class ChooseDelekTenProgramViewController: BaseFormViewController {
     @IBOutlet weak var lblDetailsAmount: RegularLabel!
     @IBOutlet weak var lblTitle: MediumLabel!
     @IBOutlet weak var tableViewHC: NSLayoutConstraint!
+    @IBOutlet weak var lblManagerText: RegularLabel!
     
-    var state = Box<State>(State.none)
     var viewModel = ChooseDelekTenProgramViewModel()
     var customerProgramsItems = ApplicationManager.sharedInstance.appGD.customerProgramItem
     var customerProgramBenefit = ApplicationManager.sharedInstance.appGD.customerProgramBenefitTypesItem
@@ -35,27 +29,17 @@ class ChooseDelekTenProgramViewController: BaseFormViewController {
     var customerProgramId: Int = 0
     var selected: Int = -1
     var firstTimeLoaded = true
+    var disableState = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
         self.registerXibs()
-        self.initializeBindings()
     }
-    
-    fileprivate func initializeBindings() {
-        self.state.bind { [unowned self] (newVal) in
-//            
-//            if self.customerProgramsUser.availableProgram.count <= 1 {
-//                self.state.value = .disable
-//                return
-//            } else {
-//                self.state.value = .enable
-//            }
-        }
-    }
+  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 230
     }
@@ -75,21 +59,35 @@ class ChooseDelekTenProgramViewController: BaseFormViewController {
     
     override func fillTextWithTrans() {
         self.lblTitle.text = Translation(Translations.Titles.delekTenChooseProgram, Translations.Titles.delekTenChooseProgramDefault)
-    }
-    
-    fileprivate func initUI() {
-        self.view.backgroundColor = .clear
         
-        self.btnTermsOfClubs.addUnderline(title: Translation(Translations.AlertButtonsKeys.delekTenChooseProgramTerms, Translations.AlertButtonsKeys.delekTenChooseProgramTermsDefault))
-        
-        self.btnSaveChanges.setTitle(Translation(Translations.AlertButtonsKeys.delekTenChooseProgram, Translations.AlertButtonsKeys.delekTenChooseProgramDefault), for: .normal)
+        //TODO: lblAmount
+//        self.lblAmount.text =
         
         self.lblDetailsAmount.text = (Translation(Translations.AlertButtonsKeys.delekTenChooseProgramAccumulation, Translations.AlertButtonsKeys.delekTenChooseProgramAccumulationDefault))
         
         self.lblProgramTitle.text = (Translation(Translations.Titles.delekTenChoosePrograms, Translations.Titles.delekTenChooseProgramsDefault))
         
-        self.lblProgramDetails.text = StringManager.sharedInstance.replaceString(originalString:  (Translation(Translations.Titles.delekTenChooseProgramChangesLeft, Translations.Titles.delekTenChooseProgramChangesLeftDefault)), replacement: String(customerProgramsUser.changesMode), String(maxChanges))
+        self.btnTermsOfClubs.addUnderline(title: Translation(Translations.AlertButtonsKeys.delekTenChooseProgramTerms, Translations.AlertButtonsKeys.delekTenChooseProgramTermsDefault))
         
+        self.btnSaveChanges.setTitle(Translation(Translations.AlertButtonsKeys.delekTenChooseProgram, Translations.AlertButtonsKeys.delekTenChooseProgramDefault), for: .normal)
+        
+         self.lblProgramDetails.text = StringManager.sharedInstance.replaceString(originalString:  (Translation(Translations.Titles.delekTenChooseProgramChangesLeft, Translations.Titles.delekTenChooseProgramChangesLeftDefault)), replacement: String(customerProgramsUser.changesMode), String(maxChanges))
+    }
+    
+    fileprivate func initUI() {
+        self.view.backgroundColor = .clear
+        self.btnSaveChanges.Disabled()
+        
+        self.disableState = self.checkState()
+        
+        if disableState {
+            self.btnSaveChanges.isHidden = true
+            self.lblManagerText.text = Translation(Translations.AlertButtonsKeys.delekTenChooseProgramStation, Translations.AlertButtonsKeys.delekTenChooseProgramStationDefault)
+            
+        } else {
+            self.lblManagerText.isHidden = true
+            self.btnSaveChanges.isHidden = false
+        }
     }
     
     fileprivate func registerXibs() {
@@ -103,19 +101,62 @@ class ChooseDelekTenProgramViewController: BaseFormViewController {
     
     @IBAction func didTapSaveChanges(_ sender: Any) {
         
-        let dict = [TenParamsNames.customerProgramId: self.customerProgramId]
-        
-        ApplicationManager.sharedInstance.userAccountManager.callSetUserCustomerProgram(dictParams: dict, requestFinishedDelegate: nil)
+        if self.customerProgramsUser.changesMode >= self.maxChanges  {
+            
+            let blockedPopup = PopupInfoObj()
+            blockedPopup.popupType = .tenGeneralPopup
+            blockedPopup.strImageName = "warning"
+            
+            blockedPopup.strTitle = StringManager.sharedInstance.replaceString(originalString: Translation(Translations.Titles.dialogChangeProgramNotAvailable, Translations.Titles.dialogChangeProgramNotAvailableDefault), replacement: ApplicationManager.sharedInstance.userAccountManager.user.strFirstName)
+            
+            blockedPopup.strSubtitle = Translation(Translations.SubTitles.dialogChangeProgramNotAvailable, Translations.SubTitles.dialogChangeProgramNotAvailableDefault)
+            
+            blockedPopup.strBottomText = Translation(Translations.SubTitles.dialogChangeProgramNotAvailableSubTitle, Translations.SubTitles.dialogChangeProgramNotAvailableSubTitleDefault)
+            
+            blockedPopup.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.dialogChangeProgramNotAvailable, Translations.AlertButtonsKeys.dialogChangeProgramNotAvailableDefault)
+            
+            blockedPopup.firstButtonAction = {
+                //TODO: Send to Connect us
+            }
+            
+            ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: blockedPopup, andPopupViewControllerDelegate: nil)
+            
+        } else {
+            let popupInfoObj = PopupInfoObj()
+            popupInfoObj.popupType = .tenGeneralPopup
+            popupInfoObj.strImageName = "warning"
+            
+            popupInfoObj.strTitle = StringManager.sharedInstance.replaceString(originalString: Translation(Translations.Titles.dialogChangeProgramNotAvailable, Translations.Titles.dialogChangeProgramNotAvailableDefault), replacement: ApplicationManager.sharedInstance.userAccountManager.user.strFirstName)
+            
+            popupInfoObj.strSubtitle =  StringManager.sharedInstance.replaceString(originalString: Translation(Translations.SubTitles.dialogChangeProgram, Translations.SubTitles.dialogChangeProgramDefault
+            ), replacement: customerProgramsItems[selected].strName, String(maxChanges))
+            
+            popupInfoObj.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.dialogChangeProgramBtn, Translations.AlertButtonsKeys.dialogChangeProgramBtnDefault)
+            
+            popupInfoObj.strSecondButtonTitle = Translation(Translations.AlertButtonsKeys.dialogChangeProgramCancel, Translations.AlertButtonsKeys.dialogChangeProgramCancelDefault)
+            
+            popupInfoObj.firstButtonAction = {
+                
+                let dict = [TenParamsNames.customerProgramId: self.customerProgramId]
+                
+                ApplicationManager.sharedInstance.userAccountManager.callSetUserCustomerProgram(dictParams: dict, requestFinishedDelegate: self)
+                
+            }
+            
+            ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
+        }
     }
 }
 
 extension ChooseDelekTenProgramViewController: SelectedProgramDelegate, DropDownDelegate {
     
     func didTapDropDown() {
-        
+        view.layoutIfNeeded()
+        self.tableView.reloadData()
     }
     
     func didTapSelectedProgram(sender: UIButton) {
+        self.btnSaveChanges.Enabled()
         self.selected = sender.tag
         self.customerProgramId = customerProgramsItems[self.selected].intId
         self.firstTimeLoaded = false
@@ -135,6 +176,9 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
         
         cell.btnSelectedProgram.tag = indexPath.row
         
+        self.disableState = self.checkState()
+        
+        
         if firstTimeLoaded {
             if customerProgramsItems[indexPath.row].intId == customerProgramsUser.intCurrentProgrramId {
                 cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOn"), for: .normal)
@@ -150,10 +194,6 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
             }
         }
         
-//        if self.customerProgramsUser.availableProgram.count <= 1 {
-//            cell.btnSelectedProgram.setTitleColor(UIColor.gray, for: .disabled)
-//        }
-    
         cell.dropDownDelegate = self
         cell.selectedProgramDelegate = self
         
@@ -174,10 +214,28 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
         cell.lblStoresAssumption.text = storeText
         
         if customerProgramsItems[indexPath.row].strNotes.isEmpty {
-            cell.lblProgramDetailsDropDown.text = ""
+            cell.lblProgramDetailsDropDown.isHidden = true
+
         } else {
+            cell.lblProgramDetailsDropDown.isHidden = false
             cell.lblProgramDetailsDropDown.text = customerProgramsItems[indexPath.row].strNotes
         }
+        
+        
+        if disableState {
+            cell.btnSelectedProgram.isEnabled = false
+            if self.customerProgramsUser.availableProgram[0] == customerProgramsItems[indexPath.row].intId {
+                cell.vwProgram.alpha = 1
+                cell.vwDropDown.alpha = 1
+                
+            } else {
+                cell.vwProgram.alpha = 0.5
+                cell.vwDropDown.alpha = 0.5
+            }
+        } else {
+            cell.btnSelectedProgram.isEnabled = true
+        }
+        
         return cell
     }
     
@@ -190,5 +248,31 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
         }
         return ""
     }
+    
+    fileprivate func checkState() -> Bool{
+        if self.customerProgramsUser.availableProgram.count <= 1 {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
+extension ChooseDelekTenProgramViewController {
+    
+    func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
+        
+        if request.requestName == TenRequestNames.getSetUserCustomerProgram {
+            if let signUpVC = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: ChooseDelekTenProgramViewController.className) as? ChooseDelekTenProgramViewController {
+                ApplicationManager.sharedInstance.navigationController.pushTenViewController(signUpVC, animated: true)
+            }
+        }
+    }
+    
+    func requestFailed(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse) {
+        
+        if request.requestName == TenRequestNames.getSetUserCustomerProgram {
+            
+        }
+    }
+}

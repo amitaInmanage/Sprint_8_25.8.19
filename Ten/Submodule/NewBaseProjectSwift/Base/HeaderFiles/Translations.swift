@@ -50,6 +50,10 @@ class Translations {
     
     struct AlertButtonsKeys {
         
+        static let dialogChangeProgramNotAvailable = "dialog_change_program_not_available_btn"
+        static let dialogChangeProgramCancel = "dialog_change_program_cancel"
+        static let dialogChangeProgramBtn = "dialog_change_program_btn"
+        static let delekTenChooseProgramStation = "delek_ten_choose_program_station_manager"
         static let delekTenChooseProgramAccumulation = "delek_ten_choose_program_accumulation_title"
         static let delekTenChooseProgram = "delek_ten_choose_program_btn"
         static let delekTenChooseProgramTerms = "delek_ten_choose_program_terms_ios"
@@ -101,6 +105,10 @@ class Translations {
         static let no = "mobile_alert_btn_no"
         static let noInternet = "alert_no_access_to_server"
         
+        static let dialogChangeProgramNotAvailableDefault = "Default"
+        static let dialogChangeProgramCancelDefault = "Default"
+        static let dialogChangeProgramBtnDefault = "Default"
+        static let delekTenChooseProgramStationDefault = "Default"
         static let delekTenChooseProgramAccumulationDefault = "Default"
         static let delekTenChooseProgramDefault = "Default"
         static let delekTenChooseProgramTermsDefault = "Default"
@@ -154,6 +162,9 @@ class Translations {
     }
     
     struct  SubTitles {
+        static let dialogChangeProgramNotAvailableSubTitle = "dialog_change_program_not_available_subtitle2"
+        static let dialogChangeProgramNotAvailable = "dialog_change_program_not_available_subtitle"
+        static let dialogChangeProgram = "dialog_change_program_subtitle"
         static let popupConnectSuccessfulPowercard = "popup_connect_successful_powercard_subtitle"
         static let popupDisconnectPowercard = "popup_disconnect_powercard_subtitle"
         static let fingertipTooltip = "fingertip_tooltip_subtitle"
@@ -175,6 +186,9 @@ class Translations {
         static let creditCardSubTitle = "credit_card_details_sub_title"
         static let carInformationClub = "car_information_club_fuel_type"
         
+        static let dialogChangeProgramNotAvailableSubTitleDefault = "Default"
+        static let dialogChangeProgramNotAvailableDefault = "Default"
+        static let dialogChangeProgramDefault = "Default"
         static let popupConnectSuccessfulPowercardDefault = "Default"
         static let popupDisconnectPowercardDefault = "Default"
         static let fingertipTooltipDefault = "Default"
@@ -247,6 +261,7 @@ class Translations {
     }
     
     struct Titles {
+        static let dialogChangeProgramNotAvailable = "dialog_change_program_not_available_title"
         static let delekTenChooseProgramRowDiscountStore = "delek_ten_choose_program_row_discount_Store_title"
         static let delekTenChooseProgramRowDiscountCar = "delek_ten_choose_program_row_discount_car_title"
         static let delekTenChooseProgramRowDiscountDelek = "delek_ten_choose_program_row_discount_delek_title"
@@ -310,6 +325,7 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let dialogChangeProgramNotAvailableDefault = "Default"
         static let delekTenChooseProgramRowDiscountStoreDefault = "Default"
         static let delekTenChooseProgramRowDiscountCarDefault = "Default"
         static let delekTenChooseProgramRowDiscountDelekDefault = "Default"

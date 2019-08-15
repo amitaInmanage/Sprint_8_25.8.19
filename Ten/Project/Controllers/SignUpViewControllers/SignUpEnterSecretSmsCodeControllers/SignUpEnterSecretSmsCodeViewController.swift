@@ -32,8 +32,8 @@ class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFiel
     fileprivate func showTokenPopup() {
         let popupInfoObj = PopupInfoObj()
         popupInfoObj.popupType = .general
-        popupInfoObj.strTitle = "QA Test"
-        popupInfoObj.strSubtitle = self.viewModel.strToken
+        popupInfoObj.strTitle = self.viewModel.strToken
+        popupInfoObj.strSubtitle = "QA Test"
         popupInfoObj.strFirstButtonTitle = "ok"
         ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
     }
@@ -110,7 +110,6 @@ class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFiel
             self.textFields[textField.tag].resignFirstResponder()
             let txt = self.viewModel.txtArr.joined(separator: "")
             ApplicationManager.sharedInstance.loginAndSignupManager.callVerifySmsToken(dictParams: [TenParamsNames.token: txt, TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self, vc: self)
-//             ApplicationManager.sharedInstance.navigationController.popViewController(animated: true)
         }
         return true
     }
