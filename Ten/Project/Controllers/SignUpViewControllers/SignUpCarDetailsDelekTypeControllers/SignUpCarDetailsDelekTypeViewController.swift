@@ -122,7 +122,7 @@ extension SignUpCarDetailsDelekTypeViewController: UICollectionViewDelegate, UIC
         
         self.validateSelectedFuelType()
         self.viewModel.selectedIndexPath = indexPath.item
-        let code = self.viewModel.data[indexPath.item].strcode
+        let code = self.viewModel.data[indexPath.item].strCode
         self.viewModel.strCode = code
         self.collectionView.reloadData()
     }

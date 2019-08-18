@@ -83,38 +83,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Managers/ScreensManager.swift"
-            timestampString = "560611485.986093"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "moveToNextScreen()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Managers/ScreensManager.swift"
-            timestampString = "560611485.986156"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "moveToNextScreen()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Ten/Base/Controllers/SideMenuTableViewController.swift"
             timestampString = "560611485.986452"
             startingColumnNumber = "9223372036854775807"
@@ -132,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "587562102.902421"
+            timestampString = "587829414.082976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1121"
-            endingLineNumber = "1121"
+            startingLineNumber = "1134"
+            endingLineNumber = "1134"
             landmarkName = "requestSucceeded(request:withOuterResponse:andInnerResponse:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -148,7 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/RemoteNotificationAndDeepLinkManager.swift"
-            timestampString = "587307441.9010561"
+            timestampString = "587569751.2107559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
@@ -164,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "587562102.90253"
+            timestampString = "587829414.083447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -428,40 +396,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/SignUpViewControllers/SignUpCarDetailsDelekTypeControllers/SignUpCarDetailsDelekTypeViewController.swift"
-            timestampString = "587563072.534888"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/SignUpViewControllers/SignUpCarDetailsDelekTypeControllers/SignUpCarDetailsDelekTypeViewController.swift"
-            timestampString = "587563072.535527"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Ten/Project/Controllers/SignUpViewControllers/SignUpCarDetailsControllers/SignUpCarDetailsViewController.swift"
-            timestampString = "587565416.51832"
+            timestampString = "587829414.083831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"

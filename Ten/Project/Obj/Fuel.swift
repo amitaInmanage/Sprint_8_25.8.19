@@ -10,7 +10,7 @@ import UIKit
 
 class Fuel: BaseInnerResponse {
     
-    var strcode = ""
+    var strCode = ""
     var strTitle = ""
     var strImage = ""
     var strIconOn = ""
@@ -22,7 +22,7 @@ class Fuel: BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
         
         self.intType = ParseValidator.getIntForKey(key: "fuel", JSONDict: JSONDict, defaultValue: 0)
-        self.strcode = ParseValidator.getStringForKey(key: "code", JSONDict: JSONDict, defaultValue: "")
+        self.strCode = ParseValidator.getStringForKey(key: "code", JSONDict: JSONDict, defaultValue: "")
         self.strIcon = ParseValidator.getStringForKey(key: "icon", JSONDict: JSONDict, defaultValue: "")
         self.strTitle = ParseValidator.getStringForKey(key: "title", JSONDict: JSONDict, defaultValue: "")
         self.strImage = ParseValidator.getStringForKey(key: "image", JSONDict: JSONDict, defaultValue: "")

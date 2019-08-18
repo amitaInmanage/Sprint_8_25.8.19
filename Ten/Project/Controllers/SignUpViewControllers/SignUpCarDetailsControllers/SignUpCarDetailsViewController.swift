@@ -105,7 +105,7 @@ extension SignUpCarDetailsViewController: UICollectionViewDelegate, UICollection
         
         cell.imgDelekType.setImageWithStrURL(strURL: self.viewModel.data[indexPath.item].strIconOff, withAddUnderscoreIphone: false)
         
-        let isSelected = self.viewModel.data[indexPath.item].strcode == self.viewModel.strCode
+        let isSelected = self.viewModel.data[indexPath.item].strCode == self.viewModel.strCode
         let fuelType = self.viewModel.data[indexPath.item]
         let resuelt = isSelected ? fuelType.strIconOn : fuelType.strIconOff
         
@@ -116,7 +116,7 @@ extension SignUpCarDetailsViewController: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        self.viewModel.strCode = self.viewModel.data[indexPath.item].strcode
+        self.viewModel.strCode = self.viewModel.data[indexPath.item].strCode
         self.collectionView.reloadData()
     }
 }

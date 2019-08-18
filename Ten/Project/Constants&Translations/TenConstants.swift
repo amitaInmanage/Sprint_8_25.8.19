@@ -9,7 +9,7 @@
 import UIKit
 
 struct TenRequestNames {
-   
+    
     static let getSmsToken = "getSmsToken"
     static let getOnBoarding = "getOnboarding"
     static let getAddPowerCard = "addPowerCard"
@@ -17,6 +17,7 @@ struct TenRequestNames {
     static let getAddCreditCard = "addCreditCard"
     static let getVerifySmsToken = "verifySmsToken"
     static let getRemovePowerCard = "removePowerCard"
+    static let getUsageInformation = "getUsageInformation"
     static let getUpdateFuelingDevice = "updateFuelingDevice"
     static let getEditUserInformation = "editUserInformation"
     static let getRemoveFuelingDevice = "removeFuelingDevice"
@@ -30,6 +31,7 @@ struct TenRequestNames {
 }
 
 struct TenParamsNames {
+    static let fuelingDeviceId = "fuelingDeviceId"
     static let customerProgramId = "customerProgramId"
     static let carManufacturer = "carManufacturer"
     static let carModel = "carModel"

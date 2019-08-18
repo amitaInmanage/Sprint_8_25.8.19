@@ -162,6 +162,7 @@ class Translations {
     }
     
     struct  SubTitles {
+        static let usageDataSubtitle = "usage_data_subtitle"
         static let dialogChangeProgramNotAvailableSubTitle = "dialog_change_program_not_available_subtitle2"
         static let dialogChangeProgramNotAvailable = "dialog_change_program_not_available_subtitle"
         static let dialogChangeProgram = "dialog_change_program_subtitle"
@@ -186,6 +187,7 @@ class Translations {
         static let creditCardSubTitle = "credit_card_details_sub_title"
         static let carInformationClub = "car_information_club_fuel_type"
         
+        static let usageDataSubtitleDefault = "Default"
         static let dialogChangeProgramNotAvailableSubTitleDefault = "Default"
         static let dialogChangeProgramNotAvailableDefault = "Default"
         static let dialogChangeProgramDefault = "Default"
@@ -261,6 +263,15 @@ class Translations {
     }
     
     struct Titles {
+        static let chooseFuelingType = "choose_fueling_type_bottom_sheet"
+        static let avgLitreSubtitle = "avg_litre_subtitle"
+        static let avgLitreTitle3 = "avg_litre_title3"
+        static let avgLitreTitle2 = "avg_litre_title2"
+        static let avgLitreTitle1 = "avg_litre_title1"
+        static let avgSumTitle3 = "avg_sum_title3"
+        static let avgSumTitle2 = "avg_sum_title2"
+        static let avgSumTitle1 = "avg_sum_title1"
+        static let usageDataTitle = "usage_data_title"
         static let dialogChangeProgramNotAvailable = "dialog_change_program_not_available_title"
         static let delekTenChooseProgramRowDiscountStore = "delek_ten_choose_program_row_discount_Store_title"
         static let delekTenChooseProgramRowDiscountCar = "delek_ten_choose_program_row_discount_car_title"
@@ -325,6 +336,15 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let chooseFuelingTypeDefault = "Default"
+        static let avgLitreSubtitleDefault = "Default"
+        static let avgLitreTitle3Default = "Default"
+        static let avgLitreTitle2Default = "Default"
+        static let avgLitreTitle1Default = "Default"
+        static let avgSumTitle3Default = "Default"
+        static let avgSumTitle2Default = "Default"
+        static let avgSumTitle1Default = "Default"
+        static let usageDataTitleDefault = "Default"
         static let dialogChangeProgramNotAvailableDefault = "Default"
         static let delekTenChooseProgramRowDiscountStoreDefault = "Default"
         static let delekTenChooseProgramRowDiscountCarDefault = "Default"

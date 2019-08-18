@@ -99,7 +99,7 @@ extension UIView {
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 5
         self.layer.masksToBounds = false
-        self.layer.cornerRadius = 4.0
+        self.layer.cornerRadius = 2.0
     }
     
     func addShadow() {

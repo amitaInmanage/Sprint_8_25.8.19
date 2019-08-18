@@ -257,7 +257,9 @@ class RemoteNotificationAndDeepLinkManager: BaseManager {
                 break
          
             case DeepLinkPageStrings.usageInformation.rawValue:
-                print("usage_information")
+                if let personalZone = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: UsegeDataViewController.className) as? UsegeDataViewController {
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalZone, animated: true)
+                }
                 break
                 
             case DeepLinkPageStrings.storePaymentMethods.rawValue:

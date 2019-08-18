@@ -414,6 +414,10 @@
 		F460570C22E9AF9400E0DB12 /* StoreHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460570B22E9AF9400E0DB12 /* StoreHistory.swift */; };
 		F460570E22E9B60B00E0DB12 /* AccumulationAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460570D22E9B60B00E0DB12 /* AccumulationAmount.swift */; };
 		F460571022E9B6BE00E0DB12 /* UsageAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460570F22E9B6BE00E0DB12 /* UsageAmount.swift */; };
+		F47F429B23058A0800B6357C /* UsegeDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F429A23058A0800B6357C /* UsegeDataViewController.swift */; };
+		F47F429D23058A5900B6357C /* UsegeDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F429C23058A5900B6357C /* UsegeDataViewModel.swift */; };
+		F47F429F23098D9700B6357C /* GetUsageInformationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F429E23098D9700B6357C /* GetUsageInformationRequest.swift */; };
+		F47F42A123098DE800B6357C /* GetUsageInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F42A023098DE800B6357C /* GetUsageInformationResponse.swift */; };
 		F48DB9AF2302D4180066534F /* CustomerProgramUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DB9AE2302D4180066534F /* CustomerProgramUser.swift */; };
 		F48DB9B32302DD790066534F /* CustomerProgramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DB9B22302DD790066534F /* CustomerProgramItem.swift */; };
 		F48DB9B52302DDF20066534F /* CustomerProgramBenefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DB9B42302DDF20066534F /* CustomerProgramBenefit.swift */; };
@@ -878,6 +882,10 @@
 		F460570B22E9AF9400E0DB12 /* StoreHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHistory.swift; sourceTree = "<group>"; };
 		F460570D22E9B60B00E0DB12 /* AccumulationAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulationAmount.swift; sourceTree = "<group>"; };
 		F460570F22E9B6BE00E0DB12 /* UsageAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageAmount.swift; sourceTree = "<group>"; };
+		F47F429A23058A0800B6357C /* UsegeDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsegeDataViewController.swift; sourceTree = "<group>"; };
+		F47F429C23058A5900B6357C /* UsegeDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsegeDataViewModel.swift; sourceTree = "<group>"; };
+		F47F429E23098D9700B6357C /* GetUsageInformationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsageInformationRequest.swift; sourceTree = "<group>"; };
+		F47F42A023098DE800B6357C /* GetUsageInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsageInformationResponse.swift; sourceTree = "<group>"; };
 		F48DB9AE2302D4180066534F /* CustomerProgramUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProgramUser.swift; sourceTree = "<group>"; };
 		F48DB9B22302DD790066534F /* CustomerProgramItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProgramItem.swift; sourceTree = "<group>"; };
 		F48DB9B42302DDF20066534F /* CustomerProgramBenefit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProgramBenefit.swift; sourceTree = "<group>"; };
@@ -2052,6 +2060,7 @@
 				F4ADEFC3230160A2005E18A9 /* AddPowerCardRequest.swift */,
 				F4ADEFCA23017474005E18A9 /* RemovePowerCardRequest.swift */,
 				F4FEA6992302F9B4000E5A02 /* SetUserCustomerProgramRequest.swift */,
+				F47F429E23098D9700B6357C /* GetUsageInformationRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -2076,6 +2085,7 @@
 				F4ADEFC123016060005E18A9 /* AddPowerCardResponse.swift */,
 				F4ADEFCC230174CD005E18A9 /* RemovePowerCardResponse.swift */,
 				F4FEA69B2302FA20000E5A02 /* SetUserCustomerProgramResponse.swift */,
+				F47F42A023098DE800B6357C /* GetUsageInformationResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -2436,6 +2446,8 @@
 		F47F42992305850900B6357C /* UsageData */ = {
 			isa = PBXGroup;
 			children = (
+				F47F429A23058A0800B6357C /* UsegeDataViewController.swift */,
+				F47F429C23058A5900B6357C /* UsegeDataViewModel.swift */,
 			);
 			path = UsageData;
 			sourceTree = "<group>";
@@ -2805,6 +2817,7 @@
 				E82A32F2229BD81700B91456 /* SilentLoginResponse.swift in Sources */,
 				E82A332B229BD81700B91456 /* UIImage+IMExtension.swift in Sources */,
 				E82A3338229BD81800B91456 /* IMCollectionView.swift in Sources */,
+				F47F42A123098DE800B6357C /* GetUsageInformationResponse.swift in Sources */,
 				E82A32F8229BD81700B91456 /* SectionBackgroundLayout.m in Sources */,
 				E82A33AF229BD81800B91456 /* UserTypeUITableViewHeaderFooterView.swift in Sources */,
 				E8AC35AC229ECBBD00171BAE /* SignUpFullNameViewController.swift in Sources */,
@@ -2929,6 +2942,7 @@
 				F48DB9B32302DD790066534F /* CustomerProgramItem.swift in Sources */,
 				E82A3357229BD81800B91456 /* SetNotificationSettingsRequest.swift in Sources */,
 				E82A338A229BD81800B91456 /* GetStartUpImagesResponse.swift in Sources */,
+				F47F429B23058A0800B6357C /* UsegeDataViewController.swift in Sources */,
 				E82A3375229BD81800B91456 /* AddNewCardRequest.swift in Sources */,
 				E82A330C229BD81700B91456 /* InputValidationManager.swift in Sources */,
 				F44E8E91215A7D64008FCD28 /* TenConstants.swift in Sources */,
@@ -2978,6 +2992,7 @@
 				E82A337D229BD81800B91456 /* BaseGeneralDeclarationResponse.swift in Sources */,
 				E82A3309229BD81700B91456 /* OpenURLManager.swift in Sources */,
 				E82A339D229BD81800B91456 /* AddNewCardResponse.swift in Sources */,
+				F47F429D23058A5900B6357C /* UsegeDataViewModel.swift in Sources */,
 				F4ADEFCD230174CD005E18A9 /* RemovePowerCardResponse.swift in Sources */,
 				E8E778F222D5CDC2004F0A9F /* PersonalDetailsTableViewCell.swift in Sources */,
 				E82A3308229BD81700B91456 /* LocalNotificationManager.swift in Sources */,
@@ -2986,6 +3001,7 @@
 				F4ADEFAC23013F8E005E18A9 /* ClubsViewController.swift in Sources */,
 				E82A338D229BD81800B91456 /* BaseUser.swift in Sources */,
 				E82A3360229BD81800B91456 /* RestorePasswordRequest.swift in Sources */,
+				F47F429F23098D9700B6357C /* GetUsageInformationRequest.swift in Sources */,
 				F4ADEFC223016060005E18A9 /* AddPowerCardResponse.swift in Sources */,
 				E82A330E229BD81700B91456 /* AlertManager.swift in Sources */,
 				E82A332D229BD81700B91456 /* UIImageView+IMExtension.swift in Sources */,

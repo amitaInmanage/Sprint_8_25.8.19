@@ -26,15 +26,13 @@ class AddNewCarViewController: BaseFormViewController {
     var isTableVisible = false
     var storePaymentMethodsTypeOne = [StorePaymentMethodsItem]()
     var window: UIWindow?
-    
+    var transparentView = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createStoreTypeOneArr()
         self.initUI()
         self.registerXibs()
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window!.backgroundColor = UIColor.blue
     }
     
     
@@ -149,6 +147,18 @@ extension AddNewCarViewController {
     }
     
     fileprivate func openDropDown() {
+        
+        let window = UIApplication.shared.keyWindow
+        
+        transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        transparentView.frame = self.view.frame
+        window?.addSubview(transparentView)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapTransparentView))
+        transparentView.addGestureRecognizer(tapGesture)
+        
+        transparentView.alpha = 0
+        
         UIView.animate(withDuration: 0.3) {
             if self.storePaymentMethodsTypeOne.count <= 3 {
                 self.tableDropDownHC.constant = 70 + (70.0 * CGFloat(self.storePaymentMethodsTypeOne.count))
@@ -159,5 +169,9 @@ extension AddNewCarViewController {
             self.isTableVisible = true
             self.view.layoutIfNeeded()
         }
+    }
+    
+    @objc func didTapTransparentView() {
+        transparentView.alpha = 0
     }
 }
