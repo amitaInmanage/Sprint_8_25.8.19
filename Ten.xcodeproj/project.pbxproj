@@ -39,8 +39,8 @@
 		3E4A9655214A3A7000DC36FC /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4A9653214A3A7000DC36FC /* UserTypeTableViewCell.swift */; };
 		3E4A9656214A3A7000DC36FC /* UserTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E4A9654214A3A7000DC36FC /* UserTypeTableViewCell.xib */; };
 		3E72DF1021778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E72DF0F21778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift */; };
-		769641789B10C13755A859A3 /* Pods_Ten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05537D0D0475563806FA442 /* Pods_Ten.framework */; };
 		8AC82CFC23058D1600A200D8 /* TenProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC82CFB23058D1600A200D8 /* TenProgramTableViewCell.swift */; };
+		97EC38C2A8557C26FB50240A /* Pods_Ten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42173CAC3E3F357A5093E13 /* Pods_Ten.framework */; };
 		E8061B6022D1E6750045AE23 /* TenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8061B5F22D1E6750045AE23 /* TenUser.swift */; };
 		E809C37522C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809C37422C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift */; };
 		E809C37822C38DDF0014A2C2 /* SignUpCarDetailsDelekTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809C37722C38DDF0014A2C2 /* SignUpCarDetailsDelekTypeViewController.swift */; };
@@ -924,6 +924,7 @@
 		F4FA7A2A2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelingAndExtraServicesViewController.swift; sourceTree = "<group>"; };
 		F4FEA6992302F9B4000E5A02 /* SetUserCustomerProgramRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserCustomerProgramRequest.swift; sourceTree = "<group>"; };
 		F4FEA69B2302FA20000E5A02 /* SetUserCustomerProgramResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserCustomerProgramResponse.swift; sourceTree = "<group>"; };
+		FAC9B3EEC73BE788C0004657 /* Pods-Ten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ten.debug.xcconfig"; path = "Target Support Files/Pods-Ten/Pods-Ten.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -932,7 +933,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F45B170D22EF4255006CBE22 /* iOSDropDown.framework in Frameworks */,
-				769641789B10C13755A859A3 /* Pods_Ten.framework in Frameworks */,
+				97EC38C2A8557C26FB50240A /* Pods_Ten.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,11 +1106,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		DFFD1B4CF69889C39D27C7B6 /* Pods */ = {
+		E3FE3B9E997828303B751E76 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E809C37022C3556B0014A2C2 /* SignUpCarDetailsCell */ = {
@@ -2284,9 +2286,9 @@
 				E8E778E222D5C6BA004F0A9F /* splash.mp4 */,
 				F448C399209085C80077947E /* Ten */,
 				F448C398209085C80077947E /* Products */,
-				DFFD1B4CF69889C39D27C7B6 /* Pods */,
 				F4F8DCF92D93296CFA60D075 /* Frameworks */,
 				3E482BCE215CEBDA00CD5D8E /* Recovered References */,
+				E3FE3B9E997828303B751E76 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2558,7 +2560,7 @@
 			isa = PBXGroup;
 			children = (
 				F45B170C22EF4255006CBE22 /* iOSDropDown.framework */,
-				B05537D0D0475563806FA442 /* Pods_Ten.framework */,
+				E42173CAC3E3F357A5093E13 /* Pods_Ten.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2570,11 +2572,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F448C3A9209085CC0077947E /* Build configuration list for PBXNativeTarget "Ten" */;
 			buildPhases = (
-				28B27BE4BDB6C993EB0085E9 /* [CP] Check Pods Manifest.lock */,
+				D1C5FBE53A67DAC9FBC0961A /* [CP] Check Pods Manifest.lock */,
 				F448C393209085C80077947E /* Sources */,
 				F448C394209085C80077947E /* Frameworks */,
 				F448C395209085C80077947E /* Resources */,
-				B93AD195E4FDDC9E8335AFBF /* [CP] Embed Pods Frameworks */,
+				1906E69989E3481FE07D7517 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2687,31 +2689,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28B27BE4BDB6C993EB0085E9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Ten-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B93AD195E4FDDC9E8335AFBF /* [CP] Embed Pods Frameworks */ = {
+		1906E69989E3481FE07D7517 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1C5FBE53A67DAC9FBC0961A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh",
@@ -2740,7 +2740,9 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ten-checkManifestLockResult.txt",
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
@@ -2768,7 +2770,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
