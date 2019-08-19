@@ -85,8 +85,8 @@ class SplashViewController: BaseViewController {
             let videoURL = URL(fileURLWithPath: path)
             
             vwPlayerSplashVideo.player = AVPlayer(url: videoURL)
+            vwPlayerSplashVideo.playerLayer.videoGravity = .resizeAspectFill
             vwPlayerSplashVideo.player?.play()
-            
         }
     }
     

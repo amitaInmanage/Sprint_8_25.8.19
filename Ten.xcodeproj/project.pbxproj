@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,6 +40,7 @@
 		3E4A9656214A3A7000DC36FC /* UserTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E4A9654214A3A7000DC36FC /* UserTypeTableViewCell.xib */; };
 		3E72DF1021778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E72DF0F21778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift */; };
 		769641789B10C13755A859A3 /* Pods_Ten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05537D0D0475563806FA442 /* Pods_Ten.framework */; };
+		8AC82CFC23058D1600A200D8 /* TenProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC82CFB23058D1600A200D8 /* TenProgramTableViewCell.swift */; };
 		E8061B6022D1E6750045AE23 /* TenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8061B5F22D1E6750045AE23 /* TenUser.swift */; };
 		E809C37522C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809C37422C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift */; };
 		E809C37822C38DDF0014A2C2 /* SignUpCarDetailsDelekTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809C37722C38DDF0014A2C2 /* SignUpCarDetailsDelekTypeViewController.swift */; };
@@ -443,7 +444,6 @@
 		F4ADEFCD230174CD005E18A9 /* RemovePowerCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFCC230174CD005E18A9 /* RemovePowerCardResponse.swift */; };
 		F4ADEFD023019547005E18A9 /* ChooseDelekTenProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFCF23019547005E18A9 /* ChooseDelekTenProgramViewController.swift */; };
 		F4ADEFD2230197B3005E18A9 /* ChooseDelekTenProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFD1230197B3005E18A9 /* ChooseDelekTenProgramViewModel.swift */; };
-		F4ADEFD6230290CA005E18A9 /* TenProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADEFD4230290CA005E18A9 /* TenProgramTableViewCell.swift */; };
 		F4ADEFD7230290CA005E18A9 /* TenProgramTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4ADEFD5230290CA005E18A9 /* TenProgramTableViewCell.xib */; };
 		F4D6A9D822E5CDD100F60A39 /* VerifyPinCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */; };
 		F4D6A9DA22E5CE3200F60A39 /* VerifyPinCodeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */; };
@@ -492,8 +492,7 @@
 		3E4A9653214A3A7000DC36FC /* UserTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeTableViewCell.swift; sourceTree = "<group>"; };
 		3E4A9654214A3A7000DC36FC /* UserTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeTableViewCell.xib; sourceTree = "<group>"; };
 		3E72DF0F21778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPumpWhichCarPopupViewController.swift; sourceTree = "<group>"; };
-		6E1FC7304D2CA00D910AA6E3 /* Pods-Ten.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ten.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ten/Pods-Ten.release.xcconfig"; sourceTree = "<group>"; };
-		9CE22F087B73858AEC1895CE /* Pods-Ten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ten.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ten/Pods-Ten.debug.xcconfig"; sourceTree = "<group>"; };
+		8AC82CFB23058D1600A200D8 /* TenProgramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenProgramTableViewCell.swift; sourceTree = "<group>"; };
 		B05537D0D0475563806FA442 /* Pods_Ten.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ten.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8061B5F22D1E6750045AE23 /* TenUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenUser.swift; sourceTree = "<group>"; };
 		E809C37422C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpChooseCustomerTypeCell.swift; sourceTree = "<group>"; };
@@ -912,7 +911,6 @@
 		F4ADEFCC230174CD005E18A9 /* RemovePowerCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovePowerCardResponse.swift; sourceTree = "<group>"; };
 		F4ADEFCF23019547005E18A9 /* ChooseDelekTenProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDelekTenProgramViewController.swift; sourceTree = "<group>"; };
 		F4ADEFD1230197B3005E18A9 /* ChooseDelekTenProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDelekTenProgramViewModel.swift; sourceTree = "<group>"; };
-		F4ADEFD4230290CA005E18A9 /* TenProgramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenProgramTableViewCell.swift; sourceTree = "<group>"; };
 		F4ADEFD5230290CA005E18A9 /* TenProgramTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenProgramTableViewCell.xib; sourceTree = "<group>"; };
 		F4D6A9D722E5CDD100F60A39 /* VerifyPinCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeResponse.swift; sourceTree = "<group>"; };
 		F4D6A9D922E5CE3200F60A39 /* VerifyPinCodeRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPinCodeRequests.swift; sourceTree = "<group>"; };
@@ -1110,8 +1108,6 @@
 		DFFD1B4CF69889C39D27C7B6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9CE22F087B73858AEC1895CE /* Pods-Ten.debug.xcconfig */,
-				6E1FC7304D2CA00D910AA6E3 /* Pods-Ten.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2552,7 +2548,7 @@
 		F4ADEFD3230290A5005E18A9 /* TenProgramCell */ = {
 			isa = PBXGroup;
 			children = (
-				F4ADEFD4230290CA005E18A9 /* TenProgramTableViewCell.swift */,
+				8AC82CFB23058D1600A200D8 /* TenProgramTableViewCell.swift */,
 				F4ADEFD5230290CA005E18A9 /* TenProgramTableViewCell.xib */,
 			);
 			path = TenProgramCell;
@@ -2714,6 +2710,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
@@ -2740,6 +2739,9 @@
 				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
@@ -2979,7 +2981,6 @@
 				E85E222122A3AA2600EE0907 /* SignUpAddAnotherCarViewController.swift in Sources */,
 				F4ADEFD2230197B3005E18A9 /* ChooseDelekTenProgramViewModel.swift in Sources */,
 				3E72DF1021778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift in Sources */,
-				F4ADEFD6230290CA005E18A9 /* TenProgramTableViewCell.swift in Sources */,
 				E82A33A4229BD81800B91456 /* GetCitiesStreetsResponse.swift in Sources */,
 				282B41AF229AD32000986480 /* FourDigitCodeViewModel.swift in Sources */,
 				E82A331B229BD81700B91456 /* UserAccountProcessObj.swift in Sources */,
@@ -3034,6 +3035,7 @@
 				E82A33A6229BD81800B91456 /* ParseValidator.swift in Sources */,
 				E82A3370229BD81800B91456 /* ErrorReportRequest.swift in Sources */,
 				E82A3346229BD81800B91456 /* ViewModel.swift in Sources */,
+				8AC82CFC23058D1600A200D8 /* TenProgramTableViewCell.swift in Sources */,
 				F4ADEFAE23013FCF005E18A9 /* ClubsViewModel.swift in Sources */,
 				E82A3388229BD81800B91456 /* FAQ.swift in Sources */,
 				E809C37822C38DDF0014A2C2 /* SignUpCarDetailsDelekTypeViewController.swift in Sources */,
@@ -3312,7 +3314,6 @@
 		};
 		F448C3AA209085CC0077947E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CE22F087B73858AEC1895CE /* Pods-Ten.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ten/Ten.entitlements;
@@ -3415,7 +3416,6 @@
 		};
 		F448C3AB209085CC0077947E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E1FC7304D2CA00D910AA6E3 /* Pods-Ten.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ten/Ten.entitlements;

@@ -254,7 +254,7 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
             self.btnSaveChanges.Disabled()
             self.selected = indexPath.row
             self.customerProgramId = customerProgramsItems[self.selected].intId
-            self.firstTimeLoaded = false
+            self.firstTimeLoaded = true
             self.tableView.reloadData()
         }
         
