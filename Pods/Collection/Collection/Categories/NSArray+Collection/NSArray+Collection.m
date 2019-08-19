@@ -43,9 +43,15 @@
     return (index == NSNotFound) ? nil : self[index];
 }
 
+
 - (id)first:(BOOL (^)(id object))condition default:(id)defaultObject{
     id object = [self first:condition];
     return (object) ? object : defaultObject;
+}
+
+- (id)first:(BOOL (^)(id object))condition defaultBlock:(id(^)(void))defaultBlock{
+    id object = [self first:condition];
+    return (object) ? object : defaultBlock();
 }
 
 - (id)last:(BOOL (^)(id))condition{
@@ -87,6 +93,11 @@
     return [self whereAny:@[keypath] is:value];
 }
 
+- (NSArray*)where:(NSString*)keypath isNot:(id)value{
+    NSPredicate* predicate      = [NSPredicate predicateWithFormat:@"%K <> %@",keypath, value];
+    return [self filteredArrayUsingPredicate:predicate];
+}
+
 - (NSArray*)whereAny:(NSArray*)keyPaths is:(id)value{
     NSMutableArray* predicates = [NSMutableArray new];
     
@@ -114,6 +125,12 @@
     
     NSPredicate *resultPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:orPredicates];
     return [self filteredArrayUsingPredicate:resultPredicate];
+}
+
+- (NSArray*)whereIn:(NSString*)keyPath values:(id)values{
+    return [self filter:^BOOL(id object) {
+        return [values containsObject:[object valueForKeyPath:keyPath]];
+    }];
 }
 
 - (NSArray*)whereNull{
@@ -258,6 +275,14 @@
         [results addObjectsFromArray:[object valueForKeyPath:keypath]];
     }];
     return results;
+}
+
+- (NSArray<NSMutableArray*>*)partition:(BOOL (^)(id obj))block{
+    NSArray<NSMutableArray*>* result = @[NSMutableArray.new, NSMutableArray.new];
+    [self each:^(id object) {
+        block(object) ? [result.firstObject addObject:object] : [result.lastObject addObject:object];
+    }];
+    return result;
 }
 
 - (NSArray*)pluck:(NSString*)keyPath{
@@ -539,7 +564,15 @@
     return [[self.class range:times-1] map:^id(NSNumber *number, NSUInteger idx) {
         return callback(number.intValue);
     }];
-    
+}
+
+-(NSArray<NSArray*>*)chunk:(int)size{
+    NSMutableArray * result = NSMutableArray.new;
+    NSMutableArray * origin = self.mutableCopy;
+    while (origin.count > 0) {
+        [result addObject:[origin splice:size]];
+    }
+    return result;
 }
 
 -(NSArray*)crossJoin:(NSArray*)list{

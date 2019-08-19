@@ -19,6 +19,7 @@ public enum Hardware {
   case unknownAppleTV
   case unknownDevice
 
+  // iPhone
   case iphone2g
   case iphone3g
   case iphone3gs
@@ -46,7 +47,13 @@ public enum Hardware {
   case iphone8
   case iphone8Plus
   case iphoneX
+  
+  case iphoneXS
+  case iphoneXSMax
+  case iphoneXSMaxChina
+  case iphoneXR
 
+  // iPod
   case ipodTouch1g
   case ipodTouch2g
   case ipodTouch3g
@@ -54,6 +61,8 @@ public enum Hardware {
   case ipodTouch5g
   case ipodTouch6g
 
+  
+  // iPad
   case ipad
   case ipad2
   case ipad2_wifi
@@ -77,12 +86,16 @@ public enum Hardware {
   case ipadMini4_wifi
   case ipadMini4_wifi_cellular
   case ipadMiniRetina_wifi_cellular_cn
+  case ipadMini5_wifi
+  case ipadMini5_wifi_cellular
 
   case ipadAir_wifi
   case ipadAir_wifi_gsm
   case ipadAir_wifi_cdma
   case ipadAir2_wifi
   case ipadAir2_wifi_cellular
+  case ipadAir3_wifi
+  case ipadAir3_wifi_cellular
 
   case ipadPro_97_wifi
   case ipadPro_97_wifi_cellular
@@ -99,12 +112,25 @@ public enum Hardware {
 
   case ipad6_wifi
   case ipad6_wifi_cellular
+  
+  case ipad_pro_11_wifi
+  case ipad_pro_11_1tb_wifi
+  case ipad_pro_11_wifi_cellular
+  case ipad_pro_11_1tb_wifi_cellular
+  
+  case ipad_pro_3g_wifi
+  case ipad_pro_3g_1tb_wifi
+  case ipad_pro_3g_wifi_cellular
+  case ipad_pro_3g_1tb_wifi_cellular
+  
 
+  // Apple TV
   case appleTv1g
   case appleTv2g
   case appleTv3g_2012
   case appleTv3g_2013
   case appleTv4g
+  case appleTv4k
 
   case appleWatch_38
   case appleWatch_42
@@ -112,6 +138,14 @@ public enum Hardware {
   case appleWatch_series_2_42
   case appleWatch_series_1_38
   case appleWatch_series_1_42
+  case appleWatch_series_3_38
+  case appleWatch_series_3_42
+  case appleWatch_series_3_38_cellular
+  case appleWatch_series_3_42_cellular
+  case appleWatch_series_4_40
+  case appleWatch_series_4_44
+  case appleWatch_series_4_40_cellular
+  case appleWatch_series_4_44_cellular
 
   case simulator
 }

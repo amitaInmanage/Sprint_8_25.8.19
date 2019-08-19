@@ -40,14 +40,14 @@ class FacebookManager: BaseProcessManager {
     
     private func facebookLogin() {
         
-        let fbLoginManager = FBSDKLoginManager()
+        let fbLoginManager = LoginManager()
         
         //logout - if user change his facebook user (from user x to user y) in the fb app
-        if FBSDKAccessToken.current() != nil{
+        if AccessToken.current != nil{
             fbLoginManager.logOut()
         }
         
-        fbLoginManager.logIn(withReadPermissions: ["public_profile","email","user_birthday", "user_friends"], from: nil) { (result, error) in
+        fbLoginManager.logIn(permissions: ["public_profile","email","user_birthday", "user_friends"], from: nil) { (result, error) in
             if error != nil {
                 LogMsg("Facebook logInWithReadPermissions process error")
             }
@@ -62,7 +62,7 @@ class FacebookManager: BaseProcessManager {
                     MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow!, animated: true)
                 }
                 
-                if let aAccessToken = FBSDKAccessToken.current() {
+                if let aAccessToken = AccessToken.current {
                     
                     let userAccountProcessObj = UserAccountProcessObj()
                     
@@ -73,7 +73,7 @@ class FacebookManager: BaseProcessManager {
                     
                     userAccountProcessObj.loginOrSignupAttemptType = .loginWithFacebook;
                     
-                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, first_name, last_name, email, picture"]).start(completionHandler: { (connection, result, error) in
+                    GraphRequest(graphPath: "me", parameters: ["fields":"id, first_name, last_name, email, picture"]).start(completionHandler: { (connection, result, error) in
                         
                         if error == nil {
                             
@@ -117,10 +117,10 @@ class FacebookManager: BaseProcessManager {
     
     func loginFacebookAndGetAccessToken()  {
         
-        let fbLoginManager = FBSDKLoginManager()
+        let fbLoginManager = LoginManager()
         
         //,"user_work_history‎" needed review from facebook
-        fbLoginManager.logIn(withReadPermissions: ["public_profile","email","user_birthday", "user_friends"], from: nil) { (result, error) in
+        fbLoginManager.logIn(permissions: ["public_profile","email","user_birthday", "user_friends"], from: nil) { (result, error) in
             if error != nil {
                 LogMsg("Facebook logInWithReadPermissions process error")
                 self.finishProcessWithStatus(processFinishedStatus: .ProcessFinishedStatusFailure)
@@ -134,7 +134,7 @@ class FacebookManager: BaseProcessManager {
                 
                 LogMsg("Facebook logInWithReadPermissions succeeded")
                 
-                let accessToken = FBSDKAccessToken.current()
+                let accessToken = AccessToken.current
                 
                 if let aAccessToken = accessToken {
                     
@@ -187,9 +187,9 @@ class FacebookManager: BaseProcessManager {
     
     func facebookLoginWithReadPermissions(arrReadPermissions: [String], callBack: @escaping success) {
         
-        let fbLoginManager = FBSDKLoginManager()
+        let fbLoginManager = LoginManager()
         
-        fbLoginManager.logIn(withReadPermissions: arrReadPermissions, from: nil) { (result, error) in
+        fbLoginManager.logIn(permissions: arrReadPermissions, from: nil) { (result, error) in
             if error != nil {
                 LogMsg("Facebook logInWithReadPermissions process error")
                 callBack(false)

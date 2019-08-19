@@ -6,8 +6,9 @@ target 'Ten' do
   use_frameworks!
 
   # Pods for Ten
-  pod 'AFNetworking', '~> 3.0'
-  pod 'MBProgressHUD', '~> 1.0.0'
+  pod 'AFNetworking'
+  pod 'Bolts'
+  pod 'MBProgressHUD'
   pod 'LGSideMenuController', '~> 1.0.0'
   pod 'SDWebImage', '~>3.8'
   pod 'FacebookCore'

@@ -39,8 +39,9 @@
 		3E4A9655214A3A7000DC36FC /* UserTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4A9653214A3A7000DC36FC /* UserTypeTableViewCell.swift */; };
 		3E4A9656214A3A7000DC36FC /* UserTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E4A9654214A3A7000DC36FC /* UserTypeTableViewCell.xib */; };
 		3E72DF1021778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E72DF0F21778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift */; };
+		72396D0594D92C9AB1087F02 /* Pods_Ten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B03A9D4D9FC21BA5A77DD79 /* Pods_Ten.framework */; };
 		8AC82CFC23058D1600A200D8 /* TenProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC82CFB23058D1600A200D8 /* TenProgramTableViewCell.swift */; };
-		97EC38C2A8557C26FB50240A /* Pods_Ten.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42173CAC3E3F357A5093E13 /* Pods_Ten.framework */; };
+		97EC38C2A8557C26FB50240A /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		E8061B6022D1E6750045AE23 /* TenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8061B5F22D1E6750045AE23 /* TenUser.swift */; };
 		E809C37522C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809C37422C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift */; };
 		E809C37822C38DDF0014A2C2 /* SignUpCarDetailsDelekTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809C37722C38DDF0014A2C2 /* SignUpCarDetailsDelekTypeViewController.swift */; };
@@ -493,7 +494,9 @@
 		3E4A9654214A3A7000DC36FC /* UserTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTypeTableViewCell.xib; sourceTree = "<group>"; };
 		3E72DF0F21778CB4006E8F28 /* PickPumpWhichCarPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPumpWhichCarPopupViewController.swift; sourceTree = "<group>"; };
 		8AC82CFB23058D1600A200D8 /* TenProgramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenProgramTableViewCell.swift; sourceTree = "<group>"; };
-		B05537D0D0475563806FA442 /* Pods_Ten.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ten.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B03A9D4D9FC21BA5A77DD79 /* Pods_Ten.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ten.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC862D4CF1C1BBD925C605B /* Pods-Ten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ten.debug.xcconfig"; path = "Target Support Files/Pods-Ten/Pods-Ten.debug.xcconfig"; sourceTree = "<group>"; };
+		BE53FF4A308404BD974F5FE6 /* Pods-Ten.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ten.release.xcconfig"; path = "Target Support Files/Pods-Ten/Pods-Ten.release.xcconfig"; sourceTree = "<group>"; };
 		E8061B5F22D1E6750045AE23 /* TenUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenUser.swift; sourceTree = "<group>"; };
 		E809C37422C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpChooseCustomerTypeCell.swift; sourceTree = "<group>"; };
 		E809C37722C38DDF0014A2C2 /* SignUpCarDetailsDelekTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCarDetailsDelekTypeViewController.swift; sourceTree = "<group>"; };
@@ -924,7 +927,6 @@
 		F4FA7A2A2185F290003C15D7 /* FuelingAndExtraServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelingAndExtraServicesViewController.swift; sourceTree = "<group>"; };
 		F4FEA6992302F9B4000E5A02 /* SetUserCustomerProgramRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserCustomerProgramRequest.swift; sourceTree = "<group>"; };
 		F4FEA69B2302FA20000E5A02 /* SetUserCustomerProgramResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserCustomerProgramResponse.swift; sourceTree = "<group>"; };
-		FAC9B3EEC73BE788C0004657 /* Pods-Ten.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ten.debug.xcconfig"; path = "Target Support Files/Pods-Ten/Pods-Ten.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -933,7 +935,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F45B170D22EF4255006CBE22 /* iOSDropDown.framework in Frameworks */,
-				97EC38C2A8557C26FB50240A /* Pods_Ten.framework in Frameworks */,
+				97EC38C2A8557C26FB50240A /* BuildFile in Frameworks */,
+				72396D0594D92C9AB1087F02 /* Pods_Ten.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1104,14 +1107,6 @@
 				3E41CB8C21664D7500A55781 /* ExtraSecurityTableViewCell */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		E3FE3B9E997828303B751E76 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		E809C37022C3556B0014A2C2 /* SignUpCarDetailsCell */ = {
@@ -2288,7 +2283,7 @@
 				F448C398209085C80077947E /* Products */,
 				F4F8DCF92D93296CFA60D075 /* Frameworks */,
 				3E482BCE215CEBDA00CD5D8E /* Recovered References */,
-				E3FE3B9E997828303B751E76 /* Pods */,
+				FB5284487638A5ACD5FC0617 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2560,9 +2555,19 @@
 			isa = PBXGroup;
 			children = (
 				F45B170C22EF4255006CBE22 /* iOSDropDown.framework */,
-				E42173CAC3E3F357A5093E13 /* Pods_Ten.framework */,
+				9B03A9D4D9FC21BA5A77DD79 /* Pods_Ten.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB5284487638A5ACD5FC0617 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCC862D4CF1C1BBD925C605B /* Pods-Ten.debug.xcconfig */,
+				BE53FF4A308404BD974F5FE6 /* Pods-Ten.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2572,11 +2577,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F448C3A9209085CC0077947E /* Build configuration list for PBXNativeTarget "Ten" */;
 			buildPhases = (
-				D1C5FBE53A67DAC9FBC0961A /* [CP] Check Pods Manifest.lock */,
+				F38630BC0FFE0A01090774EB /* [CP] Check Pods Manifest.lock */,
 				F448C393209085C80077947E /* Sources */,
 				F448C394209085C80077947E /* Frameworks */,
 				F448C395209085C80077947E /* Resources */,
-				1906E69989E3481FE07D7517 /* [CP] Embed Pods Frameworks */,
+				9BC0A2C0B9CA2E10D47808D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2689,7 +2694,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1906E69989E3481FE07D7517 /* [CP] Embed Pods Frameworks */ = {
+		9BC0A2C0B9CA2E10D47808D3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2706,7 +2711,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D1C5FBE53A67DAC9FBC0961A /* [CP] Check Pods Manifest.lock */ = {
+		F38630BC0FFE0A01090774EB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2714,59 +2719,14 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Ten/Pods-Ten-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/Collection/Collection.framework",
-				"${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework",
-				"${BUILT_PRODUCTS_DIR}/DeviceGuru/DeviceGuru.framework",
-				"${BUILT_PRODUCTS_DIR}/EasyDate/EasyDate.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${PODS_ROOT}/PayCardsRecognizer/Source/PayCardsRecognizer.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
-				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/UIColor-HexString/UIColor_HexString.framework",
-				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Ten-checkManifestLockResult.txt",
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Collection.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTools.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceGuru.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyDate.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayCardsRecognizer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_HexString.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3316,6 +3276,7 @@
 		};
 		F448C3AA209085CC0077947E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCC862D4CF1C1BBD925C605B /* Pods-Ten.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ten/Ten.entitlements;
@@ -3418,6 +3379,7 @@
 		};
 		F448C3AB209085CC0077947E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE53FF4A308404BD974F5FE6 /* Pods-Ten.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ten/Ten.entitlements;

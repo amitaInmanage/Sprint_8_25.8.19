@@ -61,10 +61,13 @@
 +(NSDate*)dateFor:(NSString*)dateType;
 +(NSDate*)dateFor:(NSString*)dateType timeZone:(NSString*)timezone date:(NSDate*)date;
 
++ (NSTimeZone *)makeTimezone:(NSString *)timezone;
 -(NSString*)toDateTimeString;
 -(NSString*)toDateString;
 -(NSString*)toDeviceTimezoneString;
 -(NSString*)toDeviceTimezoneDateString;
+-(NSString*)toDateTimezoneLocalized;
+-(NSString*)toDateTimeTimezoneLocalized;
 -(NSString*)format:(NSString*)format;
 -(NSString*)format:(NSString*)format timezone:(NSString*)timezone;
 -(NSString*)formatWithFormatter:(NSDateFormatter*)formatter;
