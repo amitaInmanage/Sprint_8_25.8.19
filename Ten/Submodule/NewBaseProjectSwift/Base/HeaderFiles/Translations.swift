@@ -263,6 +263,8 @@ class Translations {
     }
     
     struct Titles {
+        static let avgSum = "choose_fueling_type_avg_sum_fueling"
+        static let avgLiliters = "choose_fueling_type_avg_liters_fueling"
         static let chooseFuelingType = "choose_fueling_type_bottom_sheet"
         static let avgLitreSubtitle = "avg_litre_subtitle"
         static let avgLitreTitle3 = "avg_litre_title3"
@@ -336,6 +338,8 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let avgSumDefault = "Default"
+        static let avgLilitersDefault = "Default"
         static let chooseFuelingTypeDefault = "Default"
         static let avgLitreSubtitleDefault = "Default"
         static let avgLitreTitle3Default = "Default"

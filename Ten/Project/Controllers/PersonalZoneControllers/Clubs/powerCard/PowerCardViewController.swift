@@ -26,16 +26,7 @@ class PowerCardViewController: BaseFormViewController {
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
-        if let vc = parent as? TenStyleViewController {
-            vc.changeConstraint(trailingConstraint: 0,
-                                bottomConstraint: 0,
-                                leadingConstraint: 0,
-                                containerHeightConst: vc.view.frame.height)
-            vc.containerView.backgroundColor = .clear
-            vc.view.backgroundColor = .clear
-            vc.vwContent = nil
-            vc.containerView = nil
-        }
+       self.fullScreeen(parent: parent)
     }
     
     fileprivate func initUI() {

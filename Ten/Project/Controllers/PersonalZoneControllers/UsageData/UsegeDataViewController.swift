@@ -21,12 +21,8 @@ class UsegeDataViewController: BaseFormViewController {
     @IBOutlet weak var lblTitle: MediumLabel!
     @IBOutlet weak var imgNis: UIImageView!
     @IBOutlet weak var imgFuelBox: UIImageView!
-    @IBOutlet weak var lblAvgForAmountTitle: RegularLabel!
-    @IBOutlet weak var lblAmountAvgTitle: BoldLabel!
-    @IBOutlet weak var lblAvgFuelingTitle: RegularLabel!
-    @IBOutlet weak var lblAvgForLiterTitle: RegularLabel!
-    @IBOutlet weak var lblLitersAvgTitle: BoldLabel!
-    @IBOutlet weak var lblFuelingForAvgLiters: RegularLabel!
+    @IBOutlet weak var lblAvgAmountToFueling: RegularLabel?
+    @IBOutlet weak var lblAvgLitersToFueling: RegularLabel?
     @IBOutlet weak var lblAvaregeNis: MediumLabel!
     @IBOutlet weak var lblAvarageLiter: MediumLabel!
     @IBOutlet weak var lblLiter: RegularLabel!
@@ -40,7 +36,7 @@ class UsegeDataViewController: BaseFormViewController {
     var viewModel = UsegeDataViewModel()
     var transparentView = UIView()
     var isTableVisible: Bool = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
@@ -49,29 +45,16 @@ class UsegeDataViewController: BaseFormViewController {
     }
     
     override func fillTextWithTrans() {
+        self.boldLblAvgAmountToFueling()
+        self.boldLblAvgLitersToFueling()
         self.lblTitleTableView.text = Translation(Translations.Titles.chooseFuelingType, Translations.Titles.chooseFuelingTypeDefault)
         self.lblTitle.text = Translation(Translations.Titles.usageDataTitle, Translations.Titles.usageDataTitleDefault)
         self.lblMonthlyCarExpenses.text = Translation(Translations.SubTitles.usageDataSubtitle, Translations.SubTitles.usageDataSubtitleDefault)
-        self.lblAvgForAmountTitle.text = Translation(Translations.Titles.avgSumTitle1, Translations.Titles.avgSumTitle1Default)
-        self.lblAmountAvgTitle.text = Translation(Translations.Titles.avgSumTitle2, Translations.Titles.avgSumTitle2Default)
-        self.lblAvgFuelingTitle.text = Translation(Translations.Titles.avgSumTitle3, Translations.Titles.avgSumTitle3Default)
-        self.lblAvgForLiterTitle.text = Translation(Translations.Titles.avgLitreTitle1, Translations.Titles.avgLitreTitle1Default)
-        self.lblLitersAvgTitle.text = Translation(Translations.Titles.avgLitreTitle2, Translations.Titles.avgLitreTitle2Default)
-        self.lblFuelingForAvgLiters.text = Translation(Translations.Titles.avgLitreTitle3, Translations.Titles.avgLitreTitle3Default)
         self.lblLiter.text = Translation(Translations.Titles.avgLitreSubtitle, Translations.Titles.avgLitreSubtitleDefault)
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
-        if let vc = parent as? TenStyleViewController {
-            vc.changeConstraint(trailingConstraint: 0,
-                                bottomConstraint: 0,
-                                leadingConstraint: 0,
-                                containerHeightConst: vc.view.frame.height)
-            vc.containerView.backgroundColor = .clear
-            vc.view.backgroundColor = .clear
-            vc.vwContent = nil
-            vc.containerView = nil
-        }
+       self.fullScreeen(parent: parent)
     }
     
     fileprivate func initUI() {
@@ -160,6 +143,28 @@ class UsegeDataViewController: BaseFormViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapTransparentView))
         self.transparentView.addGestureRecognizer(tapGesture)
     }
+    
+    fileprivate func boldLblAvgAmountToFueling()  {
+        let formattedString = NSMutableAttributedString()
+        formattedString
+            
+            .normal(Translation(Translations.Titles.avgSumTitle1, Translations.Titles.avgSumTitle1Default) + (" "))
+            .bold(Translation(Translations.Titles.avgSumTitle2, Translations.Titles.avgSumTitle2Default) + (" "))
+            .normal(Translation(Translations.Titles.avgSumTitle3, Translations.Titles.avgSumTitle3Default))
+        
+        self.lblAvgAmountToFueling?.attributedText = formattedString
+    }
+    
+    fileprivate func boldLblAvgLitersToFueling()  {
+        let formattedString = NSMutableAttributedString()
+        formattedString
+            
+            .normal(Translation(Translations.Titles.avgLitreTitle1, Translations.Titles.avgLitreTitle1Default) + (" "))
+            .bold(Translation(Translations.Titles.avgLitreTitle2, Translations.Titles.avgLitreTitle2Default) + (" "))
+            .normal(Translation(Translations.Titles.avgLitreTitle3, Translations.Titles.avgLitreTitle3Default))
+        
+        self.lblAvgLitersToFueling?.attributedText = formattedString
+    }
 }
 
 extension UsegeDataViewController: UITableViewDelegate, UITableViewDataSource {
@@ -196,10 +201,9 @@ extension UsegeDataViewController {
         if request.requestName == TenRequestNames.getUsageInformation {
             
             if let innerResponse = innerResponse as? GetUsageInformationResponse {
-              
+            
                 
             }
-            
         }
     }
     

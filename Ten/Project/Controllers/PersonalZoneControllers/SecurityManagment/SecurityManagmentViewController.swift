@@ -42,16 +42,7 @@ class SecurityManagmentViewController: BaseFormViewController {
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
-        if let vc = parent as? TenStyleViewController {
-            vc.leadingConstraint.constant = 0
-            vc.trailingConstraint.constant = 0
-            vc.bottomConstraint.constant = 0
-            vc.containerHeightConst.constant = vc.view.frame.height
-            vc.containerView.backgroundColor = .clear
-            vc.view.backgroundColor = .clear
-            vc.vwContent = nil
-            vc.containerView = nil
-        }
+       self.fullScreeen(parent: parent)
     }
     
      func biometricType() -> BiometricType {

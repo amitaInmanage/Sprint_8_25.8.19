@@ -45,16 +45,7 @@ class ChooseDelekTenProgramViewController: BaseFormViewController {
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
-        if let vc = parent as? TenStyleViewController {
-            vc.changeConstraint(trailingConstraint: 0,
-                                bottomConstraint: 0,
-                                leadingConstraint: 0,
-                                containerHeightConst: vc.view.frame.height)
-            vc.containerView.backgroundColor = .clear
-            vc.view.backgroundColor = .clear
-            vc.vwContent = nil
-            vc.containerView = nil
-        }
+       self.fullScreeen(parent: parent)
     }
     
     override func fillTextWithTrans() {
@@ -162,83 +153,6 @@ extension ChooseDelekTenProgramViewController: SelectedProgramDelegate, DropDown
         self.firstTimeLoaded = false
         self.tableView.reloadData()
     }
-}
-
-
-extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customerProgramsItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TenProgramTableViewCell.className, for: indexPath) as! TenProgramTableViewCell
-        
-        cell.btnSelectedProgram.tag = indexPath.row
-        
-        self.disableState = self.checkState()
-        
-        
-        if firstTimeLoaded {
-            if customerProgramsItems[indexPath.row].intId == customerProgramsUser.intCurrentProgrramId {
-                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOn"), for: .normal)
-                self.selected = indexPath.row
-            } else {
-                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOff"), for: .normal)
-            }
-        } else {
-            if indexPath.row == selected {
-                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOn"), for: .normal)
-            } else {
-                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOff"), for: .normal)
-            }
-        }
-        
-        cell.dropDownDelegate = self
-        cell.selectedProgramDelegate = self
-        
-        cell.lblTitleProgram.text = StringManager.sharedInstance.replaceString(originalString: Translation(Translations.Titles.delekTenChooseProgramRow, Translations.Titles.delekTenChooseProgramRowDefault), replacement: customerProgramsItems[indexPath.row].strName)
-        cell.lblProgramDetails.text = customerProgramsItems[indexPath.row].strDescription
-        
-        var fuelDiscountText = getTemplateText(type: customerProgramsItems[indexPath.row].strFuelBenefitType)
-        fuelDiscountText = StringManager.sharedInstance.replaceString(originalString: fuelDiscountText, replacement: customerProgramsItems[indexPath.row].strfuelBenefitValue)
-        cell.lblFuelAssumption.text = fuelDiscountText
-        
-        var surroundingText = getTemplateText(type: customerProgramsItems[indexPath.row].strSurroundingsType)
-        surroundingText = StringManager.sharedInstance.replaceString(originalString: surroundingText, replacement: customerProgramsItems[indexPath.row].strSurroundingsValue)
-        cell.lblAroundCarAssumption.text = surroundingText
-        
-        
-        var storeText = getTemplateText(type: customerProgramsItems[indexPath.row].strStoreBenefitType)
-        storeText = StringManager.sharedInstance.replaceString(originalString: storeText, replacement: customerProgramsItems[indexPath.row].strStoreBenefitValue)
-        cell.lblStoresAssumption.text = storeText
-        
-        if customerProgramsItems[indexPath.row].strNotes.isEmpty {
-            cell.lblProgramDetailsDropDown.isHidden = true
-
-        } else {
-            cell.lblProgramDetailsDropDown.isHidden = false
-            cell.lblProgramDetailsDropDown.text = customerProgramsItems[indexPath.row].strNotes
-        }
-        
-        
-        if disableState {
-            cell.btnSelectedProgram.isEnabled = false
-            if self.customerProgramsUser.availableProgram[0] == customerProgramsItems[indexPath.row].intId {
-                cell.vwProgram.alpha = 1
-                cell.vwDropDown.alpha = 1
-                
-            } else {
-                cell.vwProgram.alpha = 0.5
-                cell.vwDropDown.alpha = 0.5
-            }
-        } else {
-            cell.btnSelectedProgram.isEnabled = true
-        }
-        
-        return cell
-    }
-    
     
     func getTemplateText(type: String) -> String {
         for benefitType in customerProgramBenefit {
@@ -258,6 +172,89 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
     }
 }
 
+extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return customerProgramsItems.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TenProgramTableViewCell.className, for: indexPath) as! TenProgramTableViewCell
+        
+        cell.btnSelectedProgram.tag = indexPath.row
+        
+        self.disableState = self.checkState()
+        
+        if firstTimeLoaded {
+            if customerProgramsItems[indexPath.row].intId == customerProgramsUser.intCurrentProgrramId {
+                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOn"), for: .normal)
+                self.selected = indexPath.row
+            } else {
+                cell.btnSelectedProgram.setImage(UIImage(named: "radioButtonOff"), for: .normal)
+            }
+        } else {
+                let imageResource = indexPath.row == selected ? "radioButtonOn" :  "radioButtonOff"
+                cell.btnSelectedProgram.setImage(UIImage(named: imageResource), for: .normal)
+          
+        }
+        
+        cell.dropDownDelegate = self
+        cell.selectedProgramDelegate = self
+        let customerProgramItem = customerProgramsItems[indexPath.row]
+        
+        cell.lblTitleProgram.text = StringManager.sharedInstance.replaceString(originalString: Translation(Translations.Titles.delekTenChooseProgramRow, Translations.Titles.delekTenChooseProgramRowDefault), replacement: customerProgramItem.strName)
+        cell.lblProgramDetails.text = customerProgramItem.strDescription
+        
+        var fuelDiscountText = getTemplateText(type: customerProgramItem.strFuelBenefitType)
+        fuelDiscountText = StringManager.sharedInstance.replaceString(originalString: fuelDiscountText, replacement: customerProgramItem.strfuelBenefitValue)
+        cell.lblFuelAssumption.text = fuelDiscountText
+        
+        var surroundingText = getTemplateText(type: customerProgramItem.strSurroundingsType)
+        surroundingText = StringManager.sharedInstance.replaceString(originalString: surroundingText, replacement: customerProgramItem.strSurroundingsValue)
+        cell.lblAroundCarAssumption.text = surroundingText
+        
+        var storeText = getTemplateText(type: customerProgramItem.strStoreBenefitType)
+        storeText = StringManager.sharedInstance.replaceString(originalString: storeText, replacement: customerProgramItem.strStoreBenefitValue)
+        cell.lblStoresAssumption.text = storeText
+        
+        cell.lblProgramDetailsDropDown.isHidden =  customerProgramItem.strNotes.isEmpty
+        cell.lblProgramDetailsDropDown.text = customerProgramItem.strNotes
+        
+        let alphaDisable = CGFloat(1.0)
+        let alphaEnable = CGFloat(0.5)
+
+        if disableState {
+
+            if self.customerProgramsUser.availableProgram[0] == customerProgramItem.intId {
+                cell.vwProgram.alpha = alphaDisable
+                cell.vwDropDown.alpha = alphaDisable
+            } else {
+                cell.vwProgram.alpha = alphaEnable
+                cell.vwDropDown.alpha = alphaEnable
+            }
+        } else {
+            cell.vwProgram.alpha = alphaDisable
+            cell.vwDropDown.alpha = alphaDisable
+        }
+        
+        cell.btnSelectedProgram.isEnabled = !disableState
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: TenProgramTableViewCell.className, for: indexPath) as! TenProgramTableViewCell
+//
+//        cell.btnSelectedProgram.isEnabled = false
+//        self.btnSaveChanges.Enabled()
+//        self.selected = indexPath.row
+//        self.customerProgramId = customerProgramsItems[self.selected].intId
+//        self.firstTimeLoaded = false
+//        self.tableView.reloadData()
+    }
+}
+
 extension ChooseDelekTenProgramViewController {
     
     func requestSucceeded(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse, andInnerResponse innerResponse: BaseInnerResponse) {
@@ -271,8 +268,5 @@ extension ChooseDelekTenProgramViewController {
     
     func requestFailed(request: BaseRequest, withOuterResponse outerResponse: BaseOuterResponse) {
         
-        if request.requestName == TenRequestNames.getSetUserCustomerProgram {
-            
-        }
     }
 }
