@@ -257,15 +257,6 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
             self.firstTimeLoaded = true
             self.tableView.reloadData()
         }
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: TenProgramTableViewCell.className, for: indexPath) as! TenProgramTableViewCell
-//
-//        cell.btnSelectedProgram.isEnabled = false
-//        self.btnSaveChanges.Enabled()
-//        self.selected = indexPath.row
-//        self.customerProgramId = customerProgramsItems[self.selected].intId
-//        self.firstTimeLoaded = false
-//        self.tableView.reloadData()
     }
 }
 

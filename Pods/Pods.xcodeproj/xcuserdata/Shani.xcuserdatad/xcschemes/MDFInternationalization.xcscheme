@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F8F7224BC7EBCDC260DB1CFE72D89594"
+               BlueprintIdentifier = "8DCDD809F8F085FFDFDD29D6FDC07A41"
                BlueprintName = "MDFInternationalization"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "MDFInternationalization.framework">

@@ -9,12 +9,7 @@
 import UIKit
 
 class SlidItem: BaseInnerResponse {
-
-//    enum TitlePosition: String {
-//        case top = "top"
-//        case buttom = "buttom"
-//    }
-//
+    
     var strContent = ""
     var intId = 0
     var strImage = ""
@@ -30,7 +25,6 @@ class SlidItem: BaseInnerResponse {
         self.strTitle = ParseValidator.getStringForKey(key: "title", JSONDict: JSONDict, defaultValue: "")
         self.titlePosition = ParseValidator.getStringForKey(key: "title_position", JSONDict: JSONDict, defaultValue: "")
         
-//        TitlePosition.top = ParseValidator.getStringForKey(key: "title_position", JSONDict: JSONDict, defaultValue: "") == "top"
         return self
     }
 }

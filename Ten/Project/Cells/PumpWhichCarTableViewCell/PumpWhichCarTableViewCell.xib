@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLA-TA-mLf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="45" placeholderIntrinsicHeight="27" image="customerCard" translatesAutoresizingMaskIntoConstraints="NO" id="wQp-U5-JSq">
                                 <rect key="frame" x="20" y="27.5" width="45" height="27"/>

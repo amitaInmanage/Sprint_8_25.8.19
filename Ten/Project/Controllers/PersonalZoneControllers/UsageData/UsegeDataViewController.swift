@@ -40,7 +40,7 @@ class UsegeDataViewController: BaseFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
-        self.getCarInformation()
+        self.CellCarInformation(id: "")
         self.registerXibs()
     }
     
@@ -59,7 +59,7 @@ class UsegeDataViewController: BaseFormViewController {
     
     fileprivate func initUI() {
         self.tableViewTitle.isHidden = true
-        self.imgFuelType.setImageWithStrURL(strURL: self.fuelingDevice[0].fuelItem.strIcon, withAddUnderscoreIphone: false)
+        self.imgFuelType?.setImageWithStrURL(strURL: self.fuelingDevice[0].fuelItem.strIcon, withAddUnderscoreIphone: false)
         self.imgCreditCard?.setImageWithStrURL(strURL: self.fuelingDevice[0].payment.strIcon, withAddUnderscoreIphone: false)
         self.lblCarNumber.text = self.fuelingDevice[0].strTitle
         self.tableDropDownHC.constant = 0
@@ -76,11 +76,11 @@ class UsegeDataViewController: BaseFormViewController {
         self.tableView.register(UINib(nibName: PumpWhichCarTableViewCell.className, bundle: nil), forCellReuseIdentifier: PumpWhichCarTableViewCell.className)
     }
     
-    fileprivate func getCarInformation() {
+    fileprivate func CellCarInformation(id: String) {
         
-        let dict = [TenParamsNames.fuelingDeviceId: self.fuelingDevice[0].strId]
+        let dict = [TenParamsNames.fuelingDeviceId: id]
         
-        ApplicationManager.sharedInstance.userAccountManager.callGetUsageInformation(dictParams: dict, requestFinishedDelegate: self)
+        ApplicationManager.sharedInstance.userAccountManager.callGetUsageInformation(dictParams: dict as [String : Any], requestFinishedDelegate: self)
     }
     
     //IBAction:
@@ -111,10 +111,10 @@ class UsegeDataViewController: BaseFormViewController {
         UIView.animate(withDuration: 0.3) {
             
             self.tableViewTitle.isHidden = false
-            if self.fuelingDevice.count <= 5 {
+            if self.fuelingDevice.count <= 4 {
                 self.tableDropDownHC.constant = (82.0 * CGFloat(self.fuelingDevice.count))
             } else {
-                self.tableDropDownHC.constant = (82.0 * 5)
+                self.tableDropDownHC.constant = (82.0 * 4)
             }
             self.addAlpheAndTapRecognizerToScreen()
             self.transparentView.alpha = 0.8
@@ -188,9 +188,10 @@ extension UsegeDataViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
 
         self.lblCarNumber.text = self.fuelingDevice[indexPath.row].strTitle
-        self.imgFuelType.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].fuelItem.strIcon, withAddUnderscoreIphone: false)
+        self.imgFuelType?.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].fuelItem.strIcon, withAddUnderscoreIphone: false)
         self.imgCreditCard.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].payment.strIcon, withAddUnderscoreIphone: false)
         
+        self.CellCarInformation(id: self.fuelingDevice[indexPath.row].strId)
         self.closeDropDown()
     }
 }
@@ -202,6 +203,8 @@ extension UsegeDataViewController {
             
             if let innerResponse = innerResponse as? GetUsageInformationResponse {
             
+                self.lblAvarageLiter.text = String(innerResponse.avarages.intLiter)
+                self.lblAvaregeNis.text = String(innerResponse.avarages.intSum)
                 
             }
         }
