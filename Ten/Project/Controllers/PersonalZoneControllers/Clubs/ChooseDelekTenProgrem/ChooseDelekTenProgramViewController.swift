@@ -244,6 +244,20 @@ extension ChooseDelekTenProgramViewController: UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if !disableState {
+            self.btnSaveChanges.Enabled()
+            self.selected = indexPath.row
+            self.customerProgramId = customerProgramsItems[self.selected].intId
+            self.firstTimeLoaded = false
+            self.tableView.reloadData()
+        } else {
+            self.btnSaveChanges.Disabled()
+            self.selected = indexPath.row
+            self.customerProgramId = customerProgramsItems[self.selected].intId
+            self.firstTimeLoaded = false
+            self.tableView.reloadData()
+        }
+        
 //        let cell = tableView.dequeueReusableCell(withIdentifier: TenProgramTableViewCell.className, for: indexPath) as! TenProgramTableViewCell
 //
 //        cell.btnSelectedProgram.isEnabled = false
