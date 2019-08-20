@@ -18,7 +18,7 @@ class PersonalDetailsTableViewCell: UITableViewCell {
         self.vw.addShadow()
     }
 
-    func setUpData(didTapItem:DidTapItem ) {
+    func setUpData(didTapItem: DidTapItem) {
         self.selectionStyle = UITableViewCell.SelectionStyle.none
         var horizontalStck = UIStackView()
         horizontalStck.axis = .horizontal

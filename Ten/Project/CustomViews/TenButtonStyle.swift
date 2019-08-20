@@ -20,6 +20,12 @@ class TenButtonStyle: IMButton {
         
         self.layer.cornerRadius = self.frame.size.height / 4.16
         self.layer.backgroundColor = self.tenButtonColor
+        self.tintColor = .white
+    }
+    
+    func setBoldToTitleLabel() {
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        self.titleLabel?.font = UIFont.init(name: "Heebo-Medium", size: 18)
     }
     
     func Enabled() {

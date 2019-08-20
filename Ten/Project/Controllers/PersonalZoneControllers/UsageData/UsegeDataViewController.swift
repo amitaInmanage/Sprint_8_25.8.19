@@ -10,6 +10,7 @@ import UIKit
 
 class UsegeDataViewController: BaseFormViewController {
   
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var lblTitleTableView: UILabel!
     @IBOutlet weak var tableViewTitle: UIView!
     @IBOutlet weak var imgCreditCard: UIImageView!
@@ -31,17 +32,21 @@ class UsegeDataViewController: BaseFormViewController {
     @IBOutlet weak var vwGraphs: UIView!
     @IBOutlet weak var vwNis: UIView!
     @IBOutlet weak var vwFuel: UIView!
+    @IBOutlet weak var btnDropDown: UIButton!
     
     var fuelingDevice = ApplicationManager.sharedInstance.userAccountManager.user.fuelingDevicesArr
     var viewModel = UsegeDataViewModel()
     var transparentView = UIView()
     var isTableVisible: Bool = false
-
+    var sumByMount = [SumByMountItem]()
+    var maxSum = SumByMountItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
         self.CellCarInformation(id: "")
         self.registerXibs()
+        self.oneCarForUser()
     }
     
     override func fillTextWithTrans() {
@@ -57,11 +62,22 @@ class UsegeDataViewController: BaseFormViewController {
        self.fullScreeen(parent: parent)
     }
     
+    fileprivate func registerXibs() {
+        self.tableView.register(UINib(nibName: PumpWhichCarTableViewCell.className, bundle: nil), forCellReuseIdentifier: PumpWhichCarTableViewCell.className)
+        self.collectionView.register(UINib(nibName: UsageDataGraphCollectionViewCell.className, bundle: nil), forCellWithReuseIdentifier: UsageDataGraphCollectionViewCell.className)
+    }
+    
     fileprivate func initUI() {
         self.tableViewTitle.isHidden = true
-        self.imgFuelType?.setImageWithStrURL(strURL: self.fuelingDevice[0].fuelItem.strIcon, withAddUnderscoreIphone: false)
-        self.imgCreditCard?.setImageWithStrURL(strURL: self.fuelingDevice[0].payment.strIcon, withAddUnderscoreIphone: false)
-        self.lblCarNumber.text = self.fuelingDevice[0].strTitle
+        if let strFuelIcon = self.fuelingDevice.first?.fuelItem.strIcon {
+             self.imgFuelType.setImageWithStrURL(strURL: strFuelIcon, withAddUnderscoreIphone: false)
+        }
+        if let strPaymentIcon = self.fuelingDevice.first?.payment.strIcon {
+             self.imgCreditCard?.setImageWithStrURL(strURL: strPaymentIcon, withAddUnderscoreIphone: false)
+        }
+        if let strCarNumber = self.fuelingDevice.first?.strTitle {
+             self.lblCarNumber.text = strCarNumber
+        }
         self.tableDropDownHC.constant = 0
         self.view.backgroundColor = .clear
         self.imgNis.image = UIImage(named: "nis")
@@ -71,10 +87,7 @@ class UsegeDataViewController: BaseFormViewController {
         self.vwNis.addShadowAndCorner()
         self.vwFuel.addShadowAndCorner()
     }
-    
-    fileprivate func registerXibs() {
-        self.tableView.register(UINib(nibName: PumpWhichCarTableViewCell.className, bundle: nil), forCellReuseIdentifier: PumpWhichCarTableViewCell.className)
-    }
+  
     
     fileprivate func CellCarInformation(id: String) {
         
@@ -135,6 +148,9 @@ class UsegeDataViewController: BaseFormViewController {
         let window = UIApplication.shared.keyWindow
         self.transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         DispatchQueue.main.async(execute: {
+            
+           
+            
             let hight = UIScreen.main.bounds.size.height - self.tableView.frame.size.height - self.tableViewTitle.frame.size.height
             let witdh = self.view.frame.size.height
             self.transparentView.frame = CGRect(x: 0, y: 0, width: witdh, height: hight)
@@ -165,6 +181,13 @@ class UsegeDataViewController: BaseFormViewController {
         
         self.lblAvgLitersToFueling?.attributedText = formattedString
     }
+    
+    fileprivate func oneCarForUser()  {
+        if self.fuelingDevice.count <= 1 {
+            self.imgDropDown.isHidden = true
+            self.btnDropDown.isHidden = true
+        }
+    }
 }
 
 extension UsegeDataViewController: UITableViewDelegate, UITableViewDataSource {
@@ -194,6 +217,17 @@ extension UsegeDataViewController: UITableViewDelegate, UITableViewDataSource {
         self.CellCarInformation(id: self.fuelingDevice[indexPath.row].strId)
         self.closeDropDown()
     }
+    
+    fileprivate func getBiggestSumByMount() -> SumByMountItem {
+        var maxHightGraph: SumByMountItem = SumByMountItem()
+        
+        for sum in self.sumByMount {
+            if sum.intSum > maxHightGraph.intSum  {
+                maxHightGraph = sum
+            }
+        }
+        return maxHightGraph
+    }
 }
 
 extension UsegeDataViewController {
@@ -202,10 +236,12 @@ extension UsegeDataViewController {
         if request.requestName == TenRequestNames.getUsageInformation {
             
             if let innerResponse = innerResponse as? GetUsageInformationResponse {
-            
+                
                 self.lblAvarageLiter.text = String(innerResponse.avarages.intLiter)
                 self.lblAvaregeNis.text = String(innerResponse.avarages.intSum)
-                
+                self.sumByMount = innerResponse.sumByMountArr
+                self.maxSum = self.getBiggestSumByMount()
+                self.collectionView.reloadData()
             }
         }
     }
@@ -216,3 +252,33 @@ extension UsegeDataViewController {
     }
 }
 
+extension UsegeDataViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return self.sumByMount.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsageDataGraphCollectionViewCell.className, for: indexPath) as! UsageDataGraphCollectionViewCell
+
+        
+        if self.maxSum.intSum != self.sumByMount[indexPath.row].intSum {
+            let newHeight: Double = Double(self.sumByMount[indexPath.row].intSum) / Double(self.maxSum.intSum) * 100.0
+//                for number in 1...Int(newHeight) {
+//                    UIView.animate(withDuration: 0.3) {
+//                    cell.graphHeightConstraint.constant = CGFloat(number)
+//                        self.view.layoutIfNeeded()
+//                    }
+//                }
+            cell.graphHeightConstraint.constant = CGFloat(newHeight)
+        } else {
+            cell.graphHeightConstraint.constant = 100
+        }
+        
+        cell.lblNis.text = String(sumByMount[indexPath.row].intSum)
+        cell.lblMonth.text = sumByMount[indexPath.row].strMonth
+        cell.lblYear.text = String(sumByMount[indexPath.row].intYear)
+       
+        
+        return cell
+    }
+}

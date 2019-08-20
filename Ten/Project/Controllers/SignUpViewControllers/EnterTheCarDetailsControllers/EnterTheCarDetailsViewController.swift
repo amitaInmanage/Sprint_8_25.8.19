@@ -72,6 +72,34 @@ class EnterTheCarDetailsViewController: BaseFormViewController {
         }
     }
     
+    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        
+        switch textField.tag {
+        case TxtFldTag.cardNumber.rawValue:
+            if let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) {
+                let substringToReplace = textFieldText[rangeOfTextToReplace]
+                let count = textFieldText.count - substringToReplace.count + string.count
+                return count <= self.viewModel.intFuilingCardMax
+            } else {
+                return false
+            }
+            
+        case TxtFldTag.cardSecret.rawValue:
+            if let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) {
+                let substringToReplace = textFieldText[rangeOfTextToReplace]
+                let count = textFieldText.count - substringToReplace.count + string.count
+                return count <= self.viewModel.intSecretCodeMax
+            } else {
+                return false
+            }
+            
+        default:
+            return false
+        }
+    }
+
     //MARK: IBAction:
     @IBAction func didTapForgotPass(_ sender: Any) {
         //TODO: Send to connect with : קוד סודי

@@ -26,13 +26,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="135" height="150"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5d-AI-7Dr">
-                            <rect key="frame" x="8" y="93" width="119" height="20.5"/>
+                            <rect key="frame" x="8" y="66" width="119" height="45.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="61" image="visa" translatesAutoresizingMaskIntoConstraints="NO" id="zK7-0O-u9n">
-                            <rect key="frame" x="46.5" y="20" width="42" height="61"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa" translatesAutoresizingMaskIntoConstraints="NO" id="zK7-0O-u9n">
+                            <rect key="frame" x="45.5" y="20" width="44" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="tFQ-qh-66v"/>
+                                <constraint firstAttribute="height" constant="34" id="zap-RK-feS"/>
+                            </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liC-m0-SsI" customClass="IMButton" customModule="Ten" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="135" height="150"/>
@@ -49,11 +53,9 @@
                         <constraint firstItem="liC-m0-SsI" firstAttribute="leading" secondItem="vA7-pA-5VX" secondAttribute="leading" id="DIz-tt-LlA"/>
                         <constraint firstItem="liC-m0-SsI" firstAttribute="top" secondItem="vA7-pA-5VX" secondAttribute="top" id="j2W-oE-k08"/>
                         <constraint firstAttribute="height" constant="150" id="jOU-gP-vtL"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zK7-0O-u9n" secondAttribute="trailing" constant="24" id="kNY-W1-9IQ"/>
                         <constraint firstAttribute="trailing" secondItem="liC-m0-SsI" secondAttribute="trailing" id="lcJ-C5-iAb"/>
                         <constraint firstAttribute="trailing" secondItem="N5d-AI-7Dr" secondAttribute="trailing" constant="8" id="mQ3-b0-5ou"/>
                         <constraint firstItem="N5d-AI-7Dr" firstAttribute="leading" secondItem="vA7-pA-5VX" secondAttribute="leading" constant="8" id="o6N-V8-72K"/>
-                        <constraint firstItem="zK7-0O-u9n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vA7-pA-5VX" secondAttribute="leading" constant="24" id="sWI-Ak-oLp"/>
                         <constraint firstAttribute="bottom" secondItem="liC-m0-SsI" secondAttribute="bottom" id="t9Z-yw-txg"/>
                         <constraint firstItem="zK7-0O-u9n" firstAttribute="centerX" secondItem="vA7-pA-5VX" secondAttribute="centerX" id="vxX-Ah-8fm"/>
                     </constraints>

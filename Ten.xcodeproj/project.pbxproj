@@ -310,8 +310,6 @@
 		E88C645F22DDE441002769B7 /* ExtraServiceCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88C645D22DDE441002769B7 /* ExtraServiceCustomView.xib */; };
 		E88C646222DDE495002769B7 /* FuelTypeCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88C646022DDE494002769B7 /* FuelTypeCustomView.xib */; };
 		E88C646322DDE495002769B7 /* FuelTypeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C646122DDE495002769B7 /* FuelTypeCustomView.swift */; };
-		E88C646822DDED4C002769B7 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C646722DDED4C002769B7 /* BottomButton.swift */; };
-		E88C646A22DDEE00002769B7 /* BottomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88C646922DDEE00002769B7 /* BottomButton.xib */; };
 		E8AC358D229E7FA300171BAE /* SignUpConfrimTermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AC358C229E7FA300171BAE /* SignUpConfrimTermsOfServiceViewController.swift */; };
 		E8AC358F229E7FDA00171BAE /* SignUpConfrimTermsOfServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AC358E229E7FDA00171BAE /* SignUpConfrimTermsOfServiceViewModel.swift */; };
 		E8AC3592229E911F00171BAE /* SignUpChooseCustomerTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AC3591229E911F00171BAE /* SignUpChooseCustomerTypeViewController.swift */; };
@@ -371,6 +369,8 @@
 		F432508A21450CDD00F69D9D /* Popups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F432508921450CDD00F69D9D /* Popups.storyboard */; };
 		F4443FDF230AE34C00A73FEF /* Avarage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4443FDE230AE34C00A73FEF /* Avarage.swift */; };
 		F4443FE1230AE77300A73FEF /* SumByMountItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4443FE0230AE77300A73FEF /* SumByMountItem.swift */; };
+		F4443FE9230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4443FE7230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.swift */; };
+		F4443FEA230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4443FE8230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.xib */; };
 		F4471CAD22E49AF3005B0648 /* SecurityManagmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4471CAC22E49AF3005B0648 /* SecurityManagmentViewController.swift */; };
 		F4471CB222E4AD69005B0648 /* FaceIdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4471CB122E4AD69005B0648 /* FaceIdTableViewCell.swift */; };
 		F4471CB422E4ADAB005B0648 /* FaceIdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4471CB322E4ADAB005B0648 /* FaceIdTableViewCell.xib */; };
@@ -777,8 +777,6 @@
 		E88C645D22DDE441002769B7 /* ExtraServiceCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtraServiceCustomView.xib; sourceTree = "<group>"; };
 		E88C646022DDE494002769B7 /* FuelTypeCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FuelTypeCustomView.xib; sourceTree = "<group>"; };
 		E88C646122DDE495002769B7 /* FuelTypeCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelTypeCustomView.swift; sourceTree = "<group>"; };
-		E88C646722DDED4C002769B7 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
-		E88C646922DDEE00002769B7 /* BottomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomButton.xib; sourceTree = "<group>"; };
 		E8AC358C229E7FA300171BAE /* SignUpConfrimTermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfrimTermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		E8AC358E229E7FDA00171BAE /* SignUpConfrimTermsOfServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfrimTermsOfServiceViewModel.swift; sourceTree = "<group>"; };
 		E8AC3591229E911F00171BAE /* SignUpChooseCustomerTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpChooseCustomerTypeViewController.swift; sourceTree = "<group>"; };
@@ -839,6 +837,8 @@
 		F432508921450CDD00F69D9D /* Popups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popups.storyboard; sourceTree = "<group>"; };
 		F4443FDE230AE34C00A73FEF /* Avarage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avarage.swift; sourceTree = "<group>"; };
 		F4443FE0230AE77300A73FEF /* SumByMountItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumByMountItem.swift; sourceTree = "<group>"; };
+		F4443FE7230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageDataGraphCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4443FE8230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsageDataGraphCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4471CAC22E49AF3005B0648 /* SecurityManagmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityManagmentViewController.swift; sourceTree = "<group>"; };
 		F4471CB122E4AD69005B0648 /* FaceIdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdTableViewCell.swift; sourceTree = "<group>"; };
 		F4471CB322E4ADAB005B0648 /* FaceIdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceIdTableViewCell.xib; sourceTree = "<group>"; };
@@ -1101,6 +1101,7 @@
 		3EB304A8215BBD070020DC61 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F4443FE2230BE3B000A73FEF /* UsageDataGraphCell */,
 				F4ADEFD3230290A5005E18A9 /* TenProgramCell */,
 				F4ADEFAF23014248005E18A9 /* ClubsTableViewCells */,
 				F45B172222F71B13006CBE22 /* CreditCardTableViewCell */,
@@ -2108,8 +2109,6 @@
 		E8E778E422D5CB80004F0A9F /* PersonalZoneCells */ = {
 			isa = PBXGroup;
 			children = (
-				E88C646722DDED4C002769B7 /* BottomButton.swift */,
-				E88C646922DDEE00002769B7 /* BottomButton.xib */,
 				E8E778FB22D5D05F004F0A9F /* PowerCardCells */,
 				E8E778F422D5CFE0004F0A9F /* MySavingsCells  */,
 				E8E778EB22D5CCC8004F0A9F /* MyAccumulationCell */,
@@ -2249,6 +2248,15 @@
 				F42F5C1322E7342D0084119F /*  MainScreenViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		F4443FE2230BE3B000A73FEF /* UsageDataGraphCell */ = {
+			isa = PBXGroup;
+			children = (
+				F4443FE7230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.swift */,
+				F4443FE8230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.xib */,
+			);
+			path = UsageDataGraphCell;
 			sourceTree = "<group>";
 		};
 		F4471CAB22E4997F005B0648 /* SecurityManagment */ = {
@@ -2639,6 +2647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0FA33E217885D50039C939 /* PumpWhichCarUITableViewHeaderFooterView.xib in Resources */,
+				F4443FEA230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.xib in Resources */,
 				E82A33B6229BD81800B91456 /* UserTypeUITableViewHeaderFooterView.xib in Resources */,
 				F40CA8CA209618FB00821EAD /* Heebo-Black.ttf in Resources */,
 				E88C646222DDE495002769B7 /* FuelTypeCustomView.xib in Resources */,
@@ -2682,7 +2691,6 @@
 				E815F13222AFE0B80015D1DD /* PersonalZone.storyboard in Resources */,
 				F40CA8C9209618FB00821EAD /* Heebo-Thin.ttf in Resources */,
 				F4F91BB422E9E64B00B348F3 /* StoresTableViewCell.xib in Resources */,
-				E88C646A22DDEE00002769B7 /* BottomButton.xib in Resources */,
 				E82A334E229BD81800B91456 /* NavBarView.xib in Resources */,
 				F4ADEFD7230290CA005E18A9 /* TenProgramTableViewCell.xib in Resources */,
 				E82A334B229BD81800B91456 /* CustomProgressView.xib in Resources */,
@@ -2863,7 +2871,6 @@
 				E82A3347229BD81800B91456 /* BaseViewModelDataFetchProtocol.swift in Sources */,
 				E82A3344229BD81800B91456 /* BaseTableViewModelProtocol.swift in Sources */,
 				E809C37522C3842B0014A2C2 /* SignUpChooseCustomerTypeCell.swift in Sources */,
-				E88C646822DDED4C002769B7 /* BottomButton.swift in Sources */,
 				E82A32FE229BD81700B91456 /* RIButtonItem.m in Sources */,
 				E815F12522AFA0110015D1DD /* InvoicingNumberViewController.swift in Sources */,
 				F4903DC422E83A7C0029879C /* TransactionsHistoryViewController.swift in Sources */,
@@ -3099,6 +3106,7 @@
 				E82A3335229BD81700B91456 /* UIViewController+IMExtension.swift in Sources */,
 				E834A30922DCB86D002D006D /* GetOnBoardingResponse.swift in Sources */,
 				E85E222922A3AE9700EE0907 /* SignUpPasswordCreatedSuccessfullViewModel.swift in Sources */,
+				F4443FE9230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.swift in Sources */,
 				E82A3339229BD81800B91456 /* IMLabel.swift in Sources */,
 				E82A334F229BD81800B91456 /* WebViewController.swift in Sources */,
 				E815F12222AEA8770015D1DD /* CustomPickerView.swift in Sources */,

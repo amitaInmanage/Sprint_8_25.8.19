@@ -43,8 +43,7 @@ class PersonalDetailCustomView: UIView {
     func setDataWith(menuItem: PersonalAreaMenuItem) {
         self.menuItem = menuItem
         self.lblTitle.text = menuItem.strTitle
-        //TODO: uncomment when server returns images
-        //self.img.setImageWithStrURL(strURL: menuItem.strIcon, withAddUnderscoreIphone: false)
+        self.img.setImageWithStrURL(strURL: menuItem.strIcon, withAddUnderscoreIphone: false)
     }
     
     //IBAction:

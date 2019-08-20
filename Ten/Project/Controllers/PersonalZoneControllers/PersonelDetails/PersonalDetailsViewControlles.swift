@@ -38,6 +38,7 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     @IBOutlet weak var imgCheckBox: UIImageView!
     @IBOutlet weak var lblFirstNameError: UILabel!
     @IBOutlet weak var lblLastNameError: UILabel!
+    @IBOutlet weak var lblEmailError: UILabel!
     
     var keys = [Int]()
     var values = [String]()
@@ -54,26 +55,22 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         self.setupTextFields()
         self.initTextField()
         self.initLable()
-        
         self.initCheckBox()
     }
     
     override func fillTextWithTrans() {
+        self.lblEmailError.text = Translation(Translations.ValidationFormErros.fullNameError, Translations.ValidationFormErros.fullNameErrorDefault)
         self.lblTitle.text = Translation(Translations.Titles.editPersonal, Translations.Titles.editPersonalDefault)
         self.lblNotafication.text = Translation(Translations.AlertButtonsKeys.editPersonalInformation, Translations.AlertButtonsKeys.editPersonalInformationDefault)
         self.lblSecurityManager.text = Translation(Translations.AlertButtonsKeys.securityMenagement, Translations.AlertButtonsKeys.securityMenagementDefault)
         self.lblFirstNameError.text = Translation(Translations.ValidationFormErros.fullNameError, Translations.ValidationFormErros.fullNameErrorDefault)
         self.lblLastNameError.text = Translation(Translations.ValidationFormErros.fullNameError, Translations.ValidationFormErros.fullNameErrorDefault)
+        self.btnSaveChanges.setTitle(Translation(Translations.AlertButtonsKeys.delekTenChooseProgram, Translations.AlertButtonsKeys.delekTenChooseProgramDefault), for: .normal)
         self.lblSecurityManager.textColor = UIColor.getApplicationTextColor()
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
-        if let vc = parent as? TenStyleViewController {
-            vc.containerView.backgroundColor = UIColor.groupTableViewBackground
-            vc.containerView = nil
-            let mysubView: PersonalDetailsBottomButton = PersonalDetailsBottomButton()
-            self.view.addSubview(mysubView)
-        }
+            self.fullScreeen(parent: parent)
     }
     
     fileprivate func initLable() {
@@ -81,8 +78,10 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     }
     
     fileprivate func initUI() {
+        self.btnSaveChanges.setBoldToTitleLabel()
         self.lblFirstNameError.isHidden = true
         self.lblLastNameError.isHidden = true
+        self.lblEmailError.isHidden = true
         self.btnSaveChanges.isHidden = true
         self.view.backgroundColor = .clear
         self.contentView.addShadow()
@@ -143,6 +142,7 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         
         self.txtFldFirstName.txtFldInput.tag = TxtFldTag.firstName.rawValue
         self.txtFldLastName.txtFldInput.tag = TxtFldTag.lastName.rawValue
+        self.txtFldEmail.txtFldInput.tag = TxtFldTag.email.rawValue
         
     }
     
@@ -151,11 +151,12 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         switch textField.tag {
         case TxtFldTag.firstName.rawValue:
             self.txtFldFirstName.txtFldInput.text = textField.text ?? ""
-            lblFirstNameError.isHidden = true
+            self.lblFirstNameError.isHidden = true
         case TxtFldTag.lastName.rawValue:
             self.txtFldLastName.txtFldInput.text = textField.text ?? ""
-            lblLastNameError.isHidden = true
+            self.lblLastNameError.isHidden = true
         case TxtFldTag.email.rawValue:
+            self.lblEmailError.isHidden = true
             self.txtFldEmail.txtFldInput.text = textField.text ?? ""
         default:
             break;
@@ -202,9 +203,27 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     }
     
     @IBAction func didTapSecurityManager(_ sender: Any) {
-        if let personalSecurity = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: SecurityManagmentViewController.className) as? SecurityManagmentViewController {
+        
+        if self.btnSaveChanges.isHidden == true {
+            if let personalSecurity = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: SecurityManagmentViewController.className) as? SecurityManagmentViewController {
+                
+                ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalSecurity, animated: true)
+            }
+        } else {
+            let popupInfoObj = PopupInfoObj()
+            popupInfoObj.popupType = .exit
+            popupInfoObj.strTitle = Translation(Translations.Titles.editPersonalInformationPopup, Translations.Titles.editPersonalInformationPopupDefault)
+            popupInfoObj.strSkipButtonTitle = Translation(Translations.AlertButtonsKeys.popupRemoveFuelingCardNo, Translations.AlertButtonsKeys.popupRemoveFuelingCardNoDefault)
+            popupInfoObj.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.popupRemoveFuelingCardYes, Translations.AlertButtonsKeys.popupRemoveFuelingCardYesDefault)
             
-            ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalSecurity, animated: true)
+            popupInfoObj.firstButtonAction = {
+                
+                if let personalSecurity = UIStoryboard.init(name: "PersonalZone", bundle: Bundle.main).instantiateViewController(withIdentifier: SecurityManagmentViewController.className) as? SecurityManagmentViewController {
+                    
+                    ApplicationManager.sharedInstance.navigationController.pushTenViewController(personalSecurity, animated: true)
+                }
+            }
+            ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
         }
     }
     
@@ -214,12 +233,17 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         
         if !ApplicationManager.sharedInstance.inputValidationManager.isHebrewValidSingleName(name: self.txtFldFirstName.txtFldInput.text!) {
             isValid = false
-            lblFirstNameError.isHidden = false
+            self.lblFirstNameError.isHidden = false
         }
         if !TenInputValidation.sharedInstance.isHebrewValidLastName(name: self.txtFldLastName.txtFldInput.text!) {
             isValid = false
-            lblLastNameError.isHidden = false
+            self.lblLastNameError.isHidden = false
         }
+        if !ApplicationManager.sharedInstance.inputValidationManager.isValidEmail(emailStr: self.txtFldEmail.txtFldInput.text!) {
+            isValid = false
+            self.lblEmailError.isHidden = false
+        }
+        
         if isValid {
             self.viewModel.strFirstName = self.txtFldFirstName.txtFldInput.text!
             self.viewModel.strLastName  = self.txtFldLastName.txtFldInput.text!
@@ -299,6 +323,7 @@ extension PersonalDetailsViewControlles: UITableViewDelegate, UITableViewDataSou
         UIView.animate(withDuration: 0.3) {
             self.tableDropDownHC.constant = 0
             self.btnSaveChanges.isHidden = false
+            self.imgDropDown.image = UIImage(named: "down")
             self.isTableVisible = false
             self.view.layoutIfNeeded()
         }

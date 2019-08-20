@@ -66,6 +66,34 @@ class SignUpTenClientViewController: BaseFormViewController {
         }
     }
     
+    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        
+        switch textField.tag {
+        case TxtFldTag.idNumber.rawValue:
+            if let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) {
+                let substringToReplace = textFieldText[rangeOfTextToReplace]
+                let count = textFieldText.count - substringToReplace.count + string.count
+                return count <= self.viewModel.intBusinessIdMax
+            } else {
+                return false
+            }
+            
+        case TxtFldTag.carNumber.rawValue:
+            if let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) {
+                let substringToReplace = textFieldText[rangeOfTextToReplace]
+                let count = textFieldText.count - substringToReplace.count + string.count
+                return count <= self.viewModel.intLicensePlateMax
+            } else {
+                return false
+            }
+            
+        default:
+            return false
+        }
+    }
+    
     //MARK: IBAction
     @IBAction func didTapContinueBtn(_ sender: Any) {
         if ApplicationManager.sharedInstance.userAccountManager.registrationToken.isEmpty {

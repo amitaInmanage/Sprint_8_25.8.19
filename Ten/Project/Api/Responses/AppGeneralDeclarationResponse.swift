@@ -79,8 +79,9 @@ class AppGeneralDeclarationResponse: BaseGeneralDeclarationResponse {
         self.tenCardMax = ParseValidator.getIntForKey(key: "tan_card_max_chars", JSONDict: JSONDict, defaultValue: 0)
         
         self.literFuelingLimitDefault = ParseValidator.getIntForKey(key: "liter_fueling_limit_default", JSONDict: JSONDict, defaultValue: 0)
-        self.moneyFuelingLimitDefault = ParseValidator.getIntForKey(key: "money_fueling_limit_default", JSONDict: JSONDict, defaultValue: 0)
         
+        self.moneyFuelingLimitDefault = ParseValidator.getIntForKey(key: "money_fueling_limit_default", JSONDict: JSONDict, defaultValue: 0)
+
         return self
     }
 }

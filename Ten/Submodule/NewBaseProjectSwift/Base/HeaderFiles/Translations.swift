@@ -263,6 +263,7 @@ class Translations {
     }
     
     struct Titles {
+        static let editPersonalInformationPopup = "edit_personal_information_popup_title"
         static let avgSum = "choose_fueling_type_avg_sum_fueling"
         static let avgLiliters = "choose_fueling_type_avg_liters_fueling"
         static let chooseFuelingType = "choose_fueling_type_bottom_sheet"
@@ -338,6 +339,7 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let editPersonalInformationPopupDefault = "Default"
         static let avgSumDefault = "Default"
         static let avgLilitersDefault = "Default"
         static let chooseFuelingTypeDefault = "Default"

@@ -11,7 +11,7 @@ import Foundation
 class GetUsageInformationResponse: BaseInnerResponse {
     
     var avarages = Avarage()
-    var sumByMountItem = SumByMountItem()
+    var sumByMountArr = [SumByMountItem]()
     var fuelingDeviceId = ""
     
     override func buildFromJSONDict(JSONDict: [String : Any]!) -> BaseInnerResponse {
@@ -25,8 +25,10 @@ class GetUsageInformationResponse: BaseInnerResponse {
       
         self.fuelingDeviceId = ParseValidator.getStringForKey(key: "fueling_device_id", JSONDict: JSONDict, defaultValue: "")
     
-        let tempSumByMountItem = ParseValidator.getDictionaryForKey(key: "sum_by_monthArr", JSONDict: JSONDict, defaultValue: [String : Any]())
-        self.sumByMountItem = SumByMountItem().buildFromJSONDict(JSONDict: tempSumByMountItem) as! SumByMountItem
+        let sumByMountItems = ParseValidator.getArrayForKey(key: "sum_by_monthArr", JSONDict: JSONDict, defaultValue: [Any]())
+        self.sumByMountArr = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: sumByMountItems, innerResponse: SumByMountItem(), shouldReverseOrder: false) as! [SumByMountItem]
+        
+        
         
         return self
     }
