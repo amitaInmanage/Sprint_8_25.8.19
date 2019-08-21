@@ -9,11 +9,11 @@
 import UIKit
 
 class PowerCardViewController: BaseFormViewController {
-    @IBOutlet weak var lblTitle: MediumLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var vwTitle: UIView!
     @IBOutlet weak var vwContent: UIView!
-    @IBOutlet weak var lblPowerCard: MediumLabel!
-    @IBOutlet weak var lblAmount: RegularLabel!
+    @IBOutlet weak var lblPowerCard: RegularText!
+    @IBOutlet weak var lblAmount: RegularText!
     @IBOutlet weak var btnLogin: TenButtonStyle!
     @IBOutlet weak var vwContentHC: NSLayoutConstraint!
     

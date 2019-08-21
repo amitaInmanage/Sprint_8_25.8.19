@@ -11,9 +11,9 @@ import UIKit
 class PumpWhichCarTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imgCar: UIImageView!
-    @IBOutlet weak var lblCarNumber: UILabel!
+    @IBOutlet weak var lblCarNumber: RegularText!
     @IBOutlet weak var imgFuelType: UIImageView!
-    @IBOutlet weak var lblCardNumber: UILabel!
+    @IBOutlet weak var lblCardNumber: RegularText!
     @IBOutlet weak var imgCard: UIImageView!
     
     override func awakeFromNib() {

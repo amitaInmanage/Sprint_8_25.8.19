@@ -10,13 +10,13 @@ import UIKit
 
 class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFieldDelegate {
     
-    @IBOutlet weak var lblTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var imgNewCode: UIImageView!
-    @IBOutlet weak var lblSubTitle: RegularLabel!
+    @IBOutlet weak var lblSubTitle: RegularText!
     @IBOutlet weak var imgSendingCode: UIImageView!
     @IBOutlet weak var btnContectUs: TenButtonStyle!
-    @IBOutlet weak var lblPhoneNumber: RegularLabel!
-    @IBOutlet weak var lblValidCodeStatus: RegularLabel!
+    @IBOutlet weak var lblPhoneNumber: RegularText!
+    @IBOutlet weak var lblValidCodeStatus: SemiBoldText!
     @IBOutlet var textFields: [DeleteTextField]!
     
     var viewModel = SignUpEnterSecretSmsCodeViewModel()
@@ -27,7 +27,7 @@ class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFiel
         //TODO: delete after Test
         self.showTokenPopup()
     }
-
+    
     //TODO: delete after Test
     fileprivate func showTokenPopup() {
         let popupInfoObj = PopupInfoObj()
@@ -41,9 +41,9 @@ class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFiel
     func initializeUI() {
         
         self.setupTextFields()
-
+        
         //TODO: row for check:
-//        ApplicationManager.sharedInstance.loginAndSignupManager.callVerifySmsToken(dictParams: [TenParamsNames.token: self.viewModel.strToken, TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self)
+        //        ApplicationManager.sharedInstance.loginAndSignupManager.callVerifySmsToken(dictParams: [TenParamsNames.token: self.viewModel.strToken, TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self)
         
         //TODO: remove or ask about thet:
         self.viewModel.validCodeStr = self.viewModel.validCodeStr.stringByReplacingFirstOccurrenceOfString(target: "}", withString: "").stringByReplacingFirstOccurrenceOfString(target: "{", withString: "")
@@ -120,16 +120,16 @@ class SignUpEnterSecretSmsCodeViewController: BaseFormViewController, MyTextFiel
         layer.frame = CGRect(x: 0.0, y: textField.frame.size.height - 18.0, width: textField.frame.size.width, height: 1.0)
         textField.layer.addSublayer(layer)
     }
-
+    
     //MARK: IBAction
     @objc func didTapLblValidCodeStatus(sender:UITapGestureRecognizer) {
         
         if !self.viewModel.isInProgress {
             self.viewModel.isInProgress = true
-           self.changeCodeStateView(isSending: true)
+            self.changeCodeStateView(isSending: true)
             ApplicationManager.sharedInstance.loginAndSignupManager.callGetSmsToken(dictParams: [TenParamsNames.cellPhone: self.viewModel.strPhoneNumber], andRequestFinishedDelegate: self, vc:  self)
             DispatchQueue.main.asyncAfter(deadline: .now() + 30.0) {
-              self.changeCodeStateView(isSending: false)
+                self.changeCodeStateView(isSending: false)
                 //TODO: Delete show popup after QA
                 self.showTokenPopup()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {

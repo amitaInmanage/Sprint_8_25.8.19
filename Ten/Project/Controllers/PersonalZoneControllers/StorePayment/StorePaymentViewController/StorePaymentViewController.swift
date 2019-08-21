@@ -10,8 +10,8 @@ import UIKit
 
 class StorePaymentViewController: BaseFormViewController {
     
-    @IBOutlet weak var lblTitle: IMLabel!
-    @IBOutlet weak var lblSubTitle: UILabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblSubTitle: RegularText!
     
     var viewModel = StorePaymentViewModel()
     

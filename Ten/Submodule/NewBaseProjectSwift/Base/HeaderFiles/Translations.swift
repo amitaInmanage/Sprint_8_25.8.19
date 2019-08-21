@@ -55,7 +55,7 @@ class Translations {
         static let dialogChangeProgramBtn = "dialog_change_program_btn"
         static let delekTenChooseProgramStation = "delek_ten_choose_program_station_manager"
         static let delekTenChooseProgramAccumulation = "delek_ten_choose_program_accumulation_title"
-        static let delekTenChooseProgram = "delek_ten_choose_program_btn"
+        static let delekTenChooseProgram = "edit_personal_information_save"
         static let delekTenChooseProgramTerms = "delek_ten_choose_program_terms_ios"
         static let popupConnectSuccessfulPowercard = "popup_connect_successful_powercard_btn"
         static let powercardConnect = "powercard_connect"

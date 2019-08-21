@@ -11,7 +11,7 @@ import UIKit
 class SignUpChooseCustomerTypeCell: UICollectionViewCell {
     
     @IBOutlet weak var imgCustomerType: UIImageView!
-    @IBOutlet weak var lblTitle: RegularLabel!
-    @IBOutlet weak var lblSubTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: BoldText!
+    @IBOutlet weak var lblSubTitle: RegularText!
     @IBOutlet weak var viewSelected: UIView!
 }

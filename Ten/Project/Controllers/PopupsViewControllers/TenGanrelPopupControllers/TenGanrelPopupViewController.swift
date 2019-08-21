@@ -11,9 +11,9 @@ import UIKit
 class TenGanrelPopupViewController: BasePopupViewController {
     
     @IBOutlet weak var imgSecondaryGeneral: UIImageView!
-    @IBOutlet weak var lblTitle: RegularLabel!
-    @IBOutlet weak var lblSubTitle: LightLabel!
-    @IBOutlet weak var lblSecondSubTitle: LightLabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblSubTitle: RegularText!
+    @IBOutlet weak var lblSecondSubTitle: RegularText!
     @IBOutlet weak var btnConfirm: TenButtonStyle!
     @IBOutlet weak var btnSkip: IMButton!
     @IBOutlet weak var btnsStackView: UIStackView!

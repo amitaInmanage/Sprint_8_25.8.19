@@ -36,7 +36,7 @@
                                         <constraint firstAttribute="width" constant="22" id="w9v-Ea-LQL"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טביעת אצבע" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLn-1A-eFd">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טביעת אצבע" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLn-1A-eFd" customClass="RegularText" customModule="Ten" customModuleProvider="target">
                                     <rect key="frame" x="186" y="30" width="129" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="129" id="Ag6-ID-FSg"/>
@@ -53,7 +53,7 @@
                                         <constraint firstAttribute="width" constant="2" id="USp-xR-isA"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" הסר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U5-An-U4s">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" הסר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U5-An-U4s" customClass="SmallText" customModule="Ten" customModuleProvider="target">
                                     <rect key="frame" x="14" y="43" width="59" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="fsf-Zi-iGq"/>

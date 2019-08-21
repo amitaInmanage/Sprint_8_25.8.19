@@ -11,8 +11,8 @@ import WebKit
 
 class SignUpConfrimTermsOfServiceViewController: BaseFormViewController, WKNavigationDelegate {
     
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblSubTitle: BoldLabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblSubTitle: BoldText!
     @IBOutlet weak var webViewTermsOfService: IMWebView!
     @IBOutlet weak var btnConfrimTermsOfUse: UIButton!
     
@@ -50,6 +50,7 @@ class SignUpConfrimTermsOfServiceViewController: BaseFormViewController, WKNavig
         self.view.backgroundColor = .clear
         self.webViewTermsOfService.backgroundColor = .white
         self.lblSubTitle.text = self.viewModel.strTitle
+        self.btnConfrimTermsOfUse.titleLabel?.font = UIFont(name: "Heebo-Medium", size: 18)
         self.btnConfrimTermsOfUse.setTitle(Translation(Translations.Titles.confirm, Translations.Titles.confirmDefault), for: .normal)
         self.btnConfrimTermsOfUse.backgroundColor = UIColor.getApplicationThemeColor()
         self.btnConfrimTermsOfUse.layer.cornerRadius = 8

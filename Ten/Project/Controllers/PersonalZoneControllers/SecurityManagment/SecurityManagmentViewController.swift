@@ -18,8 +18,8 @@ class SecurityManagmentViewController: BaseFormViewController {
     }
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblTtile: IMLabel!
-    @IBOutlet weak var lblSubTitle: IMLabel!
+    @IBOutlet weak var lblTtile: MediumText!
+    @IBOutlet weak var lblSubTitle: RegularText!
     
     var user = ApplicationManager.sharedInstance.userAccountManager.user
     var rowTypeArr: [RowType] = []

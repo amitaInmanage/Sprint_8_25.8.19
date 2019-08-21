@@ -139,7 +139,7 @@ class LightTextView : AdjustableFontTextView { override class func fontName() ->
 //class LightItalicTextView : AdjustableFontTextView { override class func fontName() -> (String?) { return kLightItalicFontName } }
 class RegularTextView : AdjustableFontTextView { override class func fontName() -> (String?) { return kRegularFontName } }
 //class RegularItalicTextView : AdjustableFontTextView { override class func fontName() -> (String?) { return kRegularItalicFontName } }
-class MediumTextView : AdjustableFontTextView { override class func fontName() -> (String?) { return kMediumFontName } }
+//class MediumTextView : AdjustableFontTextView { override class func fontName() -> (String?) { return kMediumFontName } }
 class MediumItalicTextView : AdjustableFontTextView { override class func fontName() -> (String?) { return kMediumItalicFontName } }
 class SemiBoldTextView : AdjustableFontTextView { override class func fontName() -> (String?) { return kSemiBoldFontName } }
 //class SemiBoldItalicTextView : AdjustableFontTextView { override class func fontName() -> (String?) { return kSemiBoldItalicFontName } }

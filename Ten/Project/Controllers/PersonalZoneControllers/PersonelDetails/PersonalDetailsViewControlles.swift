@@ -21,29 +21,28 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     }
     
     @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var lblTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var txtFldFirstName: InputCustomView!
     @IBOutlet weak var txtFldLastName: InputCustomView!
     @IBOutlet weak var txtFldPhone: InputCustomView!
     @IBOutlet weak var txtFldEmail: InputCustomView!
-    @IBOutlet weak var lblNotafication: UILabel!
-    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var lblNotafication: RegularText!
+    @IBOutlet weak var bottomView: RegularText!
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var lblSecurityManager: RegularLabel!
+    @IBOutlet weak var lblSecurityManager: RegularText!
     @IBOutlet weak var btnSaveChanges: TenButtonStyle!
-    @IBOutlet weak var lblGender: RegularLabel!
+    @IBOutlet weak var lblGender: RegularText!
     @IBOutlet weak var tableDropDown: UITableView!
     @IBOutlet weak var tableDropDownHC: NSLayoutConstraint!
     @IBOutlet weak var imgDropDown: UIImageView!
     @IBOutlet weak var imgCheckBox: UIImageView!
-    @IBOutlet weak var lblFirstNameError: UILabel!
-    @IBOutlet weak var lblLastNameError: UILabel!
-    @IBOutlet weak var lblEmailError: UILabel!
+    @IBOutlet weak var lblFirstNameError: ErrorText!
+    @IBOutlet weak var lblLastNameError: ErrorText!
+    @IBOutlet weak var lblEmailError: ErrorText!
     
     var keys = [Int]()
     var values = [String]()
     var viewModel = PersonalDetailsViewModel()
-    var button: PersonalDetailsBottomButton?
     var genserArr = ApplicationManager.sharedInstance.appGD.genderArr
     var user = ApplicationManager.sharedInstance.userAccountManager.user
     var isTableVisible = true
@@ -78,7 +77,6 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     }
     
     fileprivate func initUI() {
-        self.btnSaveChanges.setBoldToTitleLabel()
         self.lblFirstNameError.isHidden = true
         self.lblLastNameError.isHidden = true
         self.lblEmailError.isHidden = true

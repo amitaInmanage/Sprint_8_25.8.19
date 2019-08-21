@@ -11,8 +11,8 @@ import UIKit
 class SignUpAddAnotherCarViewController: BaseFormViewController {
     
     @IBOutlet weak var imgTop: UIImageView!
-    @IBOutlet weak var lblTitle: RegularLabel!
-    @IBOutlet weak var lblSubTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblSubTitle: RegularText!
     @IBOutlet weak var btnAddCar: TenButtonStyle!
     @IBOutlet weak var btnRegisterSuccess: TenButtonStyle!
     

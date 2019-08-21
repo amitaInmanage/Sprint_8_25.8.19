@@ -12,6 +12,9 @@ import LocalAuthentication
 class TouchIdableViewCell: UITableViewCell {
     
     var biometricHelper: BiometricHelper?
+    
+    @IBOutlet weak var lblTouchId: RegularText!
+    @IBOutlet weak var lblRemoveTouchId: SmallText!
     @IBOutlet weak var vwContent: UIView!
     
     override func awakeFromNib() {
@@ -24,9 +27,6 @@ class TouchIdableViewCell: UITableViewCell {
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         //  present(alertController, animated: true, completion: nil)
     }
-    
-    @IBOutlet weak var lblTouchId: UILabel!
-    @IBOutlet weak var lblRemoveTouchId: UILabel!
     
     //IBAction:
     @IBAction func didTapRemoveTouchId(_ sender: Any) {

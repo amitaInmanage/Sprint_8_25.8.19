@@ -16,18 +16,18 @@ class UsegeDataViewController: BaseFormViewController {
     @IBOutlet weak var imgCreditCard: UIImageView!
     @IBOutlet weak var imgFuelType: UIImageView!
     @IBOutlet weak var imgDropDown: UIImageView!
-    @IBOutlet weak var lblCarNumber: RegularLabel!
+    @IBOutlet weak var lblCarNumber: RegularText!
     @IBOutlet weak var tableDropDownHC: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblTitle: MediumLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var imgNis: UIImageView!
     @IBOutlet weak var imgFuelBox: UIImageView!
-    @IBOutlet weak var lblAvgAmountToFueling: RegularLabel?
-    @IBOutlet weak var lblAvgLitersToFueling: RegularLabel?
-    @IBOutlet weak var lblAvaregeNis: MediumLabel!
-    @IBOutlet weak var lblAvarageLiter: MediumLabel!
-    @IBOutlet weak var lblLiter: RegularLabel!
-    @IBOutlet weak var lblMonthlyCarExpenses: RegularLabel!
+    @IBOutlet weak var lblAvgAmountToFueling: RegularText?
+    @IBOutlet weak var lblAvgLitersToFueling: RegularText?
+    @IBOutlet weak var lblAvaregeNis: UILabel!
+    @IBOutlet weak var lblAvarageLiter: UILabel!
+    @IBOutlet weak var lblLiter: SmallText!
+    @IBOutlet weak var lblMonthlyCarExpenses: RegularText!
     @IBOutlet weak var vwTitle: UIView!
     @IBOutlet weak var vwGraphs: UIView!
     @IBOutlet weak var vwNis: UIView!
@@ -44,7 +44,7 @@ class UsegeDataViewController: BaseFormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
-        self.CellCarInformation(id: "")
+        self.cellCarInformation(id: "")
         self.registerXibs()
         self.oneCarForUser()
     }
@@ -89,7 +89,7 @@ class UsegeDataViewController: BaseFormViewController {
     }
   
     
-    fileprivate func CellCarInformation(id: String) {
+    fileprivate func cellCarInformation(id: String) {
         
         let dict = [TenParamsNames.fuelingDeviceId: id]
         
@@ -183,10 +183,9 @@ class UsegeDataViewController: BaseFormViewController {
     }
     
     fileprivate func oneCarForUser()  {
-        if self.fuelingDevice.count <= 1 {
-            self.imgDropDown.isHidden = true
-            self.btnDropDown.isHidden = true
-        }
+        let hidden = self.fuelingDevice.count <= 1
+            self.imgDropDown.isHidden = hidden
+            self.btnDropDown.isHidden = hidden
     }
 }
 
@@ -214,7 +213,7 @@ extension UsegeDataViewController: UITableViewDelegate, UITableViewDataSource {
         self.imgFuelType?.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].fuelItem.strIcon, withAddUnderscoreIphone: false)
         self.imgCreditCard.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].payment.strIcon, withAddUnderscoreIphone: false)
         
-        self.CellCarInformation(id: self.fuelingDevice[indexPath.row].strId)
+        self.cellCarInformation(id: self.fuelingDevice[indexPath.row].strId)
         self.closeDropDown()
     }
     
@@ -274,7 +273,7 @@ extension UsegeDataViewController: UICollectionViewDelegate, UICollectionViewDat
             cell.graphHeightConstraint.constant = 100
         }
         
-        cell.lblNis.text = String(sumByMount[indexPath.row].intSum)
+        cell.lblNis.text =  "₪" + String(sumByMount[indexPath.row].intSum)
         cell.lblMonth.text = sumByMount[indexPath.row].strMonth
         cell.lblYear.text = String(sumByMount[indexPath.row].intYear)
        

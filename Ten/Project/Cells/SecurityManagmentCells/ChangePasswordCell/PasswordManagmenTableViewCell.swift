@@ -10,8 +10,8 @@ import UIKit
 
 class PasswordManagmenTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var lblChangePassowrd: UILabel!
-    @IBOutlet weak var lblPassword: UILabel!
+    @IBOutlet weak var lblChangePassowrd: SmallText!
+    @IBOutlet weak var lblPassword: RegularText!
     @IBOutlet weak var vwContent: UIView!
     
     override func awakeFromNib() {

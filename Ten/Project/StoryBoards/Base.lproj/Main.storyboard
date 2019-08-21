@@ -61,7 +61,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3T-dc-SKl" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
-                                        <rect key="frame" x="307.5" y="578.5" width="33.5" height="14"/>
+                                        <rect key="frame" x="307.5" y="576.5" width="33.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="12"/>
                                         <color key="textColor" red="0.61568627450000002" green="0.63137254899999995" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -73,7 +73,6 @@
                                     <constraint firstAttribute="trailing" secondItem="PBQ-i4-Ca1" secondAttribute="trailing" constant="122" id="Jvl-Xn-8r1"/>
                                     <constraint firstItem="PBQ-i4-Ca1" firstAttribute="leading" secondItem="giG-8Z-EsA" secondAttribute="leading" constant="122" id="MvD-Sa-fe2"/>
                                     <constraint firstItem="tkg-8a-w3i" firstAttribute="centerY" secondItem="u3T-dc-SKl" secondAttribute="centerY" id="Pjx-8V-Xtg"/>
-                                    <constraint firstItem="tkg-8a-w3i" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="giG-8Z-EsA" secondAttribute="leading" constant="45" id="WjF-qD-vSw"/>
                                     <constraint firstItem="PBQ-i4-Ca1" firstAttribute="top" secondItem="tkg-8a-w3i" secondAttribute="bottom" constant="20" id="kMZ-yo-eFG"/>
                                     <constraint firstItem="tkg-8a-w3i" firstAttribute="centerX" secondItem="giG-8Z-EsA" secondAttribute="centerXWithinMargins" id="yAt-xu-ueH"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="u3T-dc-SKl" secondAttribute="trailing" constant="34" id="yES-2L-6ZX"/>
@@ -140,30 +139,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCf-au-84a" customClass="IMButton" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="190" y="607" width="185" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="185" id="8MY-9G-MSp"/>
-                                    <constraint firstAttribute="height" constant="60" id="uar-1V-kRq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="didTapSkipBtn:" destination="5JY-gJ-5WF" eventType="touchUpInside" id="YiH-FR-k7B"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRm-H6-a1A" customClass="IMButton" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="607" width="190" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="WWS-72-8Vm"/>
-                                    <constraint firstAttribute="width" constant="190" id="Ypb-2y-6Hu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="didTapSignUpBtn:" destination="5JY-gJ-5WF" eventType="touchUpInside" id="D34-en-oha"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7qF-nM-Aly">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRm-H6-a1A" customClass="IMButton" customModule="Ten" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="WWS-72-8Vm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapSignUpBtn:" destination="5JY-gJ-5WF" eventType="touchUpInside" id="D34-en-oha"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCf-au-84a" customClass="IMButton" customModule="Ten" customModuleProvider="target">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="uar-1V-kRq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapSkipBtn:" destination="5JY-gJ-5WF" eventType="touchUpInside" id="YiH-FR-k7B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lry-yu-p4p">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <subviews>
@@ -177,7 +179,7 @@
                                         </constraints>
                                         <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-OU-v8V" customClass="IMLabel" customModule="Ten" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-OU-v8V" customClass="SmallText" customModule="Ten" customModuleProvider="target">
                                         <rect key="frame" x="75" y="106" width="225" height="21.5"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -191,7 +193,7 @@
                                             <constraint firstAttribute="height" constant="51" id="xYs-uC-WcS"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-DP-2Nc" customClass="IMLabel" customModule="Ten" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-DP-2Nc" customClass="MediumText" customModule="Ten" customModuleProvider="target">
                                         <rect key="frame" x="80" y="140.5" width="215" height="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -251,18 +253,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YRm-H6-a1A" firstAttribute="leading" secondItem="Xa7-BQ-bnm" secondAttribute="leading" id="1by-rE-xgy"/>
                             <constraint firstItem="tYZ-GS-vLL" firstAttribute="leading" secondItem="Xa7-BQ-bnm" secondAttribute="leading" id="2pX-A3-eam"/>
-                            <constraint firstItem="UCf-au-84a" firstAttribute="trailing" secondItem="Xa7-BQ-bnm" secondAttribute="trailing" id="7zN-vQ-mPE"/>
-                            <constraint firstItem="UCf-au-84a" firstAttribute="top" secondItem="tYZ-GS-vLL" secondAttribute="bottom" id="BiI-uH-4ul"/>
                             <constraint firstItem="Lry-yu-p4p" firstAttribute="trailing" secondItem="Xa7-BQ-bnm" secondAttribute="trailing" id="FMF-ud-W46"/>
-                            <constraint firstItem="YRm-H6-a1A" firstAttribute="bottom" secondItem="Xa7-BQ-bnm" secondAttribute="bottom" id="K5O-zP-EcT"/>
-                            <constraint firstItem="UCf-au-84a" firstAttribute="bottom" secondItem="Xa7-BQ-bnm" secondAttribute="bottom" id="Koa-bN-Z6O"/>
+                            <constraint firstItem="7qF-nM-Aly" firstAttribute="trailing" secondItem="Xa7-BQ-bnm" secondAttribute="trailing" id="IpU-xV-EaS"/>
                             <constraint firstItem="Lry-yu-p4p" firstAttribute="leading" secondItem="Xa7-BQ-bnm" secondAttribute="leading" id="MjI-pp-kuZ"/>
                             <constraint firstItem="tYZ-GS-vLL" firstAttribute="trailing" secondItem="Xa7-BQ-bnm" secondAttribute="trailing" id="UCY-91-Wds"/>
+                            <constraint firstItem="7qF-nM-Aly" firstAttribute="leading" secondItem="Xa7-BQ-bnm" secondAttribute="leading" id="UGR-E7-Qr3"/>
+                            <constraint firstItem="7qF-nM-Aly" firstAttribute="top" secondItem="tYZ-GS-vLL" secondAttribute="bottom" id="Wae-7T-xB8"/>
                             <constraint firstItem="tYZ-GS-vLL" firstAttribute="top" secondItem="Lry-yu-p4p" secondAttribute="bottom" id="Wmj-mi-U27"/>
-                            <constraint firstItem="UCf-au-84a" firstAttribute="leading" secondItem="YRm-H6-a1A" secondAttribute="trailing" id="b7P-RL-51T"/>
                             <constraint firstItem="Lry-yu-p4p" firstAttribute="top" secondItem="Jtu-VO-1BE" secondAttribute="top" id="vjV-5a-lHr"/>
+                            <constraint firstItem="7qF-nM-Aly" firstAttribute="bottom" secondItem="Xa7-BQ-bnm" secondAttribute="bottom" id="yyG-LH-RGx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xa7-BQ-bnm"/>
                     </view>
@@ -278,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lzp-Sc-8Ki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="808"/>
+            <point key="canvasLocation" x="40.799999999999997" y="807.34632683658174"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Dro-vK-I3P">

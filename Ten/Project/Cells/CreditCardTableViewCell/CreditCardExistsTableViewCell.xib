@@ -32,7 +32,7 @@
                                             <constraint firstAttribute="height" constant="27.5" id="w7n-aU-gAg"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53r-SV-Joj" customClass="RegularLabel" customModule="Ten" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53r-SV-Joj" customClass="RegularText" customModule="Ten" customModuleProvider="target">
                                         <rect key="frame" x="60" y="0.0" width="56" height="27.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="bij-9g-gsJ"/>

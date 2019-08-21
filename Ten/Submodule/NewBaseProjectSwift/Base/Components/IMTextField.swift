@@ -211,7 +211,7 @@ class LightTextField : AdjustableFontTextField { override class func fontName() 
 //class LightItalicTextField : AdjustableFontTextField { override class func fontName() -> (String?) { return kLightItalicFontName } }
 class RegularTextField : AdjustableFontTextField { override class func fontName() -> (String?) { return kRegularFontName } }
 //class RegularItalicTextField : AdjustableFontTextField { override class func fontName() -> (String?) { return kRegularItalicFontName } }
-class MediumTextField : AdjustableFontTextField { override class func fontName() -> (String?) { return kMediumFontName } }
+//class MediumTextField : AdjustableFontTextField { override class func fontName() -> (String?) { return kMediumFontName } }
 class MediumItalicTextField : AdjustableFontTextField { override class func fontName() -> (String?) { return kMediumItalicFontName } }
 class SemiBoldTextField : AdjustableFontTextField { override class func fontName() -> (String?) { return kSemiBoldFontName } }
 //class SemiBoldItalicTextField : AdjustableFontTextField { override class func fontName() -> (String?) { return kSemiBoldItalicFontName } }

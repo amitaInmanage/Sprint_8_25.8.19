@@ -16,8 +16,8 @@ class SignUpCarDetailsViewController: BaseFormViewController {
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var lblTitle: RegularLabel!
-    @IBOutlet weak var lblSubtitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblSubtitle: MediumText!
     @IBOutlet weak var txtFldCarNumber: InputCustomView!
     @IBOutlet weak var txtFldIdNumber: InputCustomView!
     @IBOutlet weak var btnContinue: TenButtonStyle!

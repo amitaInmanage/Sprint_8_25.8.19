@@ -19,7 +19,7 @@ class ClubsViewController: BaseFormViewController {
         case poweCardClub
     }
     
-    @IBOutlet weak var lblTitle: MediumLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var vwTitle: UIView!
     @IBOutlet weak var tableView: UITableView!
     

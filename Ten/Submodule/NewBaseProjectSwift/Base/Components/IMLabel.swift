@@ -18,9 +18,7 @@ let arrAppFonts = (Bundle.main.infoDictionary?["UIAppFonts"] as? [Any])
 let kUltraLightFontName = ""
 let kUltraLightItalicFontName = ""
 let kLightFontName = arrAppFonts?[FontType.light.rawValue] as? String
-
 let kRegularFontName = arrAppFonts?[FontType.regular.rawValue] as? String
-
 let kMediumFontName = arrAppFonts?[FontType.medium.rawValue] as? String
 let kMediumItalicFontName = ""
 let kSemiBoldFontName = ""
@@ -124,17 +122,52 @@ class AdjustableFontLabel : IMLabel {
     }
 }
 
-class RegularLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kRegularFontName } }
-class UltraLightLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kUltraLightFontName } }
-class UltraLightItalicLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kUltraLightItalicFontName } }
+class RegularLabel : AdjustableFontLabel {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.font = UIFont.init(name: "Heebo-Regular", size: 16)
+        self.tintColor = UIColor(red: 48, green: 53, blue: 79, alpha: 0)
+    }
+    
+    func fontName() -> (String?) {
+     return kBlackFontName
+    }
+}
+
+class MediumLabel : AdjustableFontLabel {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.tintColor = UIColor(red: 48, green: 53, blue: 79, alpha: 0)
+        self.font = UIFont.init(name: "Heebo-Regular", size: 18)
+      
+    }
+}
+
+
+class BoldLabel : AdjustableFontLabel {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.font = UIFont.boldSystemFont(ofSize: 16.0)
+        self.font = UIFont.init(name: "Heebo-Regular", size: 16)
+        self.tintColor = UIColor(red: 48, green: 53, blue: 79, alpha: 0)
+    }
+}
+
+
+
+
+
+class UltraLightLabel : AdjustableFontLabel { override class func fontName() -> (String?) {return kUltraLightFontName }}
+class UltraLightItalicLabel : AdjustableFontLabel { override class func fontName() -> (String?) {return kUltraLightItalicFontName }}
 class LightLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kLightFontName } }
 //class LightItalicLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kLightItalicFontName } }
 //class RegularItalicLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kRegularItalicFontName } }
-class MediumLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kMediumFontName } }
 class MediumItalicLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kMediumItalicFontName } }
 class SemiBoldLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kSemiBoldFontName } }
 //class SemiBoldItalicLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kSemiBoldItalicFontName } }
-class BoldLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kBoldFontName } }
 //class BoldItalicLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kBoldItalicFontName } }
 class ExtraBoldLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kExtraBoldFontName } }
 class ExtraBoldItalicLabel : AdjustableFontLabel { override class func fontName() -> (String?) { return kExtraBoldItalicFontName } }

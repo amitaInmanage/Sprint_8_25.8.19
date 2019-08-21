@@ -10,9 +10,9 @@ import UIKit
 
 class UsageDataGraphCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var lblNis: RegularLabel!
-    @IBOutlet weak var lblMonth: RegularLabel!
-    @IBOutlet weak var lblYear: RegularLabel!
+    @IBOutlet weak var lblNis: SmallText!
+    @IBOutlet weak var lblMonth: SmallText!
+    @IBOutlet weak var lblYear: SmallText!
     @IBOutlet weak var graphHeightConstraint: NSLayoutConstraint!
     
     override func prepareForReuse() {

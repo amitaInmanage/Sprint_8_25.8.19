@@ -17,7 +17,7 @@ class CarManagmentViewControoler: BaseFormViewController {
     }
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblTitle: MediumLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var btnNewCar: TenButtonStyle!
     @IBOutlet var vwTitle: UIView!
     
@@ -62,6 +62,7 @@ class CarManagmentViewControoler: BaseFormViewController {
     }
     
     fileprivate func initUI() {
+        self.btnNewCar.titleLabel?.font = UIFont(name: "Heebo-Regular", size: 14)
         self.vwTitle.addShadowAndCorner()
         self.view.backgroundColor = .clear
         self.btnNewCar.setWhiteBackground()

@@ -15,7 +15,7 @@ class EnterTheCarDetailsViewController: BaseFormViewController {
         case cardSecret = 2
     }
     
-    @IBOutlet weak var lblTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var btnContinue: TenButtonStyle!
     @IBOutlet weak var btnForgotPass: MediumButton!
     @IBOutlet weak var txtFldSecretCode: InputCustomView!

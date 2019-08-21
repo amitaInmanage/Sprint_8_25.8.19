@@ -16,11 +16,11 @@ enum TxtFldTag: Int {
 class SignUpFullNameViewController: BaseFormViewController {
     
     @IBOutlet weak var txtFldFirstName: InputCustomView!
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var txtFldLastName: InputCustomView!
     @IBOutlet weak var btnContinue: TenButtonStyle!
-    @IBOutlet weak var lblFirstNameError: UILabel!
-    @IBOutlet weak var lblLastNameError: UILabel!
+    @IBOutlet weak var lblFirstNameError: ErrorText!
+    @IBOutlet weak var lblLastNameError: ErrorText!
     
     var viewModel = SignUpFullNameViewModel()
    

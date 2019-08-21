@@ -10,16 +10,16 @@ import UIKit
 
 class AddNewCarViewController: BaseFormViewController {
     
-    @IBOutlet weak var lblTitle: RegularLabel!
-    @IBOutlet weak var lblSubTitle: RegularLabel!
-    @IBOutlet weak var lblCardNumber: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblSubTitle: RegularText!
+    @IBOutlet weak var lblCardNumber: RegularText!
     @IBOutlet weak var imgDropDown: UIImageView!
     @IBOutlet weak var imgCreditCard: UIImageView!
     @IBOutlet weak var btnUse: TenButtonStyle!
     @IBOutlet weak var btnAddNew: TenButtonStyle!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableDropDownHC: NSLayoutConstraint!
-    @IBOutlet weak var lblTableViewHederTitle: RegularLabel!
+    @IBOutlet weak var lblTableViewHederTitle: MediumText!
     @IBOutlet weak var contentView: UIView!
     
     var viewModel = AddNewCarViewModel()

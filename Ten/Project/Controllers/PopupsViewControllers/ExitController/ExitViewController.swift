@@ -10,8 +10,8 @@ import UIKit
 
 class ExitViewController: BasePopupViewController {
 
-    @IBOutlet weak var lblTitle: RegularLabel!
-    @IBOutlet weak var lblSubTitle: LightLabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblSubTitle: RegularText!
     @IBOutlet weak var btnYes: TenButtonStyle!
     @IBOutlet weak var btnNo: TenButtonStyle!
     @IBOutlet weak var btnExit: IMButton!

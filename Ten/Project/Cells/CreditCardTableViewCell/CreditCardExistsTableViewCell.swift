@@ -11,7 +11,7 @@ import UIKit
 class CreditCardExistsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgCreditCard: UIImageView!
-    @IBOutlet weak var lblCardNumber: RegularLabel!
+    @IBOutlet weak var lblCardNumber: RegularText!
     
     override func awakeFromNib() {
         super.awakeFromNib()

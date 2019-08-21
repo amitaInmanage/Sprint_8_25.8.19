@@ -12,8 +12,8 @@ import JavaScriptCore
 
 class SignUpCreditCardDetailsViewController: BaseFormViewController, UIWebViewDelegate, CardIOPaymentViewControllerDelegate {
     
-    @IBOutlet weak var lblTitle: RegularLabel!
-    @IBOutlet weak var lblSubTitle: LightLabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblSubTitle: RegularText!
     @IBOutlet weak var btnOpenCamera: LightButton!
     @IBOutlet weak var webView: UIWebView!
     

@@ -10,7 +10,7 @@ import UIKit
 
 class PowerCardTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblDetails: UILabel!
+    @IBOutlet weak var lblDetails: SmallText!
     @IBOutlet weak var imgPowerCard: UIImageView!
     @IBOutlet weak var vw: UIView!
     

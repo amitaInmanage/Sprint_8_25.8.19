@@ -30,10 +30,10 @@ class TransactionsHistoryViewController : BaseFormViewController {
     var isWaitingForResponse = false
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblTitle: IMLabel!
-    @IBOutlet weak var lblAll: UILabel!
-    @IBOutlet weak var lblDeluqs: UILabel!
-    @IBOutlet weak var lblStores: UILabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblAll: RegularText!
+    @IBOutlet weak var lblDeluqs: RegularText!
+    @IBOutlet weak var lblStores: RegularText!
     @IBOutlet weak var underLinevw2: UIView!
     @IBOutlet weak var underLinevw1: UIView!
     @IBOutlet weak var underLinevw0: UIView!

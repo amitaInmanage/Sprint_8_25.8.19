@@ -147,7 +147,7 @@ class AdjustableFontButton : IMButton {
     }
     
     class func fontName() -> String? {
-        return ""
+        return "Heebo"
     }
     
     class func getFontName() -> String! {
@@ -168,7 +168,18 @@ class LightButton : AdjustableFontButton { override class func fontName() -> (St
 //class LightItalicButton : AdjustableFontButton { override class func fontName() -> (String?) { return kLightItalicFontName } }
 class RegularButton : AdjustableFontButton { override class func fontName() -> (String?) { return kRegularFontName } }
 //class RegularItalicButton : AdjustableFontButton { override class func fontName() -> (String?) { return kRegularItalicFontName } }
-class MediumButton : AdjustableFontButton { override class func fontName() -> (String?) { return kMediumFontName } }
+
+
+class MediumButton : AdjustableFontButton {
+
+    override class func fontName() -> (String?) {
+        return kMediumFontName
+
+    }
+
+}
+
+
 class MediumItalicButton : AdjustableFontButton { override class func fontName() -> (String?) { return kMediumItalicFontName } }
 class SemiBoldButton : AdjustableFontButton { override class func fontName() -> (String?) { return kSemiBoldFontName } }
 //class SemiBoldItalicButton : AdjustableFontButton { override class func fontName() -> (String?) { return kSemiBoldItalicFontName } }

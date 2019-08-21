@@ -46,7 +46,7 @@
                                         <constraint firstAttribute="width" constant="27" id="Q4W-tl-6C8"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="סריקת פנים" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk4-0O-gqa">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="סריקת פנים" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk4-0O-gqa" customClass="SmallText" customModule="Ten" customModuleProvider="target">
                                     <rect key="frame" x="223" y="30" width="94" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="0ti-Ko-jA9"/>

@@ -17,9 +17,6 @@ class GetUsageInformationResponse: BaseInnerResponse {
     override func buildFromJSONDict(JSONDict: [String : Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
         
-        let tempUser = ParseValidator.getDictionaryForKey(key: "user", JSONDict: JSONDict, defaultValue: [String:Any]())
-        ApplicationManager.sharedInstance.userAccountManager.user.buildFromJSONDict(JSONDict: tempUser) as! TenUser
-        
         let tempAvarages = ParseValidator.getDictionaryForKey(key: "averages", JSONDict: JSONDict, defaultValue: [String : Any]())
         self.avarages = Avarage().buildFromJSONDict(JSONDict: tempAvarages) as! Avarage
       

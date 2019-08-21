@@ -12,7 +12,7 @@ class MySavingsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgSeving: UIImageView!
     @IBOutlet weak var imgTenVip: UIImageView!
-    @IBOutlet weak var lblDetails: UILabel!
+    @IBOutlet weak var lblDetails: SmallText!
     @IBOutlet weak var contantView: UIView!
     @IBOutlet weak var vw: UIView!
     

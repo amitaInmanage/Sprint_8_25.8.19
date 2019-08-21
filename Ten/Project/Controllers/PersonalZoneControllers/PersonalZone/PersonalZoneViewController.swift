@@ -11,6 +11,8 @@ import UIKit
 class PersonalZoneViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logOutBtn: UIButton!
+    @IBOutlet weak var lblLogOut: RegularText!
     
     var personelItem = ApplicationManager.sharedInstance.userAccountManager.user.personelAreaMenuArr
     var user = ApplicationManager.sharedInstance.userAccountManager.user
@@ -28,18 +30,32 @@ class PersonalZoneViewController: BaseViewController {
         super.viewDidLoad()
         self.filRowTypeArr()
         self.registerXibs()
+        self.initTableView()
+        self.initUI()
+    }
+    
+    override func fillTextWithTrans() {
+        self.lblLogOut.text = Translation(Translations.AlertButtonsKeys.logout, Translations.AlertButtonsKeys.logoutDefault)
+    }
+    
+    fileprivate func initUI() {
+        self.view.backgroundColor = UIColor.clear
+        self.logOutBtn.setBackgroundColor(color: UIColor(red: 216, green: 215, blue: 216, alpha: 0), forState: .normal)
+    }
+    
+    fileprivate func initTableView() {
         self.tableView.bounces = false
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 80
-        self.view.backgroundColor = UIColor.clear
         self.tableView.backgroundColor = .clear
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
         self.fullScreeen(parent: parent)
     }
+    
     
     fileprivate func filRowTypeArr() -> Void{
         

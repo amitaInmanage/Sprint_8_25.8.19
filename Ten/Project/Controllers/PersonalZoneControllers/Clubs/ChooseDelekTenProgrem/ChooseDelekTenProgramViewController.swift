@@ -13,11 +13,11 @@ class ChooseDelekTenProgramViewController: BaseFormViewController {
     @IBOutlet weak var btnSaveChanges: TenButtonStyle!
     @IBOutlet weak var btnTermsOfClubs: IMButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblProgramDetails: RegularLabel!
-    @IBOutlet weak var lblProgramTitle: RegularLabel!
-    @IBOutlet weak var lblAmount: RegularLabel!
-    @IBOutlet weak var lblDetailsAmount: RegularLabel!
-    @IBOutlet weak var lblTitle: MediumLabel!
+    @IBOutlet weak var lblProgramDetails: RegularText!
+    @IBOutlet weak var lblProgramTitle: RegularText!
+    @IBOutlet weak var lblAmount: RegularText!
+    @IBOutlet weak var lblDetailsAmount: RegularText!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var tableViewHC: NSLayoutConstraint!
     @IBOutlet weak var lblManagerText: RegularLabel!
     

@@ -15,9 +15,9 @@ class OnBoardingViewController: BaseViewController {
     
     @IBOutlet weak var topVw: UIView!
     @IBOutlet weak var btnSkip: IMButton!
-    @IBOutlet weak var lblTitle: IMLabel!
+    @IBOutlet weak var lblTitle: SmallText!
     @IBOutlet weak var btnSignUp: IMButton!
-    @IBOutlet weak var lblSubTitle: IMLabel!
+    @IBOutlet weak var lblSubTitle: MediumText!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -45,6 +45,9 @@ class OnBoardingViewController: BaseViewController {
     }
     
     fileprivate func initUI() {
+        self.btnSkip.titleLabel?.textColor = UIColor.getApplicationTextColor()
+         self.btnSkip.titleLabel?.font = UIFont(name: "Heebo-Regular", size: 18)
+        self.btnSignUp.titleLabel?.font = UIFont(name: "Heebo-Regular", size: 18)
         self.topVw.backgroundColor = UIColor.getHighlightedCellColor()
         self.btnSignUp.backgroundColor = UIColor.getHighlightedCellColor()
         self.btnSignUp.tintColor = .white

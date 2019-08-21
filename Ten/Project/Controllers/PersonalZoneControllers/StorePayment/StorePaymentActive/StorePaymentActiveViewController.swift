@@ -10,7 +10,7 @@ import UIKit
 
 class StorePaymentActiveViewController: BaseFormViewController {
     
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var btnAddPayment: TenButtonStyle!
@@ -40,6 +40,7 @@ class StorePaymentActiveViewController: BaseFormViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.btnAddPayment.setReverseColor(textColor: UIColor.getApplicationThemeColor())
         self.btnAddPayment.setClearBackground()
+        self.btnAddPayment.titleLabel?.font = UIFont(name: "Heebo-Regular", size: 14)
     }
     
     override func fillTextWithTrans() {

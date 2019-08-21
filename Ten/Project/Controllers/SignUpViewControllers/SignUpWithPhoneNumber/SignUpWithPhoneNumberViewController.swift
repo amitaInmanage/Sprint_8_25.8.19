@@ -10,11 +10,11 @@ import UIKit
 
 class SignUpWithPhoneNumberViewController: BaseFormViewController {
     
-    @IBOutlet weak var lblTitle: RegularLabel!
-    @IBOutlet weak var lblInvalidNumber: UILabel!
+    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblInvalidNumber: ErrorText!
     @IBOutlet weak var txtFldPhoneNumber: InputCustomView!
     @IBOutlet weak var btnContinue: TenButtonStyle!
-    @IBOutlet weak var btnContinueWithOutSignUp: IMButton!
+    @IBOutlet weak var btnContinueWithOutSignUp: MediumButton!
     @IBOutlet weak var consteintSignUpBtn: NSLayoutConstraint!
     @IBOutlet var contentView: UIView!
     
@@ -37,6 +37,7 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
         self.initializeTextFields()
         self.btnContinue.Disabled()
         self.lblInvalidNumber.isHidden = true
+        self.lblInvalidNumber.tintColor = UIColor.getApllicationErrorColor()
         self.txtFldPhoneNumber.txtFldInput.keyboardType = UIKeyboardType.numberPad
         
     }

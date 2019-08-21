@@ -22,9 +22,9 @@ class CarManagmentTableViewCell: UITableViewCell {
     @IBOutlet weak var contentVw: UIView!
     @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var imgCar: UIImageView!
-    @IBOutlet weak var lblCarNumber: RegularLabel!
+    @IBOutlet weak var lblCarNumber: RegularText!
     @IBOutlet weak var imgFuelType: UIImageView!
-    @IBOutlet weak var lblCreditCardNumber: RegularLabel!
+    @IBOutlet weak var lblCreditCardNumber: RegularText!
     @IBOutlet weak var imgCreditCard: UIImageView!
     @IBOutlet weak var imgDropDown: UIImageView!
     @IBOutlet weak var vwCarMenegmentCell: UIView!

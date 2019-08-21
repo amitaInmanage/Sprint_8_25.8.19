@@ -10,7 +10,7 @@ import UIKit
 
 class ToolTipsViewController: BasePopupViewController {
 
-    @IBOutlet weak var lblTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var imgSecondaryGeneral: UIImageView!
     
     override func viewDidLoad() {

@@ -15,7 +15,7 @@ class AddPowerCardViewController: BaseFormViewController {
         case codeNumber = 2
     }
     
-    @IBOutlet weak var lblTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var txtFldId: InputCustomView!
     @IBOutlet weak var txtFldPinCode: InputCustomView!
     @IBOutlet weak var btnContinue: TenButtonStyle!

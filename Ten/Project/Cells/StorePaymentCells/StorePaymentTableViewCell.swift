@@ -15,7 +15,7 @@ protocol RemoveStorePaymentDelegate: NSObject {
 class StorePaymentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imgCardType: UIImageView!
-    @IBOutlet weak var lblCardNumber: IMLabel!
+    @IBOutlet weak var lblCardNumber: RegularText!
     @IBOutlet weak var vwBetween: UIView!
     @IBOutlet weak var lblRemove: UILabel!
     @IBOutlet weak var btnRemove: UIButton!

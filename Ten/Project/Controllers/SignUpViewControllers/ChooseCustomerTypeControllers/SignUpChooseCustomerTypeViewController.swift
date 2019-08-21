@@ -11,7 +11,7 @@ import UIKit
 class SignUpChooseCustomerTypeViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var lblTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var btnConfrime: TenButtonStyle!
     
     var viewModel = ChooseCustomerTypeViewModel()

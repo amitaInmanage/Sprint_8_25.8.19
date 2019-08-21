@@ -11,7 +11,7 @@ import UIKit
 class MyAccumulationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblSavingNIS: UILabel!
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var btnTop: TenButtonStyle!
     @IBOutlet weak var btnButtom: IMButton!
     @IBOutlet weak var vw: UIView!

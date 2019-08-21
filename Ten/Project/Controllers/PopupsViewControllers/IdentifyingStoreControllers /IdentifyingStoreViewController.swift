@@ -10,7 +10,7 @@ import UIKit
 
 class IdentifyingStoreViewController: BasePopupViewController {
 
-    @IBOutlet weak var lblTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: RegularText!
     @IBOutlet weak var lblSubTitle: LightLabel!
     @IBOutlet weak var lblTimer: RegularLabel!
     @IBOutlet weak var imgTimer: UIImageView!

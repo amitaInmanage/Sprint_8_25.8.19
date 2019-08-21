@@ -14,18 +14,18 @@ class StoresTableViewCell: UITableViewCell {
     @IBOutlet weak var stackViewAccunulation: UIStackView!
     @IBOutlet weak var stackViewUsage: UIStackView!
     @IBOutlet weak var imgType: UIImageView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblDate: IMLabel!
-    @IBOutlet weak var lblTime: IMLabel!
+    @IBOutlet weak var lblTitle: RegularText!
+    @IBOutlet weak var lblDate: SmallText!
+    @IBOutlet weak var lblTime: SmallText!
     @IBOutlet weak var lblAccumulationAmount: IMLabel!
     @IBOutlet weak var lblUsageAmount: IMLabel!
-    @IBOutlet weak var lblAmount: IMLabel!
+    @IBOutlet weak var lblAmount: RegularText!
     @IBOutlet weak var vwDropDown: UIView!
     @IBOutlet weak var vwHistory: UIView!
     @IBOutlet weak var dropDownConstraint: NSLayoutConstraint!
     @IBOutlet weak var historyBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var imgFuelType: UIImageView!
-    @IBOutlet weak var lblCarNumber: UILabel!
+    @IBOutlet weak var lblCarNumber: RegularText!
     @IBOutlet weak var imgCar: UIImageView!
     
     override func prepareForReuse() {

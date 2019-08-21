@@ -10,7 +10,7 @@ import UIKit
 
 class SignUpPasswordCreatedSuccessfullyViewController: BaseFormViewController {
     
-    @IBOutlet weak var lblTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     
     var userHavePinCode = ApplicationManager.sharedInstance.userAccountManager.user.hasPinCode
     

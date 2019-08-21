@@ -14,8 +14,8 @@ class FaceIdTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var vwContent: UIView!
-    @IBOutlet weak var lblRemoveFaceId: UILabel!
-    @IBOutlet weak var lblFaceId: UILabel!
+    @IBOutlet weak var lblRemoveFaceId: RegularText!
+    @IBOutlet weak var lblFaceId: SmallText!
     
     override func awakeFromNib() {
         super.awakeFromNib()

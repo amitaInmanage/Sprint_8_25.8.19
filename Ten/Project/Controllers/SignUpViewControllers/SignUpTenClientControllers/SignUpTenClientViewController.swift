@@ -15,7 +15,7 @@ class SignUpTenClientViewController: BaseFormViewController {
         case carNumber = 2
     }
     
-    @IBOutlet weak var lblTitle: RegularLabel!
+    @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var txtFldAuthorizedDealer: InputCustomView!
     @IBOutlet weak var txtFldCarNumber: InputCustomView!
     @IBOutlet weak var btnContinue: TenButtonStyle!

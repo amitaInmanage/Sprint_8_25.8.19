@@ -13,11 +13,11 @@ protocol DidTapItem {
 }
 
 class PersonalDetailCustomView: UIView {
-
+    
     @IBOutlet var view: UIView!
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblTitle: RegularText!
     @IBOutlet weak var img: UIImageView!
-
+    
     var didTapItem: DidTapItem?
     var action: ( () -> Void )?
     var menuItem: PersonalAreaMenuItem?

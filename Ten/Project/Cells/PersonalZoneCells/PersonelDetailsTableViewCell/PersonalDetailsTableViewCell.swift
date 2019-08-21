@@ -16,6 +16,7 @@ class PersonalDetailsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.vw.addShadow()
+
     }
 
     func setUpData(didTapItem: DidTapItem) {
@@ -23,6 +24,7 @@ class PersonalDetailsTableViewCell: UITableViewCell {
         var horizontalStck = UIStackView()
         horizontalStck.axis = .horizontal
         horizontalStck.distribution = .fillEqually
+
         for (index,menu) in ApplicationManager.sharedInstance.userAccountManager.user.personelAreaMenuArr.enumerated() {
             if index % 3 == 0 {
             
@@ -42,7 +44,8 @@ class PersonalDetailsTableViewCell: UITableViewCell {
         
         stckVw.addArrangedSubview(horizontalStck)
         horizontalStck.distribution = .fillEqually
-        
+//        stckVw.semanticContentAttribute = .forceLeftToRight
+
     }
     
     func addItemToStack(horizontalStck: UIStackView, menu: PersonalAreaMenuItem, didTapItem: DidTapItem) {

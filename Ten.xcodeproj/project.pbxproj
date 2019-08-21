@@ -327,8 +327,6 @@
 		E8BC4AEC22DB33500077247E /* PersonalDetailCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BC4AEB22DB33500077247E /* PersonalDetailCustomView.xib */; };
 		E8BC6FF922C9E60500CA64F8 /* FuelTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BC6FF722C9E60500CA64F8 /* FuelTypeCollectionViewCell.swift */; };
 		E8BC6FFA22C9E60500CA64F8 /* FuelTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BC6FF822C9E60500CA64F8 /* FuelTypeCollectionViewCell.xib */; };
-		E8C5317322DF6F6B007237ED /* PersonalDetailsBottomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C5317222DF6F6B007237ED /* PersonalDetailsBottomButton.xib */; };
-		E8C5317522DF6F8D007237ED /* PersonalDetailsBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5317422DF6F8D007237ED /* PersonalDetailsBottomButton.swift */; };
 		E8CDBC9A22D7463000AE3632 /* PersonalAreaMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDBC9922D7463000AE3632 /* PersonalAreaMenuItem.swift */; };
 		E8CDBC9C22D7491500AE3632 /* FuelingDevicesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDBC9B22D7491500AE3632 /* FuelingDevicesItem.swift */; };
 		E8CDBC9E22D74A7900AE3632 /* PowerCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CDBC9D22D74A7900AE3632 /* PowerCardItem.swift */; };
@@ -363,6 +361,8 @@
 		F40CA8C8209618FB00821EAD /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40CA8C1209618F800821EAD /* Heebo-Regular.ttf */; };
 		F40CA8C9209618FB00821EAD /* Heebo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40CA8C2209618F900821EAD /* Heebo-Thin.ttf */; };
 		F40CA8CA209618FB00821EAD /* Heebo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40CA8C3209618FA00821EAD /* Heebo-Black.ttf */; };
+		F40E571E230D4157000A7951 /* IMText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E571D230D4157000A7951 /* IMText.swift */; };
+		F40E5720230D6155000A7951 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E571F230D6155000A7951 /* Button.swift */; };
 		F410F7CF214518330096A8E0 /* AppPopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F410F7CE214518330096A8E0 /* AppPopupManager.swift */; };
 		F42F5C1122E7243C0084119F /* BiometricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F5C1022E7243C0084119F /* BiometricHelper.swift */; };
 		F42F5C1422E7342D0084119F /*  MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F5C1322E7342D0084119F /*  MainScreenViewController.swift */; };
@@ -794,8 +794,6 @@
 		E8BC4AEB22DB33500077247E /* PersonalDetailCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalDetailCustomView.xib; sourceTree = "<group>"; };
 		E8BC6FF722C9E60500CA64F8 /* FuelTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E8BC6FF822C9E60500CA64F8 /* FuelTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuelTypeCollectionViewCell.xib; sourceTree = "<group>"; };
-		E8C5317222DF6F6B007237ED /* PersonalDetailsBottomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalDetailsBottomButton.xib; sourceTree = "<group>"; };
-		E8C5317422DF6F8D007237ED /* PersonalDetailsBottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsBottomButton.swift; sourceTree = "<group>"; };
 		E8CDBC9922D7463000AE3632 /* PersonalAreaMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAreaMenuItem.swift; sourceTree = "<group>"; };
 		E8CDBC9B22D7491500AE3632 /* FuelingDevicesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelingDevicesItem.swift; sourceTree = "<group>"; };
 		E8CDBC9D22D74A7900AE3632 /* PowerCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerCardItem.swift; sourceTree = "<group>"; };
@@ -831,6 +829,8 @@
 		F40CA8C1209618F800821EAD /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Regular.ttf"; sourceTree = "<group>"; };
 		F40CA8C2209618F900821EAD /* Heebo-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Thin.ttf"; sourceTree = "<group>"; };
 		F40CA8C3209618FA00821EAD /* Heebo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Black.ttf"; sourceTree = "<group>"; };
+		F40E571D230D4157000A7951 /* IMText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMText.swift; sourceTree = "<group>"; };
+		F40E571F230D6155000A7951 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		F410F7CE214518330096A8E0 /* AppPopupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPopupManager.swift; sourceTree = "<group>"; };
 		F42F5C1022E7243C0084119F /* BiometricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricHelper.swift; sourceTree = "<group>"; };
 		F42F5C1322E7342D0084119F /*  MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MainScreenViewController.swift"; sourceTree = "<group>"; };
@@ -1109,7 +1109,6 @@
 				F450309122EDC23100BD8202 /* StorePaymentCells */,
 				F45417FD22E8760900C9CCFF /* TransactionsHistoryCells */,
 				F48E294422E43E320010B01B /* SecurityManagmentCells */,
-				E8C5316D22DF6E3E007237ED /* PersonalDetails */,
 				E834A32722DDDE57002D006D /* OnBoardingCell */,
 				E8E778E922D5CC99004F0A9F /* SignUpCells */,
 				E8E778E422D5CB80004F0A9F /* PersonalZoneCells */,
@@ -1454,6 +1453,8 @@
 				E82A324E229BD81700B91456 /* IMBarButtonItem.swift */,
 				E82A324F229BD81700B91456 /* IMButton.swift */,
 				E82A3250229BD81700B91456 /* IMWebView.swift */,
+				F40E571D230D4157000A7951 /* IMText.swift */,
+				F40E571F230D6155000A7951 /* Button.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2019,15 +2020,6 @@
 				E8AC35AF229ECC0700171BAE /* SignUpFullNameViewModel.swift */,
 			);
 			path = SignUpFullNameControllers;
-			sourceTree = "<group>";
-		};
-		E8C5316D22DF6E3E007237ED /* PersonalDetails */ = {
-			isa = PBXGroup;
-			children = (
-				E8C5317222DF6F6B007237ED /* PersonalDetailsBottomButton.xib */,
-				E8C5317422DF6F8D007237ED /* PersonalDetailsBottomButton.swift */,
-			);
-			path = PersonalDetails;
 			sourceTree = "<group>";
 		};
 		E8E2CA9522B7BE1000729F10 /* Extension */ = {
@@ -2687,7 +2679,6 @@
 				F45B171322F6B7C5006CBE22 /* CarManagmentTableViewCell.xib in Resources */,
 				F4471CB822E4B2FB005B0648 /* TouchIdableViewCell.xib in Resources */,
 				E82A32EC229BD81700B91456 /* SideMenuHeader.xib in Resources */,
-				E8C5317322DF6F6B007237ED /* PersonalDetailsBottomButton.xib in Resources */,
 				E815F13222AFE0B80015D1DD /* PersonalZone.storyboard in Resources */,
 				F40CA8C9209618FB00821EAD /* Heebo-Thin.ttf in Resources */,
 				F4F91BB422E9E64B00B348F3 /* StoresTableViewCell.xib in Resources */,
@@ -2884,6 +2875,7 @@
 				E82A33BD229BD81800B91456 /* PopupViewControllerDelegate.swift in Sources */,
 				F40CA8AE2090C21C00821EAD /* AppGeneralManager.swift in Sources */,
 				E85E223622A3C44900EE0907 /* IdentificationPinCodePopupViewModel.swift in Sources */,
+				F40E571E230D4157000A7951 /* IMText.swift in Sources */,
 				E82A337A229BD81800B91456 /* ApplicationTokenResponse.swift in Sources */,
 				3E08CBE3213C089F00A4C445 /* TenTranslations.swift in Sources */,
 				E82A3321229BD81700B91456 /* StartupManager.swift in Sources */,
@@ -3011,7 +3003,6 @@
 				E82A332F229BD81700B91456 /* Array+IMExtension.swift in Sources */,
 				F4EE0A9922F9743A00DC8394 /* UpdateFuelingDeviceResponse.swift in Sources */,
 				E82A336A229BD81800B91456 /* GetHostUrlRequest.swift in Sources */,
-				E8C5317522DF6F8D007237ED /* PersonalDetailsBottomButton.swift in Sources */,
 				3E41CB9421665DD400A55781 /* ExtraSecurity.swift in Sources */,
 				3E389335217869BB0000E770 /* PumpWhichCarUITableViewHeaderFooterView.swift in Sources */,
 				E82A33A7229BD81800B91456 /* SignupViewController.swift in Sources */,
@@ -3075,6 +3066,7 @@
 				E82A336D229BD81800B91456 /* ValidateVersionRequest.swift in Sources */,
 				E8CDBC9A22D7463000AE3632 /* PersonalAreaMenuItem.swift in Sources */,
 				E82A3325229BD81700B91456 /* NSObject+IMExtension.swift in Sources */,
+				F40E5720230D6155000A7951 /* Button.swift in Sources */,
 				E82A3354229BD81800B91456 /* FeatureFlags.swift in Sources */,
 				E815F12A22AFCB440015D1DD /* CouponItemsTableViewCell.swift in Sources */,
 				E82A3390229BD81800B91456 /* StartRestorePasswordResponse.swift in Sources */,

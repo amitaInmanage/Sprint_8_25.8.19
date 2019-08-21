@@ -25,15 +25,15 @@ class TenProgramTableViewCell: UITableViewCell {
     @IBOutlet weak var dropDownHeigtConstraint: NSLayoutConstraint!
     @IBOutlet weak var btnDropDown: IMButton!
     @IBOutlet weak var btnSelectedProgram: IMButton!
-    @IBOutlet weak var lblTitleProgram: MediumLabel!
-    @IBOutlet weak var lblProgramDetails: RegularLabel!
-    @IBOutlet weak var lblSubTitleFuel: MediumLabel!
-    @IBOutlet weak var lblFuelAssumption: RegularLabel!
-    @IBOutlet weak var lblSubTitleAroundCar: MediumLabel!
-    @IBOutlet weak var lblAroundCarAssumption: RegularLabel!
-    @IBOutlet weak var lblSubTitleStores: MediumLabel!
-    @IBOutlet weak var lblStoresAssumption: RegularLabel!
-    @IBOutlet weak var lblProgramDetailsDropDown: RegularLabel!
+    @IBOutlet weak var lblTitleProgram: MediumText!
+    @IBOutlet weak var lblProgramDetails: RegularText!
+    @IBOutlet weak var lblSubTitleFuel: RegularText!
+    @IBOutlet weak var lblFuelAssumption: RegularText!
+    @IBOutlet weak var lblSubTitleAroundCar: MediumText!
+    @IBOutlet weak var lblAroundCarAssumption: RegularText!
+    @IBOutlet weak var lblSubTitleStores: MediumText!
+    @IBOutlet weak var lblStoresAssumption: RegularText!
+    @IBOutlet weak var lblProgramDetailsDropDown: RegularText!
     
     weak var dropDownDelegate: DropDownDelegate?
     weak var selectedProgramDelegate: SelectedProgramDelegate?
