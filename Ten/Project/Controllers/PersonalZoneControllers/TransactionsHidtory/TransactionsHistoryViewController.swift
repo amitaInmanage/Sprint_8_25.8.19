@@ -15,7 +15,7 @@ enum TabState: Int {
 }
 
 enum PagerFontState: String {
-    case regular = "OpenSansHebrew-Regular"
+    case regular = "Heebo-Regular"
 }
 
 class TransactionsHistoryViewController : BaseFormViewController {
@@ -351,9 +351,9 @@ extension TransactionsHistoryViewController {
             self.underLinevw0.backgroundColor = UIColor.getApplicationThemeColor()
             self.underLinevw1.backgroundColor = .white
             self.underLinevw2.backgroundColor = .white
-            self.lblAll.font =  UIFont.boldSystemFont(ofSize: lblAll.font.pointSize)
-            self.lblDeluqs.font =  UIFont(name: PagerFontState.regular.rawValue, size: 16)
-            self.lblStores.font =  UIFont(name: PagerFontState.regular.rawValue, size: 16)
+            self.lblAll.font =  UIFont(name: "Heebo-Bold", size: 18)
+            self.lblDeluqs.font =  UIFont(name: PagerFontState.regular.rawValue, size: 18)
+            self.lblStores.font =  UIFont(name: PagerFontState.regular.rawValue, size: 18)
             self.loadViewIfNeeded()
             
             break
@@ -361,9 +361,9 @@ extension TransactionsHistoryViewController {
             self.underLinevw0.backgroundColor = .white
             self.underLinevw1.backgroundColor = UIColor.getApplicationThemeColor()
             self.underLinevw2.backgroundColor = .white
-            self.lblAll.font =  UIFont(name: PagerFontState.regular.rawValue, size: 16)
-            self.lblDeluqs.font =  UIFont.boldSystemFont(ofSize: lblDeluqs.font.pointSize)
-            self.lblStores.font =  UIFont(name: PagerFontState.regular.rawValue, size: 16)
+            self.lblAll.font =  UIFont(name: PagerFontState.regular.rawValue, size: 18)
+            self.lblDeluqs.font =  UIFont(name: "Heebo-Bold", size: 18)
+            self.lblStores.font =  UIFont(name: PagerFontState.regular.rawValue, size: 18)
             self.loadViewIfNeeded()
             
             break
@@ -371,9 +371,9 @@ extension TransactionsHistoryViewController {
             self.underLinevw0.backgroundColor = .white
             self.underLinevw1.backgroundColor = .white
             self.underLinevw2.backgroundColor = UIColor.getApplicationThemeColor()
-            self.lblAll.font =  UIFont(name: PagerFontState.regular.rawValue, size: 16)
-            self.lblDeluqs.font =  UIFont(name: PagerFontState.regular.rawValue, size: 16)
-            self.lblStores.font =  UIFont.boldSystemFont(ofSize: lblStores.font.pointSize)
+            self.lblAll.font =  UIFont(name: PagerFontState.regular.rawValue, size: 18)
+            self.lblDeluqs.font =  UIFont(name: PagerFontState.regular.rawValue, size: 18)
+            self.lblStores.font =  UIFont(name: "Heebo-Bold", size: 18)
             self.loadViewIfNeeded()
             
             break

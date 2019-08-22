@@ -16,6 +16,7 @@ class PersonalDetailsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.vw.addShadow()
+//        stckVw.semanticContentAttribute = .forceLeftToRight
 
     }
 
@@ -24,12 +25,11 @@ class PersonalDetailsTableViewCell: UITableViewCell {
         var horizontalStck = UIStackView()
         horizontalStck.axis = .horizontal
         horizontalStck.distribution = .fillEqually
-
         for (index,menu) in ApplicationManager.sharedInstance.userAccountManager.user.personelAreaMenuArr.enumerated() {
             if index % 3 == 0 {
             
                 if index != 0 {
-                 
+//                  horizontalStck.semanticContentAttribute = .forceRightToLeft
                   stckVw.addArrangedSubview(horizontalStck)
                 }
                 
@@ -41,10 +41,9 @@ class PersonalDetailsTableViewCell: UITableViewCell {
                 self.addItemToStack(horizontalStck: horizontalStck, menu: menu, didTapItem: didTapItem)
             }
         }
-        
+//         horizontalStck.semanticContentAttribute = .forceRightToLeft
         stckVw.addArrangedSubview(horizontalStck)
         horizontalStck.distribution = .fillEqually
-//        stckVw.semanticContentAttribute = .forceLeftToRight
 
     }
     
@@ -57,6 +56,7 @@ class PersonalDetailsTableViewCell: UITableViewCell {
                 ApplicationManager.sharedInstance.openURLManager.openSFSafari(strLink: menu.strDeepLink)
             }
         }
+        horizontalStck.semanticContentAttribute = .forceRightToLeft
         horizontalStck.addArrangedSubview(personalDetailsCVW)
     }
 }

@@ -19,7 +19,7 @@ class StoresTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTime: SmallText!
     @IBOutlet weak var lblAccumulationAmount: IMLabel!
     @IBOutlet weak var lblUsageAmount: IMLabel!
-    @IBOutlet weak var lblAmount: RegularText!
+    @IBOutlet weak var lblAmount: UILabel!
     @IBOutlet weak var vwDropDown: UIView!
     @IBOutlet weak var vwHistory: UIView!
     @IBOutlet weak var dropDownConstraint: NSLayoutConstraint!

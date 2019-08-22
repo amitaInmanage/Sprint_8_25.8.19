@@ -197,11 +197,13 @@ extension UsegeDataViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PumpWhichCarTableViewCell.className, for: indexPath) as! PumpWhichCarTableViewCell
         
-        cell.imgCar.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].strIcon, withAddUnderscoreIphone: false)
-        cell.lblCarNumber.text = self.fuelingDevice[indexPath.row].strTitle
-        cell.imgFuelType.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].fuelItem.strIcon, withAddUnderscoreIphone: false)
-        cell.lblCardNumber.text = self.fuelingDevice[indexPath.row].payment.strTitle
-        cell.imgCard.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].payment.strIcon, withAddUnderscoreIphone: false)
+        let fuelingDevice = self.fuelingDevice[indexPath.row]
+        
+        cell.imgCar.setImageWithStrURL(strURL: fuelingDevice.strIcon, withAddUnderscoreIphone: false)
+        cell.lblCarNumber.text = fuelingDevice.strTitle
+        cell.imgFuelType.setImageWithStrURL(strURL: fuelingDevice.fuelItem.strIcon, withAddUnderscoreIphone: false)
+        cell.lblCardNumber.text = fuelingDevice.payment.strTitle
+        cell.imgCard.setImageWithStrURL(strURL: fuelingDevice.payment.strIcon, withAddUnderscoreIphone: false)
         
         return cell
     }
@@ -209,11 +211,12 @@ extension UsegeDataViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        self.lblCarNumber.text = self.fuelingDevice[indexPath.row].strTitle
-        self.imgFuelType?.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].fuelItem.strIcon, withAddUnderscoreIphone: false)
-        self.imgCreditCard.setImageWithStrURL(strURL: self.fuelingDevice[indexPath.row].payment.strIcon, withAddUnderscoreIphone: false)
+        let fuelingDevice = self.fuelingDevice[indexPath.row]
         
-        self.cellCarInformation(id: self.fuelingDevice[indexPath.row].strId)
+        self.lblCarNumber.text = fuelingDevice.strTitle
+        self.imgFuelType?.setImageWithStrURL(strURL: fuelingDevice.fuelItem.strIcon, withAddUnderscoreIphone: false)
+        self.imgCreditCard.setImageWithStrURL(strURL: fuelingDevice.payment.strIcon, withAddUnderscoreIphone: false)
+        self.cellCarInformation(id: fuelingDevice.strId)
         self.closeDropDown()
     }
     
@@ -258,26 +261,32 @@ extension UsegeDataViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsageDataGraphCollectionViewCell.className, for: indexPath) as! UsageDataGraphCollectionViewCell
-
+        let sumByMount = self.sumByMount[indexPath.row]
         
-        if self.maxSum.intSum != self.sumByMount[indexPath.row].intSum {
-            let newHeight: Double = Double(self.sumByMount[indexPath.row].intSum) / Double(self.maxSum.intSum) * 100.0
+        if self.maxSum.intSum != sumByMount.intSum {
+            let newHeight: Double = Double(sumByMount.intSum) / Double(self.maxSum.intSum) * 100.0
+            
+            cell.graphHeightConstraint.constant = CGFloat(newHeight)
+        } else {
+            cell.graphHeightConstraint.constant = 100
+        }
+        
+        cell.lblNis.text =  "₪" + String(sumByMount.intSum)
+        cell.lblMonth.text = sumByMount.strMonth
+        cell.lblYear.text = String(sumByMount.intYear)
+       
+        
+        return cell
+    }
+}
+
+
+
+
+//Animate to Graph:
 //                for number in 1...Int(newHeight) {
 //                    UIView.animate(withDuration: 0.3) {
 //                    cell.graphHeightConstraint.constant = CGFloat(number)
 //                        self.view.layoutIfNeeded()
 //                    }
 //                }
-            cell.graphHeightConstraint.constant = CGFloat(newHeight)
-        } else {
-            cell.graphHeightConstraint.constant = 100
-        }
-        
-        cell.lblNis.text =  "₪" + String(sumByMount[indexPath.row].intSum)
-        cell.lblMonth.text = sumByMount[indexPath.row].strMonth
-        cell.lblYear.text = String(sumByMount[indexPath.row].intYear)
-       
-        
-        return cell
-    }
-}

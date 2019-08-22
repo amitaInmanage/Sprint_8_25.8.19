@@ -26,8 +26,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="136" height="155"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5d-AI-7Dr" customClass="RegularText" customModule="Ten" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="68" width="136" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="0.0" y="68" width="136" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -37,12 +37,8 @@
                                 <action selector="didTapitem:" destination="-1" eventType="touchUpInside" id="eJz-On-4Na"/>
                             </connections>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JVy-jS-gGO">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="45" placeholderIntrinsicHeight="34" translatesAutoresizingMaskIntoConstraints="NO" id="JVy-jS-gGO">
                             <rect key="frame" x="45.5" y="20" width="45" height="34"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="45" id="Y9V-fR-mrc"/>
-                                <constraint firstAttribute="height" constant="34" id="eUs-Li-Y5c"/>
-                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

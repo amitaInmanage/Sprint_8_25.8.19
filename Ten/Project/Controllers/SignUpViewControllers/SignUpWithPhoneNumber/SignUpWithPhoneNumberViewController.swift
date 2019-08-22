@@ -33,7 +33,7 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
     }
     
     func initUI() {
-        self.moveBtns()
+       // self.moveBtns()
         self.initializeTextFields()
         self.btnContinue.Disabled()
         self.lblInvalidNumber.isHidden = true
@@ -55,47 +55,47 @@ class SignUpWithPhoneNumberViewController: BaseFormViewController {
         self.btnContinueWithOutSignUp.addUnderline(title: Translation(Translations.AlertButtonsKeys.loginUnderlineText, Translations.AlertButtonsKeys.loginUnderlineTextDefault))
     }
   
-    fileprivate func moveBtns() {
-       NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShow),
-                                          name: Notification.Name.UIKeyboardWillShow, object: nil)
-       NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHide),
-                                               name: Notification.Name.UIKeyboardWillHide, object: nil)
-    }
-    
-    //MARK: KeyboardNotification
-    @objc func handleKeyboardHide(_ notification: Notification) {
-        consteintSignUpBtn.constant = consteintSignUpBtn.constant - self.viewModel.keyboardH + self.viewModel.navigationH + self.viewModel.statusBarH
-        UIView.animate(withDuration: 0.3) {
-             self.view.layoutIfNeeded()
-        }
-    }
-    
-    @objc func handleKeyboardShow (_ notification: Notification) {
-        if self.viewModel.keyboardH == 0 {
-            if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
-                let keyboardRectangle = keyboardFrame.cgRectValue
-                self.viewModel.keyboardH = keyboardRectangle.height
-            }
-        }
-        if self.consteintSignUpBtn.constant < self.viewModel.keyboardH {
-            
-            UIView.animate(withDuration: 0.3) {
-                
-                self.consteintSignUpBtn.constant = self.consteintSignUpBtn.constant + self.viewModel.keyboardH - self.viewModel.navigationH - self.viewModel.statusBarH
-                
-                 self.view.layoutIfNeeded()
-            }
-        } else if self.consteintSignUpBtn.constant > 190 {
-            
-            UIView.animate(withDuration: 0.3) {
-                
-                self.consteintSignUpBtn.constant = self.consteintSignUpBtn.constant - self.viewModel.keyboardH + self.viewModel.navigationH + self.viewModel.statusBarH
-                
-                self.view.layoutIfNeeded()
-        
-            }
-        }
-    }
+//    fileprivate func moveBtns() {
+//       NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShow),
+//                                          name: Notification.Name.UIKeyboardWillShow, object: nil)
+//       NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHide),
+//                                               name: Notification.Name.UIKeyboardWillHide, object: nil)
+//    }
+//
+//    //MARK: KeyboardNotification
+//    @objc func handleKeyboardHide(_ notification: Notification) {
+//        consteintSignUpBtn.constant = consteintSignUpBtn.constant - self.viewModel.keyboardH + self.viewModel.navigationH + self.viewModel.statusBarH
+//        UIView.animate(withDuration: 0.3) {
+//             self.view.layoutIfNeeded()
+//        }
+//    }
+//
+//    @objc func handleKeyboardShow (_ notification: Notification) {
+//        if self.viewModel.keyboardH == 0 {
+//            if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+//                let keyboardRectangle = keyboardFrame.cgRectValue
+//                self.viewModel.keyboardH = keyboardRectangle.height
+//            }
+//        }
+//        if self.consteintSignUpBtn.constant < self.viewModel.keyboardH {
+//
+//            UIView.animate(withDuration: 0.3) {
+//
+//                self.consteintSignUpBtn.constant = self.consteintSignUpBtn.constant + self.viewModel.keyboardH - self.viewModel.navigationH - self.viewModel.statusBarH
+//
+//                 self.view.layoutIfNeeded()
+//            }
+//        } else if self.consteintSignUpBtn.constant > 190 {
+//
+//            UIView.animate(withDuration: 0.3) {
+//
+//                self.consteintSignUpBtn.constant = self.consteintSignUpBtn.constant - self.viewModel.keyboardH + self.viewModel.navigationH + self.viewModel.statusBarH
+//
+//                self.view.layoutIfNeeded()
+//
+//            }
+//        }
+//    }
     
     //MARK: TextFieldDelegate
     override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{

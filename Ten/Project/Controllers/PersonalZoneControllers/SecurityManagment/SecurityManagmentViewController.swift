@@ -17,6 +17,7 @@ class SecurityManagmentViewController: BaseFormViewController {
         case face
     }
     
+    @IBOutlet weak var vwTitle: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblTtile: MediumText!
     @IBOutlet weak var lblSubTitle: RegularText!
@@ -37,15 +38,13 @@ class SecurityManagmentViewController: BaseFormViewController {
         self.registerXibs()
         self.initTableView()
         self.initUI()
-        
-        
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
-       self.fullScreeen(parent: parent)
+        self.fullScreeen(parent: parent)
     }
     
-     func biometricType() -> BiometricType {
+    func biometricType() -> BiometricType {
         let authContext = LAContext()
         if #available(iOS 11, *) {
             let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
@@ -68,7 +67,8 @@ class SecurityManagmentViewController: BaseFormViewController {
     }
     
     fileprivate func initUI() {
-       !user.hasPinCode ? (self.lblSubTitle.isHidden = false) : (self.lblSubTitle.isHidden = true)
+        !user.hasPinCode ? (self.lblSubTitle.isHidden = false) : (self.lblSubTitle.isHidden = true)
+        self.vwTitle.addShadowAndCorner()
         
     }
     
@@ -76,19 +76,24 @@ class SecurityManagmentViewController: BaseFormViewController {
         
         let device = self.biometricType()
         
-        if device == BiometricType.touch && user.hasPinCode {
+        if device == BiometricType.touch && user.hasPinCode && !UserDefaults.standard.bool(forKey: "Biomatric") {
             self.rowTypeArr.append(RowType.changePassword)
             self.rowTypeArr.append(RowType.touchId)
             
-        } else if device == BiometricType.face && user.hasPinCode {
+        } else if device == BiometricType.touch && user.hasPinCode && UserDefaults.standard.bool(forKey: "Biomatric") {
+            self.rowTypeArr.append(RowType.changePassword)
+            
+        } else if device == BiometricType.face && user.hasPinCode && !UserDefaults.standard.bool(forKey: "Biomatric") {
             self.rowTypeArr.append(RowType.changePassword)
             self.rowTypeArr.append(RowType.faceId)
-       
-        } else if device == BiometricType.none && user.hasPinCode {
-                self.rowTypeArr.append(RowType.changePassword)
-    
-        } else {
             
+        } else if device == BiometricType.face && user.hasPinCode && UserDefaults.standard.bool(forKey: "Biomatric") {
+            self.rowTypeArr.append(RowType.changePassword)
+            
+        } else if device == BiometricType.none && user.hasPinCode {
+            self.rowTypeArr.append(RowType.changePassword)
+            
+        } else {
             self.rowTypeArr.append(RowType.createPassword)
         }
     }

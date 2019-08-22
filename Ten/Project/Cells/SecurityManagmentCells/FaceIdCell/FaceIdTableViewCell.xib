@@ -22,7 +22,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35g-D6-csc">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" הסר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kce-jL-bCt">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" הסר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kce-jL-bCt" customClass="SmallText" customModule="Ten" customModuleProvider="target">
                                     <rect key="frame" x="14" y="43" width="59" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="59" id="1ZD-va-aXu"/>
@@ -46,7 +46,7 @@
                                         <constraint firstAttribute="width" constant="27" id="Q4W-tl-6C8"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="סריקת פנים" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk4-0O-gqa" customClass="SmallText" customModule="Ten" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="סריקת פנים" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk4-0O-gqa" customClass="RegularText" customModule="Ten" customModuleProvider="target">
                                     <rect key="frame" x="223" y="30" width="94" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="0ti-Ko-jA9"/>

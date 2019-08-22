@@ -26,7 +26,7 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     @IBOutlet weak var txtFldLastName: InputCustomView!
     @IBOutlet weak var txtFldPhone: InputCustomView!
     @IBOutlet weak var txtFldEmail: InputCustomView!
-    @IBOutlet weak var lblNotafication: RegularText!
+    @IBOutlet weak var lblNotafication: SmallText!
     @IBOutlet weak var bottomView: RegularText!
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var lblSecurityManager: RegularText!
@@ -47,13 +47,11 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     var user = ApplicationManager.sharedInstance.userAccountManager.user
     var isTableVisible = true
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initUI()
         self.setupTextFields()
         self.initTextField()
-        self.initLable()
         self.initCheckBox()
     }
     
@@ -69,11 +67,7 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
-            self.fullScreeen(parent: parent)
-    }
-    
-    fileprivate func initLable() {
-        lblGender.font = UIFont(name: LightLabel.getFontName(), size: 16)
+        self.fullScreeen(parent: parent)
     }
     
     fileprivate func initUI() {
@@ -91,7 +85,6 @@ class PersonalDetailsViewControlles: BaseFormViewController {
     }
     
     fileprivate func initCheckBox() {
-        
         if user.isAcceptsUpdates {
             self.imgCheckBox.image = UIImage(named: "checkBoxOn")
         } else {
@@ -105,7 +98,7 @@ class PersonalDetailsViewControlles: BaseFormViewController {
         self.txtFldPhone.txtFldInput.text = user.strPhoneNumber
         self.txtFldEmail.txtFldInput.text = user.strEmail
         
-        if user.strGender.isEmpty {
+        if user.strGender == "0" {
             self.lblGender.text = Translation(Translations.AlertButtonsKeys.gender, Translations.AlertButtonsKeys.genderDefault)
         } else {
             self.viewModel.intGenderId = Int(user.strGender) ?? 0
@@ -125,7 +118,7 @@ class PersonalDetailsViewControlles: BaseFormViewController {
             self.txtFldEmail.txtFldInput.text  = user.strEmail
         }
         
-       
+        
     }
     
     fileprivate func setupTextFields() {
@@ -173,7 +166,7 @@ class PersonalDetailsViewControlles: BaseFormViewController {
                 self.btnSaveChanges.isHidden = false
                 self.viewModel.isAcceptsUpdates = true
                 self.view.layoutIfNeeded()
-          
+                
             }
         } else {
             UIView.animate(withDuration: 0.3) {
@@ -237,9 +230,18 @@ class PersonalDetailsViewControlles: BaseFormViewController {
             isValid = false
             self.lblLastNameError.isHidden = false
         }
-        if !ApplicationManager.sharedInstance.inputValidationManager.isValidEmail(emailStr: self.txtFldEmail.txtFldInput.text!) {
-            isValid = false
-            self.lblEmailError.isHidden = false
+        if self.txtFldEmail.txtFldInput.text == "" {
+            isValid = true
+            self.lblEmailError.isHidden = true
+            
+        } else {
+            if !ApplicationManager.sharedInstance.inputValidationManager.isValidEmail(emailStr: self.txtFldEmail.txtFldInput.text!) {
+                isValid = false
+                self.lblEmailError.isHidden = false
+            } else {
+                isValid = true
+                self.lblEmailError.isHidden = true
+            }
         }
         
         if isValid {

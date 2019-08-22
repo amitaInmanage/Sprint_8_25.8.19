@@ -263,6 +263,8 @@ class Translations {
     }
     
     struct Titles {
+        static let rowClubsPowerCard = "row_clubs_power_card"
+        static let rowClubsDelekTen = "row_clubs_delek_ten"
         static let editPersonalInformationPopup = "edit_personal_information_popup_title"
         static let avgSum = "choose_fueling_type_avg_sum_fueling"
         static let avgLiliters = "choose_fueling_type_avg_liters_fueling"
@@ -339,6 +341,8 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let rowClubsPowerCardDefault = "Default"
+        static let rowClubsDelekTenDefault = "Default"
         static let editPersonalInformationPopupDefault = "Default"
         static let avgSumDefault = "Default"
         static let avgLilitersDefault = "Default"

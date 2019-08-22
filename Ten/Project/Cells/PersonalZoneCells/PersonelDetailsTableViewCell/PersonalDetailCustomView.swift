@@ -43,6 +43,7 @@ class PersonalDetailCustomView: UIView {
     func setDataWith(menuItem: PersonalAreaMenuItem) {
         self.menuItem = menuItem
         self.lblTitle.text = menuItem.strTitle
+        self.lblTitle.font = UIFont(name: lblTitle.font.fontName, size: 15)
         self.img.setImageWithStrURL(strURL: menuItem.strIcon, withAddUnderscoreIphone: false)
     }
     

@@ -11,6 +11,7 @@ import UIKit
 class PowerCardClubTableViewCell: UITableViewCell {
 
     @IBOutlet weak var vwContent: UIView!
+    @IBOutlet weak var lblTitle: RegularText!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,5 +20,6 @@ class PowerCardClubTableViewCell: UITableViewCell {
 
     private func initUI() {
         self.vwContent.addShadowAndCorner()
+        self.lblTitle.text = Translation(Translations.Titles.rowClubsPowerCard, Translations.Titles.rowClubsPowerCardDefault)
     }
 }

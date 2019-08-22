@@ -17,9 +17,13 @@ class TouchIdableViewCell: UITableViewCell {
     @IBOutlet weak var lblRemoveTouchId: SmallText!
     @IBOutlet weak var vwContent: UIView!
     
+    var userHaveTouchId = ApplicationManager.sharedInstance.userAccountManager.user.hasTouchId
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.vwContent.addShadow()
+        self.lblRemoveTouchId.textColor = UIColor.getApllicationErrorColor()
+    
     }
     
     func showAlertController(_ message: String) {
@@ -30,12 +34,11 @@ class TouchIdableViewCell: UITableViewCell {
     
     //IBAction:
     @IBAction func didTapRemoveTouchId(_ sender: Any) {
-     
+        self.userHaveTouchId = false
     }
     
     
     @IBAction func didTapCreateTouchId(_ sender: Any) {
-        
         
         print("hello there!.. You have clicked the touch ID")
         
@@ -59,26 +62,25 @@ class TouchIdableViewCell: UITableViewCell {
                         
                         DispatchQueue.main.async {
                             if success {
-                                // User authenticated successfully, take appropriate action
-                                //                            self.successLabel.text = "Awesome!!... User authenticated successfully"
+                                let userDefaults = UserDefaults.standard
+                                
+                                userDefaults.set(true, forKey: "Biomatric")
+                                
+                                UserDefaults.standard.synchronize()
+                                
                             } else {
-                                // User did not authenticate successfully, look at error and take appropriate action
-                                //                            self.successLabel.text = "Sorry!!... User did not authenticate successfully"
+                            
                             }
                         }
                     }
                 } else {
-                    // Could not evaluate policy; look at authError and present an appropriate message to user
-                    //                successLabel.text = "Sorry!!.. Could not evaluate policy."
+                    
                 }
             } else {
-                // Fallback on earlier versions
-                //            successLabel.text = "Ooops!!.. This feature is not supported."
+                
             }
         }
-        
         ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
-    
     }
 }
 

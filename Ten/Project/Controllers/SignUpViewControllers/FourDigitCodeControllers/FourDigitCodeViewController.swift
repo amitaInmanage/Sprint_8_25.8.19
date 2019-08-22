@@ -25,7 +25,7 @@ class FourDigitCodeViewController: BaseViewController, MyTextFieldDelegate {
     @IBOutlet weak var txtFldOTP1: DeleteTextField!
     @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var lblSubTitle: RegularText!
-    @IBOutlet weak var btnSkip: MediumButton!
+    @IBOutlet weak var btnSkip: MediumBtn!
     @IBOutlet weak var btnContinue: TenButtonStyle!
     @IBOutlet var textFields: [DeleteTextField]!
     

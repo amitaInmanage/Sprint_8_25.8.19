@@ -22,11 +22,19 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLA-TA-mLf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="45" placeholderIntrinsicHeight="27" image="customerCard" translatesAutoresizingMaskIntoConstraints="NO" id="wQp-U5-JSq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customerCard" translatesAutoresizingMaskIntoConstraints="NO" id="wQp-U5-JSq">
                                 <rect key="frame" x="20" y="27.5" width="45" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="3VZ-zP-unO"/>
+                                    <constraint firstAttribute="height" constant="27" id="hBM-hU-pRi"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="20" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="aDX-oZ-Qvy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="aDX-oZ-Qvy">
                                 <rect key="frame" x="329" y="31" width="25" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="J4h-pG-0Hv"/>
+                                    <constraint firstAttribute="width" constant="25" id="nLN-og-OHw"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRo-cd-MZw" customClass="RegularText" customModule="Ten" customModuleProvider="target">
                                 <rect key="frame" x="80" y="31" width="36.5" height="19.5"/>
@@ -40,8 +48,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="24.5" placeholderIntrinsicHeight="24.5" translatesAutoresizingMaskIntoConstraints="NO" id="u4Y-Da-cBh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u4Y-Da-cBh">
                                 <rect key="frame" x="175.5" y="28.5" width="24.5" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24.5" id="2Ta-n5-PHi"/>
+                                    <constraint firstAttribute="height" constant="24.5" id="lug-UC-M7J"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -10,8 +10,8 @@ import UIKit
 
 class CreatePasswordTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var lblPassword: IMLabel!
-    @IBOutlet weak var lblCreatePassword: IMButton!
+    @IBOutlet weak var lblPassword: RegularText!
+    @IBOutlet weak var lblCreatePassword: RegularBtn!
     @IBOutlet weak var vwContent: UIView!
     
     override func awakeFromNib() {

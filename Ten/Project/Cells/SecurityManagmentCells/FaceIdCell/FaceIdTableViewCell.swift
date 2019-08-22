@@ -14,8 +14,8 @@ class FaceIdTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var vwContent: UIView!
-    @IBOutlet weak var lblRemoveFaceId: RegularText!
-    @IBOutlet weak var lblFaceId: SmallText!
+    @IBOutlet weak var lblRemoveFaceId: SmallText!
+    @IBOutlet weak var lblFaceId: RegularText!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,26 +25,60 @@ class FaceIdTableViewCell: UITableViewCell {
     
     fileprivate func initUI() {
         self.vwContent.addShadow()
+        self.lblRemoveFaceId.textColor = UIColor.getApllicationErrorColor()
     }
     
     //IBAction:
     @IBAction func didTapCreateFaceId(_ sender: Any) {
-        let context = LAContext()
-        let reason = "We need this to protect your payments." // add your own message explaining why you need this authentication method
         
-        var authError: NSError?
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
-                if success {
-                    // User authenticated successfully
+        
+        print("hello there!.. You have clicked the touch ID")
+        
+        let popupInfoObj = PopupInfoObj()
+        popupInfoObj.popupType = .tenGeneralPopup
+        popupInfoObj.strImageName = "touchId"
+        popupInfoObj.strTitle = Translation(Translations.Titles.fingertipTooltip, Translations.Titles.fingertipTooltipDefault)
+        popupInfoObj.strSubtitle = Translation(Translations.SubTitles.fingertipTooltip, Translations.SubTitles.fingertipTooltipDefault)
+        popupInfoObj.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.fingertipTooltip, Translations.AlertButtonsKeys.fingertipTooltipDefault)
+        popupInfoObj.strSecondButtonTitle = Translation(Translations.AlertButtonsKeys.fingertipTooltipSkip, Translations.AlertButtonsKeys.fingertipTooltipSkipDefault)
+        
+        popupInfoObj.firstButtonAction = {
+            
+            print("hello there!.. You have clicked the touch ID")
+            
+            let myContext = LAContext()
+            let myLocalizedReasonString = "Biometric Authntication testing !! "
+            
+            var authError: NSError?
+            if #available(iOS 8.0, macOS 10.12.1, *) {
+                if myContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
+                    myContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString) { success, evaluateError in
+                        
+                        DispatchQueue.main.async {
+                            if success {
+                               print("seccsescsesesese")
+                            } else {
+                                // User did not authenticate successfully, look at error and take appropriate action
+                               // self.successLabel.text = "Sorry!!... User did not authenticate successfully"
+                            }
+                        }
+                    }
                 } else {
-                    // User did not authenticate successfully
+                    // Could not evaluate policy; look at authError and present an appropriate message to user
+                    //successLabel.text = "Sorry!!.. Could not evaluate policy."
                 }
+            } else {
+                // Fallback on earlier versions
+                
+                //successLabel.text = "Ooops!!.. This feature is not supported."
             }
-        } else {
-            // Handle Error
+            
+            
         }
+
+        ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
     }
+    
     @IBAction func ddiTapRemoveFaceId(_ sender: Any) {
         
     }

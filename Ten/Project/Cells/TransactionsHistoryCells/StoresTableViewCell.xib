@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Heebo-Regular.ttf">
+            <string>Heebo-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -109,17 +114,18 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etF-MO-NPR" customClass="RegularText" customModule="Ten" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="26" width="82" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etF-MO-NPR">
+                                        <rect key="frame" x="60" y="26" width="90" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="82" id="9Sn-19-nOe"/>
+                                            <constraint firstAttribute="width" constant="90" id="9Sn-19-nOe"/>
+                                            <constraint firstAttribute="height" constant="25" id="Dcc-5M-9oB"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu8-qh-v8D">
-                                        <rect key="frame" x="47" y="35.5" width="11" height="20.5"/>
+                                        <rect key="frame" x="49" y="30.5" width="11" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="11" id="utr-f9-wTb"/>
                                         </constraints>
@@ -128,7 +134,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="50i-Rs-2yv">
-                                        <rect key="frame" x="69" y="58" width="64.5" height="45"/>
+                                        <rect key="frame" x="69" y="53" width="64.5" height="45"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nCf-dX-ncp">
                                                 <rect key="frame" x="0.0" y="0.0" width="64.5" height="20"/>
@@ -209,7 +215,7 @@
                                     <constraint firstItem="etF-MO-NPR" firstAttribute="top" secondItem="TXe-qy-xTj" secondAttribute="top" constant="26" id="XZL-X7-wId"/>
                                     <constraint firstAttribute="height" constant="109.5" id="Ycj-Ze-3ER"/>
                                     <constraint firstItem="WBN-rl-tO8" firstAttribute="leading" secondItem="Gak-Ry-lde" secondAttribute="trailing" constant="13" id="bKI-ZI-8qi"/>
-                                    <constraint firstItem="etF-MO-NPR" firstAttribute="leading" secondItem="Uu8-qh-v8D" secondAttribute="trailing" constant="2" id="bcs-ww-OF2"/>
+                                    <constraint firstItem="etF-MO-NPR" firstAttribute="leading" secondItem="Uu8-qh-v8D" secondAttribute="trailing" id="bcs-ww-OF2"/>
                                     <constraint firstItem="Uu8-qh-v8D" firstAttribute="bottom" secondItem="etF-MO-NPR" secondAttribute="bottom" id="ioi-6I-u51"/>
                                     <constraint firstAttribute="bottom" secondItem="KC8-7h-iQK" secondAttribute="bottom" constant="28" id="jm6-9B-orJ"/>
                                     <constraint firstAttribute="trailing" secondItem="WBN-rl-tO8" secondAttribute="trailing" constant="23" id="kwE-2N-kkn"/>

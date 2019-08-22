@@ -424,7 +424,7 @@ class BaseFormViewController: BaseViewController, UITextViewDelegate, UITextFiel
         
     }
 
-    func    mDCTextSetUp(mDCText: MDCTextField, withPlaceholderText Placeholder: String, withIndex index: Int ,withKeyboardType keyboardType: UIKeyboardType, withKeyType keyType: UIReturnKeyType,txtFldInputType: TextFieldInputType, errorText: String, addToolbar: Bool = false) {
+    func mDCTextSetUp(mDCText: MDCTextField, withPlaceholderText Placeholder: String, withIndex index: Int ,withKeyboardType keyboardType: UIKeyboardType, withKeyType keyType: UIReturnKeyType,txtFldInputType: TextFieldInputType, errorText: String, addToolbar: Bool = false) {
         
         if addToolbar {
             let addNext = keyType == .next
@@ -454,10 +454,10 @@ class BaseFormViewController: BaseViewController, UITextViewDelegate, UITextFiel
     }
  
     func setupTxtFldControllerFont(txtFldController: CustomMDCTextInputControllerUnderline) {
-        txtFldController.textInputFont = UIFont(name: LightLabel.getFontName(), size: 16)
-        txtFldController.inlinePlaceholderFont = UIFont(name: LightLabel.getFontName(), size: 16)
-        txtFldController.leadingUnderlineLabelFont = UIFont(name: LightLabel.getFontName(), size: 14)
-        txtFldController.trailingUnderlineLabelFont = UIFont(name: LightLabel.getFontName(), size: 14)
+        txtFldController.textInputFont = UIFont(name: "Heebo-Regular", size: 16)
+        txtFldController.inlinePlaceholderFont = UIFont(name: "Heebo-Regular", size: 16)
+        txtFldController.leadingUnderlineLabelFont = UIFont(name: "Heebo-Regular", size: 16)
+        txtFldController.trailingUnderlineLabelFont = UIFont(name: "Heebo-Regular", size: 16)
     }
     
     //MARK: - inputCustomViewProtocolDelegate

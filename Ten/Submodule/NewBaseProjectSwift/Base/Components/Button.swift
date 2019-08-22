@@ -112,3 +112,11 @@ class MediumBtn: Button {
         self.setTitleColor(UIColor.getApplicationTextColor(), for: .normal)
     }
 }
+
+class RegularBtn: Button {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.titleLabel?.font = UIFont.init(name: "Heebo-Regular", size: 16)
+        self.setTitleColor(UIColor.getApplicationTextColor(), for: .normal)
+    }
+}

@@ -11,6 +11,7 @@ import UIKit
 class TenClubsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var vwContent: UIView!
+    @IBOutlet weak var lblTitle: RegularText!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,5 +20,6 @@ class TenClubsTableViewCell: UITableViewCell {
 
     fileprivate func initUI() {
         self.vwContent.addShadowAndCorner()
+        self.lblTitle.text = Translation(Translations.Titles.rowClubsDelekTen, Translations.Titles.rowClubsDelekTenDefault)
     }
 }

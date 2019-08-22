@@ -12,6 +12,8 @@ class TenUser: User {
     
     fileprivate static let noAccumulation = -1
     
+    var hasTouchId = false
+    var hasFaceId = false
     var personelAreaMenuArr = [PersonalAreaMenuItem]()
     var fuelingDevicesArr = [FuelingDevicesItem]()
     var storePaymentMethods = [StorePaymentMethodsItem]()

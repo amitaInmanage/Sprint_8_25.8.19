@@ -11,15 +11,15 @@ import UIKit
 class ChooseDelekTenProgramViewController: BaseFormViewController {
     
     @IBOutlet weak var btnSaveChanges: TenButtonStyle!
-    @IBOutlet weak var btnTermsOfClubs: IMButton!
+    @IBOutlet weak var btnTermsOfClubs: RegularBtn!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblProgramDetails: RegularText!
-    @IBOutlet weak var lblProgramTitle: RegularText!
-    @IBOutlet weak var lblAmount: RegularText!
+    @IBOutlet weak var lblProgramDetails: SmallText!
+    @IBOutlet weak var lblProgramTitle: SmallText!
+    @IBOutlet weak var lblAmount: UILabel!
     @IBOutlet weak var lblDetailsAmount: RegularText!
     @IBOutlet weak var lblTitle: MediumText!
     @IBOutlet weak var tableViewHC: NSLayoutConstraint!
-    @IBOutlet weak var lblManagerText: RegularLabel!
+    @IBOutlet weak var lblManagerText: SmallText!
     
     var viewModel = ChooseDelekTenProgramViewModel()
     var customerProgramsItems = ApplicationManager.sharedInstance.appGD.customerProgramItem
