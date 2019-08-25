@@ -35,6 +35,14 @@ class RegularText: IMText {
     }
 }
 
+class MediumBoldText: IMText {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.font = UIFont.init(name: "Heebo-Medium", size: 18)
+    }
+}
+
 class MediumText : IMText {
     
     required init?(coder aDecoder: NSCoder) {

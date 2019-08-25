@@ -49,7 +49,8 @@ class Translations {
     }
     
     struct AlertButtonsKeys {
-        
+        static let createTouchId = "security_management_set_fingerprint_ios"
+        static let crateFaceId = "security_management_set_faceId_ios"
         static let dialogChangeProgramNotAvailable = "dialog_change_program_not_available_btn"
         static let dialogChangeProgramCancel = "dialog_change_program_cancel"
         static let dialogChangeProgramBtn = "dialog_change_program_btn"
@@ -105,6 +106,8 @@ class Translations {
         static let no = "mobile_alert_btn_no"
         static let noInternet = "alert_no_access_to_server"
         
+        static let createTouchIdDefault = "Default"
+        static let crateFaceIdDefault = "Default"
         static let dialogChangeProgramNotAvailableDefault = "Default"
         static let dialogChangeProgramCancelDefault = "Default"
         static let dialogChangeProgramBtnDefault = "Default"
@@ -162,6 +165,8 @@ class Translations {
     }
     
     struct  SubTitles {
+        static let setFingertipTooltipSubtitle = "set_fingertip_tooltip_subtitle"
+        static let faceIdTooltip = "faceId_tooltip_subtitle"
         static let usageDataSubtitle = "usage_data_subtitle"
         static let dialogChangeProgramNotAvailableSubTitle = "dialog_change_program_not_available_subtitle2"
         static let dialogChangeProgramNotAvailable = "dialog_change_program_not_available_subtitle"
@@ -187,6 +192,8 @@ class Translations {
         static let creditCardSubTitle = "credit_card_details_sub_title"
         static let carInformationClub = "car_information_club_fuel_type"
         
+        static let setFingertipTooltipSubtitleDefault = "Default"
+        static let faceIdTooltipDefault = "Default"
         static let usageDataSubtitleDefault = "Default"
         static let dialogChangeProgramNotAvailableSubTitleDefault = "Default"
         static let dialogChangeProgramNotAvailableDefault = "Default"
@@ -263,6 +270,9 @@ class Translations {
     }
     
     struct Titles {
+        static let faceIdTooltip = "faceId_tooltip_title"
+        static let faceIdTitle = "extra_security_2_title"
+        static let touchIdTitle = "extra_security_1_title"
         static let rowClubsPowerCard = "row_clubs_power_card"
         static let rowClubsDelekTen = "row_clubs_delek_ten"
         static let editPersonalInformationPopup = "edit_personal_information_popup_title"
@@ -341,6 +351,9 @@ class Translations {
         static let sent = "sent_btn"
         static let resend = "resend_btn"
         
+        static let faceIdTooltipDefault = "Default"
+        static let faceIdTitleDefault = "Default"
+        static let touchIdTitleDefault = "Default"
         static let rowClubsPowerCardDefault = "Default"
         static let rowClubsDelekTenDefault = "Default"
         static let editPersonalInformationPopupDefault = "Default"

@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="136" height="155"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5d-AI-7Dr" customClass="RegularText" customModule="Ten" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="68" width="136" height="16"/>
+                            <rect key="frame" x="2" y="68" width="132" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -50,8 +50,8 @@
                         <constraint firstAttribute="trailing" secondItem="liC-m0-SsI" secondAttribute="trailing" id="aMe-B8-7pz"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="N5d-AI-7Dr" secondAttribute="bottom" constant="15" id="gBz-Pn-oac"/>
                         <constraint firstAttribute="height" constant="155" id="jOU-gP-vtL"/>
-                        <constraint firstAttribute="trailing" secondItem="N5d-AI-7Dr" secondAttribute="trailing" id="mQ3-b0-5ou"/>
-                        <constraint firstItem="N5d-AI-7Dr" firstAttribute="leading" secondItem="vA7-pA-5VX" secondAttribute="leading" id="o6N-V8-72K"/>
+                        <constraint firstAttribute="trailing" secondItem="N5d-AI-7Dr" secondAttribute="trailing" constant="2" id="mQ3-b0-5ou"/>
+                        <constraint firstItem="N5d-AI-7Dr" firstAttribute="leading" secondItem="vA7-pA-5VX" secondAttribute="leading" constant="2" id="o6N-V8-72K"/>
                         <constraint firstItem="liC-m0-SsI" firstAttribute="leading" secondItem="vA7-pA-5VX" secondAttribute="leading" id="tJl-b5-BEb"/>
                         <constraint firstItem="N5d-AI-7Dr" firstAttribute="top" secondItem="JVy-jS-gGO" secondAttribute="bottom" constant="14" id="xkg-BM-EQ1"/>
                     </constraints>

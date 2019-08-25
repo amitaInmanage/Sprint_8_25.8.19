@@ -10,12 +10,19 @@
 import UIKit
 import LocalAuthentication
 
+protocol CreateFaceIdDelegate: NSObject {
+    func didTapCreateFaceId()
+}
+
+
 class FaceIdTableViewCell: UITableViewCell {
     
-    
+    @IBOutlet weak var btnCreateFaceId: SmallBtn!
     @IBOutlet weak var vwContent: UIView!
-    @IBOutlet weak var lblRemoveFaceId: SmallText!
     @IBOutlet weak var lblFaceId: RegularText!
+    
+    weak var delegate: CreateFaceIdDelegate?
+    var userId = ApplicationManager.sharedInstance.userAccountManager.user.numID
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,26 +32,24 @@ class FaceIdTableViewCell: UITableViewCell {
     
     fileprivate func initUI() {
         self.vwContent.addShadow()
-        self.lblRemoveFaceId.textColor = UIColor.getApllicationErrorColor()
+        self.btnCreateFaceId.addUnderline(title: Translation(Translations.AlertButtonsKeys.crateFaceId, Translations.AlertButtonsKeys.crateFaceIdDefault))
+        self.lblFaceId.text = Translation(Translations.Titles.faceIdTitle, Translations.Titles.faceIdTitleDefault)
     }
     
     //IBAction:
     @IBAction func didTapCreateFaceId(_ sender: Any) {
         
-        
         print("hello there!.. You have clicked the touch ID")
         
         let popupInfoObj = PopupInfoObj()
         popupInfoObj.popupType = .tenGeneralPopup
-        popupInfoObj.strImageName = "touchId"
-        popupInfoObj.strTitle = Translation(Translations.Titles.fingertipTooltip, Translations.Titles.fingertipTooltipDefault)
-        popupInfoObj.strSubtitle = Translation(Translations.SubTitles.fingertipTooltip, Translations.SubTitles.fingertipTooltipDefault)
+        popupInfoObj.strImageName = "faceId"
+        popupInfoObj.strTitle = Translation(Translations.Titles.faceIdTooltip, Translations.Titles.faceIdTooltipDefault)
+        popupInfoObj.strSubtitle = Translation(Translations.SubTitles.faceIdTooltip, Translations.SubTitles.faceIdTooltipDefault)
         popupInfoObj.strFirstButtonTitle = Translation(Translations.AlertButtonsKeys.fingertipTooltip, Translations.AlertButtonsKeys.fingertipTooltipDefault)
         popupInfoObj.strSecondButtonTitle = Translation(Translations.AlertButtonsKeys.fingertipTooltipSkip, Translations.AlertButtonsKeys.fingertipTooltipSkipDefault)
         
         popupInfoObj.firstButtonAction = {
-            
-            print("hello there!.. You have clicked the touch ID")
             
             let myContext = LAContext()
             let myLocalizedReasonString = "Biometric Authntication testing !! "
@@ -56,30 +61,28 @@ class FaceIdTableViewCell: UITableViewCell {
                         
                         DispatchQueue.main.async {
                             if success {
-                               print("seccsescsesesese")
+                               
+                                let userDefaults = UserDefaults.standard
+                                
+                                userDefaults.setValue("FaceId", forKey: String(self.userId))
+                                
+                                userDefaults.synchronize()
+                                
+                                if let delegate = self.delegate {
+                                    delegate.didTapCreateFaceId()
+                                }
                             } else {
-                                // User did not authenticate successfully, look at error and take appropriate action
-                               // self.successLabel.text = "Sorry!!... User did not authenticate successfully"
+                                print("לא הצלחנו לתפוס את סריקת הפנים")
                             }
                         }
                     }
                 } else {
-                    // Could not evaluate policy; look at authError and present an appropriate message to user
-                    //successLabel.text = "Sorry!!.. Could not evaluate policy."
+                    print("יש להגדיר סריקת פנים למכשיר")
                 }
             } else {
-                // Fallback on earlier versions
-                
-                //successLabel.text = "Ooops!!.. This feature is not supported."
+              
             }
-            
-            
         }
-
         ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
-    }
-    
-    @IBAction func ddiTapRemoveFaceId(_ sender: Any) {
-        
     }
 }

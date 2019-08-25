@@ -23,6 +23,7 @@ class TenUser: User {
     var hasPinCode = false
     var isClubMamber = true
     var isAcceptsUpdates = false
+    //var intId = 0
     
     public func hasAccumulation() -> Bool{
         return self.accumulation != TenUser.noAccumulation
@@ -30,6 +31,8 @@ class TenUser: User {
     
     override func buildFromJSONDict(JSONDict: [String : Any]!) -> BaseInnerResponse {
         super.buildFromJSONDict(JSONDict: JSONDict)
+        
+        //self.intId = ParseValidator.getIntForKey(key: "user_id", JSONDict: JSONDict, defaultValue: 0)
         
         let personelAreaMenu = ParseValidator.getArrayForKey(key: "personal_area_menuArr", JSONDict: JSONDict, defaultValue: [Any]())
         self.personelAreaMenuArr = ParseValidator.createArrayOfInnerResponsesFromJSONArray(JSONArray: personelAreaMenu, innerResponse: PersonalAreaMenuItem(), shouldReverseOrder: false) as! [PersonalAreaMenuItem]

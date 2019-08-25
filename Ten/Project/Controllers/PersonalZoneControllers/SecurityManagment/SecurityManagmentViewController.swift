@@ -30,6 +30,8 @@ class SecurityManagmentViewController: BaseFormViewController {
         case changePassword
         case touchId
         case faceId
+        case removeTouchId
+        case removeFaceId
     }
     
     override func viewDidLoad() {
@@ -38,6 +40,12 @@ class SecurityManagmentViewController: BaseFormViewController {
         self.registerXibs()
         self.initTableView()
         self.initUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.filRowTypeArr()
+        
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -75,20 +83,25 @@ class SecurityManagmentViewController: BaseFormViewController {
     fileprivate func filRowTypeArr() -> Void {
         
         let device = self.biometricType()
+        let userDefualts = UserDefaults.standard
+        let biomatricUserId = String(self.user.numID)
+        let userDefualtsDictionary = userDefualts.string(forKey: biomatricUserId)
         
-        if device == BiometricType.touch && user.hasPinCode && !UserDefaults.standard.bool(forKey: "Biomatric") {
+        if device == BiometricType.touch && user.hasPinCode && userDefualtsDictionary == nil {
             self.rowTypeArr.append(RowType.changePassword)
             self.rowTypeArr.append(RowType.touchId)
             
-        } else if device == BiometricType.touch && user.hasPinCode && UserDefaults.standard.bool(forKey: "Biomatric") {
+        } else if device == BiometricType.touch && user.hasPinCode && userDefualtsDictionary == "TouchId"{
             self.rowTypeArr.append(RowType.changePassword)
+            self.rowTypeArr.append(RowType.removeTouchId)
             
-        } else if device == BiometricType.face && user.hasPinCode && !UserDefaults.standard.bool(forKey: "Biomatric") {
+        } else if device == BiometricType.face && user.hasPinCode && userDefualtsDictionary == nil {
             self.rowTypeArr.append(RowType.changePassword)
             self.rowTypeArr.append(RowType.faceId)
             
-        } else if device == BiometricType.face && user.hasPinCode && UserDefaults.standard.bool(forKey: "Biomatric") {
+        } else if device == BiometricType.face && user.hasPinCode && userDefualtsDictionary == "FaceId" {
             self.rowTypeArr.append(RowType.changePassword)
+            self.rowTypeArr.append(RowType.removeFaceId)
             
         } else if device == BiometricType.none && user.hasPinCode {
             self.rowTypeArr.append(RowType.changePassword)
@@ -103,6 +116,8 @@ class SecurityManagmentViewController: BaseFormViewController {
         self.tableView.register(UINib(nibName: PasswordManagmenTableViewCell.className, bundle: nil), forCellReuseIdentifier: PasswordManagmenTableViewCell.className)
         self.tableView.register(UINib(nibName: FaceIdTableViewCell.className, bundle: nil), forCellReuseIdentifier: FaceIdTableViewCell.className)
         self.tableView.register(UINib(nibName: TouchIdableViewCell.className, bundle: nil), forCellReuseIdentifier: TouchIdableViewCell.className)
+        self.tableView.register(UINib(nibName: RemoveTouchIdTableViewCell.className, bundle: nil), forCellReuseIdentifier: RemoveTouchIdTableViewCell.className)
+        self.tableView.register(UINib(nibName: RemoveFaceIdTableViewCell.className, bundle: nil), forCellReuseIdentifier: RemoveFaceIdTableViewCell.className)
     }
     
     fileprivate func createPassword(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,13 +130,28 @@ class SecurityManagmentViewController: BaseFormViewController {
         return cell
     }
     
+    fileprivate func removeTouchId(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier:  RemoveTouchIdTableViewCell.className, for: indexPath) as!  RemoveTouchIdTableViewCell
+        cell.delegate = self as? RemoveTouchIdDelegate
+        return cell
+    }
+    
+    fileprivate func removeFaceId(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier:  RemoveFaceIdTableViewCell.className, for: indexPath) as!  RemoveFaceIdTableViewCell
+        cell.delegate = self as? RemoveFaceIdDelegate
+        return cell
+    }
+    
     fileprivate func faceId(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FaceIdTableViewCell.className, for: indexPath) as! FaceIdTableViewCell
+        cell.delegate = self as? CreateFaceIdDelegate
         return cell
     }
     
     fileprivate func tuchId(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TouchIdableViewCell.className, for: indexPath) as! TouchIdableViewCell
+        cell.delegate = self as? CreateTouchIdDelegate
+        
         return cell
     }
     
@@ -131,6 +161,12 @@ class SecurityManagmentViewController: BaseFormViewController {
         self.tableView.allowsSelection = false
         self.view.backgroundColor = .clear
     }
+    
+    fileprivate func reloadDate()  {
+        self.rowTypeArr.removeAll()
+        self.filRowTypeArr()
+        self.tableView.reloadData()
+    }
 }
 
 extension SecurityManagmentViewController: UITableViewDelegate, UITableViewDataSource {
@@ -139,15 +175,39 @@ extension SecurityManagmentViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         switch self.rowTypeArr[indexPath.row] {
         case .createPassword: return self.createPassword(tableView, cellForRowAt: indexPath)
         case .changePassword: return self.changePassword(tableView, cellForRowAt: indexPath)
         case .touchId: return self.tuchId(tableView, cellForRowAt: indexPath)
         case .faceId: return self.faceId(tableView, cellForRowAt: indexPath)
+        case .removeTouchId: return self.removeTouchId(tableView, cellForRowAt: indexPath)
+        case .removeFaceId: return self.removeFaceId(tableView, cellForRowAt: indexPath)
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+}
+
+extension SecurityManagmentViewController: RemoveTouchIdDelegate , RemoveFaceIdDelegate {
+    
+    func didTapRemoveTouchId() {
+        self.reloadDate()
+    }
+    
+    func didTapRemoveFaceId() {
+        self.reloadDate()
+    }
+}
+
+extension SecurityManagmentViewController: CreateTouchIdDelegate, CreateFaceIdDelegate {
+    func didTapCreateTouchId() {
+        self.reloadDate()
+    }
+    
+    func didTapCreateFaceId() {
+        self.reloadDate()
     }
 }

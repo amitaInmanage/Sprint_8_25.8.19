@@ -9,38 +9,29 @@
 import UIKit
 import LocalAuthentication
 
+protocol CreateTouchIdDelegate: NSObject {
+    func didTapCreateTouchId()
+}
+
 class TouchIdableViewCell: UITableViewCell {
     
-    var biometricHelper: BiometricHelper?
-    
+    @IBOutlet weak var btnCreateTouchId: SmallBtn!
     @IBOutlet weak var lblTouchId: RegularText!
-    @IBOutlet weak var lblRemoveTouchId: SmallText!
     @IBOutlet weak var vwContent: UIView!
     
-    var userHaveTouchId = ApplicationManager.sharedInstance.userAccountManager.user.hasTouchId
+    var biometricHelper: BiometricHelper?
+    var userId = ApplicationManager.sharedInstance.userAccountManager.user.numID
+    weak var delegate: CreateTouchIdDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.vwContent.addShadow()
-        self.lblRemoveTouchId.textColor = UIColor.getApllicationErrorColor()
-    
-    }
-    
-    func showAlertController(_ message: String) {
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        //  present(alertController, animated: true, completion: nil)
+        self.btnCreateTouchId.addUnderline(title: Translation(Translations.AlertButtonsKeys.createTouchId, Translations.AlertButtonsKeys.createTouchIdDefault))
+        self.lblTouchId.text = Translation(Translations.Titles.touchIdTitle, Translations.Titles.touchIdTitleDefault)
     }
     
     //IBAction:
-    @IBAction func didTapRemoveTouchId(_ sender: Any) {
-        self.userHaveTouchId = false
-    }
-    
-    
     @IBAction func didTapCreateTouchId(_ sender: Any) {
-        
-        print("hello there!.. You have clicked the touch ID")
         
         let popupInfoObj = PopupInfoObj()
         popupInfoObj.popupType = .tenGeneralPopup
@@ -53,7 +44,7 @@ class TouchIdableViewCell: UITableViewCell {
         popupInfoObj.firstButtonAction = {
             
             let myContext = LAContext()
-            let myLocalizedReasonString = "Biometric Authntication testing !! "
+            let myLocalizedReasonString = Translation(Translations.SubTitles.setFingertipTooltipSubtitle, Translations.SubTitles.setFingertipTooltipSubtitleDefault)
             
             var authError: NSError?
             if #available(iOS 8.0, macOS 10.12.1, *) {
@@ -64,23 +55,29 @@ class TouchIdableViewCell: UITableViewCell {
                             if success {
                                 let userDefaults = UserDefaults.standard
                                 
-                                userDefaults.set(true, forKey: "Biomatric")
+                                userDefaults.set("TouchId", forKey: String(self.userId))
+
+                                userDefaults.synchronize()
                                 
-                                UserDefaults.standard.synchronize()
+                                if let delegate = self.delegate {
+                                    delegate.didTapCreateTouchId()
+                                }
                                 
                             } else {
-                            
+                             print("לא הצלחנו לתפוס את טביעת האצבע")
                             }
                         }
                     }
                 } else {
-                    
+                    print("יש להגדיר טביעת אצבע למכשיר")
                 }
             } else {
                 
             }
         }
         ApplicationManager.sharedInstance.popupManager.createPopupVCWithPopupInfoObj(popupInfoObj: popupInfoObj, andPopupViewControllerDelegate: nil)
+        
+       
     }
 }
 

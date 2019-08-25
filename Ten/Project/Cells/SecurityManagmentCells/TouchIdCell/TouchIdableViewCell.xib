@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="TouchIdableViewCell" id="iN0-l3-epB" customClass="TouchIdableViewCell" customModule="Ten" customModuleProvider="target">
+        <view contentMode="scaleToFill" restorationIdentifier="TouchIdableViewCell" id="iN0-l3-epB" userLabel="Touch Id able View Cell" customClass="TouchIdableViewCell" customModule="Ten" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -22,13 +22,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgO-cK-ThX">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-RH-4zG">
-                                    <rect key="frame" x="34" y="26" width="17" height="17"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="17" id="95p-Et-ZhX"/>
-                                        <constraint firstAttribute="width" constant="17" id="Rbg-Jf-zU7"/>
-                                    </constraints>
-                                </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touchId" translatesAutoresizingMaskIntoConstraints="NO" id="s9r-FY-TT6">
                                     <rect key="frame" x="327" y="27" width="22" height="26"/>
                                     <constraints>
@@ -45,57 +38,22 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRq-18-yf9">
-                                    <rect key="frame" x="80" y="12" width="2" height="56"/>
-                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="56" id="Fhx-kz-bfH"/>
-                                        <constraint firstAttribute="width" constant="2" id="USp-xR-isA"/>
-                                    </constraints>
-                                </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" הסר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U5-An-U4s" customClass="SmallText" customModule="Ten" customModuleProvider="target">
-                                    <rect key="frame" x="14" y="43" width="59" height="17"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="17" id="fsf-Zi-iGq"/>
-                                        <constraint firstAttribute="width" constant="59" id="trU-hZ-7gN"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="textColor" red="0.91085577009999996" green="0.37636703249999998" blue="0.45170903210000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5q7-8p-zGS" customClass="IMButton" customModule="Ten" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEd-AI-DQw" customClass="SmallBtn" customModule="Ten" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="25" width="109" height="30"/>
+                                    <state key="normal" title="הגדר טביעת אצבע"/>
                                     <connections>
-                                        <action selector="didTapRemoveTouchId:" destination="iN0-l3-epB" eventType="touchUpInside" id="SDW-ED-68u"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAp-et-naN" customClass="IMButton" customModule="Ten" customModuleProvider="target">
-                                    <rect key="frame" x="82" y="0.0" width="293" height="80"/>
-                                    <connections>
-                                        <action selector="didTapCreateTouchId:" destination="iN0-l3-epB" eventType="touchUpInside" id="vwH-T8-Vh5"/>
+                                        <action selector="didTapCreateTouchId:" destination="iN0-l3-epB" eventType="touchUpInside" id="gG3-Jy-gYS"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="lAp-et-naN" secondAttribute="bottom" id="1c9-Y1-Fdu"/>
-                                <constraint firstAttribute="bottom" secondItem="5q7-8p-zGS" secondAttribute="bottom" id="27L-Yw-qjT"/>
-                                <constraint firstAttribute="trailing" secondItem="lAp-et-naN" secondAttribute="trailing" id="2fo-Fh-R5W"/>
-                                <constraint firstItem="3U5-An-U4s" firstAttribute="leading" secondItem="RgO-cK-ThX" secondAttribute="leading" constant="14" id="75k-Wr-DaF"/>
+                                <constraint firstItem="uEd-AI-DQw" firstAttribute="centerY" secondItem="RgO-cK-ThX" secondAttribute="centerY" id="0x4-Ho-zPb"/>
                                 <constraint firstItem="s9r-FY-TT6" firstAttribute="leading" secondItem="sLn-1A-eFd" secondAttribute="trailing" constant="12" id="CcJ-nP-gGZ"/>
-                                <constraint firstItem="g0C-RH-4zG" firstAttribute="top" secondItem="RgO-cK-ThX" secondAttribute="top" constant="26" id="Clg-Aa-hOG"/>
-                                <constraint firstItem="g0C-RH-4zG" firstAttribute="leading" secondItem="RgO-cK-ThX" secondAttribute="leading" constant="34" id="F7w-9r-hrI"/>
-                                <constraint firstItem="lAp-et-naN" firstAttribute="leading" secondItem="hRq-18-yf9" secondAttribute="trailing" id="HJF-se-Twm"/>
                                 <constraint firstAttribute="trailing" secondItem="s9r-FY-TT6" secondAttribute="trailing" constant="26" id="HT5-s9-icw"/>
-                                <constraint firstItem="hRq-18-yf9" firstAttribute="leading" secondItem="g0C-RH-4zG" secondAttribute="trailing" constant="29" id="MQ4-8j-OkC"/>
                                 <constraint firstItem="sLn-1A-eFd" firstAttribute="centerY" secondItem="s9r-FY-TT6" secondAttribute="centerY" id="OP2-ZH-NsB"/>
-                                <constraint firstItem="hRq-18-yf9" firstAttribute="leading" secondItem="5q7-8p-zGS" secondAttribute="trailing" id="RgY-p7-FB6"/>
+                                <constraint firstItem="uEd-AI-DQw" firstAttribute="leading" secondItem="RgO-cK-ThX" secondAttribute="leading" constant="26" id="W32-ml-Hnh"/>
                                 <constraint firstItem="s9r-FY-TT6" firstAttribute="top" secondItem="RgO-cK-ThX" secondAttribute="top" constant="27" id="lQP-vX-WW6"/>
-                                <constraint firstItem="lAp-et-naN" firstAttribute="top" secondItem="RgO-cK-ThX" secondAttribute="top" id="nVp-20-XeZ"/>
-                                <constraint firstItem="5q7-8p-zGS" firstAttribute="leading" secondItem="RgO-cK-ThX" secondAttribute="leading" id="rd5-1c-oy0"/>
-                                <constraint firstItem="3U5-An-U4s" firstAttribute="top" secondItem="g0C-RH-4zG" secondAttribute="bottom" id="uQS-nu-Stf"/>
-                                <constraint firstItem="hRq-18-yf9" firstAttribute="top" secondItem="RgO-cK-ThX" secondAttribute="top" constant="12" id="vfE-9H-3qy"/>
-                                <constraint firstItem="5q7-8p-zGS" firstAttribute="top" secondItem="RgO-cK-ThX" secondAttribute="top" id="ywd-8Z-gBE"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -119,7 +77,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="lblRemoveTouchId" destination="3U5-An-U4s" id="Yku-P0-6sk"/>
+                <outlet property="btnCreateTouchId" destination="uEd-AI-DQw" id="jDS-vi-Baw"/>
                 <outlet property="lblTouchId" destination="sLn-1A-eFd" id="dQl-eE-46T"/>
                 <outlet property="vwContent" destination="RgO-cK-ThX" id="Omu-Z0-hwb"/>
             </connections>
@@ -128,6 +86,5 @@
     </objects>
     <resources>
         <image name="touchId" width="41" height="49"/>
-        <image name="trash" width="16.5" height="18"/>
     </resources>
 </document>

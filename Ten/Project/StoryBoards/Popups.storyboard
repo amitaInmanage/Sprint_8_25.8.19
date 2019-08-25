@@ -25,11 +25,11 @@
         <scene sceneID="xNf-kf-1Wg">
             <objects>
                 <viewController storyboardIdentifier="SecondaryGeneralPopupViewController" id="wWF-jb-6CA" customClass="SecondaryGeneralPopupViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rY7-rz-B1g">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="rY7-rz-B1g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-J8-xAT">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-J8-xAT">
                                 <rect key="frame" x="38" y="187.5" width="299" height="312.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY4-RC-b7h">
@@ -44,19 +44,19 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-Wc-3vU">
-                                        <rect key="frame" x="16" y="40" width="267" height="119.5"/>
+                                        <rect key="frame" x="16" y="40" width="268" height="119.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Ff-Ax-ZkY">
-                                                <rect key="frame" x="0.0" y="0.0" width="267" height="29.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="268" height="29.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKd-YH-GzS" customClass="RegularLabel">
-                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="29.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="268" height="29.5"/>
                                                         <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7a-vy-ToP" customClass="LightLabel" customModule="Ten" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="29.5" width="267" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="29.5" width="268" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Heebo-Light" family="Heebo" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -64,15 +64,15 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="nRg-ui-Zm0">
-                                                <rect key="frame" x="0.0" y="59.5" width="267" height="60"/>
+                                                <rect key="frame" x="0.0" y="59.5" width="268" height="60"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="wyw-nz-r5G">
-                                        <rect key="frame" x="8" y="171.5" width="283" height="111"/>
+                                        <rect key="frame" x="8" y="171.5" width="284" height="111"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg4-b1-udX" customClass="MediumButton" customModule="Ten" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="283" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="284" height="33"/>
                                                 <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="14"/>
                                                 <state key="normal" title="CONFIRM">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -82,14 +82,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTy-gm-8bR" customClass="MediumButton" customModule="Ten" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="39" width="283" height="33"/>
+                                                <rect key="frame" x="0.0" y="39" width="284" height="33"/>
                                                 <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="14"/>
                                                 <connections>
                                                     <action selector="didTapSkip:" destination="wWF-jb-6CA" eventType="touchUpInside" id="wra-1R-OlR"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkd-oR-VVT">
-                                                <rect key="frame" x="0.0" y="78" width="283" height="33"/>
+                                                <rect key="frame" x="0.0" y="78" width="284" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -261,7 +261,7 @@
         <scene sceneID="gzs-J9-ea3">
             <objects>
                 <viewController storyboardIdentifier="IdentificationPinCodePopupViewController" id="X2W-Er-YQM" customClass="IdentificationPinCodePopupViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qrg-kb-AAw">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="qrg-kb-AAw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -875,11 +875,11 @@
         <scene sceneID="ovd-OE-TAS">
             <objects>
                 <viewController storyboardIdentifier="GeneralPopupViewController" id="B1Q-Wr-Ncc" customClass="GeneralPopupViewController" customModule="Ten" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Nh4-7E-c6j">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Nh4-7E-c6j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLc-KX-gXQ">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jLc-KX-gXQ">
                                 <rect key="frame" x="38" y="176" width="299" height="335.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M46-US-2AQ">
@@ -923,8 +923,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="3Gu-FZ-JH8">
-                                        <rect key="frame" x="8" y="255.5" width="102" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="3Gu-FZ-JH8">
+                                        <rect key="frame" x="189" y="255.5" width="102" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfb-zo-cgu" customClass="TenButtonStyle" customModule="Ten" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="50"/>
@@ -1015,50 +1015,61 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2Q-fm-9oG">
-                                <rect key="frame" x="10" y="161.5" width="355" height="364"/>
+                                <rect key="frame" x="10" y="175" width="355" height="337"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="iuK-LS-2z8">
-                                        <rect key="frame" x="43" y="21" width="268" height="328.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="iuK-LS-2z8">
+                                        <rect key="frame" x="43" y="21" width="268" height="301.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="165.5" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kna-VN-omr">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="219.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="165.5" axis="vertical" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kna-VN-omr">
+                                                <rect key="frame" x="0.0" y="0.0" width="268" height="165.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZvJ-0z-Q8h">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="BEc-PF-HrM">
                                                         <rect key="frame" x="0.0" y="0.0" width="268" height="50"/>
-                                                    </imageView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="79.5" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tW3-5S-NNJ">
-                                                        <rect key="frame" x="0.0" y="70" width="268" height="149.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiy-EH-NjF" customClass="MediumText" customModule="Ten" customModuleProvider="target">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZvJ-0z-Q8h">
+                                                                <rect key="frame" x="0.0" y="0.0" width="268" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="79.5" axis="vertical" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tW3-5S-NNJ">
+                                                        <rect key="frame" x="0.0" y="74" width="268" height="91.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiy-EH-NjF" customClass="MediumBoldText" customModule="Ten" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="268" height="29.5"/>
                                                                 <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="20"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kf-Uq-WkJ" customClass="RegularText" customModule="Ten" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="29.5" width="268" height="70"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="rUD-0m-bdY"/>
-                                                                </constraints>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kf-Uq-WkJ" customClass="RegularText" customModule="Ten" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="39.5" width="268" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Heebo-Light" family="Heebo" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwc-5T-wFu" customClass="RegularText" customModule="Ten" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="99.5" width="268" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="NTh-LE-HtK"/>
-                                                                </constraints>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwc-5T-wFu" customClass="RegularText" customModule="Ten" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="70.5" width="268" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Heebo-Light" family="Heebo" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="9Kf-Uq-WkJ" firstAttribute="leading" secondItem="tW3-5S-NNJ" secondAttribute="leading" id="7iK-hY-zef"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hiy-EH-NjF" secondAttribute="trailing" id="CIG-XJ-Bfg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="wwc-5T-wFu" secondAttribute="bottom" id="Cl4-L0-tCY"/>
+                                                            <constraint firstItem="wwc-5T-wFu" firstAttribute="top" secondItem="9Kf-Uq-WkJ" secondAttribute="bottom" constant="10" id="NQ5-st-ToX"/>
+                                                            <constraint firstItem="9Kf-Uq-WkJ" firstAttribute="top" secondItem="hiy-EH-NjF" secondAttribute="bottom" constant="10" id="NgV-el-Bm0"/>
+                                                            <constraint firstAttribute="trailing" secondItem="9Kf-Uq-WkJ" secondAttribute="trailing" id="Q5Z-0a-c57"/>
+                                                            <constraint firstItem="wwc-5T-wFu" firstAttribute="leading" secondItem="tW3-5S-NNJ" secondAttribute="leading" id="alD-iU-gzw"/>
+                                                            <constraint firstItem="hiy-EH-NjF" firstAttribute="leading" secondItem="tW3-5S-NNJ" secondAttribute="leading" id="e3t-QD-7h5"/>
+                                                            <constraint firstAttribute="trailing" secondItem="wwc-5T-wFu" secondAttribute="trailing" id="rIE-eR-DJW"/>
+                                                            <constraint firstItem="hiy-EH-NjF" firstAttribute="top" secondItem="tW3-5S-NNJ" secondAttribute="top" id="yQf-rM-hSG"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="225" placeholderIntrinsicHeight="86" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WNO-UJ-t9h">
-                                                <rect key="frame" x="21.5" y="244.5" width="225" height="84"/>
+                                                <rect key="frame" x="21.5" y="217.5" width="225" height="84"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vk-Tx-7LB" customClass="TenButtonStyle" customModule="Ten" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="225" height="42"/>
@@ -1075,7 +1086,7 @@
                                                             <action selector="didTapConfirm:" destination="jAx-7K-62M" eventType="touchUpInside" id="ufF-Vv-PBp"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGv-jh-qay" customClass="IMButton" customModule="Ten" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGv-jh-qay" customClass="MediumBtn" customModule="Ten" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="42" width="225" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="225" id="Xy7-Og-uEk"/>

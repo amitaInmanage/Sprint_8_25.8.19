@@ -31,19 +31,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zix-CY-Inr" customClass="MediumText" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="165.5" y="40" width="44.5" height="21"/>
+                                <rect key="frame" x="165.5" y="40" width="44" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thz-hI-6kE" customClass="RegularText">
-                                <rect key="frame" x="25" y="61" width="325" height="19"/>
+                                <rect key="frame" x="25" y="66.5" width="325" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCt-f1-TcG" customClass="MediumBtn" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="163" y="618" width="49" height="31"/>
+                                <rect key="frame" x="163.5" y="613" width="48" height="36"/>
                                 <fontDescription key="fontDescription" name="Heebo-Medium" family="Heebo" pointSize="16"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lic-En-gtW" customClass="TenButtonStyle" customModule="Ten" customModuleProvider="target">
-                                <rect key="frame" x="70.5" y="560" width="234" height="40"/>
+                                <rect key="frame" x="70.5" y="555" width="234" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xya-Nw-uJW"/>
                                 </constraints>
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yyb-dv-fUx">
-                                <rect key="frame" x="69.5" y="205" width="236" height="70"/>
+                                <rect key="frame" x="69.5" y="215" width="236" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RI2-Hf-VK0">
                                         <rect key="frame" x="0.0" y="0.0" width="236" height="70"/>
@@ -448,7 +448,7 @@
                                     <action selector="didTapRegisterSuccess:" destination="8kx-SD-Px9" eventType="touchUpInside" id="irm-8V-G44"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQJ-Pl-8Nn" customClass="RegularText">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQJ-Pl-8Nn" customClass="SmallText" customModule="Ten" customModuleProvider="target">
                                 <rect key="frame" x="20" y="159" width="335" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>

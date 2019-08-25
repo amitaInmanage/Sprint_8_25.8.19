@@ -11,11 +11,11 @@ import UIKit
 class TenGanrelPopupViewController: BasePopupViewController {
     
     @IBOutlet weak var imgSecondaryGeneral: UIImageView!
-    @IBOutlet weak var lblTitle: MediumText!
+    @IBOutlet weak var lblTitle: MediumBoldText!
     @IBOutlet weak var lblSubTitle: RegularText!
     @IBOutlet weak var lblSecondSubTitle: RegularText!
     @IBOutlet weak var btnConfirm: TenButtonStyle!
-    @IBOutlet weak var btnSkip: IMButton!
+    @IBOutlet weak var btnSkip: MediumBtn!
     @IBOutlet weak var btnsStackView: UIStackView!
     @IBOutlet weak var btnExit: IMButton!
  

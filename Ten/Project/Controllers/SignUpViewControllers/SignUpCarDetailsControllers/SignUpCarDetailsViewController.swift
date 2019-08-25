@@ -21,7 +21,7 @@ class SignUpCarDetailsViewController: BaseFormViewController {
     @IBOutlet weak var txtFldCarNumber: InputCustomView!
     @IBOutlet weak var txtFldIdNumber: InputCustomView!
     @IBOutlet weak var btnContinue: TenButtonStyle!
-
+    
     var viewModel = SignUpCarDetailsViewModel()
     
     override func viewDidLoad() {
@@ -91,33 +91,61 @@ class SignUpCarDetailsViewController: BaseFormViewController {
             self.viewModel.buildJsonAndSendUpdateRegistrationData(strScreenName: self.viewModel.screenName)
         }
     }
+    
+    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        
+        switch textField.tag {
+        case TxtFldTag.idNumber.rawValue:
+            if let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) {
+                let substringToReplace = textFieldText[rangeOfTextToReplace]
+                let count = textFieldText.count - substringToReplace.count + string.count
+                return count <= self.viewModel.intIdNumberMax
+            } else {
+                return false
+            }
+            
+        case TxtFldTag.carNumber.rawValue:
+            if let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) {
+                let substringToReplace = textFieldText[rangeOfTextToReplace]
+                let count = textFieldText.count - substringToReplace.count + string.count
+                return count <= self.viewModel.intLicensePlateMax
+            } else {
+                return false
+            }
+            
+        default:
+            return false
+        }
+    }
 }
-
-extension SignUpCarDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.data.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    extension SignUpCarDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FuelTypeCollectionViewCell.className, for: indexPath) as! FuelTypeCollectionViewCell
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return self.viewModel.data.count
+        }
         
-        cell.imgDelekType.setImageWithStrURL(strURL: self.viewModel.data[indexPath.item].strIconOff, withAddUnderscoreIphone: false)
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FuelTypeCollectionViewCell.className, for: indexPath) as! FuelTypeCollectionViewCell
+            
+            cell.imgDelekType.setImageWithStrURL(strURL: self.viewModel.data[indexPath.item].strIconOff, withAddUnderscoreIphone: false)
+            
+            let isSelected = self.viewModel.data[indexPath.item].strCode == self.viewModel.strCode
+            let fuelType = self.viewModel.data[indexPath.item]
+            let resuelt = isSelected ? fuelType.strIconOn : fuelType.strIconOff
+            
+            cell.imgDelekType.setImageWithStrURL(strURL: resuelt, withAddUnderscoreIphone: false)
+            
+            return cell
+        }
         
-        let isSelected = self.viewModel.data[indexPath.item].strCode == self.viewModel.strCode
-        let fuelType = self.viewModel.data[indexPath.item]
-        let resuelt = isSelected ? fuelType.strIconOn : fuelType.strIconOff
-        
-        cell.imgDelekType.setImageWithStrURL(strURL: resuelt, withAddUnderscoreIphone: false)
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        self.viewModel.strCode = self.viewModel.data[indexPath.item].strCode
-        self.collectionView.reloadData()
-    }
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            
+            self.viewModel.strCode = self.viewModel.data[indexPath.item].strCode
+            self.collectionView.reloadData()
+        }
 }
 

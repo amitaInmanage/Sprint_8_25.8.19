@@ -100,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "588171134.773805"
+            timestampString = "588427859.217734"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1134"
@@ -132,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ten/Submodule/NewBaseProjectSwift/Base/Managers/UserAccountManager.swift"
-            timestampString = "588171134.773999"
+            timestampString = "588427859.217852"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -396,24 +396,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Controllers/SignUpViewControllers/SignUpCarDetailsControllers/SignUpCarDetailsViewController.swift"
-            timestampString = "588084377.487336"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Ten/Project/Cells/SecurityManagmentCells/TuchIdCell/TouchIdableViewCell.swift"
-            timestampString = "588172721.527588"
+            timestampString = "588406255.887797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -428,45 +412,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Cells/SecurityManagmentCells/FaceIdCell/FaceIdTableViewCell.swift"
-            timestampString = "588172721.528042"
+            filePath = "Ten/Project/Cells/SecurityManagmentCells/TouchIdCell/TouchIdableViewCell.swift"
+            timestampString = "588430838.719849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "didTapCreateFaceId(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Cells/SecurityManagmentCells/FaceIdCell/FaceIdTableViewCell.swift"
-            timestampString = "588172721.528389"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "didTapCreateFaceId(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ten/Project/Cells/SecurityManagmentCells/FaceIdCell/FaceIdTableViewCell.swift"
-            timestampString = "588172721.528695"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "didTapCreateFaceId(_:)"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "didTapCreateTouchId(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

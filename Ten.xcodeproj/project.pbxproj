@@ -270,7 +270,6 @@
 		E82A33C6229BE19500B91456 /* LoginWithPhoneNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82A33C5229BE19500B91456 /* LoginWithPhoneNumberViewModel.swift */; };
 		E834A30922DCB86D002D006D /* GetOnBoardingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834A30822DCB86D002D006D /* GetOnBoardingResponse.swift */; };
 		E834A30B22DCB95F002D006D /* SlidItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834A30A22DCB95F002D006D /* SlidItem.swift */; };
-		E834A31322DCDCF3002D006D /* OnBordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834A31222DCDCF3002D006D /* OnBordingCell.swift */; };
 		E834A32422DDBEDB002D006D /* ScreensManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834A32322DDBED9002D006D /* ScreensManager.swift */; };
 		E834A32622DDBFAB002D006D /* LoginAndSignupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834A32522DDBFAA002D006D /* LoginAndSignupManager.swift */; };
 		E834A32A22DDDFDE002D006D /* onBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E834A32922DDDFDE002D006D /* onBoardingViewModel.swift */; };
@@ -397,6 +396,10 @@
 		F450309B22EDE77700BD8202 /* AddCreditCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309A22EDE77700BD8202 /* AddCreditCardResponse.swift */; };
 		F450309D22EDE7C800BD8202 /* AddCreditCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309C22EDE7C800BD8202 /* AddCreditCardRequest.swift */; };
 		F450309F22EF302300BD8202 /* SuccessAddCraditCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F450309E22EF302300BD8202 /* SuccessAddCraditCardResponse.swift */; };
+		F4519077231267D0009EF71A /* RemoveTouchIdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4519075231267D0009EF71A /* RemoveTouchIdTableViewCell.swift */; };
+		F4519078231267D0009EF71A /* RemoveTouchIdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4519076231267D0009EF71A /* RemoveTouchIdTableViewCell.xib */; };
+		F451907C23126DD5009EF71A /* RemoveFaceIdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F451907A23126DD5009EF71A /* RemoveFaceIdTableViewCell.swift */; };
+		F451907D23126DD5009EF71A /* RemoveFaceIdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F451907B23126DD5009EF71A /* RemoveFaceIdTableViewCell.xib */; };
 		F454180322E8817300C9CCFF /* GetTransactionsHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */; };
 		F454180522E881B900C9CCFF /* GetTransactionsHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */; };
 		F454180722E8905D00C9CCFF /* TransactionHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */; };
@@ -422,6 +425,7 @@
 		F47F429F23098D9700B6357C /* GetUsageInformationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F429E23098D9700B6357C /* GetUsageInformationRequest.swift */; };
 		F47F42A123098DE800B6357C /* GetUsageInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F42A023098DE800B6357C /* GetUsageInformationResponse.swift */; };
 		F47F42A4230A8E5400B6357C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F42A3230A8E5400B6357C /* Extensions.swift */; };
+		F487F25223125D5D003632BA /* OnBordingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F487F25123125D5C003632BA /* OnBordingCell.swift */; };
 		F48DB9AF2302D4180066534F /* CustomerProgramUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DB9AE2302D4180066534F /* CustomerProgramUser.swift */; };
 		F48DB9B32302DD790066534F /* CustomerProgramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DB9B22302DD790066534F /* CustomerProgramItem.swift */; };
 		F48DB9B52302DDF20066534F /* CustomerProgramBenefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48DB9B42302DDF20066534F /* CustomerProgramBenefit.swift */; };
@@ -737,7 +741,6 @@
 		E82A33C5229BE19500B91456 /* LoginWithPhoneNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithPhoneNumberViewModel.swift; sourceTree = "<group>"; };
 		E834A30822DCB86D002D006D /* GetOnBoardingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOnBoardingResponse.swift; sourceTree = "<group>"; };
 		E834A30A22DCB95F002D006D /* SlidItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidItem.swift; sourceTree = "<group>"; };
-		E834A31222DCDCF3002D006D /* OnBordingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBordingCell.swift; sourceTree = "<group>"; };
 		E834A32322DDBED9002D006D /* ScreensManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreensManager.swift; sourceTree = "<group>"; };
 		E834A32522DDBFAA002D006D /* LoginAndSignupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAndSignupManager.swift; sourceTree = "<group>"; };
 		E834A32922DDDFDE002D006D /* onBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingViewModel.swift; sourceTree = "<group>"; };
@@ -867,6 +870,10 @@
 		F450309A22EDE77700BD8202 /* AddCreditCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditCardResponse.swift; sourceTree = "<group>"; };
 		F450309C22EDE7C800BD8202 /* AddCreditCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditCardRequest.swift; sourceTree = "<group>"; };
 		F450309E22EF302300BD8202 /* SuccessAddCraditCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessAddCraditCardResponse.swift; sourceTree = "<group>"; };
+		F4519075231267D0009EF71A /* RemoveTouchIdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveTouchIdTableViewCell.swift; sourceTree = "<group>"; };
+		F4519076231267D0009EF71A /* RemoveTouchIdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemoveTouchIdTableViewCell.xib; sourceTree = "<group>"; };
+		F451907A23126DD5009EF71A /* RemoveFaceIdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFaceIdTableViewCell.swift; sourceTree = "<group>"; };
+		F451907B23126DD5009EF71A /* RemoveFaceIdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemoveFaceIdTableViewCell.xib; sourceTree = "<group>"; };
 		F454180222E8817300C9CCFF /* GetTransactionsHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsHistoryResponse.swift; sourceTree = "<group>"; };
 		F454180422E881B900C9CCFF /* GetTransactionsHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsHistoryRequest.swift; sourceTree = "<group>"; };
 		F454180622E8905D00C9CCFF /* TransactionHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryItem.swift; sourceTree = "<group>"; };
@@ -893,6 +900,7 @@
 		F47F429E23098D9700B6357C /* GetUsageInformationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsageInformationRequest.swift; sourceTree = "<group>"; };
 		F47F42A023098DE800B6357C /* GetUsageInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsageInformationResponse.swift; sourceTree = "<group>"; };
 		F47F42A3230A8E5400B6357C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F487F25123125D5C003632BA /* OnBordingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBordingCell.swift; sourceTree = "<group>"; };
 		F48DB9AE2302D4180066534F /* CustomerProgramUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProgramUser.swift; sourceTree = "<group>"; };
 		F48DB9B22302DD790066534F /* CustomerProgramItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProgramItem.swift; sourceTree = "<group>"; };
 		F48DB9B42302DDF20066534F /* CustomerProgramBenefit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProgramBenefit.swift; sourceTree = "<group>"; };
@@ -1102,6 +1110,7 @@
 			isa = PBXGroup;
 			children = (
 				F4443FE2230BE3B000A73FEF /* UsageDataGraphCell */,
+				F487F25023125D5C003632BA /* OnBoardingCell */,
 				F4ADEFD3230290A5005E18A9 /* TenProgramCell */,
 				F4ADEFAF23014248005E18A9 /* ClubsTableViewCells */,
 				F45B172222F71B13006CBE22 /* CreditCardTableViewCell */,
@@ -1109,7 +1118,6 @@
 				F450309122EDC23100BD8202 /* StorePaymentCells */,
 				F45417FD22E8760900C9CCFF /* TransactionsHistoryCells */,
 				F48E294422E43E320010B01B /* SecurityManagmentCells */,
-				E834A32722DDDE57002D006D /* OnBoardingCell */,
 				E8E778E922D5CC99004F0A9F /* SignUpCells */,
 				E8E778E422D5CB80004F0A9F /* PersonalZoneCells */,
 				3E38932F21785EA10000E770 /* PumpWhichCarTableViewCell */,
@@ -1794,14 +1802,6 @@
 			path = LoginWithPhoneNumberControllers;
 			sourceTree = "<group>";
 		};
-		E834A32722DDDE57002D006D /* OnBoardingCell */ = {
-			isa = PBXGroup;
-			children = (
-				E834A31222DCDCF3002D006D /* OnBordingCell.swift */,
-			);
-			path = OnBoardingCell;
-			sourceTree = "<group>";
-		};
 		E834A32822DDDFAA002D006D /* OnBoaardingControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -2277,13 +2277,13 @@
 			path = FaceIdCell;
 			sourceTree = "<group>";
 		};
-		F4471CB022E4ACDA005B0648 /* TuchIdCell */ = {
+		F4471CB022E4ACDA005B0648 /* TouchIdCell */ = {
 			isa = PBXGroup;
 			children = (
 				F4471CB522E4B2D9005B0648 /* TouchIdableViewCell.swift */,
 				F4471CB722E4B2FB005B0648 /* TouchIdableViewCell.xib */,
 			);
-			path = TuchIdCell;
+			path = TouchIdCell;
 			sourceTree = "<group>";
 		};
 		F448C38E209085C80077947E = {
@@ -2400,6 +2400,24 @@
 			path = StorePaymentCells;
 			sourceTree = "<group>";
 		};
+		F45190742312677A009EF71A /* RemoveTouchIdCell */ = {
+			isa = PBXGroup;
+			children = (
+				F4519075231267D0009EF71A /* RemoveTouchIdTableViewCell.swift */,
+				F4519076231267D0009EF71A /* RemoveTouchIdTableViewCell.xib */,
+			);
+			path = RemoveTouchIdCell;
+			sourceTree = "<group>";
+		};
+		F451907923126DBA009EF71A /* RemoveFaceIdCell */ = {
+			isa = PBXGroup;
+			children = (
+				F451907A23126DD5009EF71A /* RemoveFaceIdTableViewCell.swift */,
+				F451907B23126DD5009EF71A /* RemoveFaceIdTableViewCell.xib */,
+			);
+			path = RemoveFaceIdCell;
+			sourceTree = "<group>";
+		};
 		F45417FD22E8760900C9CCFF /* TransactionsHistoryCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -2469,11 +2487,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F487F25023125D5C003632BA /* OnBoardingCell */ = {
+			isa = PBXGroup;
+			children = (
+				F487F25123125D5C003632BA /* OnBordingCell.swift */,
+			);
+			path = OnBoardingCell;
+			sourceTree = "<group>";
+		};
 		F48E294422E43E320010B01B /* SecurityManagmentCells */ = {
 			isa = PBXGroup;
 			children = (
+				F451907923126DBA009EF71A /* RemoveFaceIdCell */,
+				F45190742312677A009EF71A /* RemoveTouchIdCell */,
 				F45D570322E5A6210088E704 /* CreatePasswordCell */,
-				F4471CB022E4ACDA005B0648 /* TuchIdCell */,
+				F4471CB022E4ACDA005B0648 /* TouchIdCell */,
 				F4471CAF22E4ACC7005B0648 /* FaceIdCell */,
 				F4471CAE22E4ACAF005B0648 /* ChangePasswordCell */,
 			);
@@ -2640,6 +2668,7 @@
 			files = (
 				3E0FA33E217885D50039C939 /* PumpWhichCarUITableViewHeaderFooterView.xib in Resources */,
 				F4443FEA230BE40C00A73FEF /* UsageDataGraphCollectionViewCell.xib in Resources */,
+				F4519078231267D0009EF71A /* RemoveTouchIdTableViewCell.xib in Resources */,
 				E82A33B6229BD81800B91456 /* UserTypeUITableViewHeaderFooterView.xib in Resources */,
 				F40CA8CA209618FB00821EAD /* Heebo-Black.ttf in Resources */,
 				E88C646222DDE495002769B7 /* FuelTypeCustomView.xib in Resources */,
@@ -2688,6 +2717,7 @@
 				F40CA8C4209618FB00821EAD /* Heebo-Bold.ttf in Resources */,
 				3E4A9656214A3A7000DC36FC /* UserTypeTableViewCell.xib in Resources */,
 				E82A32FB229BD81700B91456 /* SectionBackgroundView.xib in Resources */,
+				F451907D23126DD5009EF71A /* RemoveFaceIdTableViewCell.xib in Resources */,
 				E8E778FA22D5D05A004F0A9F /* MySavingsTableViewCell.xib in Resources */,
 				3E42AEF9216DD5C5007F9C07 /* FuelingProcess.storyboard in Resources */,
 			);
@@ -2844,6 +2874,7 @@
 				F47F42A123098DE800B6357C /* GetUsageInformationResponse.swift in Sources */,
 				E82A32F8229BD81700B91456 /* SectionBackgroundLayout.m in Sources */,
 				E82A33AF229BD81800B91456 /* UserTypeUITableViewHeaderFooterView.swift in Sources */,
+				F451907C23126DD5009EF71A /* RemoveFaceIdTableViewCell.swift in Sources */,
 				E8AC35AC229ECBBD00171BAE /* SignUpFullNameViewController.swift in Sources */,
 				E82A33A3229BD81800B91456 /* GetCitiesResponse.swift in Sources */,
 				E82A3367229BD81800B91456 /* GeneralDeclarationRequest.swift in Sources */,
@@ -2913,6 +2944,7 @@
 				E85E223F22A3C51400EE0907 /* PickPumpWhichCarPopupViewModel.swift in Sources */,
 				E8CF64C722C4E46B00B6D569 /* TenInputValidation.swift in Sources */,
 				E8E7790422D61C78004F0A9F /* PersonalDetailsViewControlles.swift in Sources */,
+				F487F25223125D5D003632BA /* OnBordingCell.swift in Sources */,
 				E82A3383229BD81800B91456 /* GetStartUpMessage.swift in Sources */,
 				E82A3323229BD81700B91456 /* UIButton+IMExtension.swift in Sources */,
 				E82A33A8229BD81800B91456 /* BaseFormViewControllerDelegate.swift in Sources */,
@@ -3126,7 +3158,6 @@
 				E82A33BB229BD81800B91456 /* LocationUpdateableProtocol.swift in Sources */,
 				E82A33C6229BE19500B91456 /* LoginWithPhoneNumberViewModel.swift in Sources */,
 				F4ADEFC4230160A2005E18A9 /* AddPowerCardRequest.swift in Sources */,
-				E834A31322DCDCF3002D006D /* OnBordingCell.swift in Sources */,
 				F4443FE1230AE77300A73FEF /* SumByMountItem.swift in Sources */,
 				F4ADEFD023019547005E18A9 /* ChooseDelekTenProgramViewController.swift in Sources */,
 				E82A3362229BD81800B91456 /* AddUserRequest.swift in Sources */,
@@ -3137,6 +3168,7 @@
 				E82A338F229BD81800B91456 /* BaseInnerResponse.swift in Sources */,
 				F4EE0A9722F8687B00DC8394 /* RemoveFuelingDeviceRequest.swift in Sources */,
 				E82A339A229BD81800B91456 /* CheckSmsTokenResponse.swift in Sources */,
+				F4519077231267D0009EF71A /* RemoveTouchIdTableViewCell.swift in Sources */,
 				E82A334A229BD81800B91456 /* BaseFunctionsViewModelDataSource.swift in Sources */,
 				E82A337E229BD81800B91456 /* BaseMenuItem.swift in Sources */,
 				E82A3350229BD81800B91456 /* DynamicButton.swift in Sources */,

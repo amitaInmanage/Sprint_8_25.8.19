@@ -110,6 +110,7 @@ class MediumBtn: Button {
         super.init(coder: aDecoder)
         self.titleLabel?.font = UIFont.init(name: "Heebo-Medium", size: 16)
         self.setTitleColor(UIColor.getApplicationTextColor(), for: .normal)
+        self.tintColor = UIColor.getApplicationTextColor()
     }
 }
 
@@ -118,5 +119,15 @@ class RegularBtn: Button {
         super.init(coder: aDecoder)
         self.titleLabel?.font = UIFont.init(name: "Heebo-Regular", size: 16)
         self.setTitleColor(UIColor.getApplicationTextColor(), for: .normal)
+        self.tintColor = UIColor.getApplicationTextColor()
+    }
+}
+
+class SmallBtn: Button {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.titleLabel?.font = UIFont.init(name: "Heebo-Regular", size: 14)
+        self.setTitleColor(UIColor.getApplicationTextColor(), for: .normal)
+        self.tintColor = UIColor.getApplicationTextColor()
     }
 }
